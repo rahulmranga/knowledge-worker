@@ -175,7 +175,7 @@ def check_pairs(g: Graph, k: int = 10) -> list[dict]:
 
 SOURCE_CANDIDATE_PROMPT = """\
 A markdown/text document is below. Decide whether it should be ingested as a
-Source into Rahul's personal knowledge graph. Respond as JSON:
+Source into the user's personal knowledge graph. Respond as JSON:
 
   ingest_recommendation : "yes" | "no" | "maybe"
   rationale             : one short sentence

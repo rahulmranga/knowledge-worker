@@ -7,7 +7,7 @@ Usage:
     python mygraph.py seed                                # v0: populate from known nodes
     python mygraph.py summary                             # stats overview
     python mygraph.py query "h1b"                         # search + neighbors + provenance
-    python mygraph.py path goal:green-card project:rahul-brain
+    python mygraph.py path goal:my-goal project:knowledge-worker
     python mygraph.py dump                                # raw JSON
     python mygraph.py reset                               # delete graph file
 
@@ -222,12 +222,13 @@ def conf_tag(c: str) -> str:
 # ---------- seed --------------------------------------------------------------
 
 def seed() -> Graph:
-    """Populate the graph with what we know about Rahul as of 2026-05-08, midnight.
+    """EXAMPLE seed: personal graph snapshot from the author's initial setup (2026-05-08).
 
-    Every node points back to at least one Source. The three sources tonight are:
-      - inspiration.md (Gemini conversation export)
-      - cowin.md (Rahul's CoWIN notifier post)
-      - claude-2026-05-08-knowledge-worker (this conversation)
+    Replace or extend this with your own nodes to bootstrap your graph.
+    Every node points back to at least one Source. The three sources here are:
+      - inspiration.md (conversation export)
+      - cowin.md (project write-up)
+      - claude-2026-05-08-knowledge-worker (bootstrap conversation)
     """
     g = Graph.load()
 

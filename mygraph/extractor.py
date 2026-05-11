@@ -76,7 +76,7 @@ EXTRACTION_TOOL = {
 
 
 PROMPT_TEMPLATE = """\
-You are extracting nodes and edges for a personal knowledge graph centered on Rahul.
+You are extracting nodes and edges for a personal knowledge graph centered on the user.
 The graph stores durable concepts (Person, Idea, Project, Goal, Topic, Reference,
 Question, Decision, Source) and relations between them.
 

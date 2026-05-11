@@ -1,20 +1,14 @@
 # knowledge-worker
 
-<<<<<<< HEAD
 **A personal knowledge graph that survives between AI conversations.**  
 User-centered (not conversation-centered). Provenance-or-bust. Built on boring infrastructure.
 
 > *Your AI is only as smart as what it remembers about you.*
-=======
-Personal knowledge graph that survives between Claude conversations.
-User-centered (not conversation-centered). Provenance-or-bust.
->>>>>>> refs/remotes/origin/main
 
 ---
 
 ## Why This Exists
 
-<<<<<<< HEAD
 Every AI assistant forgets you the moment the conversation ends. You re-explain context. You re-teach preferences. You lose the thread.
 
 `knowledge-worker` fixes this. It maintains a structured, provenance-backed knowledge graph about *you* — your projects, goals, decisions, and reasoning — and injects it as context into any LLM session. The result: an AI that picks up exactly where you left off.
@@ -35,9 +29,6 @@ Every AI assistant forgets you the moment the conversation ends. You re-explain 
 ## Architecture
 
 Three principles. See `knowledge_worker_principles.md` for full reasoning.
-=======
-Three principles captured: See `knowledge_worker_principles.md` for full reasoning.
->>>>>>> refs/remotes/origin/main
 
 **1. Boring persistence layer** — Postgres, not Neptune or graph DBs. Intelligence lives above the DB, not in it.
 

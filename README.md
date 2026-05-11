@@ -7,7 +7,7 @@ User-centered (not conversation-centered). Provenance-or-bust.
 
 ## Architecture (as of 2026-05-10)
 
-Three principles captured at 3:30am. See `knowledge_worker_principles.md` for full reasoning.
+Three principles captured: See `knowledge_worker_principles.md` for full reasoning.
 
 **1. Boring persistence layer** — Postgres, not Neptune or graph DBs. Intelligence lives above the DB, not in it.
 

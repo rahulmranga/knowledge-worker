@@ -1,7 +1,7 @@
-# rahul-brain
+# knowledge-worker
 
 Personal knowledge graph that survives between Claude conversations.
-Rahul-centered (not conversation-centered). Provenance-or-bust.
+User-centered (not conversation-centered). Provenance-or-bust.
 
 ---
 

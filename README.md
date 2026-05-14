@@ -26,6 +26,17 @@ Every AI assistant forgets you the moment the conversation ends. You re-explain 
 
 ---
 
+## Roadmap
+
+The long-term phases and milestones for this project are documented in [ROADMAP.md](./ROADMAP.md).
+
+The roadmap focuses on evolving the graph from a static memory store into a living cognitive substrate:
+- automated ingestion
+- retrieval + evals
+- contradiction detection
+- temporal reasoning
+- provenance-aware memory continuity
+
 ## Architecture
 
 Three principles. See `knowledge_worker_principles.md` for full reasoning.

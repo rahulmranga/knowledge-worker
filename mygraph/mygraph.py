@@ -4,19 +4,19 @@ mygraph.py — personal knowledge graph (v0 schema, v1 ingest/check/export/viz).
 Single-file core, stdlib-only. Read SPEC.md → V1_DESIGN.md → V1_PLAN.md.
 
 Usage:
-    python mygraph.py seed                                # v0: populate from known nodes
+    python mygraph.py seed                                # populate fictional demo graph
     python mygraph.py summary                             # stats overview
-    python mygraph.py query "h1b"                         # search + neighbors + provenance
+    python mygraph.py query "provenance"                  # search + neighbors + provenance
     python mygraph.py path goal:my-goal project:knowledge-worker
     python mygraph.py dump                                # raw JSON
     python mygraph.py reset                               # delete graph file
 
     python mygraph.py ingest <path/to/file.md>            # v1 M1: 5-stage extractor pipeline
     python mygraph.py check [--provenance|--stale-edges|--pairs N|--source-candidates DIR]
-    python mygraph.py export --ttl                        # v1 M3: emit mygraph.ttl
-    python mygraph.py viz                                 # v1 M4: open custom force-directed HTML
+    python mygraph.py export --ttl                        # v1 M3: emit Turtle
+    python mygraph.py viz                                 # v1 M4: write offline HTML viewer
 
-Graph file: ./mygraph.json (next to this script).
+Graph file: ./mygraph.json by default, or MYGRAPH_PATH=/absolute/path.json.
 """
 
 from __future__ import annotations
@@ -30,7 +30,15 @@ from datetime import datetime, timezone
 from typing import Any, Optional
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-GRAPH_PATH = os.path.join(HERE, "mygraph.json")
+DEFAULT_GRAPH_PATH = os.path.join(HERE, "mygraph.json")
+
+
+def resolve_graph_path(path: Optional[str] = None) -> str:
+    raw = path or os.environ.get("MYGRAPH_PATH") or DEFAULT_GRAPH_PATH
+    return os.path.abspath(os.path.expanduser(raw))
+
+
+GRAPH_PATH = resolve_graph_path()
 
 # ---------- node + edge types -------------------------------------------------
 
@@ -86,7 +94,8 @@ class Graph:
         self.edges: list[Edge] = edges or []
 
     @classmethod
-    def load(cls, path: str = GRAPH_PATH) -> "Graph":
+    def load(cls, path: Optional[str] = None) -> "Graph":
+        path = resolve_graph_path(path)
         if not os.path.exists(path):
             return cls()
         with open(path) as f:
@@ -107,11 +116,13 @@ class Graph:
             edges.append(Edge(**kw))
         return cls(nodes=nodes, edges=edges)
 
-    def save(self, path: str = GRAPH_PATH) -> None:
+    def save(self, path: Optional[str] = None) -> None:
+        path = resolve_graph_path(path)
         data = {
             "nodes": {nid: asdict(n) for nid, n in self.nodes.items()},
             "edges": [asdict(e) for e in self.edges],
         }
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w") as f:
             json.dump(data, f, indent=2, sort_keys=True)
 
@@ -222,344 +233,77 @@ def conf_tag(c: str) -> str:
 # ---------- seed --------------------------------------------------------------
 
 def seed() -> Graph:
-    """EXAMPLE seed: personal graph snapshot from the author's initial setup (2026-05-08).
+    """Write a small fictional demo graph to the active graph path.
 
-    Replace or extend this with your own nodes to bootstrap your graph.
-    Every node points back to at least one Source. The three sources here are:
-      - inspiration.md (conversation export)
-      - cowin.md (project write-up)
-      - claude-2026-05-08-knowledge-worker (bootstrap conversation)
+    The seed intentionally avoids private-owner facts so generated public
+    examples can be committed safely.
     """
-    g = Graph.load()
+    g = Graph()
 
-    # -- sources
-    s_insp = Node(id="source:inspiration-md", type="source",
-                  label="inspiration.md",
-                  body="Gemini conversation about GraphRAG + RL + knowledge worker, exported 2026-05-08")
-    s_cowin = Node(id="source:cowin-md", type="source",
-                   label="cowin.md",
-                   body="Rahul's post about the CoWIN email notifier, ~500 users across 22 Indian states during second COVID wave.")
-    s_chat = Node(id="source:claude-2026-05-08-knowledge-worker", type="source",
-                  label="Claude chat 2026-05-08 — knowledge worker",
-                  body="This conversation. Where the spec and v0 prototype were sketched.")
-    # M0.3: inspiration.md as a formal Source (referenced as origin of CogGRAG/HippoRAG/Graph-R1).
-    s_insp_md = Node(id="source:inspiration-md-file", type="source",
-                     label="inspiration.md (workspace file)",
-                     body="The local inspiration.md at the project root. Origin of references to CogGRAG, HippoRAG, Graph-R1, HyperGraphPro.")
-    for s in (s_insp, s_cowin, s_chat, s_insp_md):
-        g.add_node(s)
-
-    # -- people
-    rahul = Node(id="person:rahul", type="person", label="Rahul",
-                 body="Knowledge worker at a biotech company, on H1B with green card pending. Long-term entrepreneurial goal. Third-generation entrepreneurial family.")
-    saumya = Node(id="person:saumya-shikhar", type="person", label="Saumya Shikhar",
-                  body="Friend and ex-colleague who built the original CoWIN web platform that inspired Rahul's email notifier.")
-    dad = Node(id="person:dad", type="person", label="Dad",
-               body="Writer. Spiritual, meditates. Said: 'it's all just a mere happening, like a drama or a play.'",
-               confidence="medium")
-    for p in (rahul, saumya, dad):
-        g.add_node(p)
-
-    # -- topics
-    topics = [
-        ("land-evaluation", "Land evaluation"),
-        ("knowledge-graphs", "Knowledge Graphs"),
-        ("rag", "RAG"),
-        ("graphrag", "GraphRAG"),
-        ("reinforcement-learning", "Reinforcement Learning"),
-        ("fine-tuning", "Fine-tuning"),
-        ("claude-code", "Claude Code"),
-        ("h1b", "H1B"),
-        ("green-card", "Green Card"),
-        ("taxes", "Taxes"),
-        ("finances", "Finances"),
-        ("flow-theory", "Flow theory"),
-        ("biotech", "Biotech"),
-        ("entrepreneurship", "Entrepreneurship"),
-        ("medium-publishing", "Medium publishing"),
-        ("python", "Python"),
-        ("agentic-systems", "Agentic systems"),
+    nodes = [
+        Node(id="source:demo-notes", type="source", label="demo-notes.md",
+             body="Fictional project notes used to demonstrate provenance-backed memory."),
+        Node(id="source:architecture-note", type="source", label="architecture-note.md",
+             body="Fictional architecture note for the public demo graph."),
+        Node(id="person:demo-owner", type="person", label="Demo Owner",
+             body="A fictional graph owner used only for public examples."),
+        Node(id="project:knowledge-worker", type="project", label="knowledge-worker",
+             body="A local-first toolkit for source-backed AI memory."),
+        Node(id="idea:context-memory", type="idea", label="Context memory",
+             body="AI sessions improve when durable context is stored as concepts instead of loose transcript chunks."),
+        Node(id="idea:provenance-first", type="idea", label="Provenance first",
+             body="Every durable claim should point back to source evidence."),
+        Node(id="goal:trusted-ai-assistance", type="goal", label="Trusted AI assistance",
+             body="Make assistant responses easier to verify and continue across sessions."),
+        Node(id="question:storage-backend", type="question", label="When should storage move beyond JSON?",
+             body="Open question: keep JSON until size or concurrency makes it awkward."),
+        Node(id="decision:json-first", type="decision", label="Use JSON first",
+             body="Start with a simple JSON store before introducing a database."),
+        Node(id="topic:knowledge-graphs", type="topic", label="Knowledge graphs",
+             body="Structured concepts and relationships for durable context."),
+        Node(id="topic:local-first", type="topic", label="Local-first software",
+             body="Software that keeps user data local unless the owner chooses otherwise."),
+        Node(id="reference:coggrag", type="reference", label="CogGRAG",
+             body="A public reference about cognition-inspired graph retrieval.", confidence="medium"),
     ]
-    for s, lab in topics:
-        g.add_node(Node(id=f"topic:{s}", type="topic", label=lab))
+    for node in nodes:
+        g.add_node(node)
 
-    # -- references
-    coggrag = Node(id="reference:coggrag", type="reference",
-                   label="CogGRAG (arXiv:2503.06567)",
-                   body="Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving. Decomposition + exploratory retrieval + dual-process verification.",
-                   confidence="medium")  # we haven't independently verified the abstract
-    hipporag = Node(id="reference:hipporag", type="reference",
-                    label="HippoRAG",
-                    body="Neurobiologically-inspired RAG using PageRank over a KG, 2024.",
-                    confidence="medium")
-    graphr1 = Node(id="reference:graph-r1", type="reference",
-                   label="Graph-R1 (claimed arXiv:2507.21892)",
-                   body="Per inspiration.md: end-to-end agentic GraphRAG with multi-turn retrieval. Existence not independently verified.",
-                   confidence="low")
-    flow = Node(id="reference:csikszentmihalyi-flow", type="reference",
-                label="Csikszentmihalyi — Flow theory (Planyway summary)",
-                body="https://planyway.com/blog/mihaly-csikszentmihalyi-flow-theory")
-    for r in (coggrag, hipporag, graphr1, flow):
-        g.add_node(r)
+    def edge(src: str, dst: str, type_: str, source_id: str,
+             excerpt: str = "", confidence: str = "high") -> None:
+        g.add_edge(Edge(src=src, dst=dst, type=type_, source_id=source_id,
+                        excerpt=excerpt, confidence=confidence))
 
-    # -- ideas
-    idea_kgw = Node(
-        id="idea:kg-rag-ft-knowledge-worker",
-        type="idea",
-        label="KG + RAG + small fine-tune ≈ knowledge worker",
-        body=("Knowledge graphs provide associative structure, RAG provides recall, "
-              "and a small fine-tune (or strong system prompt) provides taste / voice. "
-              "Together they approximate how a domain knowledge worker reasons. "
-              "Originally framed as 'mimic the brain'; engineering-wise, that framing is a hook, not a compass."),
-        confidence="high",
-    )
-    idea_rahul_centered = Node(
-        id="idea:rahul-centered-graph",
-        type="idea",
-        label="Personal AI memory should be person-centered, not conversation-centered",
-        body=("Vanilla 'chat memory' indexes conversation chunks. The durable thing is the person's "
-              "concepts, decisions, and open questions — conversations are evidence, not substance."),
-        confidence="high",
-    )
-    idea_provenance = Node(
-        id="idea:provenance-or-bust",
-        type="idea",
-        label="Provenance-or-bust",
-        body="Every node and claim must trace back to a literal source excerpt, or it's slop. Anti-AI-slop spine of the project.",
-        confidence="high",
-    )
-    idea_rl_dessert = Node(
-        id="idea:rl-is-dessert",
-        type="idea",
-        label="RL is dessert, not dinner",
-        body="At v0, RL on a personal KG is unjustified. KG + RAG + good prompting earns most of the value. RL only after a clear ceiling.",
-        confidence="high",
-    )
-    idea_one_project = Node(
-        id="idea:abc-is-one-project-sequenced",
-        type="idea",
-        label="A, B, C are one project sequenced",
-        body=("Work project, Medium article, and personal local tool are not three competing tracks. "
-              "Build B (the personal tool) first; A and C fall out as artifacts and writing material."),
-        confidence="high",
-    )
-    idea_land_eval = Node(
-        id="idea:land-evaluation-as-rb-test-case",
-        type="idea",
-        label="land_evaluation as both an Idea and a v1 Source folder",
-        body=("Per SPEC §9 (resolved 2026-05-08): the land_evaluation folder at "
-              "~/Desktop/ideas/land_evaluation is treated as (a) a Source folder we "
-              "ingest from at v1, and (b) an Idea node — 'apply Rahul-Brain methodology "
-              "to land_evaluation.' Folder access deferred until ingest run."),
-        confidence="high",
-    )
-    for i in (idea_kgw, idea_rahul_centered, idea_provenance, idea_rl_dessert,
-              idea_one_project, idea_land_eval):
-        g.add_node(i)
+    src_demo = "source:demo-notes"
+    src_arch = "source:architecture-note"
+    for node_id, excerpt in [
+        ("person:demo-owner", "The demo owner wants assistant memory that survives across sessions."),
+        ("project:knowledge-worker", "Build a local-first toolkit for source-backed AI memory."),
+        ("idea:context-memory", "Store durable concepts instead of loose transcript chunks."),
+        ("idea:provenance-first", "Every durable claim needs source evidence."),
+        ("goal:trusted-ai-assistance", "Make assistant responses easier to verify and continue."),
+        ("topic:knowledge-graphs", "Use a graph of concepts and relationships."),
+        ("topic:local-first", "Keep owner data local unless explicitly exported."),
+    ]:
+        edge(node_id, src_demo, "MENTIONED_IN", src_demo, excerpt)
 
-    # -- projects
-    rb = Node(id="project:rahul-brain", type="project",
-              label="Rahul Brain",
-              body="A personal knowledge graph that survives between Claude conversations. v0 = JSON-backed, single Python file, schema-led.")
-    cowin = Node(id="project:cowin-notifier", type="project",
-                 label="CoWIN email notifier",
-                 body="During India's second COVID wave, Rahul built an email notification system on top of the Indian govt vaccination API. ~500 users across 22 states signed up within a day. Hit policy/email-platform limits, stopped onboarding. Per Rahul: 'technically a failure; from a solution point of view, it helped people.'")
-    for p in (rb, cowin):
-        g.add_node(p)
+    for node_id, excerpt in [
+        ("question:storage-backend", "When should storage move beyond JSON?"),
+        ("decision:json-first", "Use JSON first; add a database only when needed."),
+        ("reference:coggrag", "CogGRAG is a public reference for graph retrieval."),
+    ]:
+        edge(node_id, src_arch, "MENTIONED_IN", src_arch, excerpt)
 
-    # -- goals
-    goals = [
-        Node(id="goal:green-card", type="goal", label="Green card",
-             body="Strengthen US footing. A real technical artifact + writing supports NIW-type evidence."),
-        Node(id="goal:entrepreneurship", type="goal", label="Entrepreneurship",
-             body="Long-term aim. Third-generation entrepreneurial family."),
-        Node(id="goal:flow", type="goal", label="Live in flow",
-             body="Csikszentmihalyi's challenge-zone. Rahul yearns for flow especially."),
-        Node(id="goal:not-ai-slop", type="goal", label="Not AI slop",
-             body="Anything we publish has to be honest, verifiable, and add original value. The provenance-or-bust principle is in service of this goal."),
-    ]
-    for go in goals:
-        g.add_node(go)
-
-    # -- questions
-    qs = [
-        Node(id="question:medium-or-venue", type="question",
-             label="Medium or a more formal venue for the writeup?",
-             body="Open."),
-        Node(id="question:work-project-or-side-project", type="question",
-             label="Is Rahul Brain a work project, a side project, or both?",
-             body="Tonight's lean: side project first, work-project later if it generalizes."),
-        Node(id="question:storage-jsonl-vs-kuzu-vs-graphify", type="question",
-             label="JSON vs Kùzu vs graphify.net for storage layer?",
-             body="v0 = JSON. Reassess when JSON gets painful. graphify.net unverified by Claude tonight; user to evaluate."),
-    ]
-    for q in qs:
-        g.add_node(q)
-
-    # -- decisions
-    decs = [
-        Node(id="decision:v0-json-store", type="decision",
-             label="v0 uses JSON, not Kùzu",
-             body="Reduce stack to stdlib so we ship tonight."),
-        Node(id="decision:rahul-centered-not-conversation-centered", type="decision",
-             label="Graph centers on Rahul (durable concepts), not conversations",
-             body="Conversations are Sources; nodes are concepts."),
-        Node(id="decision:both-spec-and-prototype", type="decision",
-             label="Ship spec AND prototype in this session",
-             body="User asked for both; they're cheap together."),
-    ]
-    for d in decs:
-        g.add_node(d)
-
-    # ============== edges ==============
-    # every node gets a MENTIONED_IN to its primary source(s).
-
-    def mentioned(node_id: str, source_id: str, excerpt: str = "", conf: str = "high"):
-        g.add_edge(Edge(src=node_id, dst=source_id, type="MENTIONED_IN",
-                        source_id=source_id, excerpt=excerpt, confidence=conf))
-
-    # -- provenance to inspiration.md
-    mentioned("idea:kg-rag-ft-knowledge-worker", "source:inspiration-md",
-              excerpt="in essence I want to mimic knowledge worker like how it is in the brain.")
-    mentioned("reference:coggrag", "source:inspiration-md",
-              excerpt="Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving (arXiv:2503.06567)")
-    mentioned("reference:hipporag", "source:inspiration-md",
-              excerpt="Hippocampal Retrieval (HippoRAG)")
-    mentioned("reference:graph-r1", "source:inspiration-md",
-              excerpt="Graph-R1 (2025): An end-to-end agentic framework", conf="low")
-    # M0.3: bind references to the local inspiration.md file Source as well.
-    mentioned("reference:coggrag", "source:inspiration-md-file",
-              excerpt="Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving (arXiv:2503.06567)")
-    mentioned("reference:hipporag", "source:inspiration-md-file",
-              excerpt="Hippocampal Retrieval (HippoRAG)")
-    mentioned("reference:graph-r1", "source:inspiration-md-file",
-              excerpt="Graph-R1 (2025): An end-to-end agentic framework modeling retrieval as a multi-turn interaction", conf="low")
-    mentioned("topic:graphrag", "source:inspiration-md",
-              excerpt="graph rag with reinforcement learning")
-    mentioned("topic:reinforcement-learning", "source:inspiration-md")
-    mentioned("topic:knowledge-graphs", "source:inspiration-md")
-    mentioned("topic:rag", "source:inspiration-md")
-    mentioned("topic:agentic-systems", "source:inspiration-md")
-
-    # -- provenance to cowin.md
-    mentioned("project:cowin-notifier", "source:cowin-md",
-              excerpt="around 500 users from 22 states across India opted for the service within one day")
-    mentioned("person:saumya-shikhar", "source:cowin-md",
-              excerpt="my friend and ex-colleague, Saumya Shikhar")
-    mentioned("topic:python", "source:cowin-md", excerpt="#python")
-
-    # -- provenance to tonight's chat
-    mentioned("person:rahul", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="I am also a worker in a biotech company on my H1B visa with green card, but long term have an entrepreneurial goal.")
-    mentioned("person:dad", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="my dad is a writer and he is spirtual and meditates")
-    mentioned("project:rahul-brain", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="i want to be part of a good AI project, and this is under utilized")
-    mentioned("idea:rahul-centered-graph", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="if i'm building a knowledge worker, for myself, won't i want to *build* information about \"Rahul\" or \"rahul's ideas\"?")
-    mentioned("idea:provenance-or-bust", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="Not AI Slop. maybe")
-    mentioned("idea:rl-is-dessert", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="RL is dessert, not dinner")
-    mentioned("idea:abc-is-one-project-sequenced", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="A, B, and C are not three projects. They're one project sequenced.")
-    mentioned("idea:land-evaluation-as-rb-test-case", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="this is also an idea/inspiration. I changed the folder structure for you but mostly for ME!")
-    mentioned("topic:land-evaluation", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="land_evaluation")
-    mentioned("goal:green-card", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="This will help me in my green card application - article or whatever.")
-    mentioned("goal:entrepreneurship", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="long term have an entrepreneurial goal")
-    mentioned("goal:flow", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="we as humans yearn for the moments of flow -especially me-")
-    mentioned("goal:not-ai-slop", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="Not AI Slop. maybe")
-    mentioned("topic:claude-code", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="Granted I've not been using claude code even though i paid for it")
-    mentioned("topic:h1b", "source:claude-2026-05-08-knowledge-worker", excerpt="H1B visa")
-    mentioned("topic:green-card", "source:claude-2026-05-08-knowledge-worker", excerpt="green card")
-    mentioned("topic:taxes", "source:claude-2026-05-08-knowledge-worker", excerpt="finances and taxes")
-    mentioned("topic:finances", "source:claude-2026-05-08-knowledge-worker", excerpt="finances and taxes")
-    mentioned("topic:biotech", "source:claude-2026-05-08-knowledge-worker", excerpt="biotech company")
-    mentioned("topic:flow-theory", "source:claude-2026-05-08-knowledge-worker")
-    mentioned("topic:medium-publishing", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="OR I can prove something and publish a medium article")
-    mentioned("topic:fine-tuning", "source:claude-2026-05-08-knowledge-worker")
-    mentioned("reference:csikszentmihalyi-flow", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="https://planyway.com/blog/mihaly-csikszentmihalyi-flow-theory")
-    mentioned("question:medium-or-venue", "source:claude-2026-05-08-knowledge-worker")
-    mentioned("question:work-project-or-side-project", "source:claude-2026-05-08-knowledge-worker")
-    mentioned("question:storage-jsonl-vs-kuzu-vs-graphify", "source:claude-2026-05-08-knowledge-worker",
-              excerpt="there's graphify https://graphify.net/")
-
-    # -- relational edges
-    SRC = "source:claude-2026-05-08-knowledge-worker"
-
-    def rel(s, d, t, src=SRC, ex="", conf="high"):
-        g.add_edge(Edge(src=s, dst=d, type=t, source_id=src, excerpt=ex, confidence=conf))
-
-    # ideas Rahul holds
-    for idea_id in ("idea:kg-rag-ft-knowledge-worker", "idea:rahul-centered-graph",
-                    "idea:provenance-or-bust", "idea:rl-is-dessert",
-                    "idea:abc-is-one-project-sequenced"):
-        rel("person:rahul", idea_id, "HAS_IDEA")
-
-    # idea → topics
-    rel("idea:kg-rag-ft-knowledge-worker", "topic:knowledge-graphs", "RELATES_TO")
-    rel("idea:kg-rag-ft-knowledge-worker", "topic:rag", "RELATES_TO")
-    rel("idea:kg-rag-ft-knowledge-worker", "topic:fine-tuning", "RELATES_TO")
-    rel("idea:kg-rag-ft-knowledge-worker", "topic:agentic-systems", "RELATES_TO")
-    rel("idea:rahul-centered-graph", "topic:knowledge-graphs", "RELATES_TO")
-    rel("idea:provenance-or-bust", "topic:medium-publishing", "RELATES_TO")
-    rel("idea:rl-is-dessert", "topic:reinforcement-learning", "RELATES_TO")
-    rel("idea:land-evaluation-as-rb-test-case", "topic:land-evaluation", "RELATES_TO")
-    rel("idea:land-evaluation-as-rb-test-case", "project:rahul-brain", "RELATES_TO",
-        ex="apply Rahul-Brain methodology to land_evaluation")
-
-    # idea → references
-    rel("idea:kg-rag-ft-knowledge-worker", "reference:coggrag", "SUPPORTED_BY", src="source:inspiration-md")
-    rel("idea:kg-rag-ft-knowledge-worker", "reference:hipporag", "SUPPORTED_BY", src="source:inspiration-md")
-    rel("idea:kg-rag-ft-knowledge-worker", "reference:graph-r1", "SUPPORTED_BY",
-        src="source:inspiration-md", conf="low")
-
-    # ideas in tension
-    rel("idea:rl-is-dessert", "idea:kg-rag-ft-knowledge-worker", "CHALLENGES",
-        ex="scopes the original 'KG+RAG+RL' framing — argues RL is unnecessary at v0")
-
-    # project → goals
-    rel("project:rahul-brain", "goal:green-card", "SERVES",
-        ex="A real artifact + writeup is stronger NIW evidence than the article alone.")
-    rel("project:rahul-brain", "goal:entrepreneurship", "SERVES")
-    rel("project:rahul-brain", "goal:flow", "SERVES",
-        ex="Sized for the challenge-zone — non-trivial but tractable in a sitting.")
-    rel("project:rahul-brain", "goal:not-ai-slop", "SERVES")
-
-    # project → topics
-    rel("project:rahul-brain", "topic:knowledge-graphs", "INVOLVES")
-    rel("project:rahul-brain", "topic:rag", "INVOLVES")
-    rel("project:rahul-brain", "topic:python", "INVOLVES")
-    rel("project:rahul-brain", "topic:agentic-systems", "INVOLVES")
-
-    # project → people
-    rel("project:rahul-brain", "person:rahul", "INVOLVES")
-    rel("project:cowin-notifier", "person:saumya-shikhar", "INVOLVES",
-        src="source:cowin-md",
-        ex="I would like to thank Saumya for the inspiration")
-    rel("project:cowin-notifier", "person:rahul", "INVOLVES", src="source:cowin-md")
-    rel("project:cowin-notifier", "topic:python", "INVOLVES", src="source:cowin-md")
-    rel("project:cowin-notifier", "goal:entrepreneurship", "SERVES", src="source:cowin-md",
-        ex="3rd generation entrepreneurial family")
-
-    # questions → topics/projects
-    rel("question:medium-or-venue", "topic:medium-publishing", "ABOUT")
-    rel("question:work-project-or-side-project", "project:rahul-brain", "ABOUT")
-    rel("question:storage-jsonl-vs-kuzu-vs-graphify", "project:rahul-brain", "ABOUT")
-
-    # decisions → source
-    rel("decision:v0-json-store", SRC, "MADE_AT")
-    rel("decision:rahul-centered-not-conversation-centered", SRC, "MADE_AT")
-    rel("decision:both-spec-and-prototype", SRC, "MADE_AT")
+    edge("person:demo-owner", "idea:context-memory", "HAS_IDEA", src_demo)
+    edge("person:demo-owner", "idea:provenance-first", "HAS_IDEA", src_demo)
+    edge("project:knowledge-worker", "goal:trusted-ai-assistance", "SERVES", src_demo)
+    edge("project:knowledge-worker", "topic:knowledge-graphs", "INVOLVES", src_demo)
+    edge("project:knowledge-worker", "topic:local-first", "INVOLVES", src_demo)
+    edge("idea:context-memory", "topic:knowledge-graphs", "RELATES_TO", src_demo)
+    edge("idea:provenance-first", "goal:trusted-ai-assistance", "SERVES", src_demo)
+    edge("decision:json-first", "question:storage-backend", "ABOUT", src_arch)
+    edge("idea:context-memory", "reference:coggrag", "SUPPORTED_BY", src_arch,
+         excerpt="CogGRAG is a public reference for graph retrieval.", confidence="medium")
 
     g.save()
     return g
@@ -576,7 +320,7 @@ def summary() -> None:
     for e in g.edges:
         edge_by_type[e.type] = edge_by_type.get(e.type, 0) + 1
 
-    print(f"mygraph — {GRAPH_PATH}")
+    print(f"mygraph — {resolve_graph_path()}")
     print(f"  {len(g.nodes)} nodes, {len(g.edges)} edges")
     print()
     print("  Nodes by type:")
@@ -643,14 +387,15 @@ def path(a: str, b: str) -> None:
 
 
 def dump() -> None:
-    with open(GRAPH_PATH) as f:
+    with open(resolve_graph_path()) as f:
         print(f.read())
 
 
 def reset() -> None:
-    if os.path.exists(GRAPH_PATH):
-        os.remove(GRAPH_PATH)
-        print(f"Deleted {GRAPH_PATH}")
+    path = resolve_graph_path()
+    if os.path.exists(path):
+        os.remove(path)
+        print(f"Deleted {path}")
     else:
         print("No graph file to delete.")
 
@@ -714,7 +459,7 @@ Usage:
   python mygraph.py check [--provenance] [--stale-edges] [--pairs N]
                           [--source-candidates <dir>]
   python mygraph.py export --ttl [--out <path>]
-  python mygraph.py viz [--no-open]
+  python mygraph.py viz [--graph <path>] [--out <path>] [--no-open]
 """
 
 
@@ -725,7 +470,7 @@ def main(argv: list[str]) -> int:
     cmd = argv[1]
     if cmd == "seed":
         g = seed()
-        print(f"Seeded. {len(g.nodes)} nodes, {len(g.edges)} edges → {GRAPH_PATH}")
+        print(f"Seeded. {len(g.nodes)} nodes, {len(g.edges)} edges → {resolve_graph_path()}")
         return 0
     if cmd == "summary":
         summary()

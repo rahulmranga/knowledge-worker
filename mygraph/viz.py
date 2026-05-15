@@ -1,227 +1,244 @@
 """
-viz.py — v1 M4 visualization launcher.
+viz.py — offline graph viewer generator.
 
-Writes a fresh `mygraph_viz.html` next to this script and opens it in the
-default browser. The HTML is a single self-contained file (D3.js from CDN) that
-fetches `mygraph.json` over file://.
-
-Why custom HTML over WebVOWL/Gephi:
-  - zero install
-  - reads canonical JSON directly (no dependency on M3 TTL)
-  - portable, version-controllable, customizable
+Writes a single HTML file with graph JSON embedded directly into the page. The
+viewer has no CDN dependency, no sibling JSON fetch, and no upload step.
 """
 
 from __future__ import annotations
 
 import json
-import os
 import sys
 import webbrowser
+from dataclasses import asdict
 from pathlib import Path
+
+from mygraph import Graph, resolve_graph_path
 
 HERE = Path(__file__).parent
 HTML_PATH = HERE / "mygraph_viz.html"
-GRAPH_JSON = HERE / "mygraph.json"
+
 
 HTML_TEMPLATE = r"""<!doctype html>
 <meta charset="utf-8" />
-<title>mygraph — visualizer</title>
+<title>mygraph viewer</title>
 <style>
   :root {
-    --bg: #0f1115;
-    --fg: #e6e8ea;
-    --muted: #8a9099;
-    --panel: #181b21;
-    --accent: #d2b48c;
+    --bg: #101214;
+    --fg: #edf0f2;
+    --muted: #9ba3ad;
+    --line: #2c333a;
+    --panel: #191d22;
+    --accent: #72d1b0;
+    --warn: #e5c07b;
   }
-  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg);
-               font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-               overflow: hidden; }
-  #header { padding: 8px 14px; border-bottom: 1px solid #222;
-            display: flex; align-items: center; gap: 14px; font-size: 12px; }
-  #header strong { color: var(--accent); letter-spacing: 0.04em; }
-  #header .legend { display: flex; gap: 10px; flex-wrap: wrap; }
-  #header .legend span { display: inline-flex; align-items: center; gap: 4px; }
-  #header .legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-  #stage { width: 100vw; height: calc(100vh - 38px); }
-  svg { width: 100%; height: 100%; cursor: grab; }
-  .link { stroke: #3a3f47; stroke-opacity: 0.55; }
-  .link.high { stroke-opacity: 0.9; }
-  .link.medium { stroke-opacity: 0.6; }
-  .link.low   { stroke-opacity: 0.3; stroke-dasharray: 3 3; }
-  .node circle { stroke: #0f1115; stroke-width: 1.5; cursor: pointer; }
-  .node text { fill: var(--fg); font-size: 10px; pointer-events: none;
-               text-shadow: 0 0 3px #0f1115, 0 0 3px #0f1115, 0 0 3px #0f1115; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 100%; height: 100%; overflow: hidden;
+    background: var(--bg); color: var(--fg);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  header { height: 44px; display: flex; align-items: center; gap: 16px;
+    padding: 0 14px; border-bottom: 1px solid var(--line); font-size: 13px; }
+  header strong { color: var(--accent); }
+  #counts, #hint { color: var(--muted); }
+  #hint { margin-left: auto; }
+  #stage { width: 100vw; height: calc(100vh - 44px); }
+  svg { width: 100%; height: 100%; cursor: grab; user-select: none; }
+  .link { stroke: #52606d; stroke-opacity: 0.5; stroke-width: 1.2; }
+  .link.low { stroke-dasharray: 4 4; stroke-opacity: 0.35; }
+  .link.medium { stroke-opacity: 0.42; }
   .edge-label { fill: var(--muted); font-size: 9px; pointer-events: none; }
-  #panel { position: fixed; top: 50px; right: 12px; width: 360px; max-height: 80vh;
-           overflow: auto; background: var(--panel); border: 1px solid #2a2f37;
-           border-radius: 6px; padding: 12px 14px; font-size: 12px; line-height: 1.45;
-           display: none; }
+  .node circle { stroke: #0a0c0e; stroke-width: 1.5; cursor: pointer; }
+  .node text { fill: var(--fg); font-size: 10px; pointer-events: none;
+    text-shadow: 0 1px 2px #000, 0 0 4px #000; }
+  .node.selected circle { stroke: var(--accent); stroke-width: 3; }
+  #panel { position: fixed; right: 12px; top: 56px; width: min(390px, calc(100vw - 24px));
+    max-height: calc(100vh - 72px); overflow: auto; background: var(--panel);
+    border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: none;
+    box-shadow: 0 18px 60px rgba(0,0,0,.35); font-size: 13px; line-height: 1.45; }
   #panel.open { display: block; }
-  #panel h3 { margin: 0 0 4px 0; color: var(--accent); font-size: 13px; }
-  #panel .meta { color: var(--muted); font-size: 11px; }
-  #panel .body { margin: 8px 0; }
-  #panel .section { margin-top: 10px; }
-  #panel .section-title { color: var(--muted); text-transform: uppercase;
-                          letter-spacing: 0.08em; font-size: 10px; margin-bottom: 4px; }
-  #panel ul { margin: 0; padding-left: 16px; }
-  #panel a { color: #87b7e0; text-decoration: none; cursor: pointer; }
+  #panel h2 { margin: 0 26px 4px 0; font-size: 16px; color: var(--accent); }
+  #panel code { color: var(--muted); }
+  #panel .meta { color: var(--muted); font-size: 12px; }
+  #panel .body { margin: 10px 0; }
+  #panel .section-title { margin-top: 14px; color: var(--muted); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  #panel ul { margin: 6px 0 0 0; padding-left: 18px; }
+  #panel li { margin-bottom: 5px; }
+  #panel button { position: absolute; top: 10px; right: 10px; border: 0;
+    background: transparent; color: var(--muted); font-size: 22px; cursor: pointer; }
+  #panel a { color: #9cc9ff; cursor: pointer; text-decoration: none; }
   #panel a:hover { text-decoration: underline; }
-  .pill { display: inline-block; padding: 0 6px; border-radius: 3px;
-          background: #2a2f37; color: var(--muted); font-size: 10px; margin-left: 4px; }
-  #close { float: right; cursor: pointer; color: var(--muted); }
+  .pill { display: inline-block; margin-left: 4px; padding: 1px 6px;
+    border-radius: 999px; background: #263039; color: var(--muted); font-size: 11px; }
+  .pill.low { color: #ffb4a8; }
+  .pill.medium { color: var(--warn); }
 </style>
-
-<div id="header">
+<header>
   <strong>mygraph</strong>
-  <span id="counts">loading…</span>
-  <span class="legend" id="legend"></span>
-  <span style="margin-left:auto; color: var(--muted)">click a node · drag to pan · scroll to zoom</span>
-</div>
-<div id="stage"><svg></svg></div>
-<div id="panel"></div>
-
-<script src="https://d3js.org/d3.v7.min.js"></script>
+  <span id="counts"></span>
+  <span id="hint">click nodes · drag canvas · scroll to zoom</span>
+</header>
+<div id="stage"><svg id="graph" viewBox="0 0 1200 760" aria-label="knowledge graph"></svg></div>
+<aside id="panel"></aside>
 <script>
-const TYPE_COLORS = {
-  person:    "#e07b7b",
-  topic:     "#7bb0e0",
-  idea:      "#d2b48c",
-  project:   "#7be0a8",
-  goal:      "#b07be0",
-  question:  "#e0c87b",
-  decision:  "#7be0c8",
-  reference: "#e07bb0",
-  source:    "#8a9099",
+const GRAPH_DATA = __GRAPH_JSON__;
+const COLORS = {
+  person: "#ef7d7d", topic: "#78aee8", idea: "#e3c56f", project: "#76d99d",
+  goal: "#c18be8", question: "#f0a06d", decision: "#72d1b0",
+  reference: "#dc83bd", source: "#9ba3ad"
 };
-const TYPE_RADIUS = { source: 5, topic: 6, person: 8, project: 9, goal: 9,
-                      idea: 8, question: 7, decision: 7, reference: 7 };
+const RADII = { source: 6, topic: 8, person: 9, project: 10, goal: 10,
+  idea: 9, question: 8, decision: 8, reference: 8 };
+const nodes = Object.values(GRAPH_DATA.nodes || {});
+const edges = GRAPH_DATA.edges || [];
+const nodeById = new Map(nodes.map(n => [n.id, n]));
+const svg = document.getElementById("graph");
+const panel = document.getElementById("panel");
+document.getElementById("counts").textContent = `${nodes.length} nodes · ${edges.length} edges`;
 
-(async function() {
-  const res = await fetch("mygraph.json");
-  if (!res.ok) {
-    document.getElementById("counts").textContent = "failed to load mygraph.json";
-    return;
-  }
-  const data = await res.json();
-  const nodes = Object.values(data.nodes).map(n => ({...n}));
-  const edges = data.edges.map(e => ({...e, source: e.src, target: e.dst}));
-  document.getElementById("counts").textContent = `${nodes.length} nodes · ${edges.length} edges`;
+function escapeHtml(value) {
+  return String(value || "").replace(/[&<>"]/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"
+  }[c]));
+}
 
-  // legend
-  const legend = document.getElementById("legend");
-  Object.keys(TYPE_COLORS).forEach(t => {
-    const span = document.createElement("span");
-    span.innerHTML = `<i style="background:${TYPE_COLORS[t]}"></i>${t}`;
-    legend.appendChild(span);
-  });
-
-  const svg = d3.select("svg");
-  const g = svg.append("g");
-  svg.call(d3.zoom().scaleExtent([0.2, 4]).on("zoom", ev => g.attr("transform", ev.transform)));
-
-  const sim = d3.forceSimulation(nodes)
-    .force("link", d3.forceLink(edges).id(d => d.id).distance(80).strength(0.5))
-    .force("charge", d3.forceManyBody().strength(-160))
-    .force("center", d3.forceCenter(window.innerWidth/2, (window.innerHeight-38)/2))
-    .force("collide", d3.forceCollide().radius(d => (TYPE_RADIUS[d.type]||7) + 4));
-
-  const link = g.append("g").attr("class","links").selectAll("line")
-    .data(edges).join("line")
-    .attr("class", d => `link ${d.confidence||"medium"}`);
-
-  const edgeLabel = g.append("g").attr("class","edge-labels").selectAll("text")
-    .data(edges).join("text").attr("class","edge-label").text(d => d.type);
-
-  const node = g.append("g").attr("class","nodes").selectAll("g.node")
-    .data(nodes).join("g").attr("class","node")
-    .call(drag(sim));
-
-  node.append("circle")
-    .attr("r", d => TYPE_RADIUS[d.type] || 7)
-    .attr("fill", d => TYPE_COLORS[d.type] || "#888");
-  node.append("text")
-    .attr("dx", 11).attr("dy", 3)
-    .text(d => d.label);
-
-  node.on("click", (ev, d) => openPanel(d, data));
-
-  sim.on("tick", () => {
-    link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y)
-        .attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
-    edgeLabel.attr("x",d=>(d.source.x+d.target.x)/2)
-             .attr("y",d=>(d.source.y+d.target.y)/2);
-    node.attr("transform", d=>`translate(${d.x},${d.y})`);
-  });
-
-  function drag(sim) {
-    return d3.drag()
-      .on("start",(ev,d)=>{ if(!ev.active) sim.alphaTarget(0.3).restart();
-                            d.fx=d.x; d.fy=d.y; })
-      .on("drag",(ev,d)=>{ d.fx=ev.x; d.fy=ev.y; })
-      .on("end",(ev,d)=>{ if(!ev.active) sim.alphaTarget(0);
-                          d.fx=null; d.fy=null; });
-  }
-
-  function openPanel(n, data) {
-    const panel = document.getElementById("panel");
-    const out = data.edges.filter(e => e.src === n.id);
-    const inc = data.edges.filter(e => e.dst === n.id);
-    const prov = data.edges.filter(e =>
-      (e.type === "MENTIONED_IN" || e.type === "MADE_AT") &&
-      (e.src === n.id || e.dst === n.id));
-    panel.classList.add("open");
-    panel.innerHTML = `
-      <span id="close">×</span>
-      <h3>${escape(n.label)}</h3>
-      <div class="meta">${n.type} · <code>${n.id}</code>
-        <span class="pill">${n.confidence||"?"}</span></div>
-      ${n.body ? `<div class="body">${escape(n.body)}</div>` : ""}
-      ${prov.length ? `<div class="section">
-        <div class="section-title">provenance</div>
-        <ul>${prov.map(e => {
-          const sid = e.src === n.id ? e.dst : e.src;
-          const ex = e.excerpt ? `<div class="meta">"${escape(e.excerpt)}"</div>` : "";
-          return `<li><a data-id="${sid}">${sid}</a>${ex}</li>`;
-        }).join("")}</ul></div>` : ""}
-      ${out.length ? `<div class="section">
-        <div class="section-title">outgoing (${out.length})</div>
-        <ul>${out.map(e =>
-          `<li>${e.type} → <a data-id="${e.dst}">${e.dst}</a></li>`).join("")}</ul></div>` : ""}
-      ${inc.length ? `<div class="section">
-        <div class="section-title">incoming (${inc.length})</div>
-        <ul>${inc.map(e =>
-          `<li><a data-id="${e.src}">${e.src}</a> → ${e.type}</li>`).join("")}</ul></div>` : ""}
-    `;
-    document.getElementById("close").onclick = () => panel.classList.remove("open");
-    panel.querySelectorAll("a[data-id]").forEach(a => {
-      a.onclick = () => {
-        const target = nodes.find(x => x.id === a.dataset.id);
-        if (target) openPanel(target, data);
-      };
+function layout() {
+  const groups = {};
+  for (const node of nodes) (groups[node.type] ||= []).push(node);
+  const typeOrder = Object.keys(groups).sort();
+  const centerX = 600, centerY = 380;
+  const ringGap = Math.max(76, Math.min(118, 440 / Math.max(1, typeOrder.length)));
+  typeOrder.forEach((type, ringIndex) => {
+    const ring = groups[type];
+    const radius = 70 + ringIndex * ringGap;
+    ring.forEach((node, i) => {
+      const angle = (Math.PI * 2 * i / Math.max(1, ring.length)) + ringIndex * 0.45;
+      node.x = centerX + Math.cos(angle) * radius;
+      node.y = centerY + Math.sin(angle) * radius;
     });
+  });
+}
+
+function make(tag, attrs = {}, parent = svg) {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  parent.appendChild(el);
+  return el;
+}
+
+function render() {
+  layout();
+  svg.innerHTML = "";
+  const root = make("g", { id: "viewport" });
+  for (const edge of edges) {
+    const src = nodeById.get(edge.src), dst = nodeById.get(edge.dst);
+    if (!src || !dst) continue;
+    make("line", { class: `link ${edge.confidence || "medium"}`,
+      x1: src.x, y1: src.y, x2: dst.x, y2: dst.y }, root);
+    make("text", { class: "edge-label", x: (src.x + dst.x) / 2, y: (src.y + dst.y) / 2 }, root)
+      .textContent = edge.type;
   }
-  function escape(s){ return String(s||"").replace(/[&<>]/g,
-    c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
-})();
+  for (const node of nodes) {
+    const g = make("g", { class: "node", transform: `translate(${node.x},${node.y})`,
+      "data-id": node.id }, root);
+    make("circle", { r: RADII[node.type] || 8, fill: COLORS[node.type] || "#aaa" }, g);
+    make("text", { x: 13, y: 4 }, g).textContent = node.label || node.id;
+    g.addEventListener("click", ev => { ev.stopPropagation(); openPanel(node.id); });
+  }
+  enablePanZoom(root);
+}
+
+function relatedEdges(id) {
+  return edges.filter(e => e.src === id || e.dst === id);
+}
+
+function openPanel(id) {
+  const node = nodeById.get(id);
+  if (!node) return;
+  document.querySelectorAll(".node").forEach(el => el.classList.toggle("selected", el.dataset.id === id));
+  const rel = relatedEdges(id);
+  const provenance = rel.filter(e => e.type === "MENTIONED_IN" || e.type === "MADE_AT");
+  panel.classList.add("open");
+  panel.innerHTML = `
+    <button aria-label="Close">×</button>
+    <h2>${escapeHtml(node.label || node.id)}</h2>
+    <div class="meta">${escapeHtml(node.type)} · <code>${escapeHtml(node.id)}</code>
+      <span class="pill ${escapeHtml(node.confidence || "")}">${escapeHtml(node.confidence || "?")}</span>
+    </div>
+    ${node.body ? `<div class="body">${escapeHtml(node.body)}</div>` : ""}
+    ${provenance.length ? `<div class="section-title">provenance</div><ul>${provenance.map(e => {
+      const other = e.src === id ? e.dst : e.src;
+      return `<li><a data-id="${escapeHtml(other)}">${escapeHtml(other)}</a>${e.excerpt ? `<div class="meta">"${escapeHtml(e.excerpt)}"</div>` : ""}</li>`;
+    }).join("")}</ul>` : ""}
+    <div class="section-title">neighbors</div>
+    <ul>${rel.map(e => {
+      const other = e.src === id ? e.dst : e.src;
+      const dir = e.src === id ? "to" : "from";
+      return `<li>${escapeHtml(e.type)} ${dir} <a data-id="${escapeHtml(other)}">${escapeHtml(other)}</a></li>`;
+    }).join("") || "<li>none</li>"}</ul>
+  `;
+  panel.querySelector("button").onclick = () => panel.classList.remove("open");
+  panel.querySelectorAll("a[data-id]").forEach(a => a.onclick = () => openPanel(a.dataset.id));
+}
+
+function enablePanZoom(root) {
+  let scale = 1, tx = 0, ty = 0, dragging = false, start = null;
+  const apply = () => root.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+  svg.addEventListener("mousedown", ev => { dragging = true; start = [ev.clientX - tx, ev.clientY - ty]; });
+  window.addEventListener("mouseup", () => dragging = false);
+  window.addEventListener("mousemove", ev => {
+    if (!dragging) return;
+    tx = ev.clientX - start[0]; ty = ev.clientY - start[1]; apply();
+  });
+  svg.addEventListener("wheel", ev => {
+    ev.preventDefault();
+    const next = Math.max(0.35, Math.min(3.5, scale * (ev.deltaY < 0 ? 1.08 : 0.92)));
+    scale = next; apply();
+  }, { passive: false });
+  svg.addEventListener("click", () => panel.classList.remove("open"));
+}
+
+render();
 </script>
 """
 
 
-def render_html(out_path: Path = HTML_PATH) -> Path:
-    out_path.write_text(HTML_TEMPLATE)
+def _graph_payload(graph_path: Path) -> dict:
+    g = Graph.load(str(graph_path))
+    return {
+        "nodes": {nid: asdict(node) for nid, node in g.nodes.items()},
+        "edges": [asdict(edge) for edge in g.edges],
+    }
+
+
+def render_html(graph_path: Path, out_path: Path = HTML_PATH) -> Path:
+    payload = _graph_payload(graph_path)
+    graph_json = json.dumps(payload, ensure_ascii=False)
+    html = HTML_TEMPLATE.replace("__GRAPH_JSON__", graph_json.replace("</script", "<\\/script"))
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(html, encoding="utf-8")
     return out_path
 
 
+def _value_arg(args: list[str], name: str) -> str | None:
+    if name not in args:
+        return None
+    i = args.index(name)
+    if i + 1 >= len(args):
+        raise SystemExit(f"viz: {name} needs a path")
+    return args[i + 1]
+
+
 def run_viz(args: list[str]) -> int:
-    out = render_html()
-    print(f"viz: wrote {out}")
+    graph_arg = _value_arg(args, "--graph")
+    out_arg = _value_arg(args, "--out")
+    graph_path = Path(graph_arg).expanduser().resolve() if graph_arg else Path(resolve_graph_path())
+    out = Path(out_arg).expanduser().resolve() if out_arg else HTML_PATH
+    written = render_html(graph_path, out)
+    print(f"viz: wrote {written}")
     if "--no-open" not in args:
-        try:
-            webbrowser.open(f"file://{out.resolve()}")
-            print("viz: opened in default browser")
-        except Exception as e:
-            print(f"viz: could not auto-open ({e}). Open this file manually: {out}")
+        webbrowser.open(f"file://{written.resolve()}")
+        print("viz: opened in default browser")
     return 0
 
 

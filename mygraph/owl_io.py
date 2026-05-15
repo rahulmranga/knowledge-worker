@@ -22,7 +22,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from mygraph import Graph, Node, Edge, NODE_TYPES, EDGE_TYPES, GRAPH_PATH
+from mygraph import Graph, Node, Edge, NODE_TYPES, EDGE_TYPES, resolve_graph_path
 
 NS = "http://mygraph.local/"
 RB = "http://mygraph.local/schema#"
@@ -151,9 +151,10 @@ def from_turtle(path: Path) -> Graph:
     return Graph(nodes=nodes, edges=edges)
 
 
-def round_trip_test(graph_path: Path = Path(GRAPH_PATH)) -> tuple[bool, str]:
+def round_trip_test(graph_path: Path | None = None) -> tuple[bool, str]:
     import tempfile
-    g = Graph.load(str(graph_path))
+    active_path = graph_path or Path(resolve_graph_path())
+    g = Graph.load(str(active_path))
     ttl = to_turtle(g)
     with tempfile.NamedTemporaryFile("w", suffix=".ttl", delete=False) as f:
         f.write(ttl)
@@ -175,17 +176,22 @@ def round_trip_test(graph_path: Path = Path(GRAPH_PATH)) -> tuple[bool, str]:
 
 def run_export(args: list[str]) -> int:
     if "--ttl" not in args:
-        print("Usage: python mygraph.py export --ttl [--out <path>] [--round-trip]")
+        print("Usage: python mygraph.py export --ttl [--graph <path>] [--out <path>] [--round-trip]")
         return 1
-    out = Path(GRAPH_PATH).with_suffix(".ttl")
+    graph_path = Path(resolve_graph_path())
+    if "--graph" in args:
+        i = args.index("--graph")
+        graph_path = Path(args[i + 1]).expanduser().resolve()
+    out = graph_path.with_suffix(".ttl")
     if "--out" in args:
         i = args.index("--out")
         out = Path(args[i + 1]).expanduser().resolve()
-    g = Graph.load()
+    g = Graph.load(str(graph_path))
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(to_turtle(g))
     print(f"export: wrote {out}")
     if "--round-trip" in args:
-        ok, msg = round_trip_test()
+        ok, msg = round_trip_test(graph_path)
         print(f"round-trip: {msg}")
         return 0 if ok else 2
     return 0

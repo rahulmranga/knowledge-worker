@@ -85,7 +85,7 @@ Rules:
 2. Use confidence "high" only when you have a direct quote in the `excerpt` field.
 3. Use confidence "medium" for clear paraphrase (still quote what you paraphrased FROM).
 4. Use confidence "low" for inference. Quote what you inferred FROM.
-5. Slug-style IDs: lowercase, hyphenated, type-prefixed. E.g. `idea:rahul-centered-graph`.
+5. Slug-style IDs: lowercase, hyphenated, type-prefixed. E.g. `idea:context-memory`.
 6. Reuse existing IDs (below) when a candidate refers to an existing concept.
 7. Do NOT invent biographical facts. If the source doesn't say it, it doesn't go in.
 8. The Source node `id` MUST equal: {source_id}

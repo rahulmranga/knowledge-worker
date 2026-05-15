@@ -27,6 +27,8 @@ def append(record: dict, path: Path = EVAL_LOG) -> None:
 
 
 def append_many(records: list[dict], path: Path = EVAL_LOG) -> None:
+    if not records:
+        return
     ts = now()
     with path.open("a") as f:
         for r in records:

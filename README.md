@@ -9,12 +9,67 @@ stay outside git and be loaded with `MYGRAPH_PATH`.
 
 ## What It Does
 
-- Ingests markdown into candidate nodes and edges.
-- Requires source-backed provenance for high-confidence claims.
-- Reviews candidates before merge.
-- Exports JSON graphs to Turtle/RDF.
-- Runs deterministic health checks.
-- Generates an offline, single-file HTML graph viewer.
+- **Ingests your markdown files** (notes, journals, docs) → extracts structured nodes + edges via LLM
+- **Builds a graph on Postgres** — no exotic graph DB, just boring reliable SQL
+- **Validates every claim** against its source (no floating assertions)
+- **Exports to OWL/RDF** for interoperability
+- **Visualizes** as a force-directed interactive graph
+- **Queries by concept** — find what you think about any topic, plus all connected reasoning
+
+---
+
+## Roadmap
+
+The long-term phases and milestones for this project are documented in [ROADMAP.md](./ROADMAP.md).
+
+The roadmap focuses on evolving the graph from a static memory store into a living cognitive substrate:
+- automated ingestion
+- retrieval + evals
+- contradiction detection
+- temporal reasoning
+- provenance-aware memory continuity
+
+## Architecture
+
+Three principles. See `knowledge_worker_principles.md` for full reasoning.
+
+**1. Boring persistence layer** — Postgres, not Neptune or graph DBs. Intelligence lives above the DB, not in it.
+
+**2. Cold GPU / federated compute** — Older/idle GPU nodes connect opportunistically to any Postgres instance. Heterogeneous hardware. Async. Distributed. Like BitTorrent, but for inference.
+
+**3. Emergent KG** — The knowledge graph grows from usage on Postgres. Not prescribed by schema upfront.
+
+> *Chaos at compute. Boring at persistence.*
+
+---
+
+## System 1 / System 2 Cognition Map
+
+The architecture maps to dual-process cognition (Kahneman / AAAI 2020):
+
+| Layer | What it is | Brain analogy |
+|---|---|---|
+| Cold GPU nodes | ML inference, pattern-matching | System 1 / Reptilian |
+| Postgres | Symbolic knowledge store, explicit facts | System 2 / Neocortex |
+| Emergent KG | Common-sense bridge between the two | Limbic / associative |
+
+---
+
+## Measures of Success
+
+The graph pays off when LLM responses improve *because* of it.
+
+---
+
+### 🔴 Without knowledge-worker context
+
+> **Prompt:** *"What should I focus on for my next side project?"*
+
+**Gemma (local):**
+> *"Consider building a web app, mobile app, or contributing to open source. Pick something that interests you."*
+
+**GitHub Copilot:**
+> *"A good side project should align with your career goals and help you learn new skills."*
 
 ## Quick Start
 

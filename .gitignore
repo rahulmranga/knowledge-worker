@@ -1,0 +1,36 @@
+# Private/raw graph payloads
+datadump/
+*_READ_ONLY.json
+network_theory.md
+*.Zone.Identifier
+*:Zone.Identifier
+mygraph/mygraph.json
+mygraph/mygraph.ttl
+mygraph/mygraph_viz.html
+mygraph/private_*.html
+mygraph/private_*.ttl
+
+# Runtime/eval sidecars
+mygraph/eval_record.jsonl
+mygraph/state_log.jsonl
+*.candidates.json
+
+# Local environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.secret
+*secret*
+*token*
+*password*
+
+# Python/cache/build output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/

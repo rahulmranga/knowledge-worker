@@ -1,0 +1,181 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>mygraph viewer</title>
+<style>
+  :root {
+    --bg: #101214;
+    --fg: #edf0f2;
+    --muted: #9ba3ad;
+    --line: #2c333a;
+    --panel: #191d22;
+    --accent: #72d1b0;
+    --warn: #e5c07b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 100%; height: 100%; overflow: hidden;
+    background: var(--bg); color: var(--fg);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  header { height: 44px; display: flex; align-items: center; gap: 16px;
+    padding: 0 14px; border-bottom: 1px solid var(--line); font-size: 13px; }
+  header strong { color: var(--accent); }
+  #counts, #hint { color: var(--muted); }
+  #hint { margin-left: auto; }
+  #stage { width: 100vw; height: calc(100vh - 44px); }
+  svg { width: 100%; height: 100%; cursor: grab; user-select: none; }
+  .link { stroke: #52606d; stroke-opacity: 0.5; stroke-width: 1.2; }
+  .link.low { stroke-dasharray: 4 4; stroke-opacity: 0.35; }
+  .link.medium { stroke-opacity: 0.42; }
+  .edge-label { fill: var(--muted); font-size: 9px; pointer-events: none; }
+  .node circle { stroke: #0a0c0e; stroke-width: 1.5; cursor: pointer; }
+  .node text { fill: var(--fg); font-size: 10px; pointer-events: none;
+    text-shadow: 0 1px 2px #000, 0 0 4px #000; }
+  .node.selected circle { stroke: var(--accent); stroke-width: 3; }
+  #panel { position: fixed; right: 12px; top: 56px; width: min(390px, calc(100vw - 24px));
+    max-height: calc(100vh - 72px); overflow: auto; background: var(--panel);
+    border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: none;
+    box-shadow: 0 18px 60px rgba(0,0,0,.35); font-size: 13px; line-height: 1.45; }
+  #panel.open { display: block; }
+  #panel h2 { margin: 0 26px 4px 0; font-size: 16px; color: var(--accent); }
+  #panel code { color: var(--muted); }
+  #panel .meta { color: var(--muted); font-size: 12px; }
+  #panel .body { margin: 10px 0; }
+  #panel .section-title { margin-top: 14px; color: var(--muted); font-size: 11px;
+    text-transform: uppercase; letter-spacing: .08em; }
+  #panel ul { margin: 6px 0 0 0; padding-left: 18px; }
+  #panel li { margin-bottom: 5px; }
+  #panel button { position: absolute; top: 10px; right: 10px; border: 0;
+    background: transparent; color: var(--muted); font-size: 22px; cursor: pointer; }
+  #panel a { color: #9cc9ff; cursor: pointer; text-decoration: none; }
+  #panel a:hover { text-decoration: underline; }
+  .pill { display: inline-block; margin-left: 4px; padding: 1px 6px;
+    border-radius: 999px; background: #263039; color: var(--muted); font-size: 11px; }
+  .pill.low { color: #ffb4a8; }
+  .pill.medium { color: var(--warn); }
+</style>
+<header>
+  <strong>mygraph</strong>
+  <span id="counts"></span>
+  <span id="hint">click nodes · drag canvas · scroll to zoom</span>
+</header>
+<div id="stage"><svg id="graph" viewBox="0 0 1200 760" aria-label="knowledge graph"></svg></div>
+<aside id="panel"></aside>
+<script>
+const GRAPH_DATA = {"nodes": {"decision:json-first": {"id": "decision:json-first", "type": "decision", "label": "Use JSON first", "body": "Start with a simple JSON store before introducing a database.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774863+00:00"}, "goal:trusted-ai-assistance": {"id": "goal:trusted-ai-assistance", "type": "goal", "label": "Trusted AI assistance", "body": "Make assistant responses easier to verify and continue across sessions.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774852+00:00"}, "idea:context-memory": {"id": "idea:context-memory", "type": "idea", "label": "Context memory", "body": "AI sessions improve when durable context is stored as concepts instead of loose transcript chunks.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774842+00:00"}, "idea:provenance-first": {"id": "idea:provenance-first", "type": "idea", "label": "Provenance first", "body": "Every durable claim should point back to source evidence.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774847+00:00"}, "person:demo-owner": {"id": "person:demo-owner", "type": "person", "label": "Demo Owner", "body": "A fictional graph owner used only for public examples.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774831+00:00"}, "project:knowledge-worker": {"id": "project:knowledge-worker", "type": "project", "label": "knowledge-worker", "body": "A local-first toolkit for source-backed AI memory.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774837+00:00"}, "question:storage-backend": {"id": "question:storage-backend", "type": "question", "label": "When should storage move beyond JSON?", "body": "Open question: keep JSON until size or concurrency makes it awkward.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774857+00:00"}, "reference:coggrag": {"id": "reference:coggrag", "type": "reference", "label": "CogGRAG", "body": "A public reference about cognition-inspired graph retrieval.", "confidence": "medium", "created_at": "2026-05-15T22:55:51.774880+00:00"}, "source:architecture-note": {"id": "source:architecture-note", "type": "source", "label": "architecture-note.md", "body": "Fictional architecture note for the public demo graph.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774823+00:00"}, "source:demo-notes": {"id": "source:demo-notes", "type": "source", "label": "demo-notes.md", "body": "Fictional project notes used to demonstrate provenance-backed memory.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774750+00:00"}, "topic:knowledge-graphs": {"id": "topic:knowledge-graphs", "type": "topic", "label": "Knowledge graphs", "body": "Structured concepts and relationships for durable context.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774868+00:00"}, "topic:local-first": {"id": "topic:local-first", "type": "topic", "label": "Local-first software", "body": "Software that keeps user data local unless the owner chooses otherwise.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774874+00:00"}}, "edges": [{"src": "person:demo-owner", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "The demo owner wants assistant memory that survives across sessions.", "confidence": "high", "created_at": "2026-05-15T22:55:51.774985+00:00", "last_seen": "2026-05-15T22:55:51.774994+00:00"}, {"src": "project:knowledge-worker", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Build a local-first toolkit for source-backed AI memory.", "confidence": "high", "created_at": "2026-05-15T22:55:51.775006+00:00", "last_seen": "2026-05-15T22:55:51.775011+00:00"}, {"src": "idea:context-memory", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Store durable concepts instead of loose transcript chunks.", "confidence": "high", "created_at": "2026-05-15T22:55:51.775019+00:00", "last_seen": "2026-05-15T22:55:51.775023+00:00"}, {"src": "idea:provenance-first", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Every durable claim needs source evidence.", "confidence": "high", "created_at": "2026-05-15T22:55:51.775030+00:00", "last_seen": "2026-05-15T22:55:51.775034+00:00"}, {"src": "goal:trusted-ai-assistance", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Make assistant responses easier to verify and continue.", "confidence": "high", "created_at": "2026-05-15T22:55:51.775042+00:00", "last_seen": "2026-05-15T22:55:51.775046+00:00"}, {"src": "topic:knowledge-graphs", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Use a graph of concepts and relationships.", "confidence": "high", "created_at": "2026-05-15T22:55:51.775055+00:00", "last_seen": "2026-05-15T22:55:51.775060+00:00"}, {"src": "topic:local-first", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Keep owner data local unless explicitly exported.", "confidence": "high", "created_at": "2026-05-15T22:55:51.775069+00:00", "last_seen": "2026-05-15T22:55:51.775073+00:00"}, {"src": "question:storage-backend", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "When should storage move beyond JSON?", "confidence": "high", "created_at": "2026-05-15T22:55:51.775083+00:00", "last_seen": "2026-05-15T22:55:51.775087+00:00"}, {"src": "decision:json-first", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "Use JSON first; add a database only when needed.", "confidence": "high", "created_at": "2026-05-15T22:55:51.775097+00:00", "last_seen": "2026-05-15T22:55:51.775101+00:00"}, {"src": "reference:coggrag", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "CogGRAG is a public reference for graph retrieval.", "confidence": "high", "created_at": "2026-05-15T22:55:51.775111+00:00", "last_seen": "2026-05-15T22:55:51.775115+00:00"}, {"src": "person:demo-owner", "dst": "idea:context-memory", "type": "HAS_IDEA", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-15T22:55:51.775125+00:00", "last_seen": "2026-05-15T22:55:51.775128+00:00"}, {"src": "person:demo-owner", "dst": "idea:provenance-first", "type": "HAS_IDEA", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-15T22:55:51.775139+00:00", "last_seen": "2026-05-15T22:55:51.775142+00:00"}, {"src": "project:knowledge-worker", "dst": "goal:trusted-ai-assistance", "type": "SERVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-15T22:55:51.775152+00:00", "last_seen": "2026-05-15T22:55:51.775156+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:knowledge-graphs", "type": "INVOLVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-15T22:55:51.775167+00:00", "last_seen": "2026-05-15T22:55:51.775170+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:local-first", "type": "INVOLVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-15T22:55:51.775181+00:00", "last_seen": "2026-05-15T22:55:51.775186+00:00"}, {"src": "idea:context-memory", "dst": "topic:knowledge-graphs", "type": "RELATES_TO", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-15T22:55:51.775200+00:00", "last_seen": "2026-05-15T22:55:51.775204+00:00"}, {"src": "idea:provenance-first", "dst": "goal:trusted-ai-assistance", "type": "SERVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-15T22:55:51.775218+00:00", "last_seen": "2026-05-15T22:55:51.775222+00:00"}, {"src": "decision:json-first", "dst": "question:storage-backend", "type": "ABOUT", "source_id": "source:architecture-note", "excerpt": "", "confidence": "high", "created_at": "2026-05-15T22:55:51.775237+00:00", "last_seen": "2026-05-15T22:55:51.775241+00:00"}, {"src": "idea:context-memory", "dst": "reference:coggrag", "type": "SUPPORTED_BY", "source_id": "source:architecture-note", "excerpt": "CogGRAG is a public reference for graph retrieval.", "confidence": "medium", "created_at": "2026-05-15T22:55:51.775257+00:00", "last_seen": "2026-05-15T22:55:51.775261+00:00"}]};
+const COLORS = {
+  person: "#ef7d7d", topic: "#78aee8", idea: "#e3c56f", project: "#76d99d",
+  goal: "#c18be8", question: "#f0a06d", decision: "#72d1b0",
+  reference: "#dc83bd", source: "#9ba3ad"
+};
+const RADII = { source: 6, topic: 8, person: 9, project: 10, goal: 10,
+  idea: 9, question: 8, decision: 8, reference: 8 };
+const nodes = Object.values(GRAPH_DATA.nodes || {});
+const edges = GRAPH_DATA.edges || [];
+const nodeById = new Map(nodes.map(n => [n.id, n]));
+const svg = document.getElementById("graph");
+const panel = document.getElementById("panel");
+document.getElementById("counts").textContent = `${nodes.length} nodes · ${edges.length} edges`;
+
+function escapeHtml(value) {
+  return String(value || "").replace(/[&<>"]/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"
+  }[c]));
+}
+
+function layout() {
+  const groups = {};
+  for (const node of nodes) (groups[node.type] ||= []).push(node);
+  const typeOrder = Object.keys(groups).sort();
+  const centerX = 600, centerY = 380;
+  const ringGap = Math.max(76, Math.min(118, 440 / Math.max(1, typeOrder.length)));
+  typeOrder.forEach((type, ringIndex) => {
+    const ring = groups[type];
+    const radius = 70 + ringIndex * ringGap;
+    ring.forEach((node, i) => {
+      const angle = (Math.PI * 2 * i / Math.max(1, ring.length)) + ringIndex * 0.45;
+      node.x = centerX + Math.cos(angle) * radius;
+      node.y = centerY + Math.sin(angle) * radius;
+    });
+  });
+}
+
+function make(tag, attrs = {}, parent = svg) {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  parent.appendChild(el);
+  return el;
+}
+
+function render() {
+  layout();
+  svg.innerHTML = "";
+  const root = make("g", { id: "viewport" });
+  for (const edge of edges) {
+    const src = nodeById.get(edge.src), dst = nodeById.get(edge.dst);
+    if (!src || !dst) continue;
+    make("line", { class: `link ${edge.confidence || "medium"}`,
+      x1: src.x, y1: src.y, x2: dst.x, y2: dst.y }, root);
+    make("text", { class: "edge-label", x: (src.x + dst.x) / 2, y: (src.y + dst.y) / 2 }, root)
+      .textContent = edge.type;
+  }
+  for (const node of nodes) {
+    const g = make("g", { class: "node", transform: `translate(${node.x},${node.y})`,
+      "data-id": node.id }, root);
+    make("circle", { r: RADII[node.type] || 8, fill: COLORS[node.type] || "#aaa" }, g);
+    make("text", { x: 13, y: 4 }, g).textContent = node.label || node.id;
+    g.addEventListener("click", ev => { ev.stopPropagation(); openPanel(node.id); });
+  }
+  enablePanZoom(root);
+}
+
+function relatedEdges(id) {
+  return edges.filter(e => e.src === id || e.dst === id);
+}
+
+function openPanel(id) {
+  const node = nodeById.get(id);
+  if (!node) return;
+  document.querySelectorAll(".node").forEach(el => el.classList.toggle("selected", el.dataset.id === id));
+  const rel = relatedEdges(id);
+  const provenance = rel.filter(e => e.type === "MENTIONED_IN" || e.type === "MADE_AT");
+  panel.classList.add("open");
+  panel.innerHTML = `
+    <button aria-label="Close">×</button>
+    <h2>${escapeHtml(node.label || node.id)}</h2>
+    <div class="meta">${escapeHtml(node.type)} · <code>${escapeHtml(node.id)}</code>
+      <span class="pill ${escapeHtml(node.confidence || "")}">${escapeHtml(node.confidence || "?")}</span>
+    </div>
+    ${node.body ? `<div class="body">${escapeHtml(node.body)}</div>` : ""}
+    ${provenance.length ? `<div class="section-title">provenance</div><ul>${provenance.map(e => {
+      const other = e.src === id ? e.dst : e.src;
+      return `<li><a data-id="${escapeHtml(other)}">${escapeHtml(other)}</a>${e.excerpt ? `<div class="meta">"${escapeHtml(e.excerpt)}"</div>` : ""}</li>`;
+    }).join("")}</ul>` : ""}
+    <div class="section-title">neighbors</div>
+    <ul>${rel.map(e => {
+      const other = e.src === id ? e.dst : e.src;
+      const dir = e.src === id ? "to" : "from";
+      return `<li>${escapeHtml(e.type)} ${dir} <a data-id="${escapeHtml(other)}">${escapeHtml(other)}</a></li>`;
+    }).join("") || "<li>none</li>"}</ul>
+  `;
+  panel.querySelector("button").onclick = () => panel.classList.remove("open");
+  panel.querySelectorAll("a[data-id]").forEach(a => a.onclick = () => openPanel(a.dataset.id));
+}
+
+function enablePanZoom(root) {
+  let scale = 1, tx = 0, ty = 0, dragging = false, start = null;
+  const apply = () => root.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
+  svg.addEventListener("mousedown", ev => { dragging = true; start = [ev.clientX - tx, ev.clientY - ty]; });
+  window.addEventListener("mouseup", () => dragging = false);
+  window.addEventListener("mousemove", ev => {
+    if (!dragging) return;
+    tx = ev.clientX - start[0]; ty = ev.clientY - start[1]; apply();
+  });
+  svg.addEventListener("wheel", ev => {
+    ev.preventDefault();
+    const next = Math.max(0.35, Math.min(3.5, scale * (ev.deltaY < 0 ? 1.08 : 0.92)));
+    scale = next; apply();
+  }, { passive: false });
+  svg.addEventListener("click", () => panel.classList.remove("open"));
+}
+
+render();
+</script>

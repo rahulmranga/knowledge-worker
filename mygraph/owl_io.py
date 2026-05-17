@@ -176,7 +176,7 @@ def round_trip_test(graph_path: Path | None = None) -> tuple[bool, str]:
 
 def run_export(args: list[str]) -> int:
     if "--ttl" not in args:
-        print("Usage: python mygraph.py export --ttl [--graph <path>] [--out <path>] [--round-trip]")
+        print("Usage: mykg export --ttl [--graph <path>] [--out <path>] [--round-trip]")
         return 1
     graph_path = Path(resolve_graph_path())
     if "--graph" in args:

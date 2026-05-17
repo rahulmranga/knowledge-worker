@@ -27,9 +27,11 @@ If you're not sure, open an issue first and describe the use case.
 ## How to Contribute
 
 1. Fork the repo and create a branch: `git checkout -b your-feature`
-2. Keep the core graph (`mygraph.py`) stdlib-only. New deps belong in `requirements.txt` as optional extras.
-3. Test with the demo graph: `python3 mygraph/mygraph.py seed && python3 mygraph/mygraph.py check --provenance`
-4. Open a pull request with a clear description of what changed and why.
+2. Keep the core graph (`mygraph.py`) stdlib-only. New deps belong in `pyproject.toml` as optional extras.
+3. Install locally: `python3 -m pip install -e .` (`python -m pip ...` is fine if `python` is Python 3.10+)
+4. Run the smoke tests: `python3 -m unittest` (`python -m unittest` is fine if `python` is Python 3.10+)
+5. Test with the demo graph: `MYGRAPH_PATH=examples/demo_graph.json mykg check --provenance`
+6. Open a pull request with a clear description of what changed and why.
 
 ## Code Style
 

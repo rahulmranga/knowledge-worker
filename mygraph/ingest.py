@@ -1,14 +1,14 @@
 """
 ingest.py — orchestrates the 5-stage v1 pipeline.
 
-  python mygraph.py ingest <path/to/file.md>
-                           [--non-interactive]
-                           [--auto-accept-high]
-                           [--auto-accept-all]
-                           [--candidates-file <path>]   # skip Stage 1 (extractor)
-                           [--keep-candidates]          # don't delete intermediate JSON
-                           [--backend claude|ollama]    # v1.5: extractor LLM (default claude)
-                           [--model <name>]             # v1.5: override model tag
+  mykg ingest <path/to/file.md>
+              [--non-interactive]
+              [--auto-accept-high]
+              [--auto-accept-all]
+              [--candidates-file <path>]   # skip Stage 1 (extractor)
+              [--keep-candidates]          # don't delete intermediate JSON
+              [--backend claude|ollama]    # v1.5: extractor LLM (default claude)
+              [--model <name>]             # v1.5: override model tag
 
 Stage 1 (extractor) → candidates.json
 Stage 2 (validator) → manifest + validated.json (in-memory)
@@ -23,10 +23,16 @@ import json
 import sys
 from pathlib import Path
 
-from validator import validate
-from review import review
-from merge import merge
-from eval_log import append as eval_append
+try:
+    from .validator import validate
+    from .review import review
+    from .merge import merge
+    from .eval_log import append as eval_append
+except ImportError:  # direct script execution
+    from validator import validate
+    from review import review
+    from merge import merge
+    from eval_log import append as eval_append
 
 
 def _load_extractor(backend: str):
@@ -43,14 +49,17 @@ def _load_extractor(backend: str):
         from extractor_adapter import extract as _extract  # type: ignore
         return _extract
     if backend == "claude":
-        from extractor import extract as _extract
+        try:
+            from .extractor import extract as _extract
+        except ImportError:
+            from extractor import extract as _extract
         return _extract
     raise ValueError(f"ingest: unknown --backend {backend!r} (valid: claude, ollama)")
 
 
 def run_ingest(args: list[str]) -> int:
     if not args:
-        print("Usage: python mygraph.py ingest <file.md> [flags]")
+        print("Usage: mykg ingest <file.md> [flags]")
         return 1
     md_path = Path(args[0]).expanduser().resolve()
     if not md_path.exists():

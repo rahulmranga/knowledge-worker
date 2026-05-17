@@ -4,17 +4,18 @@ mygraph.py — personal knowledge graph (v0 schema, v1 ingest/check/export/viz).
 Single-file core, stdlib-only. Read SPEC.md → V1_DESIGN.md → V1_PLAN.md.
 
 Usage:
-    python mygraph.py seed                                # populate fictional demo graph
-    python mygraph.py summary                             # stats overview
-    python mygraph.py query "provenance"                  # search + neighbors + provenance
-    python mygraph.py path goal:my-goal project:knowledge-worker
-    python mygraph.py dump                                # raw JSON
-    python mygraph.py reset                               # delete graph file
+    mykg seed                                             # populate fictional demo graph
+    mykg summary                                          # stats overview
+    mykg query "provenance"                               # search + neighbors + provenance
+    mykg path goal:my-goal project:knowledge-worker
+    mykg dump                                             # raw JSON
+    mykg reset                                            # delete graph file
 
-    python mygraph.py ingest <path/to/file.md>            # v1 M1: 5-stage extractor pipeline
-    python mygraph.py check [--provenance|--stale-edges|--pairs N|--source-candidates DIR]
-    python mygraph.py export --ttl                        # v1 M3: emit Turtle
-    python mygraph.py viz                                 # v1 M4: write offline HTML viewer
+    mykg ingest <path/to/file.md>                         # v1 M1: 5-stage extractor pipeline
+    mykg check [--provenance|--stale-edges|--pairs N|--source-candidates DIR]
+    mykg export --ttl                                     # v1 M3: emit Turtle
+    mykg context                                          # LLM-ready context snapshot
+    mykg viz                                              # v1 M4: write offline HTML viewer
 
 Graph file: ./mygraph.json by default, or MYGRAPH_PATH=/absolute/path.json.
 """
@@ -445,29 +446,34 @@ def state(entry: str) -> None:
 
 USAGE = """\
 Usage:
-  python mygraph.py seed
-  python mygraph.py summary
-  python mygraph.py query <string>
-  python mygraph.py list <type>           # all nodes of a type (decision, goal, idea, ...)
-  python mygraph.py path <node_id> <node_id>
-  python mygraph.py state "<entry>"       # append mood/state to state_log.jsonl (sidecar)
-  python mygraph.py dump
-  python mygraph.py reset
-  python mygraph.py ingest <path/to/file.md> [--non-interactive] [--auto-accept-high]
-                                              [--candidates-file <path>]
-                                              [--backend claude|ollama] [--model <name>]
-  python mygraph.py check [--provenance] [--stale-edges] [--pairs N]
-                          [--source-candidates <dir>]
-  python mygraph.py export --ttl [--out <path>]
-  python mygraph.py viz [--graph <path>] [--out <path>] [--no-open]
+  mykg seed
+  mykg summary
+  mykg query <string>
+  mykg list <type>           # all nodes of a type (decision, goal, idea, ...)
+  mykg path <node_id> <node_id>
+  mykg state "<entry>"       # append mood/state to state_log.jsonl (sidecar)
+  mykg dump
+  mykg reset
+  mykg ingest <path/to/file.md> [--non-interactive] [--auto-accept-high]
+                                [--candidates-file <path>]
+                                [--backend claude|ollama] [--model <name>]
+  mykg check [--provenance] [--stale-edges] [--pairs N]
+             [--source-candidates <dir>]
+  mykg export --ttl [--out <path>]
+  mykg context [--out <path>] [--max-ideas N]
+  mykg viz [--graph <path>] [--out <path>] [--no-open]
 """
 
 
-def main(argv: list[str]) -> int:
+def main(argv: Optional[list[str]] = None) -> int:
+    argv = sys.argv if argv is None else argv
     if len(argv) < 2:
         print(USAGE)
         return 1
     cmd = argv[1]
+    if cmd in {"-h", "--help", "help"}:
+        print(USAGE)
+        return 0
     if cmd == "seed":
         g = seed()
         print(f"Seeded. {len(g.nodes)} nodes, {len(g.edges)} edges → {resolve_graph_path()}")
@@ -501,25 +507,47 @@ def main(argv: list[str]) -> int:
         return 0
     if cmd == "state":
         if len(argv) < 3:
-            print("Need a state entry. Example: python mygraph.py state \"manic, 1:48am, coffee\"")
+            print("Need a state entry. Example: mykg state \"focused, 10:30am, coffee\"")
             return 1
         state(" ".join(argv[2:]))
         return 0
     if cmd == "ingest":
-        from ingest import run_ingest
+        if __package__:
+            from .ingest import run_ingest
+        else:
+            from ingest import run_ingest
         return run_ingest(argv[2:])
     if cmd == "check":
-        from check import run_check
+        if __package__:
+            from .check import run_check
+        else:
+            from check import run_check
         return run_check(argv[2:])
     if cmd == "export":
-        from owl_io import run_export
+        if __package__:
+            from .owl_io import run_export
+        else:
+            from owl_io import run_export
         return run_export(argv[2:])
+    if cmd in {"context", "export_context"}:
+        if __package__:
+            from .export_context import run_export_context
+        else:
+            from export_context import run_export_context
+        return run_export_context(argv[2:])
     if cmd == "viz":
-        from viz import run_viz
+        if __package__:
+            from .viz import run_viz
+        else:
+            from viz import run_viz
         return run_viz(argv[2:])
     print(USAGE)
     return 1
 
 
+def cli() -> int:
+    return main(sys.argv)
+
+
 if __name__ == "__main__":
-    sys.exit(main(sys.argv))
+    sys.exit(cli())

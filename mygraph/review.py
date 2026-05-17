@@ -26,8 +26,12 @@ from pathlib import Path
 from typing import Iterable
 
 from mygraph import Graph
-from validator import validate
-from eval_log import append as eval_append
+try:
+    from .validator import validate
+    from .eval_log import append as eval_append
+except ImportError:  # direct script execution
+    from validator import validate
+    from eval_log import append as eval_append
 
 
 def _print_node(node: dict) -> None:

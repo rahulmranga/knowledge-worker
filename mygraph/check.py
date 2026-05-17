@@ -28,7 +28,10 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from mygraph import Graph
-from eval_log import append as eval_append, append_many
+try:
+    from .eval_log import append as eval_append, append_many
+except ImportError:  # direct script execution
+    from eval_log import append as eval_append, append_many
 
 
 # ------------ provenance ------------------------------------------------------

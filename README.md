@@ -31,29 +31,54 @@ Every claim in the graph points back to the source it came from. If it can't be 
 
 ## Quick Start
 
+Requirements: Python 3.10+ on macOS or Linux. The core demo CLI has no runtime
+dependencies beyond the standard library.
+
+The examples below use `python3`, which is the common command on macOS/Linux.
+If `python --version` shows Python 3.10 or newer on your machine, `python` is
+fine too.
+
 ```bash
 git clone https://github.com/rahulmranga/knowledge-worker
 cd knowledge-worker
 
+# Install the CLI command
+python3 -m pip install -e .
+
 # Run the demo graph (no API key needed)
-python3 mygraph/mygraph.py seed
-python3 mygraph/mygraph.py summary
-python3 mygraph/mygraph.py query "provenance"
+MYGRAPH_PATH=examples/demo_graph.json mykg summary
+MYGRAPH_PATH=examples/demo_graph.json mykg query "provenance"
 
 # Generate an LLM-ready context snapshot
-python3 mygraph/export_context.py
+MYGRAPH_PATH=examples/demo_graph.json mykg context
 
 # Visualize the graph (opens a self-contained HTML file)
-python3 mygraph/mygraph.py viz --graph examples/demo_graph.json --out /tmp/demo.html
+mykg viz --graph examples/demo_graph.json --out /tmp/demo.html
+```
+
+One-command smoke test after cloning:
+
+```bash
+python3 -m pip install -e . && MYGRAPH_PATH=examples/demo_graph.json mykg query provenance
 ```
 
 For ingest with your own notes (requires an API key or local Ollama):
 
 ```bash
-pip install -r mygraph/requirements.txt
+python3 -m pip install -e ".[llm]"
 export ANTHROPIC_API_KEY=...
 
-python3 mygraph/mygraph.py ingest path/to/your/notes.md
+mykg ingest path/to/your/notes.md
+```
+
+If you prefer a traditional requirements file, `python3 -m pip install -r requirements.txt`
+installs the CLI plus the optional graph dependencies for Claude ingest, Ollama ingest, and Turtle/RDF export.
+You can use `python -m pip ...` instead if `python` is your Python 3.10+ command.
+
+Run the smoke tests with:
+
+```bash
+python3 -m unittest
 ```
 
 ## Private Graph Workflow
@@ -62,9 +87,9 @@ The public repo ships only code, docs, and a fictional demo graph. Your private 
 
 ```bash
 # Point any command at your private graph
-MYGRAPH_PATH=~/my-private-graph/mygraph.json python3 mygraph/mygraph.py summary
-MYGRAPH_PATH=~/my-private-graph/mygraph.json python3 mygraph/mygraph.py query "architecture"
-MYGRAPH_PATH=~/my-private-graph/mygraph.json python3 mygraph/mygraph.py export_context
+MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg summary
+MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg query "architecture"
+MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg context
 ```
 
 Your private `mygraph.json` is gitignored by default. It never ends up in git unless you explicitly add it.
@@ -81,6 +106,7 @@ Your private `mygraph.json` is gitignored by default. It never ends up in git un
 | `ingest <file.md>` | 5-stage LLM pipeline: extract → validate → review → merge → eval |
 | `check --provenance` | Flag nodes with missing source citations |
 | `export --ttl` | Emit Turtle/RDF |
+| `context` | Print a compact LLM-ready context snapshot |
 | `viz` | Generate offline single-file HTML viewer |
 | `state "<entry>"` | Append a mood/state entry (sidecar, not in main graph) |
 
@@ -89,10 +115,11 @@ Your private `mygraph.json` is gitignored by default. It never ends up in git un
 The ingest and check pipelines support Ollama as a backend — no Anthropic API key required:
 
 ```bash
-python3 mygraph/mygraph.py ingest notes.md --backend ollama --model llama3
+python3 -m pip install -e ".[ollama]"
+mykg ingest notes.md --backend ollama --model llama3
 ```
 
-The core graph model (seed, summary, query, viz, export) is pure stdlib Python with no external deps.
+The core graph model (seed, summary, query, context, viz) is pure stdlib Python with no external deps. Turtle/RDF export uses `rdflib`.
 
 ## Design Principles
 

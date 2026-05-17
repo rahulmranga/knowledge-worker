@@ -133,7 +133,7 @@ def call_anthropic(prompt: str, model: str = DEFAULT_MODEL) -> dict:
     if not os.environ.get("ANTHROPIC_API_KEY"):
         raise SystemExit(
             "extractor: ANTHROPIC_API_KEY env var is not set.\n"
-            "Either export it, or run `python mygraph.py ingest <file> --candidates-file <path>` "
+            "Either export it, or run `mykg ingest <file> --candidates-file <path>` "
             "to skip extraction with a hand-curated candidates JSON."
         )
     client = anthropic.Anthropic()

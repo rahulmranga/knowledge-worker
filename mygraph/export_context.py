@@ -1,11 +1,21 @@
 """
 export_context.py — generate a compact LLM-ready context snapshot of mygraph.
-Usage: python export_context.py [--out context.md] [--max-ideas 20]
+Usage: mykg context [--out context.md] [--max-ideas 20]
 """
-import json, argparse, datetime
+import argparse
+import datetime
+import json
+import sys
 from collections import defaultdict
 
-def load(path="mygraph.json"):
+try:
+    from .mygraph import resolve_graph_path
+except ImportError:  # direct script execution: python mygraph/export_context.py
+    from mygraph import resolve_graph_path
+
+
+def load(path=None):
+    path = resolve_graph_path(path)
     with open(path) as f:
         return json.load(f)
 
@@ -90,20 +100,25 @@ def export_context(g, max_ideas=20):
 
     return "\n".join(lines)
 
-if __name__ == "__main__":
-    import os, sys
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+def run_export_context(args: list[str]) -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--graph", default=None)
     parser.add_argument("--out", default=None)
     parser.add_argument("--max-ideas", type=int, default=20)
-    args = parser.parse_args()
+    parsed = parser.parse_args(args)
 
-    g = load()
-    text = export_context(g, max_ideas=args.max_ideas)
+    g = load(parsed.graph)
+    text = export_context(g, max_ideas=parsed.max_ideas)
 
-    if args.out:
-        with open(args.out, "w") as f:
+    if parsed.out:
+        with open(parsed.out, "w") as f:
             f.write(text)
-        print(f"Written to {args.out}")
+        print(f"Written to {parsed.out}")
     else:
         print(text)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(run_export_context(sys.argv[1:]))

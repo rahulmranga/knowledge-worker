@@ -19,7 +19,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from mygraph import Graph, Node, Edge
-from eval_log import append as eval_append
+try:
+    from .eval_log import append as eval_append
+except ImportError:  # direct script execution
+    from eval_log import append as eval_append
 
 
 def _now() -> str:

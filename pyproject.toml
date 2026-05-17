@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "knowledge-worker"
+version = "0.1.0"
+description = "Provenance-backed personal knowledge graph for local AI workflows"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Rahul Rangarao", email = "rahulmohanrangarao@gmail.com" }]
+keywords = [
+    "knowledge-graph",
+    "llm-memory",
+    "local-first",
+    "provenance",
+    "personal-knowledge-management",
+    "ai",
+    "claude",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# Core graph (seed/summary/query/viz/export_context) — stdlib only, no deps.
+# Install optional extras for LLM-backed ingest and Turtle export.
+dependencies = []
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.39.0", "rdflib>=7.0.0"]
+ollama = ["rdflib>=7.0.0"]
+all = ["anthropic>=0.39.0", "rdflib>=7.0.0"]
+
+[project.scripts]
+mygraph = "mygraph.mygraph:main"
+
+[project.urls]
+Homepage = "https://github.com/rahulmranga/knowledge-worker"
+Repository = "https://github.com/rahulmranga/knowledge-worker"
+Issues = "https://github.com/rahulmranga/knowledge-worker/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mygraph*", "ollama_proxy*"]

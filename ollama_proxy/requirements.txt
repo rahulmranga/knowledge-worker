@@ -1,0 +1,7 @@
+# MCP server (server.py)
+mcp[cli]>=1.0.0
+httpx>=0.27.0
+
+# HTTP passthrough proxy (proxy.py)
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0

@@ -56,18 +56,21 @@ def to_turtle(g: Graph) -> str:
     rg.bind("dcterms", dc_ns)
     rg.bind("mg", Namespace(NS))
 
-    # ontology: classes for each node type, ObjectProperties for each edge type
+    # ontology: classes/properties include public schema plus any legacy/private
+    # types already present in the graph.
     rg.add((rb_ns.Concept, RDF.type, OWL.Class))
     rg.add((rb_ns.Source, RDF.type, OWL.Class))
     rg.add((rb_ns.Source, RDFS.subClassOf, dc_ns.ProvenanceEntity))
-    for t in sorted(NODE_TYPES):
+    node_types = NODE_TYPES | {n.type for n in g.nodes.values()}
+    edge_types = EDGE_TYPES | {e.type for e in g.edges}
+    for t in sorted(node_types):
         cls = rb_ns[t.capitalize()]
         rg.add((cls, RDF.type, OWL.Class))
         if t == "source":
             rg.add((cls, RDFS.subClassOf, rb_ns.Source))
         else:
             rg.add((cls, RDFS.subClassOf, rb_ns.Concept))
-    for t in sorted(EDGE_TYPES):
+    for t in sorted(edge_types):
         rg.add((rb_ns[t], RDF.type, OWL.ObjectProperty))
 
     # nodes
@@ -122,8 +125,6 @@ def from_turtle(path: Path) -> Graph:
         # type from rdf:type (capitalize → lowercase mapping)
         t_iri = next(rg.objects(s, RDF.type), None)
         type_str = (str(t_iri).rsplit("#", 1)[-1] if t_iri else "idea").lower()
-        if type_str not in NODE_TYPES:
-            type_str = "idea"
         label = str(next(rg.objects(s, RDFS.label), Literal("")))
         body = str(next(rg.objects(s, RDFS.comment), Literal("")))
         conf = str(next(rg.objects(s, rb_ns.confidence), Literal("medium")))
@@ -137,7 +138,7 @@ def from_turtle(path: Path) -> Graph:
         src = str(next(rg.objects(a_iri, rb_ns.srcId), Literal("")))
         dst = str(next(rg.objects(a_iri, rb_ns.dstId), Literal("")))
         etype = str(next(rg.objects(a_iri, rb_ns.edgeType), Literal("")))
-        if etype not in EDGE_TYPES:
+        if not etype:
             continue
         sid = str(next(rg.objects(a_iri, rb_ns.sourceId), Literal("")))
         conf = str(next(rg.objects(a_iri, rb_ns.confidence), Literal("medium")))

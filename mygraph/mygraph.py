@@ -65,9 +65,8 @@ class Node:
     confidence: str = "high"
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
-    def __post_init__(self):
-        assert self.type in NODE_TYPES, f"unknown node type: {self.type}"
-        assert self.confidence in CONFIDENCE, f"bad confidence: {self.confidence}"
+    # Graph files are external input. The ingest validator keeps new extracted
+    # nodes on the public schema, but loading must tolerate legacy/private types.
 
 
 @dataclass
@@ -80,10 +79,6 @@ class Edge:
     confidence: str = "high"
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     last_seen: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
-
-    def __post_init__(self):
-        assert self.type in EDGE_TYPES, f"unknown edge type: {self.type}"
-        assert self.confidence in CONFIDENCE, f"bad confidence: {self.confidence}"
 
 
 # ---------- store -------------------------------------------------------------
@@ -407,12 +402,13 @@ def list_nodes(type_: str) -> None:
     2 of 3 decisions). When you ask for a type, you get every member of that type."""
     # Accept plural ("decisions" → "decision")
     t = type_.lower().rstrip("s")
-    if t not in NODE_TYPES:
-        print(f"Unknown type '{type_}'. Valid: {', '.join(sorted(NODE_TYPES))}")
-        return
     g = Graph.load()
     matches = [n for n in g.nodes.values() if n.type == t]
     if not matches:
+        if t not in NODE_TYPES:
+            observed = sorted(NODE_TYPES | {n.type for n in g.nodes.values()})
+            print(f"No nodes of type '{t}'. Known/observed: {', '.join(observed)}")
+            return
         print(f"No nodes of type '{t}'.")
         return
     non_high = [n for n in matches if n.confidence != "high"]

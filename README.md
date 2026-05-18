@@ -27,31 +27,39 @@ AI conversations usually start from zero. You clarify a decision, name a constra
 
 ## Quick Start
 
-Requirements: Python 3.10+ on macOS or Linux. The core demo CLI has no runtime dependencies beyond the standard library.
+Requirements: Python 3.10+ on macOS or Linux. The core demo CLI has no runtime dependencies beyond the standard library and does not need a package install.
 
 ```bash
 git clone https://github.com/rahulmranga/knowledge-worker
 cd knowledge-worker
 
-# Install the CLI command
-python3 -m pip install -e .
-
 # Run the public demo graph, no API key needed
-MYGRAPH_PATH=examples/demo_graph.json mykg summary
-MYGRAPH_PATH=examples/demo_graph.json mykg query "provenance"
+MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py summary
+MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py query "provenance"
 
 # Generate an LLM-ready context snapshot
-MYGRAPH_PATH=examples/demo_graph.json mykg context
+MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py context
 
 # Visualize the graph as a self-contained HTML file
-mykg viz --graph examples/demo_graph.json --out /tmp/demo.html
+python3 mygraph/mygraph.py viz --graph examples/demo_graph.json --out /tmp/demo.html
 ```
 
 One-command smoke test:
 
 ```bash
-python3 -m pip install -e . && MYGRAPH_PATH=examples/demo_graph.json mykg query provenance
+MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py query provenance
 ```
+
+If you want the shorter `mykg` command, install it inside a virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+MYGRAPH_PATH=examples/demo_graph.json mykg query provenance
+```
+
+Using a virtual environment avoids Homebrew/system Python's externally-managed install errors.
 
 Run the test suite with:
 
@@ -64,7 +72,9 @@ python3 -m unittest
 LLM-backed ingest needs either an Anthropic API key or a local Ollama model:
 
 ```bash
-python3 -m pip install -e ".[llm]"
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[llm]"
 export ANTHROPIC_API_KEY=...
 
 mykg ingest path/to/your/notes.md
@@ -73,11 +83,13 @@ mykg ingest path/to/your/notes.md
 For local Ollama:
 
 ```bash
-python3 -m pip install -e ".[ollama]"
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[ollama]"
 mykg ingest notes.md --backend ollama --model llama3
 ```
 
-If you prefer a traditional requirements file, `python3 -m pip install -r requirements.txt` installs the CLI plus optional dependencies for Claude ingest, Ollama ingest, and Turtle/RDF export.
+If you prefer a traditional requirements file, activate a virtual environment first, then run `python -m pip install -r requirements.txt`. That installs the CLI plus optional dependencies for Claude ingest, Ollama ingest, and Turtle/RDF export.
 
 ## Private Graph Workflow
 

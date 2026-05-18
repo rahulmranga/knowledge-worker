@@ -31,6 +31,8 @@ ollama_proxy/
 
 ```bash
 cd /path/to/knowledge-worker/ollama_proxy
+python3 -m venv ../.venv
+source ../.venv/bin/activate
 python -m pip install -r requirements.txt
 ollama list   # confirm your local model is present
 ollama serve  # if not already running

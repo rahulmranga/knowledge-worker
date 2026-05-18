@@ -28,10 +28,11 @@ If you're not sure, open an issue first and describe the use case.
 
 1. Fork the repo and create a branch: `git checkout -b your-feature`
 2. Keep the core graph (`mygraph.py`) stdlib-only. New deps belong in `pyproject.toml` as optional extras.
-3. Install locally: `python3 -m pip install -e .` (`python -m pip ...` is fine if `python` is Python 3.10+)
-4. Run the smoke tests: `python3 -m unittest` (`python -m unittest` is fine if `python` is Python 3.10+)
-5. Test with the demo graph: `MYGRAPH_PATH=examples/demo_graph.json mykg check --provenance`
-6. Open a pull request with a clear description of what changed and why.
+3. Create a virtual environment: `python3 -m venv .venv && source .venv/bin/activate`
+4. Install locally: `python -m pip install -e .`
+5. Run the smoke tests: `python -m unittest`
+6. Test with the demo graph: `MYGRAPH_PATH=examples/demo_graph.json mykg check --provenance`
+7. Open a pull request with a clear description of what changed and why.
 
 ## Code Style
 

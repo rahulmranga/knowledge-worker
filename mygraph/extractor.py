@@ -8,8 +8,11 @@ Provenance-or-bust: the prompt requires literal excerpts for `high`-confidence
 candidates. Validator (Stage 2) enforces it; this stage just asks for it.
 
 Env:
-    ANTHROPIC_API_KEY — required (else the script raises a clear error).
-    MYGRAPH_MODEL    — optional model override; default `claude-sonnet-4-6`.
+    Anthropic auth is inferred from env. Supported providers:
+      - Anthropic API: ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN
+      - Foundry: ANTHROPIC_FOUNDRY_API_KEY plus resource/base URL
+      - Bedrock: AWS_BEARER_TOKEN_BEDROCK or AWS credentials plus region
+    MYGRAPH_MODEL — optional model override; default `claude-sonnet-4-6`.
 """
 
 from __future__ import annotations
@@ -22,8 +25,12 @@ from pathlib import Path
 from typing import Any
 
 from mygraph import Graph, NODE_TYPES, EDGE_TYPES, slug
+try:
+    from .anthropic_client import get_anthropic_client
+except ImportError:  # direct script execution
+    from anthropic_client import get_anthropic_client
 
-DEFAULT_MODEL = os.environ.get("MYGRAPH_MODEL", "claude-sonnet-4-6")
+DEFAULT_MODEL = "claude-sonnet-4-6"
 
 EXTRACTION_TOOL = {
     "name": "emit_candidates",
@@ -121,22 +128,17 @@ def build_source_decl(md_path: Path) -> dict:
     }
 
 
-def call_anthropic(prompt: str, model: str = DEFAULT_MODEL) -> dict:
+def call_anthropic(prompt: str, model: str | None = None) -> dict:
     """Invoke Claude with the extraction tool. Returns the tool input dict."""
     try:
-        import anthropic  # type: ignore
-    except ImportError as e:
+        client, config = get_anthropic_client()
+    except RuntimeError as e:
         raise SystemExit(
-            "extractor: `anthropic` package not installed. Run:\n"
-            "    pip install anthropic"
-        ) from e
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        raise SystemExit(
-            "extractor: ANTHROPIC_API_KEY env var is not set.\n"
-            "Either export it, or run `mykg ingest <file> --candidates-file <path>` "
+            f"extractor: {e}\n"
+            "Or run `mykg ingest <file> --candidates-file <path>` "
             "to skip extraction with a hand-curated candidates JSON."
-        )
-    client = anthropic.Anthropic()
+        ) from e
+    model = model or config.model
     resp = client.messages.create(
         model=model,
         max_tokens=8000,
@@ -151,7 +153,7 @@ def call_anthropic(prompt: str, model: str = DEFAULT_MODEL) -> dict:
 
 
 def extract(md_path: Path, out_path: Path | None = None,
-            model: str = DEFAULT_MODEL) -> dict:
+            model: str | None = None) -> dict:
     """End-to-end extract: read markdown, call LLM, write candidates.json."""
     g = Graph.load()
     decl = build_source_decl(md_path)
@@ -171,7 +173,7 @@ def extract(md_path: Path, out_path: Path | None = None,
     payload.setdefault("_meta", {})
     payload["_meta"]["source_path"] = decl["source_path"]
     payload["_meta"]["ingested_at"] = decl["ingested_at"]
-    payload["_meta"]["model"] = model
+    payload["_meta"]["model"] = model or os.environ.get("MYGRAPH_MODEL", DEFAULT_MODEL)
     if out_path:
         out_path.write_text(json.dumps(payload, indent=2))
     return payload

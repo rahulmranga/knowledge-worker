@@ -16,12 +16,12 @@ Subcommands (all write JSONL records to eval_record.jsonl):
                             kind: source_candidate. Never auto-ingests.
 
 Default (no subcommand): runs --provenance and --stale-edges. LLM-bound checks
-require ANTHROPIC_API_KEY; they're skipped (with a warning) if it's unset.
+use the configured Anthropic provider; they're skipped if no supported provider
+env is present.
 """
 
 from __future__ import annotations
 
-import os
 import random
 import sys
 from datetime import datetime, timedelta, timezone
@@ -29,8 +29,10 @@ from pathlib import Path
 
 from mygraph import Graph
 try:
+    from .anthropic_client import anthropic_configured, get_anthropic_client
     from .eval_log import append as eval_append, append_many
 except ImportError:  # direct script execution
+    from anthropic_client import anthropic_configured, get_anthropic_client
     from eval_log import append as eval_append, append_many
 
 
@@ -108,19 +110,17 @@ NODE B: id={b_id}  type={b_type}  label={b_label}
 
 
 def _call_claude_json(prompt: str) -> dict | None:
-    """Lightweight Claude call returning parsed JSON; None if no API key."""
-    if not os.environ.get("ANTHROPIC_API_KEY"):
+    """Lightweight Claude call returning parsed JSON; None if no LLM config."""
+    if not anthropic_configured():
         return None
     try:
-        import anthropic  # type: ignore
-    except ImportError:
-        print("check: anthropic SDK not installed; skipping LLM-bound checks.")
+        client, config = get_anthropic_client()
+    except RuntimeError as e:
+        print(f"check: {e}; skipping LLM-bound checks.")
         return None
     import json as _json
-    client = anthropic.Anthropic()
-    model = os.environ.get("MYGRAPH_MODEL", "claude-sonnet-4-6")
     resp = client.messages.create(
-        model=model, max_tokens=400,
+        model=config.model, max_tokens=400,
         messages=[{"role": "user", "content": prompt + "\n\nReturn ONLY JSON."}],
     )
     text = "".join(getattr(b, "text", "") for b in resp.content)
@@ -138,8 +138,8 @@ def _call_claude_json(prompt: str) -> dict | None:
 
 def check_pairs(g: Graph, k: int = 10) -> list[dict]:
     from mygraph import EDGE_TYPES
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("check --pairs: ANTHROPIC_API_KEY unset; skipping.")
+    if not anthropic_configured():
+        print("check --pairs: no Anthropic provider env configured; skipping.")
         return []
     adj = set()
     for e in g.edges:
@@ -193,8 +193,8 @@ DOCUMENT (filename: {fname}):
 
 
 def check_source_candidates(g: Graph, dir_path: Path) -> list[dict]:
-    if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("check --source-candidates: ANTHROPIC_API_KEY unset; skipping.")
+    if not anthropic_configured():
+        print("check --source-candidates: no Anthropic provider env configured; skipping.")
         return []
     if not dir_path.is_dir():
         print(f"check --source-candidates: not a directory: {dir_path}")

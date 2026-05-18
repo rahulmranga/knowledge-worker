@@ -100,6 +100,12 @@ export ANTHROPIC_API_KEY=...
 mykg ingest path/to/your/notes.md
 ```
 
+The Claude backend also auto-detects Anthropic-compatible provider env:
+
+- Anthropic API: `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN`
+- Foundry: `ANTHROPIC_FOUNDRY_API_KEY` plus `ANTHROPIC_FOUNDRY_RESOURCE` or `ANTHROPIC_FOUNDRY_BASE_URL`
+- Bedrock: `AWS_BEARER_TOKEN_BEDROCK`, or AWS credentials plus `AWS_REGION`/`AWS_DEFAULT_REGION`
+
 For OpenAI API:
 
 ```bash

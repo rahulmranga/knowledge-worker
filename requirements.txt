@@ -1,3 +1,3 @@
 # Local graph CLI install with optional graph dependencies:
-# Claude ingest, Ollama ingest, and Turtle/RDF export.
+# Anthropic API ingest, OpenAI API ingest, Ollama ingest, and Turtle/RDF export.
 -e .[all]

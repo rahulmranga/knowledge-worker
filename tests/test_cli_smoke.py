@@ -30,6 +30,13 @@ class CliSmokeTest(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("mykg query <string>", result.stdout)
+        self.assertIn("--backend claude|openai|ollama", result.stdout)
+
+    def test_ingest_loads_openai_backend_without_sdk_import(self):
+        from mygraph.ingest import _load_extractor
+
+        extract = _load_extractor("openai")
+        self.assertEqual(extract.__name__, "extract")
 
     def test_demo_graph_query_runs_from_module(self):
         result = run_mykg(

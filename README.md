@@ -69,15 +69,46 @@ python3 -m unittest
 
 ## Use Your Own Notes
 
-LLM-backed ingest needs either an Anthropic API key or a local Ollama model:
+You can ingest your notes with or without an API key.
+
+### Claude or Codex App, No API Key
+
+If you are already working with Claude, Codex, or ChatGPT in an app session, you do **not** need an API key. Ask the assistant to produce a `*.candidates.json` file that follows the schema in `mygraph/extractor.py`, then let the local CLI validate, review, and merge it:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e ".[llm]"
+python -m pip install -e .
+
+mykg ingest path/to/your/notes.md --candidates-file path/to/your/notes.candidates.json
+```
+
+The app subscription helps you create the candidates file. The repo still keeps graph validation and merge local.
+
+### Automated API-Backed Ingest
+
+If you want the CLI to call an LLM directly, use a provider API key or local Ollama.
+
+For Anthropic API:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[anthropic]"
 export ANTHROPIC_API_KEY=...
 
 mykg ingest path/to/your/notes.md
+```
+
+For OpenAI API:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[openai]"
+export OPENAI_API_KEY=...
+
+mykg ingest path/to/your/notes.md --backend openai --model gpt-5.2
 ```
 
 For local Ollama:
@@ -89,7 +120,7 @@ python -m pip install -e ".[ollama]"
 mykg ingest notes.md --backend ollama --model llama3
 ```
 
-If you prefer a traditional requirements file, activate a virtual environment first, then run `python -m pip install -r requirements.txt`. That installs the CLI plus optional dependencies for Claude ingest, Ollama ingest, and Turtle/RDF export.
+If you prefer a traditional requirements file, activate a virtual environment first, then run `python -m pip install -r requirements.txt`. That installs the CLI plus optional dependencies for Anthropic API ingest, OpenAI API ingest, Ollama ingest, and Turtle/RDF export.
 
 ## Private Graph Workflow
 

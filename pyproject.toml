@@ -35,10 +35,12 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-llm = ["anthropic>=0.39.0", "rdflib>=7.0.0"]
+anthropic = ["anthropic>=0.39.0", "rdflib>=7.0.0"]
+openai = ["openai>=1.68.0", "rdflib>=7.0.0"]
+llm = ["anthropic>=0.39.0", "openai>=1.68.0", "rdflib>=7.0.0"]
 ollama = ["httpx>=0.27.0", "rdflib>=7.0.0"]
 proxy = ["fastapi>=0.110.0", "httpx>=0.27.0", "mcp[cli]>=1.0.0", "uvicorn[standard]>=0.27.0"]
-all = ["anthropic>=0.39.0", "httpx>=0.27.0", "rdflib>=7.0.0"]
+all = ["anthropic>=0.39.0", "openai>=1.68.0", "httpx>=0.27.0", "rdflib>=7.0.0"]
 
 [project.scripts]
 mykg = "mygraph.mygraph:cli"

@@ -1,3 +1,4 @@
 # v1 deps. Core mygraph.py stays stdlib-only; these are needed for v1 modules.
-anthropic>=0.39.0   # M1 extractor, M2 --pairs / --source-candidates
+anthropic>=0.39.0   # Anthropic API extractor, M2 --pairs / --source-candidates
+openai>=1.68.0      # OpenAI API extractor backend
 rdflib>=7.0.0       # M3 owl_io (TTL serialization)

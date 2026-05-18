@@ -452,7 +452,7 @@ Usage:
   mykg reset
   mykg ingest <path/to/file.md> [--non-interactive] [--auto-accept-high]
                                 [--candidates-file <path>]
-                                [--backend claude|ollama] [--model <name>]
+                                [--backend claude|openai|ollama] [--model <name>]
   mykg check [--provenance] [--stale-edges] [--pairs N]
              [--source-candidates <dir>]
   mykg export --ttl [--out <path>]

@@ -7,7 +7,7 @@ ingest.py — orchestrates the 5-stage v1 pipeline.
               [--auto-accept-all]
               [--candidates-file <path>]   # skip Stage 1 (extractor)
               [--keep-candidates]          # don't delete intermediate JSON
-              [--backend claude|ollama]    # v1.5: extractor LLM (default claude)
+              [--backend claude|openai|ollama]  # extractor LLM (default claude)
               [--model <name>]             # v1.5: override model tag
 
 Stage 1 (extractor) → candidates.json
@@ -37,8 +37,8 @@ except ImportError:  # direct script execution
 
 def _load_extractor(backend: str):
     """Return the extract() callable for the chosen backend.
-    backend ∈ {"claude", "ollama"}. Imported lazily so a missing dep on one
-    side doesn't break the other."""
+    backend ∈ {"claude", "openai", "ollama"}. Imported lazily so a missing dep
+    on one side doesn't break the other."""
     if backend == "ollama":
         # ollama_proxy lives as a sibling to mygraph/
         import sys as _sys
@@ -54,7 +54,13 @@ def _load_extractor(backend: str):
         except ImportError:
             from extractor import extract as _extract
         return _extract
-    raise ValueError(f"ingest: unknown --backend {backend!r} (valid: claude, ollama)")
+    if backend == "openai":
+        try:
+            from .extractor_openai import extract as _extract
+        except ImportError:
+            from extractor_openai import extract as _extract
+        return _extract
+    raise ValueError(f"ingest: unknown --backend {backend!r} (valid: claude, openai, ollama)")
 
 
 def run_ingest(args: list[str]) -> int:
@@ -78,7 +84,7 @@ def run_ingest(args: list[str]) -> int:
     if "--backend" in args:
         i = args.index("--backend")
         if i + 1 >= len(args):
-            print("ingest: --backend needs a value (claude|ollama)")
+            print("ingest: --backend needs a value (claude|openai|ollama)")
             return 1
         backend = args[i + 1]
     model = None

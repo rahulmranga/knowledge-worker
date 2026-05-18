@@ -1,8 +1,8 @@
-# ollama_proxy — v1.5
+# ollama_proxy
 
-Local-Gemma access layer for the Rahul Brain knowledge graph.
+Local Ollama access layer for `knowledge-worker`.
 
-Three components, one purpose: make `gemma4:e4b` (and future local Ollama models) usable from Claude/Cowork, AnythingLLM, and the mygraph extraction pipeline — over Tailscale.
+Three components, one purpose: make a local Ollama model usable from Claude/Cowork, AnythingLLM, and the `mygraph` extraction pipeline. It can run entirely on localhost, or be exposed to your own devices over Tailscale.
 
 ## Layout
 
@@ -10,8 +10,8 @@ Three components, one purpose: make `gemma4:e4b` (and future local Ollama models
 ollama_proxy/
 ├── server.py             MCP server wrapping Ollama. stdio for Claude Code/Cowork; SSE for remote MCP clients.
 ├── proxy.py              Logging passthrough proxy in front of Ollama. Tailscale-expose this for AnythingLLM.
-├── extractor_adapter.py  Drop-in replacement for mygraph/extractor.py — routes extraction to local Gemma.
-├── eval_compare.py       Side-by-side Claude vs Gemma extraction A/B; appends to mygraph/eval_record.jsonl.
+├── extractor_adapter.py  Drop-in replacement for mygraph/extractor.py; routes extraction to a local model.
+├── eval_compare.py       Side-by-side Claude vs Ollama extraction A/B; appends to mygraph/eval_record.jsonl.
 ├── tailscale.md          Network exposure runbook.
 ├── requirements.txt
 └── README.md             ← you are here
@@ -25,14 +25,14 @@ ollama_proxy/
 | `proxy.py`  | AnythingLLM, raw HTTP clients, anything Ollama-compatible | HTTP (Ollama API shape) |
 | `extractor_adapter.py` | `mygraph/ingest.py` (called via `--backend ollama`) | in-process |
 
-`server.py` and `proxy.py` are *not* the same thing. MCP is JSON-RPC for tool-use; Ollama's REST API is what AnythingLLM actually speaks. Two consumers, two surfaces.
+`server.py` and `proxy.py` are *not* the same thing. MCP is JSON-RPC for tool use; Ollama's REST API is what AnythingLLM actually speaks. Two consumers, two surfaces.
 
 ## Install
 
 ```bash
-cd ~/Desktop/ideas/"Midnight idea - Knowledge worker"/ollama_proxy
-pip install -r requirements.txt
-ollama list   # confirm gemma4:e4b is present
+cd /path/to/knowledge-worker/ollama_proxy
+python -m pip install -r requirements.txt
+ollama list   # confirm your local model is present
 ollama serve  # if not already running
 ```
 
@@ -48,11 +48,11 @@ curl http://127.0.0.1:11435/healthz   # → {"ok": true, "models": [...]}
 
 # 3. Extractor adapter (drop-in for mygraph)
 cd ../mygraph
-python mygraph.py ingest ../inspiration.md --backend ollama --non-interactive
+OLLAMA_DEFAULT_MODEL=gemma4:e4b python mygraph.py ingest ../inspiration.md --backend ollama --non-interactive
 
 # 4. A/B comparison
 cd ../ollama_proxy
-python eval_compare.py ../inspiration.md
+OLLAMA_DEFAULT_MODEL=gemma4:e4b python eval_compare.py ../inspiration.md
 ```
 
 ## Wiring into Claude Code / Cowork
@@ -63,7 +63,7 @@ Add to your MCP client config (e.g. `~/.config/claude-code/mcp_servers.json`):
 {
   "ollama-proxy": {
     "command": "python",
-    "args": ["/Users/rahul/Desktop/ideas/Midnight idea - Knowledge worker/ollama_proxy/server.py"],
+    "args": ["/absolute/path/to/knowledge-worker/ollama_proxy/server.py"],
     "env": {
       "OLLAMA_DEFAULT_MODEL": "gemma4:e4b"
     }
@@ -71,7 +71,7 @@ Add to your MCP client config (e.g. `~/.config/claude-code/mcp_servers.json`):
 }
 ```
 
-Once registered, Claude can call `chat`, `generate`, `list_models`, `embed` against local Gemma without any API spend.
+Once registered, Claude can call `chat`, `generate`, `list_models`, and `embed` against your local Ollama model without API spend.
 
 ## Wiring into AnythingLLM
 
@@ -103,6 +103,6 @@ See `tailscale.md` for the full network setup.
 
 ## Scope (v1.5)
 
-In: MCP wrap, logging proxy, extractor adapter, eval comparison, Tailscale exposure runbook.
+In: MCP wrapper, logging proxy, extractor adapter, eval comparison, Tailscale exposure runbook.
 
 Out: per-user auth, rate limiting, multi-model routing, fine-tuning, web UI. Add when justified.

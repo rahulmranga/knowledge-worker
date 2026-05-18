@@ -2,6 +2,7 @@
 datadump/
 *_READ_ONLY.json
 network_theory.md
+.DS_Store
 *.Zone.Identifier
 *:Zone.Identifier
 mygraph/mygraph.json
@@ -13,7 +14,9 @@ mygraph/private_*.ttl
 # Runtime/eval sidecars
 mygraph/eval_record.jsonl
 mygraph/state_log.jsonl
+ollama_proxy/proxy.log.jsonl
 *.candidates.json
+/knowledge-worker-demo.mov
 
 # Local environment and secrets
 .env

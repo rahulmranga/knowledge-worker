@@ -8,8 +8,12 @@ network_theory.md
 mygraph/mygraph.json
 mygraph/mygraph.ttl
 mygraph/mygraph_viz.html
+mygraph/analytics.json
+mygraph/memory_audit.html
 mygraph/private_*.html
 mygraph/private_*.ttl
+analytics.json
+memory_audit.html
 
 # Runtime/eval sidecars
 mygraph/eval_record.jsonl

@@ -13,6 +13,15 @@
 - Record clearer eval outcomes for accepted, rejected, and edited claims.
 - Add repeatable privacy scans to the normal commit checklist.
 
+## v1.5: Memory Audit
+
+- Emit `analytics.json` with PageRank, betweenness, k-core, communities,
+  low-confidence edges, and provenance coverage.
+- Add a Memory Audit HTML view with ranked panels before the graph canvas:
+  important concepts, bridge ideas, weak claims, and proof trail.
+- Keep audit output read-only and generated from explicit graph paths so private
+  graph data stays outside the public repo.
+
 ## v2: Storage Evolution
 
 - Move from JSON to SQL-backed persistence only when graph size or concurrency

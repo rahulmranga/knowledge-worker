@@ -16,6 +16,7 @@ Usage:
     mykg export --ttl                                     # v1 M3: emit Turtle
     mykg context                                          # LLM-ready context snapshot
     mykg viz                                              # v1 M4: write offline HTML viewer
+    mykg audit                                            # memory audit analytics + optional HTML
 
 Graph file: ./mygraph.json by default, or MYGRAPH_PATH=/absolute/path.json.
 """
@@ -458,6 +459,7 @@ Usage:
   mykg export --ttl [--out <path>]
   mykg context [--out <path>] [--max-ideas N]
   mykg viz [--graph <path>] [--out <path>] [--no-open]
+  mykg audit [--graph <path>] [--out analytics.json] [--html memory_audit.html]
 """
 
 
@@ -537,6 +539,12 @@ def main(argv: Optional[list[str]] = None) -> int:
         else:
             from viz import run_viz
         return run_viz(argv[2:])
+    if cmd == "audit":
+        if __package__:
+            from .memory_audit import run_audit
+        else:
+            from memory_audit import run_audit
+        return run_audit(argv[2:])
     print(USAGE)
     return 1
 

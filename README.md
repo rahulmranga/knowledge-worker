@@ -23,6 +23,8 @@ AI conversations usually start from zero. You clarify a decision, name a constra
 - Lets you review, accept, reject, or edit LLM proposals before merge.
 - Searches by term, lists nodes by type, and finds paths between ideas.
 - Exports an LLM-ready context snapshot for a fresh chat session.
+- Audits memory shape with PageRank, betweenness, k-core, communities, weak
+  claims, and provenance coverage.
 - Generates an offline HTML graph viewer for exploration and demos.
 
 ## Quick Start
@@ -39,6 +41,9 @@ MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py query "provenan
 
 # Generate an LLM-ready context snapshot
 MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py context
+
+# Audit memory structure and proof coverage
+MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py audit --out /tmp/analytics.json --html /tmp/memory_audit.html
 
 # Visualize the graph as a self-contained HTML file
 python3 mygraph/mygraph.py viz --graph examples/demo_graph.json --out /tmp/demo.html
@@ -154,7 +159,25 @@ Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, 
 | `export --ttl` | Emit Turtle/RDF |
 | `context` | Print a compact LLM-ready context snapshot |
 | `viz` | Generate an offline single-file HTML viewer |
+| `audit` | Emit graph analytics JSON and optional Memory Audit HTML |
 | `state "<entry>"` | Append a mood/state sidecar entry |
+
+## Memory Audit
+
+`mykg audit` is a read-only layer over the graph. It ranks important concepts
+with PageRank, bridge ideas with betweenness, structural strength with k-core,
+communities with deterministic graph splitting, and weak claims from confidence
+and provenance gaps.
+
+```bash
+MYGRAPH_PATH=examples/demo_graph.json mykg audit \
+  --out /tmp/analytics.json \
+  --html /tmp/memory_audit.html
+```
+
+The generated HTML puts ranked panels first and the graph canvas second. This
+keeps the feature focused on memory governance instead of making the raw graph
+view the product.
 
 ## Local LLM Support
 

@@ -49,6 +49,34 @@ class CliSmokeTest(unittest.TestCase):
         self.assertIn("Matches for 'provenance'", result.stdout)
         self.assertIn("idea:provenance-first", result.stdout)
 
+    def test_audit_emits_analytics_and_memory_audit_html(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "analytics.json"
+            html = Path(tmp) / "memory_audit.html"
+            result = run_mykg(
+                "audit",
+                "--out",
+                str(out),
+                "--html",
+                str(html),
+                env={"MYGRAPH_PATH": str(ROOT / "examples" / "demo_graph.json")},
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn("audit: wrote", result.stdout)
+            data = json.loads(out.read_text())
+            self.assertEqual(data["schema_version"], "memory-audit/v1")
+            self.assertIn("important_concepts", data["ranked"])
+            self.assertIn("bridge_ideas", data["ranked"])
+            self.assertIn("weak_claims", data["ranked"])
+            self.assertIn("proof_trail", data["ranked"])
+            self.assertIn("pagerank", data["centrality"])
+            self.assertIn("betweenness", data["centrality"])
+            self.assertIn("core_number", data["centrality"])
+            self.assertIn("provenance_coverage", data)
+            self.assertTrue(html.exists())
+            self.assertIn("Memory Audit", html.read_text())
+
     def test_seed_summary_and_context_use_temp_graph(self):
         with tempfile.TemporaryDirectory() as tmp:
             env = {"MYGRAPH_PATH": str(Path(tmp) / "demo.json")}

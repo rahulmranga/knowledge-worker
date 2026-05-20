@@ -237,7 +237,7 @@ def run_viz(args: list[str]) -> int:
     written = render_html(graph_path, out)
     print(f"viz: wrote {written}")
     if "--no-open" not in args:
-        webbrowser.open(f"file://{written.resolve()}")
+        webbrowser.open(written.resolve().as_uri())
         print("viz: opened in default browser")
     return 0
 

@@ -34,6 +34,17 @@ If you're not sure, open an issue first and describe the use case.
 6. Test with the demo graph: `MYGRAPH_PATH=examples/demo_graph.json mykg check --provenance`
 7. Open a pull request with a clear description of what changed and why.
 
+On Windows PowerShell, use:
+
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e .
+python -m unittest
+$env:MYGRAPH_PATH = "examples\demo_graph.json"
+mykg check --provenance
+```
+
 ## Code Style
 
 - Python 3.10+, type hints where they add clarity

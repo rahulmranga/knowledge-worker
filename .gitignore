@@ -35,6 +35,8 @@ ollama_proxy/proxy.log.jsonl
 # Python/cache/build output
 __pycache__/
 *.py[cod]
+.venv/
+venv/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

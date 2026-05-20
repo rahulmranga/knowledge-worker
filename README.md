@@ -66,6 +66,25 @@ MYGRAPH_PATH=examples/demo_graph.json mykg query provenance
 
 Using a virtual environment avoids Homebrew/system Python's externally-managed install errors.
 
+On Windows PowerShell:
+
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e .
+
+$env:MYGRAPH_PATH = "examples\demo_graph.json"
+mykg query provenance
+mykg audit --out "$env:TEMP\analytics.json" --html "$env:TEMP\memory_audit.html"
+```
+
+If PowerShell blocks activation scripts, run this for the current terminal
+session and activate again:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
 Run the test suite with:
 
 ```bash

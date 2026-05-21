@@ -1,5 +1,25 @@
 # Public Roadmap
 
+## v0.3: Directed Memory Audit And Benchmarks
+
+- Add directed idea-flow panels that separate idea attractors from idea
+  generators.
+- Turn weak claims into a user-reviewed queue: verify, downgrade, convert to a
+  question, or ignore for now.
+- Keep the audit read-only and prompt-driven so the user does the judgment work.
+- Publish `docs/COMPETITIVE_ANALYSIS.md` with a source-checked category matrix.
+- Publish `docs/BENCHMARKS.md` with offline demo-graph benchmarks.
+- Add `tests/test_benchmarks.py` so benchmark checks run with no API key.
+- Add README positioning that points readers to the analysis and benchmarks.
+- Keep the MCP comparison honest while `ollama_proxy/server.py` remains
+  experimental.
+
+## v0.4: MCP Surface Hardening
+
+- Complete and document the local MCP wrapper surface.
+- Add MCP smoke tests that do not require private graph data.
+- Revisit named competitor rows only after a fresh source-verification pass.
+
 ## v1: Public Demo And Local Graphs
 
 - Keep the repo public-demo safe with fictional graph data only.

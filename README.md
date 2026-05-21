@@ -16,6 +16,15 @@ AI conversations usually start from zero. You clarify a decision, name a constra
 
 `knowledge-worker` keeps the useful parts: cited claims, explicit relationships, human review, and a small context snapshot when you need continuity.
 
+## How It Compares
+
+`knowledge-worker` is personal AI memory with source-backed claims, not a team
+chat-to-wiki system. It keeps reasoning local, reviewable, and tied to literal
+provenance excerpts before claims become durable graph knowledge.
+
+See [Competitive Analysis](docs/COMPETITIVE_ANALYSIS.md) for the category
+matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
+
 ## What It Does
 
 - Ingests markdown notes into candidate graph nodes and edges.
@@ -89,6 +98,12 @@ Run the test suite with:
 
 ```bash
 python3 -m unittest
+```
+
+Run the public-demo benchmark suite with:
+
+```bash
+python3 -m unittest tests/test_benchmarks.py
 ```
 
 ## Use Your Own Notes
@@ -178,7 +193,7 @@ Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, 
 | `export --ttl` | Emit Turtle/RDF |
 | `context` | Print a compact LLM-ready context snapshot |
 | `viz` | Generate an offline single-file HTML viewer |
-| `audit` | Emit graph analytics JSON and optional Memory Audit HTML |
+| `audit` | Emit graph analytics, directed idea-flow queues, and optional Memory Audit HTML |
 | `state "<entry>"` | Append a mood/state sidecar entry |
 
 ## Memory Audit
@@ -186,7 +201,10 @@ Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, 
 `mykg audit` is a read-only layer over the graph. It ranks important concepts
 with PageRank, bridge ideas with betweenness, structural strength with k-core,
 communities with deterministic graph splitting, and weak claims from confidence
-and provenance gaps.
+and provenance gaps. It also includes directed idea-flow queues:
+`idea_attractors` for concepts that many edges point into, `idea_generators`
+for ideas that branch outward, and a `weak_claim_queue` that asks for human
+review actions instead of auto-promoting conclusions.
 
 ```bash
 MYGRAPH_PATH=examples/demo_graph.json mykg audit \
@@ -194,9 +212,9 @@ MYGRAPH_PATH=examples/demo_graph.json mykg audit \
   --html /tmp/memory_audit.html
 ```
 
-The generated HTML puts ranked panels first and the graph canvas second. This
-keeps the feature focused on memory governance instead of making the raw graph
-view the product.
+The generated HTML puts ranked panels and legwork queues first, with the graph
+canvas second. This keeps the feature focused on memory governance instead of
+making the raw graph view the product.
 
 ## Local LLM Support
 

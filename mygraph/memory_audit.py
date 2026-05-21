@@ -101,6 +101,27 @@ def _degree(undirected: dict[str, set[str]]) -> dict[str, int]:
     return {nid: len(neighbors) for nid, neighbors in undirected.items()}
 
 
+def _directed_counts(ids: Iterable[str], edges: Iterable[Edge]) -> tuple[dict[str, int], dict[str, int]]:
+    in_degree = {nid: 0 for nid in ids}
+    out_degree = {nid: 0 for nid in ids}
+    for edge in edges:
+        if edge.src not in out_degree or edge.dst not in in_degree:
+            continue
+        out_degree[edge.src] += 1
+        in_degree[edge.dst] += 1
+    return in_degree, out_degree
+
+
+def _directed_edge_types(ids: Iterable[str], edges: Iterable[Edge]) -> tuple[dict[str, Counter], dict[str, Counter]]:
+    in_types = {nid: Counter() for nid in ids}
+    out_types = {nid: Counter() for nid in ids}
+    for edge in edges:
+        if edge.src in out_types and edge.dst in in_types:
+            out_types[edge.src][edge.type] += 1
+            in_types[edge.dst][edge.type] += 1
+    return in_types, out_types
+
+
 def _pagerank(
     ids: list[str],
     directed: dict[str, set[str]],
@@ -458,6 +479,93 @@ def _weak_claims(g: Graph, coverage: dict, limit: int) -> list[dict]:
     return sorted(claims, key=sort_key)[:limit]
 
 
+def _idea_flow_records(
+    g: Graph,
+    ids: list[str],
+    in_degree: dict[str, int],
+    out_degree: dict[str, int],
+    in_types: dict[str, Counter],
+    out_types: dict[str, Counter],
+    communities: dict[str, int],
+    limit: int,
+    *,
+    mode: str,
+) -> list[dict]:
+    if mode not in {"attractor", "generator"}:
+        raise ValueError(f"unknown idea flow mode: {mode}")
+
+    idea_ids = [nid for nid in ids if g.nodes[nid].type == "idea"]
+
+    def score(node_id: str) -> int:
+        if mode == "attractor":
+            return in_degree.get(node_id, 0) - out_degree.get(node_id, 0)
+        return out_degree.get(node_id, 0) - in_degree.get(node_id, 0)
+
+    ranked = sorted(
+        idea_ids,
+        key=lambda nid: (
+            -score(nid),
+            -max(in_degree.get(nid, 0), out_degree.get(nid, 0)),
+            g.nodes[nid].label.lower(),
+        ),
+    )
+
+    records = []
+    for node_id in ranked:
+        if mode == "attractor":
+            if in_degree.get(node_id, 0) < 1 or score(node_id) <= 0:
+                continue
+            prompt = (
+                "Is this a durable principle, an unresolved sink, or an over-compressed label? "
+                "Write one next action."
+            )
+        else:
+            if out_degree.get(node_id, 0) < 1 or score(node_id) <= 0:
+                continue
+            prompt = (
+                "Which branch deserves leg work next? Choose one edge to operationalize, "
+                "verify, or prune."
+            )
+
+        records.append(
+            _node_record(
+                g,
+                node_id,
+                score=float(score(node_id)),
+                in_degree=in_degree.get(node_id, 0),
+                out_degree=out_degree.get(node_id, 0),
+                flow_balance=score(node_id),
+                inbound_edge_types=dict(in_types.get(node_id, Counter())),
+                outbound_edge_types=dict(out_types.get(node_id, Counter())),
+                community=communities.get(node_id),
+                prompt=prompt,
+            )
+        )
+        if len(records) >= limit:
+            break
+    return records
+
+
+def _weak_claim_queue(claims: list[dict], limit: int) -> list[dict]:
+    queue = []
+    for claim in claims[:limit]:
+        prompt = "Choose: verify, downgrade, convert to question, ignore for now."
+        if claim.get("kind") == "missing_node_provenance":
+            prompt = "Find source evidence or keep this out of durable memory."
+        elif claim.get("kind") == "missing_edge_source_id":
+            prompt = "Attach a source id or remove this edge from the durable graph."
+        elif claim.get("kind") == "edge_confidence":
+            prompt = "Inspect this relationship: verify it, downgrade it, or turn it into an open question."
+        queue.append(
+            {
+                **claim,
+                "prompt": prompt,
+                "review_options": ["verify", "downgrade", "convert_to_question", "ignore_for_now"],
+            }
+        )
+    return queue
+
+
 def _community_records(
     g: Graph,
     communities: dict[str, int],
@@ -510,6 +618,8 @@ def build_memory_audit(g: Graph, *, limit: int = 25, max_communities: int = 12) 
     core = _core_numbers(ids, undirected)
     communities = _community_partition(ids, undirected, max_communities=max_communities)
     coverage = _provenance_coverage(g)
+    semantic_in_degree, semantic_out_degree = _directed_counts(ids, semantic_edges)
+    semantic_in_types, semantic_out_types = _directed_edge_types(ids, semantic_edges)
 
     important = _ranked_nodes(g, pagerank, degree, core, communities, limit, include_zero=True)
     bridges = _ranked_nodes(g, betweenness, degree, core, communities, limit)
@@ -523,6 +633,29 @@ def build_memory_audit(g: Graph, *, limit: int = 25, max_communities: int = 12) 
         include_zero=True,
     )
     proof_ids = [record["id"] for record in important] + [record["id"] for record in bridges]
+    weak_claims = _weak_claims(g, coverage, limit)
+    idea_attractors = _idea_flow_records(
+        g,
+        ids,
+        semantic_in_degree,
+        semantic_out_degree,
+        semantic_in_types,
+        semantic_out_types,
+        communities,
+        limit,
+        mode="attractor",
+    )
+    idea_generators = _idea_flow_records(
+        g,
+        ids,
+        semantic_in_degree,
+        semantic_out_degree,
+        semantic_in_types,
+        semantic_out_types,
+        communities,
+        limit,
+        mode="generator",
+    )
 
     return {
         "schema_version": "memory-audit/v1",
@@ -550,14 +683,46 @@ def build_memory_audit(g: Graph, *, limit: int = 25, max_communities: int = 12) 
         "ranked": {
             "important_concepts": important,
             "bridge_ideas": bridges,
+            "idea_attractors": idea_attractors,
+            "idea_generators": idea_generators,
             "structural_core": structural_core,
-            "weak_claims": _weak_claims(g, coverage, limit),
+            "weak_claims": weak_claims,
+            "weak_claim_queue": _weak_claim_queue(weak_claims, limit),
             "proof_trail": _proof_trail(g, proof_ids, limit),
         },
         "centrality": {
             "pagerank": important,
             "betweenness": bridges,
             "core_number": structural_core,
+            "semantic_in_degree": _ranked_nodes(
+                g,
+                {nid: float(semantic_in_degree.get(nid, 0)) for nid in ids},
+                degree,
+                core,
+                communities,
+                limit,
+            ),
+            "semantic_out_degree": _ranked_nodes(
+                g,
+                {nid: float(semantic_out_degree.get(nid, 0)) for nid in ids},
+                degree,
+                core,
+                communities,
+                limit,
+            ),
+        },
+        "directed_flow": {
+            "note": (
+                "Directed flow uses semantic edges only. Provenance/source projection edges are excluded "
+                "so attractors and generators reflect relationship direction, not citation volume."
+            ),
+            "idea_attractors": idea_attractors,
+            "idea_generators": idea_generators,
+        },
+        "legwork_queue": {
+            "idea_attractors": idea_attractors,
+            "idea_generators": idea_generators,
+            "weak_claims": _weak_claim_queue(weak_claims, limit),
         },
         "communities": _community_records(g, communities, pagerank, degree, core),
         "low_confidence_edges": [
@@ -731,7 +896,9 @@ function renderPanels() {
     </div>
     ${rankedPanel("Important Concepts", AUDIT.ranked.important_concepts || [], "PageRank over semantic edges")}
     ${rankedPanel("Bridge Ideas", AUDIT.ranked.bridge_ideas || [], "Betweenness centrality")}
-    ${weakPanel("Weak Claims", AUDIT.ranked.weak_claims || [])}
+    ${flowPanel("Idea Attractors", AUDIT.ranked.idea_attractors || [], "High semantic in-degree, low out-degree")}
+    ${flowPanel("Idea Generators", AUDIT.ranked.idea_generators || [], "High semantic out-degree, low in-degree")}
+    ${weakPanel("Weak Claim Queue", AUDIT.ranked.weak_claim_queue || AUDIT.ranked.weak_claims || [])}
     ${proofPanel("Proof Trail", AUDIT.ranked.proof_trail || [])}
   `;
   panels.querySelectorAll("[data-node-id]").forEach(el => {
@@ -748,12 +915,23 @@ function rankedPanel(title, records, subtitle) {
   return `<section class="panel"><h2>${esc(title)}</h2><ol>${rows || `<li class="item-meta" style="padding:8px">None</li>`}</ol></section>`;
 }
 
+function flowPanel(title, records, subtitle) {
+  const rows = records.slice(0, 12).map(record => `
+    <li><button class="item" data-node-id="${esc(record.id)}">
+      <span class="item-title">${esc(record.label || record.id)}</span>
+      <span class="item-meta">${esc(subtitle)} · in ${record.in_degree || 0} · out ${record.out_degree || 0} · balance ${record.flow_balance || 0}</span>
+      <span class="item-meta">${esc(record.prompt || "")}</span>
+    </button></li>`).join("");
+  return `<section class="panel"><h2>${esc(title)}</h2><ol>${rows || `<li class="item-meta" style="padding:8px">None</li>`}</ol></section>`;
+}
+
 function weakPanel(title, claims) {
   const rows = claims.slice(0, 14).map(claim => {
     const nodeId = claim.id || claim.src || claim.dst || "";
     return `<li><button class="item weak" data-node-id="${esc(nodeId)}">
       <span class="item-title">${esc(claimTitle(claim))}</span>
       <span class="item-meta"><span class="score">${esc(claim.confidence || "missing")}</span> ${esc(claimMeta(claim))}</span>
+      <span class="item-meta">${esc(claim.prompt || "Choose a review action before this becomes durable memory.")}</span>
     </button></li>`;
   }).join("");
   return `<section class="panel"><h2>${esc(title)}</h2><ul>${rows || `<li class="item-meta" style="padding:8px">No weak claims found</li>`}</ul></section>`;

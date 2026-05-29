@@ -42,6 +42,7 @@ from extractor import (  # noqa: E402
     EXTRACTION_TOOL,
     PROMPT_TEMPLATE,
     build_source_decl,
+    ensure_provenance_edges,
 )
 
 try:
@@ -121,6 +122,13 @@ def extract(md_path: Path, out_path: Path | None = None,
     })
     payload.setdefault("nodes", [])
     payload.setdefault("edges", [])
+    injected = ensure_provenance_edges(payload)
+    if injected:
+        print(
+            "extractor_adapter: gateway returned missing provenance edges; "
+            f"synthesized {injected} MENTIONED_IN edges.",
+            file=sys.stderr,
+        )
 
     payload.setdefault("_meta", {})
     payload["_meta"]["source_path"] = decl["source_path"]

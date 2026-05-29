@@ -152,6 +152,47 @@ def call_anthropic(prompt: str, model: str | None = None) -> dict:
     raise RuntimeError("extractor: model did not emit the emit_candidates tool call.")
 
 
+def ensure_provenance_edges(payload: dict) -> int:
+    """Backfill MENTIONED_IN edges when a gateway drops tool-emitted edges."""
+    src_id = payload.get("source", {}).get("id")
+    if not src_id:
+        return 0
+
+    edges = payload.get("edges")
+    if not isinstance(edges, list):
+        edges = []
+        payload["edges"] = edges
+    nodes = payload.get("nodes", [])
+    if not isinstance(nodes, list):
+        return 0
+
+    existing = {
+        (e.get("src"), e.get("dst"), e.get("type"))
+        for e in edges
+        if isinstance(e, dict)
+    }
+    injected = 0
+    for node in nodes:
+        if not isinstance(node, dict):
+            continue
+        node_id = node.get("id")
+        if not node_id or node_id == src_id:
+            continue
+        key = (node_id, src_id, "MENTIONED_IN")
+        if key in existing:
+            continue
+        edges.append({
+            "src": node_id,
+            "dst": src_id,
+            "type": "MENTIONED_IN",
+            "confidence": node.get("confidence", "medium"),
+            "excerpt": (node.get("excerpt") or node.get("body") or "")[:300],
+        })
+        existing.add(key)
+        injected += 1
+    return injected
+
+
 def extract(md_path: Path, out_path: Path | None = None,
             model: str | None = None) -> dict:
     """End-to-end extract: read markdown, call LLM, write candidates.json."""
@@ -169,6 +210,13 @@ def extract(md_path: Path, out_path: Path | None = None,
         source_text=source_text,
     )
     payload = call_anthropic(prompt, model=model)
+    injected = ensure_provenance_edges(payload)
+    if injected:
+        print(
+            "extractor: gateway returned missing provenance edges; "
+            f"synthesized {injected} MENTIONED_IN edges.",
+            file=sys.stderr,
+        )
     # ensure source_path/ingested_at hitch a ride for downstream stages
     payload.setdefault("_meta", {})
     payload["_meta"]["source_path"] = decl["source_path"]

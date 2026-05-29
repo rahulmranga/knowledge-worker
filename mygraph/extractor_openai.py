@@ -20,9 +20,19 @@ from typing import Any
 from mygraph import Graph, NODE_TYPES, EDGE_TYPES
 
 try:
-    from .extractor import EXTRACTION_TOOL, PROMPT_TEMPLATE, build_source_decl
+    from .extractor import (
+        EXTRACTION_TOOL,
+        PROMPT_TEMPLATE,
+        build_source_decl,
+        ensure_provenance_edges,
+    )
 except ImportError:  # direct script execution
-    from extractor import EXTRACTION_TOOL, PROMPT_TEMPLATE, build_source_decl
+    from extractor import (
+        EXTRACTION_TOOL,
+        PROMPT_TEMPLATE,
+        build_source_decl,
+        ensure_provenance_edges,
+    )
 
 
 DEFAULT_MODEL = os.environ.get("MYGRAPH_OPENAI_MODEL", "gpt-5.2")
@@ -111,6 +121,13 @@ def extract(md_path: Path, out_path: Path | None = None,
         source_text=source_text,
     )
     payload = call_openai(prompt, model=model)
+    injected = ensure_provenance_edges(payload)
+    if injected:
+        print(
+            "extractor_openai: gateway returned missing provenance edges; "
+            f"synthesized {injected} MENTIONED_IN edges.",
+            file=sys.stderr,
+        )
     payload.setdefault("_meta", {})
     payload["_meta"]["source_path"] = decl["source_path"]
     payload["_meta"]["ingested_at"] = decl["ingested_at"]

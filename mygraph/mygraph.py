@@ -37,7 +37,10 @@ DEFAULT_GRAPH_PATH = os.path.join(HERE, "mygraph.json")
 
 def resolve_graph_path(path: Optional[str] = None) -> str:
     raw = path or os.environ.get("MYGRAPH_PATH") or DEFAULT_GRAPH_PATH
-    return os.path.abspath(os.path.expanduser(raw))
+    resolved = os.path.abspath(os.path.expanduser(raw))
+    if os.path.isdir(resolved):
+        resolved = os.path.join(resolved, "mygraph.json")
+    return resolved
 
 
 GRAPH_PATH = resolve_graph_path()

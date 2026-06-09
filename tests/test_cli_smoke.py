@@ -104,6 +104,18 @@ class CliSmokeTest(unittest.TestCase):
             self.assertIn("# mygraph", context.stdout)
             self.assertIn("## Ideas", context.stdout)
 
+    def test_directory_graph_path_resolves_to_mygraph_json(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            env = {"MYGRAPH_PATH": tmp}
+
+            seed = run_mykg("seed", env=env)
+            self.assertEqual(seed.returncode, 0, seed.stderr)
+            self.assertTrue((Path(tmp) / "mygraph.json").exists())
+
+            summary = run_mykg("summary", env=env)
+            self.assertEqual(summary.returncode, 0, summary.stderr)
+            self.assertIn("12 nodes, 21 edges", summary.stdout)
+
     def test_merge_adds_enabled_by_from_goal_and_decision_back_to_idea(self):
         from mygraph.merge import merge
 

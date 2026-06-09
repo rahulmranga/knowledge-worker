@@ -97,7 +97,7 @@ class CliSmokeTest(unittest.TestCase):
 
             summary = run_mykg("summary", env=env)
             self.assertEqual(summary.returncode, 0, summary.stderr)
-            self.assertIn("12 nodes, 21 edges", summary.stdout)
+            self.assertIn("47 nodes, 97 edges", summary.stdout)
 
             context = run_mykg("context", "--max-ideas", "2", env=env)
             self.assertEqual(context.returncode, 0, context.stderr)
@@ -114,7 +114,7 @@ class CliSmokeTest(unittest.TestCase):
 
             summary = run_mykg("summary", env=env)
             self.assertEqual(summary.returncode, 0, summary.stderr)
-            self.assertIn("12 nodes, 21 edges", summary.stdout)
+            self.assertIn("47 nodes, 97 edges", summary.stdout)
 
     def test_merge_adds_enabled_by_from_goal_and_decision_back_to_idea(self):
         from mygraph.merge import merge

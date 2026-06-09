@@ -199,6 +199,21 @@ Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, 
 | `audit` | Emit graph analytics, directed idea-flow queues, and optional Memory Audit HTML |
 | `state "<entry>"` | Append a mood/state sidecar entry |
 
+## Why Graph Analytics?
+
+AI memory should be inspectable, not just larger.
+
+`knowledge-worker` models memory as a typed, provenance-backed graph so the
+system can answer operational questions:
+
+- **PageRank:** which concepts matter because important concepts point to them?
+- **Betweenness:** which ideas bridge otherwise separate parts of the work?
+- **k-core:** which concepts are structurally embedded versus one-off notes?
+- **Communities:** which themes are forming without a hand-written taxonomy?
+- **Provenance coverage:** which claims can be traced to literal source excerpts?
+
+The result is a memory audit and review queue, not chat-history search.
+
 ## Memory Audit
 
 `mykg audit` is a read-only layer over the graph. It ranks important concepts
@@ -218,6 +233,8 @@ MYGRAPH_PATH=examples/demo_graph.json mykg audit \
 The generated HTML puts ranked panels and legwork queues first, with the graph
 canvas second. This keeps the feature focused on memory governance instead of
 making the raw graph view the product.
+
+![Memory Audit ranked panels](docs/assets/memory-audit-demo.png)
 
 ## Local LLM Support
 

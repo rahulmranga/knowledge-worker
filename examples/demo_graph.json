@@ -2,268 +2,1212 @@
   "edges": [
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538813+00:00",
-      "dst": "source:demo-notes",
-      "excerpt": "The demo owner wants assistant memory that survives across sessions.",
-      "last_seen": "2026-05-26T00:04:21.538814+00:00",
-      "source_id": "source:demo-notes",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:product-brief",
+      "excerpt": "The fictional demo owner wants memory that can be reviewed before reuse.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
       "src": "person:demo-owner",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538817+00:00",
-      "dst": "source:demo-notes",
-      "excerpt": "Build a local-first toolkit for source-backed AI memory.",
-      "last_seen": "2026-05-26T00:04:21.538818+00:00",
-      "source_id": "source:demo-notes",
-      "src": "project:knowledge-worker",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:product-brief",
+      "excerpt": "Build a local workbench for reviewed, source-backed memory.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "project:memory-workbench",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538821+00:00",
-      "dst": "source:demo-notes",
-      "excerpt": "Store durable concepts instead of loose transcript chunks.",
-      "last_seen": "2026-05-26T00:04:21.538821+00:00",
-      "source_id": "source:demo-notes",
-      "src": "idea:context-memory",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "The research assistant should keep claims connected to evidence.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "project:research-assistant",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538823+00:00",
-      "dst": "source:demo-notes",
-      "excerpt": "Every durable claim needs source evidence.",
-      "last_seen": "2026-05-26T00:04:21.538824+00:00",
-      "source_id": "source:demo-notes",
-      "src": "idea:provenance-first",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:launch-plan",
+      "excerpt": "Publish a public-safe demonstration using fictional graph data.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "project:launch-demo",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538825+00:00",
-      "dst": "source:demo-notes",
-      "excerpt": "Make assistant responses easier to verify and continue.",
-      "last_seen": "2026-05-26T00:04:21.538826+00:00",
-      "source_id": "source:demo-notes",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:user-interviews",
+      "excerpt": "People want AI sessions to continue without losing the reasoning behind prior work.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:user-interviews",
       "src": "goal:trusted-ai-assistance",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538827+00:00",
-      "dst": "source:demo-notes",
-      "excerpt": "Use a graph of concepts and relationships.",
-      "last_seen": "2026-05-26T00:04:21.538828+00:00",
-      "source_id": "source:demo-notes",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Share only the bounded context needed for the current task.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "goal:private-context-sharing",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "Research claims should remain connected to supporting and challenging evidence.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "goal:evidence-backed-research",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:launch-plan",
+      "excerpt": "Ship a useful public alpha without exposing private memory.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "goal:public-alpha",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "Use JSON first; add a database only when size or concurrency requires it.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "decision:json-first",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:product-brief",
+      "excerpt": "A person reviews proposed memory before it becomes durable.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "decision:review-before-merge",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:product-brief",
+      "excerpt": "Every durable claim requires a source identifier and literal excerpt.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "decision:provenance-required",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Export a bounded context slice instead of the whole private graph.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "decision:scoped-exports",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:launch-plan",
+      "excerpt": "Lead the demo with ranked audit panels before the graph canvas.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "decision:ranked-audit-first",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Keep private graph data local unless the owner explicitly exports it.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "decision:local-default",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "Defer SQL storage until JSON becomes the limiting factor.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "decision:defer-sql",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:launch-plan",
+      "excerpt": "Use fictional data for every committed public demo artifact.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "decision:fictional-demo-only",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:user-interviews",
+      "excerpt": "Durable concepts preserve continuity better than loose transcript chunks.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:user-interviews",
+      "src": "idea:context-memory",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:product-brief",
+      "excerpt": "Every durable claim needs source evidence.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:provenance-first",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:product-brief",
+      "excerpt": "AI proposes memory changes and a person decides what becomes durable.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:human-promotion-loop",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:launch-plan",
+      "excerpt": "Rank important concepts, bridge ideas, weak claims, and proof trails.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "idea:memory-audit",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Export only the cited graph slice needed by another AI tool.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "idea:context-packs",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Keep the canonical graph in files controlled by the owner.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "idea:local-first-storage",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "Named edges preserve why research concepts are connected.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:typed-relationships",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "Central claims should accumulate supporting or challenging evidence over time.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:evidence-backfill",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Public infrastructure and private memory must remain separate.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "idea:privacy-boundary",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "Research synthesis should retain claims, sources, and uncertainty.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:reviewable-research",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:product-brief",
+      "excerpt": "Use Memory Audit to identify safe, relevant concepts for context export.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:audited-context-bridge",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "Evidence quality should influence which memories are promoted and reused.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:evidence-governance-bridge",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "CogGRAG is a public reference for cognition-inspired graph retrieval.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "reference:coggrag",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "HippoRAG is a public reference for associative graph memory.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "reference:hipporag",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "RDF 1.1 defines a standard model for graph statements.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "reference:rdf",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Local-first software prioritizes local data ownership.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "reference:local-first",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:launch-plan",
+      "excerpt": "PageRank ranks nodes using graph link structure.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "reference:pagerank",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "Use structured concepts and typed relationships.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:architecture-note",
       "src": "topic:knowledge-graphs",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538829+00:00",
-      "dst": "source:demo-notes",
-      "excerpt": "Keep owner data local unless explicitly exported.",
-      "last_seen": "2026-05-26T00:04:21.538830+00:00",
-      "source_id": "source:demo-notes",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Keep user data under local control.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
       "src": "topic:local-first",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538832+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:product-brief",
+      "excerpt": "Trace durable claims back to source excerpts.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "topic:provenance",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:research-notes",
+      "excerpt": "Collect, test, and revise evidence over time.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "topic:research-workflow",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:launch-plan",
+      "excerpt": "Use network measures for importance, bridges, communities, and weak claims.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "topic:graph-analytics",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:privacy-review",
+      "excerpt": "Decide what memory another tool should receive.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "topic:context-governance",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "source:architecture-note",
       "excerpt": "When should storage move beyond JSON?",
-      "last_seen": "2026-05-26T00:04:21.538833+00:00",
+      "last_seen": "2026-06-09T12:00:00+00:00",
       "source_id": "source:architecture-note",
       "src": "question:storage-backend",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538834+00:00",
-      "dst": "source:architecture-note",
-      "excerpt": "Use JSON first; add a database only when needed.",
-      "last_seen": "2026-05-26T00:04:21.538835+00:00",
-      "source_id": "source:architecture-note",
-      "src": "decision:json-first",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "source:launch-plan",
+      "excerpt": "What proves the public demo is useful?",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "question:launch-signal",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538836+00:00",
-      "dst": "source:architecture-note",
-      "excerpt": "CogGRAG is a public reference for graph retrieval.",
-      "last_seen": "2026-05-26T00:04:21.538837+00:00",
-      "source_id": "source:architecture-note",
-      "src": "reference:coggrag",
-      "type": "MENTIONED_IN"
-    },
-    {
-      "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538839+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "idea:context-memory",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538840+00:00",
-      "source_id": "source:demo-notes",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:user-interviews",
       "src": "person:demo-owner",
       "type": "HAS_IDEA"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538842+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "idea:provenance-first",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538842+00:00",
-      "source_id": "source:demo-notes",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
       "src": "person:demo-owner",
       "type": "HAS_IDEA"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538844+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:memory-audit",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "person:demo-owner",
+      "type": "HAS_IDEA"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:context-packs",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "person:demo-owner",
+      "type": "HAS_IDEA"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "goal:trusted-ai-assistance",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538845+00:00",
-      "source_id": "source:demo-notes",
-      "src": "project:knowledge-worker",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "project:memory-workbench",
       "type": "SERVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538847+00:00",
-      "dst": "topic:knowledge-graphs",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:private-context-sharing",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538848+00:00",
-      "source_id": "source:demo-notes",
-      "src": "project:knowledge-worker",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "project:memory-workbench",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:evidence-backed-research",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "project:research-assistant",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:public-alpha",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "project:launch-demo",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:provenance",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "project:memory-workbench",
       "type": "INVOLVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538850+00:00",
-      "dst": "topic:local-first",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:context-governance",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538851+00:00",
-      "source_id": "source:demo-notes",
-      "src": "project:knowledge-worker",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "project:memory-workbench",
       "type": "INVOLVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538852+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:research-workflow",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "project:research-assistant",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:graph-analytics",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "project:launch-demo",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "topic:knowledge-graphs",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538853+00:00",
-      "source_id": "source:demo-notes",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:user-interviews",
       "src": "idea:context-memory",
       "type": "RELATES_TO"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538855+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:provenance",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:provenance-first",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:provenance",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:human-promotion-loop",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:graph-analytics",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "idea:memory-audit",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:context-governance",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "idea:context-packs",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:local-first",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "idea:local-first-storage",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:knowledge-graphs",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:typed-relationships",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:research-workflow",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:evidence-backfill",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:context-governance",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "idea:privacy-boundary",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "topic:research-workflow",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:reviewable-research",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "goal:trusted-ai-assistance",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538856+00:00",
-      "source_id": "source:demo-notes",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
       "src": "idea:provenance-first",
       "type": "SERVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538858+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "idea:provenance-first",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538859+00:00",
-      "source_id": "source:demo-notes",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
       "src": "goal:trusted-ai-assistance",
       "type": "ENABLED_BY"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538861+00:00",
-      "dst": "idea:context-memory",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:trusted-ai-assistance",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538861+00:00",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:human-promotion-loop",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:human-promotion-loop",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "goal:trusted-ai-assistance",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:private-context-sharing",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "idea:context-packs",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:context-packs",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "goal:private-context-sharing",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:evidence-backed-research",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:evidence-backfill",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:evidence-backfill",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "goal:evidence-backed-research",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:public-alpha",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "idea:memory-audit",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:memory-audit",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "goal:public-alpha",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:human-promotion-loop",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "decision:review-before-merge",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:provenance-first",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "decision:provenance-required",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:context-packs",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "decision:scoped-exports",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:memory-audit",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "decision:ranked-audit-first",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:local-first-storage",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "decision:local-default",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:local-first-storage",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
       "source_id": "source:architecture-note",
       "src": "decision:json-first",
       "type": "ENABLED_BY"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538863+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:local-first-storage",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "decision:defer-sql",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:privacy-boundary",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "decision:fictional-demo-only",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "question:storage-backend",
       "excerpt": "",
-      "last_seen": "2026-05-26T00:04:21.538864+00:00",
+      "last_seen": "2026-06-09T12:00:00+00:00",
       "source_id": "source:architecture-note",
       "src": "decision:json-first",
       "type": "ABOUT"
     },
     {
-      "confidence": "medium",
-      "created_at": "2026-05-26T00:04:21.538867+00:00",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "question:launch-signal",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "decision:ranked-audit-first",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "dst": "reference:coggrag",
-      "excerpt": "CogGRAG is a public reference for graph retrieval.",
-      "last_seen": "2026-05-26T00:04:21.538867+00:00",
-      "source_id": "source:architecture-note",
-      "src": "idea:context-memory",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:typed-relationships",
       "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "reference:hipporag",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:typed-relationships",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "reference:local-first",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:privacy-review",
+      "src": "idea:local-first-storage",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "reference:pagerank",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "idea:memory-audit",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "reference:rdf",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "idea:provenance-first",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:memory-audit",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:audited-context-bridge",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:context-packs",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:audited-context-bridge",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:private-context-sharing",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:product-brief",
+      "src": "idea:audited-context-bridge",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:evidence-backfill",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:evidence-governance-bridge",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:provenance-first",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:evidence-governance-bridge",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "goal:evidence-backed-research",
+      "excerpt": "",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:research-notes",
+      "src": "idea:evidence-governance-bridge",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "low",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:context-packs",
+      "excerpt": "Candidate: evidence-backed packs may improve handoffs.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:user-interviews",
+      "src": "idea:evidence-backfill",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "low",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:reviewable-research",
+      "excerpt": "Candidate: local storage may support reviewable research.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "idea:local-first-storage",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "low",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "dst": "idea:privacy-boundary",
+      "excerpt": "Candidate: typed relationships may clarify privacy boundaries.",
+      "last_seen": "2026-06-09T12:00:00+00:00",
+      "source_id": "source:launch-plan",
+      "src": "idea:typed-relationships",
+      "type": "RELATES_TO"
     }
   ],
   "nodes": {
-    "decision:json-first": {
-      "body": "Start with a simple JSON store before introducing a database.",
+    "decision:defer-sql": {
+      "body": "Move beyond JSON only when graph size or concurrency requires it.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538805+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "decision:defer-sql",
+      "label": "Defer SQL storage",
+      "type": "decision"
+    },
+    "decision:fictional-demo-only": {
+      "body": "The public repository must demonstrate behavior without private facts.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "decision:fictional-demo-only",
+      "label": "Use fictional demo data",
+      "type": "decision"
+    },
+    "decision:json-first": {
+      "body": "Start with a transparent JSON graph before adding database infrastructure.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "decision:json-first",
       "label": "Use JSON first",
       "type": "decision"
     },
+    "decision:local-default": {
+      "body": "Private graph data stays local unless the owner explicitly exports a slice.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "decision:local-default",
+      "label": "Keep private memory local",
+      "type": "decision"
+    },
+    "decision:provenance-required": {
+      "body": "Every durable claim needs a source identifier and literal excerpt.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "decision:provenance-required",
+      "label": "Require provenance",
+      "type": "decision"
+    },
+    "decision:ranked-audit-first": {
+      "body": "Lead with important concepts, bridges, weak claims, and proof trails.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "decision:ranked-audit-first",
+      "label": "Ranked audit before graph canvas",
+      "type": "decision"
+    },
+    "decision:review-before-merge": {
+      "body": "Human approval is required before proposed memory becomes durable.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "decision:review-before-merge",
+      "label": "Review before merge",
+      "type": "decision"
+    },
+    "decision:scoped-exports": {
+      "body": "Share bounded context packs instead of the full graph.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "decision:scoped-exports",
+      "label": "Export scoped context",
+      "type": "decision"
+    },
+    "goal:evidence-backed-research": {
+      "body": "Keep research claims connected to supporting and challenging evidence.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "goal:evidence-backed-research",
+      "label": "Evidence-backed research",
+      "type": "goal"
+    },
+    "goal:private-context-sharing": {
+      "body": "Share only the bounded context needed for a task.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "goal:private-context-sharing",
+      "label": "Private context sharing",
+      "type": "goal"
+    },
+    "goal:public-alpha": {
+      "body": "Publish a useful, fictional demonstration without exposing private memory.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "goal:public-alpha",
+      "label": "Public alpha",
+      "type": "goal"
+    },
     "goal:trusted-ai-assistance": {
       "body": "Make assistant responses easier to verify and continue across sessions.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538803+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "goal:trusted-ai-assistance",
       "label": "Trusted AI assistance",
       "type": "goal"
     },
-    "idea:context-memory": {
-      "body": "AI sessions improve when durable context is stored as concepts instead of loose transcript chunks.",
+    "idea:audited-context-bridge": {
+      "body": "Memory Audit should identify the safest, most relevant concepts for context export.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538800+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:audited-context-bridge",
+      "label": "Audited context bridge",
+      "type": "idea"
+    },
+    "idea:context-memory": {
+      "body": "Durable concepts preserve continuity better than loose transcript chunks.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "idea:context-memory",
       "label": "Context memory",
+      "type": "idea"
+    },
+    "idea:context-packs": {
+      "body": "Export only the cited graph slice needed by another AI tool.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:context-packs",
+      "label": "Context packs",
+      "type": "idea"
+    },
+    "idea:evidence-backfill": {
+      "body": "Central claims should accumulate supporting or challenging evidence over time.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:evidence-backfill",
+      "label": "Evidence backfill",
+      "type": "idea"
+    },
+    "idea:evidence-governance-bridge": {
+      "body": "Evidence quality should influence which memories are promoted and reused.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:evidence-governance-bridge",
+      "label": "Evidence governance bridge",
+      "type": "idea"
+    },
+    "idea:human-promotion-loop": {
+      "body": "AI proposes memory changes and a person decides what becomes durable.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:human-promotion-loop",
+      "label": "Human promotion loop",
+      "type": "idea"
+    },
+    "idea:local-first-storage": {
+      "body": "Keep the canonical graph in files controlled by the owner.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:local-first-storage",
+      "label": "Local-first storage",
+      "type": "idea"
+    },
+    "idea:memory-audit": {
+      "body": "Ranked graph analytics make important, bridging, and weak memory inspectable.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:memory-audit",
+      "label": "Memory Audit",
+      "type": "idea"
+    },
+    "idea:privacy-boundary": {
+      "body": "Public infrastructure and private memory should remain separate.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:privacy-boundary",
+      "label": "Explicit privacy boundary",
       "type": "idea"
     },
     "idea:provenance-first": {
       "body": "Every durable claim should point back to source evidence.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538802+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "idea:provenance-first",
       "label": "Provenance first",
+      "type": "idea"
+    },
+    "idea:reviewable-research": {
+      "body": "Research synthesis should retain claims, sources, and uncertainty.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:reviewable-research",
+      "label": "Reviewable research memory",
+      "type": "idea"
+    },
+    "idea:typed-relationships": {
+      "body": "Named edges preserve why concepts are connected.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "idea:typed-relationships",
+      "label": "Typed relationships",
       "type": "idea"
     },
     "person:demo-owner": {
       "body": "A fictional graph owner used only for public examples.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538798+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "person:demo-owner",
       "label": "Demo Owner",
       "type": "person"
     },
-    "project:knowledge-worker": {
-      "body": "A local-first toolkit for source-backed AI memory.",
+    "project:launch-demo": {
+      "body": "A public-safe demonstration of memory governance workflows.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538799+00:00",
-      "id": "project:knowledge-worker",
-      "label": "knowledge-worker",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "project:launch-demo",
+      "label": "Public Launch Demo",
       "type": "project"
     },
-    "question:storage-backend": {
-      "body": "Open question: keep JSON until size or concurrency makes it awkward.",
+    "project:memory-workbench": {
+      "body": "A local toolkit for reviewed, source-backed AI memory.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538804+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "project:memory-workbench",
+      "label": "Memory Workbench",
+      "type": "project"
+    },
+    "project:research-assistant": {
+      "body": "A fictional assistant that keeps claims connected to evidence.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "project:research-assistant",
+      "label": "Research Assistant",
+      "type": "project"
+    },
+    "question:launch-signal": {
+      "body": "Measure substantive conversations and repository interest after launch.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "question:launch-signal",
+      "label": "What proves the public demo is useful?",
+      "type": "question"
+    },
+    "question:storage-backend": {
+      "body": "Keep JSON until size or concurrency makes a database necessary.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "question:storage-backend",
       "label": "When should storage move beyond JSON?",
       "type": "question"
@@ -271,41 +1215,137 @@
     "reference:coggrag": {
       "body": "A public reference about cognition-inspired graph retrieval.",
       "confidence": "medium",
-      "created_at": "2026-05-26T00:04:21.538808+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "reference:coggrag",
       "label": "CogGRAG",
       "type": "reference"
     },
-    "source:architecture-note": {
-      "body": "Fictional architecture note for the public demo graph.",
+    "reference:hipporag": {
+      "body": "A public reference about associative graph memory for language models.",
+      "confidence": "medium",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "reference:hipporag",
+      "label": "HippoRAG",
+      "type": "reference"
+    },
+    "reference:local-first": {
+      "body": "A public reference for software that prioritizes local data ownership.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538796+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "reference:local-first",
+      "label": "Local-first software",
+      "type": "reference"
+    },
+    "reference:pagerank": {
+      "body": "A public reference for ranking nodes using graph link structure.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "reference:pagerank",
+      "label": "PageRank",
+      "type": "reference"
+    },
+    "reference:rdf": {
+      "body": "A public standard for representing graph statements.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "reference:rdf",
+      "label": "RDF 1.1 Concepts",
+      "type": "reference"
+    },
+    "source:architecture-note": {
+      "body": "Fictional architecture note for JSON storage, RDF export, and typed graph structure. Candidate: local storage may support reviewable research.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "source:architecture-note",
       "label": "architecture-note.md",
       "type": "source"
     },
-    "source:demo-notes": {
-      "body": "Fictional project notes used to demonstrate provenance-backed memory.",
+    "source:launch-plan": {
+      "body": "Fictional public-alpha plan centered on ranked memory audit output. Candidate: typed relationships may clarify privacy boundaries.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538646+00:00",
-      "id": "source:demo-notes",
-      "label": "demo-notes.md",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "source:launch-plan",
+      "label": "launch-plan.md",
       "type": "source"
     },
-    "topic:knowledge-graphs": {
-      "body": "Structured concepts and relationships for durable context.",
+    "source:privacy-review": {
+      "body": "Fictional privacy review for local storage and scoped context sharing.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538806+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "source:privacy-review",
+      "label": "privacy-review.md",
+      "type": "source"
+    },
+    "source:product-brief": {
+      "body": "Fictional brief for reviewable, provenance-backed memory.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "source:product-brief",
+      "label": "product-brief.md",
+      "type": "source"
+    },
+    "source:research-notes": {
+      "body": "Fictional research notes connecting evidence, typed relationships, and retrieval.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "source:research-notes",
+      "label": "research-notes.md",
+      "type": "source"
+    },
+    "source:user-interviews": {
+      "body": "Fictional interview synthesis about continuity across AI sessions. Candidate: evidence-backed packs may improve handoffs.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "source:user-interviews",
+      "label": "user-interviews.md",
+      "type": "source"
+    },
+    "topic:context-governance": {
+      "body": "Rules for deciding what memory another tool should receive.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "topic:context-governance",
+      "label": "Context governance",
+      "type": "topic"
+    },
+    "topic:graph-analytics": {
+      "body": "Network measures for importance, bridges, communities, and weak claims.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "topic:graph-analytics",
+      "label": "Graph analytics",
+      "type": "topic"
+    },
+    "topic:knowledge-graphs": {
+      "body": "Structured concepts and typed relationships.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "topic:knowledge-graphs",
       "label": "Knowledge graphs",
       "type": "topic"
     },
     "topic:local-first": {
-      "body": "Software that keeps user data local unless the owner chooses otherwise.",
+      "body": "Software that keeps user data under local control.",
       "confidence": "high",
-      "created_at": "2026-05-26T00:04:21.538807+00:00",
+      "created_at": "2026-06-09T12:00:00+00:00",
       "id": "topic:local-first",
       "label": "Local-first software",
+      "type": "topic"
+    },
+    "topic:provenance": {
+      "body": "Traceability from durable claims back to source excerpts.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "topic:provenance",
+      "label": "Provenance",
+      "type": "topic"
+    },
+    "topic:research-workflow": {
+      "body": "Processes for collecting, testing, and revising evidence.",
+      "confidence": "high",
+      "created_at": "2026-06-09T12:00:00+00:00",
+      "id": "topic:research-workflow",
+      "label": "Research workflow",
       "type": "topic"
     }
   }

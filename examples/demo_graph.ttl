@@ -6,418 +6,1684 @@
 
 <http://mygraph.local/_assertion/0> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538813+00:00" ;
-    rb:dstId "source:demo-notes" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:product-brief" ;
     rb:edgeType "MENTIONED_IN" ;
-    rb:excerpt "The demo owner wants assistant memory that survives across sessions." ;
-    rb:lastSeen "2026-05-26T00:04:21.538814+00:00" ;
-    rb:sourceId "source:demo-notes" ;
+    rb:excerpt "The fictional demo owner wants memory that can be reviewed before reuse." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
     rb:srcId "person:demo-owner" ;
-    rdf:object <http://mygraph.local/source/demo-notes> ;
+    rdf:object <http://mygraph.local/source/product-brief> ;
     rdf:predicate rb:MENTIONED_IN ;
     rdf:subject <http://mygraph.local/person/demo-owner> .
 
 <http://mygraph.local/_assertion/1> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538817+00:00" ;
-    rb:dstId "source:demo-notes" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:product-brief" ;
     rb:edgeType "MENTIONED_IN" ;
-    rb:excerpt "Build a local-first toolkit for source-backed AI memory." ;
-    rb:lastSeen "2026-05-26T00:04:21.538818+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "project:knowledge-worker" ;
-    rdf:object <http://mygraph.local/source/demo-notes> ;
+    rb:excerpt "Build a local workbench for reviewed, source-backed memory." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "project:memory-workbench" ;
+    rdf:object <http://mygraph.local/source/product-brief> ;
     rdf:predicate rb:MENTIONED_IN ;
-    rdf:subject <http://mygraph.local/project/knowledge-worker> .
+    rdf:subject <http://mygraph.local/project/memory-workbench> .
 
 <http://mygraph.local/_assertion/10> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538839+00:00" ;
-    rb:dstId "idea:context-memory" ;
-    rb:edgeType "HAS_IDEA" ;
-    rb:lastSeen "2026-05-26T00:04:21.538840+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "person:demo-owner" ;
-    rdf:object <http://mygraph.local/idea/context-memory> ;
-    rdf:predicate rb:HAS_IDEA ;
-    rdf:subject <http://mygraph.local/person/demo-owner> .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:product-brief" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Every durable claim requires a source identifier and literal excerpt." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "decision:provenance-required" ;
+    rdf:object <http://mygraph.local/source/product-brief> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/decision/provenance-required> .
 
 <http://mygraph.local/_assertion/11> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538842+00:00" ;
-    rb:dstId "idea:provenance-first" ;
-    rb:edgeType "HAS_IDEA" ;
-    rb:lastSeen "2026-05-26T00:04:21.538842+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "person:demo-owner" ;
-    rdf:object <http://mygraph.local/idea/provenance-first> ;
-    rdf:predicate rb:HAS_IDEA ;
-    rdf:subject <http://mygraph.local/person/demo-owner> .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Export a bounded context slice instead of the whole private graph." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "decision:scoped-exports" ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/decision/scoped-exports> .
 
 <http://mygraph.local/_assertion/12> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538844+00:00" ;
-    rb:dstId "goal:trusted-ai-assistance" ;
-    rb:edgeType "SERVES" ;
-    rb:lastSeen "2026-05-26T00:04:21.538845+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "project:knowledge-worker" ;
-    rdf:object <http://mygraph.local/goal/trusted-ai-assistance> ;
-    rdf:predicate rb:SERVES ;
-    rdf:subject <http://mygraph.local/project/knowledge-worker> .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:launch-plan" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Lead the demo with ranked audit panels before the graph canvas." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "decision:ranked-audit-first" ;
+    rdf:object <http://mygraph.local/source/launch-plan> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/decision/ranked-audit-first> .
 
 <http://mygraph.local/_assertion/13> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538847+00:00" ;
-    rb:dstId "topic:knowledge-graphs" ;
-    rb:edgeType "INVOLVES" ;
-    rb:lastSeen "2026-05-26T00:04:21.538848+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "project:knowledge-worker" ;
-    rdf:object <http://mygraph.local/topic/knowledge-graphs> ;
-    rdf:predicate rb:INVOLVES ;
-    rdf:subject <http://mygraph.local/project/knowledge-worker> .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Keep private graph data local unless the owner explicitly exports it." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "decision:local-default" ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/decision/local-default> .
 
 <http://mygraph.local/_assertion/14> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538850+00:00" ;
-    rb:dstId "topic:local-first" ;
-    rb:edgeType "INVOLVES" ;
-    rb:lastSeen "2026-05-26T00:04:21.538851+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "project:knowledge-worker" ;
-    rdf:object <http://mygraph.local/topic/local-first> ;
-    rdf:predicate rb:INVOLVES ;
-    rdf:subject <http://mygraph.local/project/knowledge-worker> .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:architecture-note" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Defer SQL storage until JSON becomes the limiting factor." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "decision:defer-sql" ;
+    rdf:object <http://mygraph.local/source/architecture-note> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/decision/defer-sql> .
 
 <http://mygraph.local/_assertion/15> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538852+00:00" ;
-    rb:dstId "topic:knowledge-graphs" ;
-    rb:edgeType "RELATES_TO" ;
-    rb:lastSeen "2026-05-26T00:04:21.538853+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "idea:context-memory" ;
-    rdf:object <http://mygraph.local/topic/knowledge-graphs> ;
-    rdf:predicate rb:RELATES_TO ;
-    rdf:subject <http://mygraph.local/idea/context-memory> .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:launch-plan" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Use fictional data for every committed public demo artifact." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "decision:fictional-demo-only" ;
+    rdf:object <http://mygraph.local/source/launch-plan> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/decision/fictional-demo-only> .
 
 <http://mygraph.local/_assertion/16> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538855+00:00" ;
-    rb:dstId "goal:trusted-ai-assistance" ;
-    rb:edgeType "SERVES" ;
-    rb:lastSeen "2026-05-26T00:04:21.538856+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "idea:provenance-first" ;
-    rdf:object <http://mygraph.local/goal/trusted-ai-assistance> ;
-    rdf:predicate rb:SERVES ;
-    rdf:subject <http://mygraph.local/idea/provenance-first> .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:user-interviews" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Durable concepts preserve continuity better than loose transcript chunks." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:user-interviews" ;
+    rb:srcId "idea:context-memory" ;
+    rdf:object <http://mygraph.local/source/user-interviews> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/context-memory> .
 
 <http://mygraph.local/_assertion/17> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538858+00:00" ;
-    rb:dstId "idea:provenance-first" ;
-    rb:edgeType "ENABLED_BY" ;
-    rb:lastSeen "2026-05-26T00:04:21.538859+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "goal:trusted-ai-assistance" ;
-    rdf:object <http://mygraph.local/idea/provenance-first> ;
-    rdf:predicate rb:ENABLED_BY ;
-    rdf:subject <http://mygraph.local/goal/trusted-ai-assistance> .
-
-<http://mygraph.local/_assertion/18> a rb:Assertion ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538861+00:00" ;
-    rb:dstId "idea:context-memory" ;
-    rb:edgeType "ENABLED_BY" ;
-    rb:lastSeen "2026-05-26T00:04:21.538861+00:00" ;
-    rb:sourceId "source:architecture-note" ;
-    rb:srcId "decision:json-first" ;
-    rdf:object <http://mygraph.local/idea/context-memory> ;
-    rdf:predicate rb:ENABLED_BY ;
-    rdf:subject <http://mygraph.local/decision/json-first> .
-
-<http://mygraph.local/_assertion/19> a rb:Assertion ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538863+00:00" ;
-    rb:dstId "question:storage-backend" ;
-    rb:edgeType "ABOUT" ;
-    rb:lastSeen "2026-05-26T00:04:21.538864+00:00" ;
-    rb:sourceId "source:architecture-note" ;
-    rb:srcId "decision:json-first" ;
-    rdf:object <http://mygraph.local/question/storage-backend> ;
-    rdf:predicate rb:ABOUT ;
-    rdf:subject <http://mygraph.local/decision/json-first> .
-
-<http://mygraph.local/_assertion/2> a rb:Assertion ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538821+00:00" ;
-    rb:dstId "source:demo-notes" ;
-    rb:edgeType "MENTIONED_IN" ;
-    rb:excerpt "Store durable concepts instead of loose transcript chunks." ;
-    rb:lastSeen "2026-05-26T00:04:21.538821+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "idea:context-memory" ;
-    rdf:object <http://mygraph.local/source/demo-notes> ;
-    rdf:predicate rb:MENTIONED_IN ;
-    rdf:subject <http://mygraph.local/idea/context-memory> .
-
-<http://mygraph.local/_assertion/20> a rb:Assertion ;
-    rb:confidence "medium" ;
-    rb:createdAt "2026-05-26T00:04:21.538867+00:00" ;
-    rb:dstId "reference:coggrag" ;
-    rb:edgeType "SUPPORTED_BY" ;
-    rb:excerpt "CogGRAG is a public reference for graph retrieval." ;
-    rb:lastSeen "2026-05-26T00:04:21.538867+00:00" ;
-    rb:sourceId "source:architecture-note" ;
-    rb:srcId "idea:context-memory" ;
-    rdf:object <http://mygraph.local/reference/coggrag> ;
-    rdf:predicate rb:SUPPORTED_BY ;
-    rdf:subject <http://mygraph.local/idea/context-memory> .
-
-<http://mygraph.local/_assertion/3> a rb:Assertion ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538823+00:00" ;
-    rb:dstId "source:demo-notes" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:product-brief" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "Every durable claim needs source evidence." ;
-    rb:lastSeen "2026-05-26T00:04:21.538824+00:00" ;
-    rb:sourceId "source:demo-notes" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
     rb:srcId "idea:provenance-first" ;
-    rdf:object <http://mygraph.local/source/demo-notes> ;
+    rdf:object <http://mygraph.local/source/product-brief> ;
     rdf:predicate rb:MENTIONED_IN ;
     rdf:subject <http://mygraph.local/idea/provenance-first> .
 
-<http://mygraph.local/_assertion/4> a rb:Assertion ;
+<http://mygraph.local/_assertion/18> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538825+00:00" ;
-    rb:dstId "source:demo-notes" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:product-brief" ;
     rb:edgeType "MENTIONED_IN" ;
-    rb:excerpt "Make assistant responses easier to verify and continue." ;
-    rb:lastSeen "2026-05-26T00:04:21.538826+00:00" ;
-    rb:sourceId "source:demo-notes" ;
-    rb:srcId "goal:trusted-ai-assistance" ;
-    rdf:object <http://mygraph.local/source/demo-notes> ;
+    rb:excerpt "AI proposes memory changes and a person decides what becomes durable." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:human-promotion-loop" ;
+    rdf:object <http://mygraph.local/source/product-brief> ;
     rdf:predicate rb:MENTIONED_IN ;
-    rdf:subject <http://mygraph.local/goal/trusted-ai-assistance> .
+    rdf:subject <http://mygraph.local/idea/human-promotion-loop> .
 
-<http://mygraph.local/_assertion/5> a rb:Assertion ;
+<http://mygraph.local/_assertion/19> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538827+00:00" ;
-    rb:dstId "source:demo-notes" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:launch-plan" ;
     rb:edgeType "MENTIONED_IN" ;
-    rb:excerpt "Use a graph of concepts and relationships." ;
-    rb:lastSeen "2026-05-26T00:04:21.538828+00:00" ;
-    rb:sourceId "source:demo-notes" ;
+    rb:excerpt "Rank important concepts, bridge ideas, weak claims, and proof trails." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "idea:memory-audit" ;
+    rdf:object <http://mygraph.local/source/launch-plan> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/memory-audit> .
+
+<http://mygraph.local/_assertion/2> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "The research assistant should keep claims connected to evidence." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "project:research-assistant" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/project/research-assistant> .
+
+<http://mygraph.local/_assertion/20> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Export only the cited graph slice needed by another AI tool." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "idea:context-packs" ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/context-packs> .
+
+<http://mygraph.local/_assertion/21> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Keep the canonical graph in files controlled by the owner." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "idea:local-first-storage" ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/local-first-storage> .
+
+<http://mygraph.local/_assertion/22> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Named edges preserve why research concepts are connected." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:typed-relationships" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/typed-relationships> .
+
+<http://mygraph.local/_assertion/23> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Central claims should accumulate supporting or challenging evidence over time." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:evidence-backfill" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/evidence-backfill> .
+
+<http://mygraph.local/_assertion/24> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Public infrastructure and private memory must remain separate." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "idea:privacy-boundary" ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/privacy-boundary> .
+
+<http://mygraph.local/_assertion/25> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Research synthesis should retain claims, sources, and uncertainty." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:reviewable-research" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/reviewable-research> .
+
+<http://mygraph.local/_assertion/26> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:product-brief" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Use Memory Audit to identify safe, relevant concepts for context export." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:audited-context-bridge" ;
+    rdf:object <http://mygraph.local/source/product-brief> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/audited-context-bridge> .
+
+<http://mygraph.local/_assertion/27> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Evidence quality should influence which memories are promoted and reused." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:evidence-governance-bridge" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/idea/evidence-governance-bridge> .
+
+<http://mygraph.local/_assertion/28> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "CogGRAG is a public reference for cognition-inspired graph retrieval." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "reference:coggrag" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/reference/coggrag> .
+
+<http://mygraph.local/_assertion/29> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "HippoRAG is a public reference for associative graph memory." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "reference:hipporag" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/reference/hipporag> .
+
+<http://mygraph.local/_assertion/3> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:launch-plan" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Publish a public-safe demonstration using fictional graph data." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "project:launch-demo" ;
+    rdf:object <http://mygraph.local/source/launch-plan> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/project/launch-demo> .
+
+<http://mygraph.local/_assertion/30> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:architecture-note" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "RDF 1.1 defines a standard model for graph statements." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "reference:rdf" ;
+    rdf:object <http://mygraph.local/source/architecture-note> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/reference/rdf> .
+
+<http://mygraph.local/_assertion/31> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Local-first software prioritizes local data ownership." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "reference:local-first" ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/reference/local-first> .
+
+<http://mygraph.local/_assertion/32> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:launch-plan" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "PageRank ranks nodes using graph link structure." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "reference:pagerank" ;
+    rdf:object <http://mygraph.local/source/launch-plan> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/reference/pagerank> .
+
+<http://mygraph.local/_assertion/33> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:architecture-note" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Use structured concepts and typed relationships." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:architecture-note" ;
     rb:srcId "topic:knowledge-graphs" ;
-    rdf:object <http://mygraph.local/source/demo-notes> ;
+    rdf:object <http://mygraph.local/source/architecture-note> ;
     rdf:predicate rb:MENTIONED_IN ;
     rdf:subject <http://mygraph.local/topic/knowledge-graphs> .
 
-<http://mygraph.local/_assertion/6> a rb:Assertion ;
+<http://mygraph.local/_assertion/34> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538829+00:00" ;
-    rb:dstId "source:demo-notes" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
     rb:edgeType "MENTIONED_IN" ;
-    rb:excerpt "Keep owner data local unless explicitly exported." ;
-    rb:lastSeen "2026-05-26T00:04:21.538830+00:00" ;
-    rb:sourceId "source:demo-notes" ;
+    rb:excerpt "Keep user data under local control." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
     rb:srcId "topic:local-first" ;
-    rdf:object <http://mygraph.local/source/demo-notes> ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
     rdf:predicate rb:MENTIONED_IN ;
     rdf:subject <http://mygraph.local/topic/local-first> .
 
-<http://mygraph.local/_assertion/7> a rb:Assertion ;
+<http://mygraph.local/_assertion/35> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538832+00:00" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:product-brief" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Trace durable claims back to source excerpts." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "topic:provenance" ;
+    rdf:object <http://mygraph.local/source/product-brief> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/topic/provenance> .
+
+<http://mygraph.local/_assertion/36> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Collect, test, and revise evidence over time." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "topic:research-workflow" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/topic/research-workflow> .
+
+<http://mygraph.local/_assertion/37> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:launch-plan" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Use network measures for importance, bridges, communities, and weak claims." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "topic:graph-analytics" ;
+    rdf:object <http://mygraph.local/source/launch-plan> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/topic/graph-analytics> .
+
+<http://mygraph.local/_assertion/38> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Decide what memory another tool should receive." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "topic:context-governance" ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/topic/context-governance> .
+
+<http://mygraph.local/_assertion/39> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
     rb:dstId "source:architecture-note" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "When should storage move beyond JSON?" ;
-    rb:lastSeen "2026-05-26T00:04:21.538833+00:00" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
     rb:sourceId "source:architecture-note" ;
     rb:srcId "question:storage-backend" ;
     rdf:object <http://mygraph.local/source/architecture-note> ;
     rdf:predicate rb:MENTIONED_IN ;
     rdf:subject <http://mygraph.local/question/storage-backend> .
 
+<http://mygraph.local/_assertion/4> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:user-interviews" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "People want AI sessions to continue without losing the reasoning behind prior work." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:user-interviews" ;
+    rb:srcId "goal:trusted-ai-assistance" ;
+    rdf:object <http://mygraph.local/source/user-interviews> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/goal/trusted-ai-assistance> .
+
+<http://mygraph.local/_assertion/40> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:launch-plan" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "What proves the public demo is useful?" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "question:launch-signal" ;
+    rdf:object <http://mygraph.local/source/launch-plan> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/question/launch-signal> .
+
+<http://mygraph.local/_assertion/41> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:context-memory" ;
+    rb:edgeType "HAS_IDEA" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:user-interviews" ;
+    rb:srcId "person:demo-owner" ;
+    rdf:object <http://mygraph.local/idea/context-memory> ;
+    rdf:predicate rb:HAS_IDEA ;
+    rdf:subject <http://mygraph.local/person/demo-owner> .
+
+<http://mygraph.local/_assertion/42> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:provenance-first" ;
+    rb:edgeType "HAS_IDEA" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "person:demo-owner" ;
+    rdf:object <http://mygraph.local/idea/provenance-first> ;
+    rdf:predicate rb:HAS_IDEA ;
+    rdf:subject <http://mygraph.local/person/demo-owner> .
+
+<http://mygraph.local/_assertion/43> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:memory-audit" ;
+    rb:edgeType "HAS_IDEA" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "person:demo-owner" ;
+    rdf:object <http://mygraph.local/idea/memory-audit> ;
+    rdf:predicate rb:HAS_IDEA ;
+    rdf:subject <http://mygraph.local/person/demo-owner> .
+
+<http://mygraph.local/_assertion/44> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:context-packs" ;
+    rb:edgeType "HAS_IDEA" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "person:demo-owner" ;
+    rdf:object <http://mygraph.local/idea/context-packs> ;
+    rdf:predicate rb:HAS_IDEA ;
+    rdf:subject <http://mygraph.local/person/demo-owner> .
+
+<http://mygraph.local/_assertion/45> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:trusted-ai-assistance" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "project:memory-workbench" ;
+    rdf:object <http://mygraph.local/goal/trusted-ai-assistance> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/project/memory-workbench> .
+
+<http://mygraph.local/_assertion/46> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:private-context-sharing" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "project:memory-workbench" ;
+    rdf:object <http://mygraph.local/goal/private-context-sharing> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/project/memory-workbench> .
+
+<http://mygraph.local/_assertion/47> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:evidence-backed-research" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "project:research-assistant" ;
+    rdf:object <http://mygraph.local/goal/evidence-backed-research> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/project/research-assistant> .
+
+<http://mygraph.local/_assertion/48> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:public-alpha" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "project:launch-demo" ;
+    rdf:object <http://mygraph.local/goal/public-alpha> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/project/launch-demo> .
+
+<http://mygraph.local/_assertion/49> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:provenance" ;
+    rb:edgeType "INVOLVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "project:memory-workbench" ;
+    rdf:object <http://mygraph.local/topic/provenance> ;
+    rdf:predicate rb:INVOLVES ;
+    rdf:subject <http://mygraph.local/project/memory-workbench> .
+
+<http://mygraph.local/_assertion/5> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:privacy-review" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Share only the bounded context needed for the current task." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "goal:private-context-sharing" ;
+    rdf:object <http://mygraph.local/source/privacy-review> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/goal/private-context-sharing> .
+
+<http://mygraph.local/_assertion/50> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:context-governance" ;
+    rb:edgeType "INVOLVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "project:memory-workbench" ;
+    rdf:object <http://mygraph.local/topic/context-governance> ;
+    rdf:predicate rb:INVOLVES ;
+    rdf:subject <http://mygraph.local/project/memory-workbench> .
+
+<http://mygraph.local/_assertion/51> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:research-workflow" ;
+    rb:edgeType "INVOLVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "project:research-assistant" ;
+    rdf:object <http://mygraph.local/topic/research-workflow> ;
+    rdf:predicate rb:INVOLVES ;
+    rdf:subject <http://mygraph.local/project/research-assistant> .
+
+<http://mygraph.local/_assertion/52> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:graph-analytics" ;
+    rb:edgeType "INVOLVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "project:launch-demo" ;
+    rdf:object <http://mygraph.local/topic/graph-analytics> ;
+    rdf:predicate rb:INVOLVES ;
+    rdf:subject <http://mygraph.local/project/launch-demo> .
+
+<http://mygraph.local/_assertion/53> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:knowledge-graphs" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:user-interviews" ;
+    rb:srcId "idea:context-memory" ;
+    rdf:object <http://mygraph.local/topic/knowledge-graphs> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/context-memory> .
+
+<http://mygraph.local/_assertion/54> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:provenance" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:provenance-first" ;
+    rdf:object <http://mygraph.local/topic/provenance> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/provenance-first> .
+
+<http://mygraph.local/_assertion/55> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:provenance" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:human-promotion-loop" ;
+    rdf:object <http://mygraph.local/topic/provenance> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/human-promotion-loop> .
+
+<http://mygraph.local/_assertion/56> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:graph-analytics" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "idea:memory-audit" ;
+    rdf:object <http://mygraph.local/topic/graph-analytics> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/memory-audit> .
+
+<http://mygraph.local/_assertion/57> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:context-governance" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "idea:context-packs" ;
+    rdf:object <http://mygraph.local/topic/context-governance> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/context-packs> .
+
+<http://mygraph.local/_assertion/58> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:local-first" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "idea:local-first-storage" ;
+    rdf:object <http://mygraph.local/topic/local-first> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/local-first-storage> .
+
+<http://mygraph.local/_assertion/59> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:knowledge-graphs" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:typed-relationships" ;
+    rdf:object <http://mygraph.local/topic/knowledge-graphs> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/typed-relationships> .
+
+<http://mygraph.local/_assertion/6> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:research-notes" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Research claims should remain connected to supporting and challenging evidence." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "goal:evidence-backed-research" ;
+    rdf:object <http://mygraph.local/source/research-notes> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/goal/evidence-backed-research> .
+
+<http://mygraph.local/_assertion/60> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:research-workflow" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:evidence-backfill" ;
+    rdf:object <http://mygraph.local/topic/research-workflow> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/evidence-backfill> .
+
+<http://mygraph.local/_assertion/61> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:context-governance" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "idea:privacy-boundary" ;
+    rdf:object <http://mygraph.local/topic/context-governance> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/privacy-boundary> .
+
+<http://mygraph.local/_assertion/62> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "topic:research-workflow" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:reviewable-research" ;
+    rdf:object <http://mygraph.local/topic/research-workflow> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/reviewable-research> .
+
+<http://mygraph.local/_assertion/63> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:trusted-ai-assistance" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:provenance-first" ;
+    rdf:object <http://mygraph.local/goal/trusted-ai-assistance> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/idea/provenance-first> .
+
+<http://mygraph.local/_assertion/64> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:provenance-first" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "goal:trusted-ai-assistance" ;
+    rdf:object <http://mygraph.local/idea/provenance-first> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/goal/trusted-ai-assistance> .
+
+<http://mygraph.local/_assertion/65> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:trusted-ai-assistance" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:human-promotion-loop" ;
+    rdf:object <http://mygraph.local/goal/trusted-ai-assistance> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/idea/human-promotion-loop> .
+
+<http://mygraph.local/_assertion/66> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:human-promotion-loop" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "goal:trusted-ai-assistance" ;
+    rdf:object <http://mygraph.local/idea/human-promotion-loop> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/goal/trusted-ai-assistance> .
+
+<http://mygraph.local/_assertion/67> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:private-context-sharing" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "idea:context-packs" ;
+    rdf:object <http://mygraph.local/goal/private-context-sharing> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/idea/context-packs> .
+
+<http://mygraph.local/_assertion/68> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:context-packs" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "goal:private-context-sharing" ;
+    rdf:object <http://mygraph.local/idea/context-packs> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/goal/private-context-sharing> .
+
+<http://mygraph.local/_assertion/69> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:evidence-backed-research" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:evidence-backfill" ;
+    rdf:object <http://mygraph.local/goal/evidence-backed-research> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/idea/evidence-backfill> .
+
+<http://mygraph.local/_assertion/7> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:launch-plan" ;
+    rb:edgeType "MENTIONED_IN" ;
+    rb:excerpt "Ship a useful public alpha without exposing private memory." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "goal:public-alpha" ;
+    rdf:object <http://mygraph.local/source/launch-plan> ;
+    rdf:predicate rb:MENTIONED_IN ;
+    rdf:subject <http://mygraph.local/goal/public-alpha> .
+
+<http://mygraph.local/_assertion/70> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:evidence-backfill" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "goal:evidence-backed-research" ;
+    rdf:object <http://mygraph.local/idea/evidence-backfill> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/goal/evidence-backed-research> .
+
+<http://mygraph.local/_assertion/71> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:public-alpha" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "idea:memory-audit" ;
+    rdf:object <http://mygraph.local/goal/public-alpha> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/idea/memory-audit> .
+
+<http://mygraph.local/_assertion/72> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:memory-audit" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "goal:public-alpha" ;
+    rdf:object <http://mygraph.local/idea/memory-audit> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/goal/public-alpha> .
+
+<http://mygraph.local/_assertion/73> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:human-promotion-loop" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "decision:review-before-merge" ;
+    rdf:object <http://mygraph.local/idea/human-promotion-loop> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/review-before-merge> .
+
+<http://mygraph.local/_assertion/74> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:provenance-first" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "decision:provenance-required" ;
+    rdf:object <http://mygraph.local/idea/provenance-first> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/provenance-required> .
+
+<http://mygraph.local/_assertion/75> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:context-packs" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "decision:scoped-exports" ;
+    rdf:object <http://mygraph.local/idea/context-packs> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/scoped-exports> .
+
+<http://mygraph.local/_assertion/76> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:memory-audit" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "decision:ranked-audit-first" ;
+    rdf:object <http://mygraph.local/idea/memory-audit> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/ranked-audit-first> .
+
+<http://mygraph.local/_assertion/77> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:local-first-storage" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "decision:local-default" ;
+    rdf:object <http://mygraph.local/idea/local-first-storage> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/local-default> .
+
+<http://mygraph.local/_assertion/78> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:local-first-storage" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "decision:json-first" ;
+    rdf:object <http://mygraph.local/idea/local-first-storage> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/json-first> .
+
+<http://mygraph.local/_assertion/79> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:local-first-storage" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "decision:defer-sql" ;
+    rdf:object <http://mygraph.local/idea/local-first-storage> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/defer-sql> .
+
 <http://mygraph.local/_assertion/8> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538834+00:00" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
     rb:dstId "source:architecture-note" ;
     rb:edgeType "MENTIONED_IN" ;
-    rb:excerpt "Use JSON first; add a database only when needed." ;
-    rb:lastSeen "2026-05-26T00:04:21.538835+00:00" ;
+    rb:excerpt "Use JSON first; add a database only when size or concurrency requires it." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
     rb:sourceId "source:architecture-note" ;
     rb:srcId "decision:json-first" ;
     rdf:object <http://mygraph.local/source/architecture-note> ;
     rdf:predicate rb:MENTIONED_IN ;
     rdf:subject <http://mygraph.local/decision/json-first> .
 
+<http://mygraph.local/_assertion/80> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:privacy-boundary" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "decision:fictional-demo-only" ;
+    rdf:object <http://mygraph.local/idea/privacy-boundary> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/fictional-demo-only> .
+
+<http://mygraph.local/_assertion/81> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "question:storage-backend" ;
+    rb:edgeType "ABOUT" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "decision:json-first" ;
+    rdf:object <http://mygraph.local/question/storage-backend> ;
+    rdf:predicate rb:ABOUT ;
+    rdf:subject <http://mygraph.local/decision/json-first> .
+
+<http://mygraph.local/_assertion/82> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "question:launch-signal" ;
+    rb:edgeType "ABOUT" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "decision:ranked-audit-first" ;
+    rdf:object <http://mygraph.local/question/launch-signal> ;
+    rdf:predicate rb:ABOUT ;
+    rdf:subject <http://mygraph.local/decision/ranked-audit-first> .
+
+<http://mygraph.local/_assertion/83> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "reference:coggrag" ;
+    rb:edgeType "SUPPORTED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:typed-relationships" ;
+    rdf:object <http://mygraph.local/reference/coggrag> ;
+    rdf:predicate rb:SUPPORTED_BY ;
+    rdf:subject <http://mygraph.local/idea/typed-relationships> .
+
+<http://mygraph.local/_assertion/84> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "reference:hipporag" ;
+    rb:edgeType "SUPPORTED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:typed-relationships" ;
+    rdf:object <http://mygraph.local/reference/hipporag> ;
+    rdf:predicate rb:SUPPORTED_BY ;
+    rdf:subject <http://mygraph.local/idea/typed-relationships> .
+
+<http://mygraph.local/_assertion/85> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "reference:local-first" ;
+    rb:edgeType "SUPPORTED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:privacy-review" ;
+    rb:srcId "idea:local-first-storage" ;
+    rdf:object <http://mygraph.local/reference/local-first> ;
+    rdf:predicate rb:SUPPORTED_BY ;
+    rdf:subject <http://mygraph.local/idea/local-first-storage> .
+
+<http://mygraph.local/_assertion/86> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "reference:pagerank" ;
+    rb:edgeType "SUPPORTED_BY" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "idea:memory-audit" ;
+    rdf:object <http://mygraph.local/reference/pagerank> ;
+    rdf:predicate rb:SUPPORTED_BY ;
+    rdf:subject <http://mygraph.local/idea/memory-audit> .
+
+<http://mygraph.local/_assertion/87> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "reference:rdf" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "idea:provenance-first" ;
+    rdf:object <http://mygraph.local/reference/rdf> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/provenance-first> .
+
+<http://mygraph.local/_assertion/88> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:memory-audit" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:audited-context-bridge" ;
+    rdf:object <http://mygraph.local/idea/memory-audit> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/audited-context-bridge> .
+
+<http://mygraph.local/_assertion/89> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:context-packs" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:audited-context-bridge" ;
+    rdf:object <http://mygraph.local/idea/context-packs> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/audited-context-bridge> .
+
 <http://mygraph.local/_assertion/9> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538836+00:00" ;
-    rb:dstId "source:architecture-note" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "source:product-brief" ;
     rb:edgeType "MENTIONED_IN" ;
-    rb:excerpt "CogGRAG is a public reference for graph retrieval." ;
-    rb:lastSeen "2026-05-26T00:04:21.538837+00:00" ;
-    rb:sourceId "source:architecture-note" ;
-    rb:srcId "reference:coggrag" ;
-    rdf:object <http://mygraph.local/source/architecture-note> ;
+    rb:excerpt "A person reviews proposed memory before it becomes durable." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "decision:review-before-merge" ;
+    rdf:object <http://mygraph.local/source/product-brief> ;
     rdf:predicate rb:MENTIONED_IN ;
-    rdf:subject <http://mygraph.local/reference/coggrag> .
+    rdf:subject <http://mygraph.local/decision/review-before-merge> .
+
+<http://mygraph.local/_assertion/90> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:private-context-sharing" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:product-brief" ;
+    rb:srcId "idea:audited-context-bridge" ;
+    rdf:object <http://mygraph.local/goal/private-context-sharing> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/idea/audited-context-bridge> .
+
+<http://mygraph.local/_assertion/91> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:evidence-backfill" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:evidence-governance-bridge" ;
+    rdf:object <http://mygraph.local/idea/evidence-backfill> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/evidence-governance-bridge> .
+
+<http://mygraph.local/_assertion/92> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:provenance-first" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:evidence-governance-bridge" ;
+    rdf:object <http://mygraph.local/idea/provenance-first> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/evidence-governance-bridge> .
+
+<http://mygraph.local/_assertion/93> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "goal:evidence-backed-research" ;
+    rb:edgeType "SERVES" ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:research-notes" ;
+    rb:srcId "idea:evidence-governance-bridge" ;
+    rdf:object <http://mygraph.local/goal/evidence-backed-research> ;
+    rdf:predicate rb:SERVES ;
+    rdf:subject <http://mygraph.local/idea/evidence-governance-bridge> .
+
+<http://mygraph.local/_assertion/94> a rb:Assertion ;
+    rb:confidence "low" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:context-packs" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:excerpt "Candidate: evidence-backed packs may improve handoffs." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:user-interviews" ;
+    rb:srcId "idea:evidence-backfill" ;
+    rdf:object <http://mygraph.local/idea/context-packs> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/evidence-backfill> .
+
+<http://mygraph.local/_assertion/95> a rb:Assertion ;
+    rb:confidence "low" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:reviewable-research" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:excerpt "Candidate: local storage may support reviewable research." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "idea:local-first-storage" ;
+    rdf:object <http://mygraph.local/idea/reviewable-research> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/local-first-storage> .
+
+<http://mygraph.local/_assertion/96> a rb:Assertion ;
+    rb:confidence "low" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:dstId "idea:privacy-boundary" ;
+    rb:edgeType "RELATES_TO" ;
+    rb:excerpt "Candidate: typed relationships may clarify privacy boundaries." ;
+    rb:lastSeen "2026-06-09T12:00:00+00:00" ;
+    rb:sourceId "source:launch-plan" ;
+    rb:srcId "idea:typed-relationships" ;
+    rdf:object <http://mygraph.local/idea/privacy-boundary> ;
+    rdf:predicate rb:RELATES_TO ;
+    rdf:subject <http://mygraph.local/idea/typed-relationships> .
 
 rb:CHALLENGES a owl:ObjectProperty .
 
 rb:MADE_AT a owl:ObjectProperty .
 
-rb:ABOUT a owl:ObjectProperty .
-
-rb:Decision a owl:Class ;
-    rdfs:subClassOf rb:Concept .
-
-rb:Goal a owl:Class ;
-    rdfs:subClassOf rb:Concept .
-
 rb:Person a owl:Class ;
     rdfs:subClassOf rb:Concept .
 
-rb:Project a owl:Class ;
-    rdfs:subClassOf rb:Concept .
+<http://mygraph.local/decision/defer-sql> a rb:Decision ;
+    rdfs:label "Defer SQL storage" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/local-first-storage> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "decision:defer-sql" ;
+    rdfs:comment "Move beyond JSON only when graph size or concurrency requires it." .
+
+<http://mygraph.local/decision/fictional-demo-only> a rb:Decision ;
+    rdfs:label "Use fictional demo data" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/privacy-boundary> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/launch-plan> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "decision:fictional-demo-only" ;
+    rdfs:comment "The public repository must demonstrate behavior without private facts." .
+
+<http://mygraph.local/decision/local-default> a rb:Decision ;
+    rdfs:label "Keep private memory local" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/local-first-storage> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "decision:local-default" ;
+    rdfs:comment "Private graph data stays local unless the owner explicitly exports a slice." .
+
+<http://mygraph.local/decision/provenance-required> a rb:Decision ;
+    rdfs:label "Require provenance" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/provenance-first> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/product-brief> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "decision:provenance-required" ;
+    rdfs:comment "Every durable claim needs a source identifier and literal excerpt." .
+
+<http://mygraph.local/decision/review-before-merge> a rb:Decision ;
+    rdfs:label "Review before merge" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/human-promotion-loop> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/product-brief> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "decision:review-before-merge" ;
+    rdfs:comment "Human approval is required before proposed memory becomes durable." .
+
+<http://mygraph.local/decision/scoped-exports> a rb:Decision ;
+    rdfs:label "Export scoped context" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/context-packs> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "decision:scoped-exports" ;
+    rdfs:comment "Share bounded context packs instead of the full graph." .
+
+rb:ABOUT a owl:ObjectProperty .
 
 rb:Question a owl:Class ;
-    rdfs:subClassOf rb:Concept .
-
-rb:RELATES_TO a owl:ObjectProperty .
-
-rb:Reference a owl:Class ;
-    rdfs:subClassOf rb:Concept .
-
-rb:SUPPORTED_BY a owl:ObjectProperty .
-
-rb:ENABLED_BY a owl:ObjectProperty .
-
-rb:HAS_IDEA a owl:ObjectProperty .
-
-rb:INVOLVES a owl:ObjectProperty .
-
-rb:Idea a owl:Class ;
-    rdfs:subClassOf rb:Concept .
-
-rb:SERVES a owl:ObjectProperty .
-
-rb:Topic a owl:Class ;
     rdfs:subClassOf rb:Concept .
 
 <http://mygraph.local/decision/json-first> a rb:Decision ;
     rdfs:label "Use JSON first" ;
     rb:ABOUT <http://mygraph.local/question/storage-backend> ;
-    rb:ENABLED_BY <http://mygraph.local/idea/context-memory> ;
+    rb:ENABLED_BY <http://mygraph.local/idea/local-first-storage> ;
     rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538805+00:00" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
     rb:nodeId "decision:json-first" ;
-    rdfs:comment "Start with a simple JSON store before introducing a database." .
+    rdfs:comment "Start with a transparent JSON graph before adding database infrastructure." .
 
-<http://mygraph.local/person/demo-owner> a rb:Person ;
-    rdfs:label "Demo Owner" ;
-    rb:HAS_IDEA <http://mygraph.local/idea/context-memory>,
-        <http://mygraph.local/idea/provenance-first> ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
+<http://mygraph.local/decision/ranked-audit-first> a rb:Decision ;
+    rdfs:label "Ranked audit before graph canvas" ;
+    rb:ABOUT <http://mygraph.local/question/launch-signal> ;
+    rb:ENABLED_BY <http://mygraph.local/idea/memory-audit> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/launch-plan> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538798+00:00" ;
-    rb:nodeId "person:demo-owner" ;
-    rdfs:comment "A fictional graph owner used only for public examples." .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "decision:ranked-audit-first" ;
+    rdfs:comment "Lead with important concepts, bridges, weak claims, and proof trails." .
+
+<http://mygraph.local/project/launch-demo> a rb:Project ;
+    rdfs:label "Public Launch Demo" ;
+    rb:INVOLVES <http://mygraph.local/topic/graph-analytics> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/launch-plan> ;
+    rb:SERVES <http://mygraph.local/goal/public-alpha> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "project:launch-demo" ;
+    rdfs:comment "A public-safe demonstration of memory governance workflows." .
+
+<http://mygraph.local/project/research-assistant> a rb:Project ;
+    rdfs:label "Research Assistant" ;
+    rb:INVOLVES <http://mygraph.local/topic/research-workflow> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
+    rb:SERVES <http://mygraph.local/goal/evidence-backed-research> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "project:research-assistant" ;
+    rdfs:comment "A fictional assistant that keeps claims connected to evidence." .
+
+<http://mygraph.local/question/launch-signal> a rb:Question ;
+    rdfs:label "What proves the public demo is useful?" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/launch-plan> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "question:launch-signal" ;
+    rdfs:comment "Measure substantive conversations and repository interest after launch." .
 
 <http://mygraph.local/question/storage-backend> a rb:Question ;
     rdfs:label "When should storage move beyond JSON?" ;
     rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538804+00:00" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
     rb:nodeId "question:storage-backend" ;
-    rdfs:comment "Open question: keep JSON until size or concurrency makes it awkward." .
+    rdfs:comment "Keep JSON until size or concurrency makes a database necessary." .
 
 <http://mygraph.local/reference/coggrag> a rb:Reference ;
     rdfs:label "CogGRAG" ;
-    rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
     rb:confidence "medium" ;
-    rb:createdAt "2026-05-26T00:04:21.538808+00:00" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
     rb:nodeId "reference:coggrag" ;
     rdfs:comment "A public reference about cognition-inspired graph retrieval." .
+
+<http://mygraph.local/reference/hipporag> a rb:Reference ;
+    rdfs:label "HippoRAG" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
+    rb:confidence "medium" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "reference:hipporag" ;
+    rdfs:comment "A public reference about associative graph memory for language models." .
+
+<http://mygraph.local/reference/local-first> a rb:Reference ;
+    rdfs:label "Local-first software" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "reference:local-first" ;
+    rdfs:comment "A public reference for software that prioritizes local data ownership." .
+
+<http://mygraph.local/reference/pagerank> a rb:Reference ;
+    rdfs:label "PageRank" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/launch-plan> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "reference:pagerank" ;
+    rdfs:comment "A public reference for ranking nodes using graph link structure." .
+
+<http://mygraph.local/reference/rdf> a rb:Reference ;
+    rdfs:label "RDF 1.1 Concepts" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "reference:rdf" ;
+    rdfs:comment "A public standard for representing graph statements." .
+
+rb:Project a owl:Class ;
+    rdfs:subClassOf rb:Concept .
+
+<http://mygraph.local/topic/local-first> a rb:Topic ;
+    rdfs:label "Local-first software" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "topic:local-first" ;
+    rdfs:comment "Software that keeps user data under local control." .
+
+<http://mygraph.local/idea/audited-context-bridge> a rb:Idea ;
+    rdfs:label "Audited context bridge" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/product-brief> ;
+    rb:RELATES_TO <http://mygraph.local/idea/context-packs>,
+        <http://mygraph.local/idea/memory-audit> ;
+    rb:SERVES <http://mygraph.local/goal/private-context-sharing> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:audited-context-bridge" ;
+    rdfs:comment "Memory Audit should identify the safest, most relevant concepts for context export." .
+
+<http://mygraph.local/idea/context-memory> a rb:Idea ;
+    rdfs:label "Context memory" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/user-interviews> ;
+    rb:RELATES_TO <http://mygraph.local/topic/knowledge-graphs> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:context-memory" ;
+    rdfs:comment "Durable concepts preserve continuity better than loose transcript chunks." .
+
+<http://mygraph.local/idea/evidence-governance-bridge> a rb:Idea ;
+    rdfs:label "Evidence governance bridge" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
+    rb:RELATES_TO <http://mygraph.local/idea/evidence-backfill>,
+        <http://mygraph.local/idea/provenance-first> ;
+    rb:SERVES <http://mygraph.local/goal/evidence-backed-research> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:evidence-governance-bridge" ;
+    rdfs:comment "Evidence quality should influence which memories are promoted and reused." .
+
+<http://mygraph.local/idea/reviewable-research> a rb:Idea ;
+    rdfs:label "Reviewable research memory" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
+    rb:RELATES_TO <http://mygraph.local/topic/research-workflow> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:reviewable-research" ;
+    rdfs:comment "Research synthesis should retain claims, sources, and uncertainty." .
+
+rb:Goal a owl:Class ;
+    rdfs:subClassOf rb:Concept .
+
+rb:HAS_IDEA a owl:ObjectProperty .
+
+rb:INVOLVES a owl:ObjectProperty .
+
+rb:SUPPORTED_BY a owl:ObjectProperty .
+
+<http://mygraph.local/source/user-interviews> a rb:Source ;
+    rdfs:label "user-interviews.md" ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "source:user-interviews" ;
+    rdfs:comment "Fictional interview synthesis about continuity across AI sessions. Candidate: evidence-backed packs may improve handoffs." .
+
+<http://mygraph.local/idea/typed-relationships> a rb:Idea ;
+    rdfs:label "Typed relationships" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
+    rb:RELATES_TO <http://mygraph.local/idea/privacy-boundary>,
+        <http://mygraph.local/topic/knowledge-graphs> ;
+    rb:SUPPORTED_BY <http://mygraph.local/reference/coggrag>,
+        <http://mygraph.local/reference/hipporag> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:typed-relationships" ;
+    rdfs:comment "Named edges preserve why concepts are connected." .
+
+<http://mygraph.local/person/demo-owner> a rb:Person ;
+    rdfs:label "Demo Owner" ;
+    rb:HAS_IDEA <http://mygraph.local/idea/context-memory>,
+        <http://mygraph.local/idea/context-packs>,
+        <http://mygraph.local/idea/memory-audit>,
+        <http://mygraph.local/idea/provenance-first> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/product-brief> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "person:demo-owner" ;
+    rdfs:comment "A fictional graph owner used only for public examples." .
+
+<http://mygraph.local/project/memory-workbench> a rb:Project ;
+    rdfs:label "Memory Workbench" ;
+    rb:INVOLVES <http://mygraph.local/topic/context-governance>,
+        <http://mygraph.local/topic/provenance> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/product-brief> ;
+    rb:SERVES <http://mygraph.local/goal/private-context-sharing>,
+        <http://mygraph.local/goal/trusted-ai-assistance> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "project:memory-workbench" ;
+    rdfs:comment "A local toolkit for reviewed, source-backed AI memory." .
+
+rb:Reference a owl:Class ;
+    rdfs:subClassOf rb:Concept .
+
+<http://mygraph.local/topic/graph-analytics> a rb:Topic ;
+    rdfs:label "Graph analytics" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/launch-plan> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "topic:graph-analytics" ;
+    rdfs:comment "Network measures for importance, bridges, communities, and weak claims." .
+
+<http://mygraph.local/topic/knowledge-graphs> a rb:Topic ;
+    rdfs:label "Knowledge graphs" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "topic:knowledge-graphs" ;
+    rdfs:comment "Structured concepts and typed relationships." .
+
+<http://mygraph.local/goal/public-alpha> a rb:Goal ;
+    rdfs:label "Public alpha" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/memory-audit> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/launch-plan> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "goal:public-alpha" ;
+    rdfs:comment "Publish a useful, fictional demonstration without exposing private memory." .
+
+<http://mygraph.local/idea/privacy-boundary> a rb:Idea ;
+    rdfs:label "Explicit privacy boundary" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
+    rb:RELATES_TO <http://mygraph.local/topic/context-governance> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:privacy-boundary" ;
+    rdfs:comment "Public infrastructure and private memory should remain separate." .
+
+rb:Topic a owl:Class ;
+    rdfs:subClassOf rb:Concept .
+
+<http://mygraph.local/idea/human-promotion-loop> a rb:Idea ;
+    rdfs:label "Human promotion loop" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/product-brief> ;
+    rb:RELATES_TO <http://mygraph.local/topic/provenance> ;
+    rb:SERVES <http://mygraph.local/goal/trusted-ai-assistance> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:human-promotion-loop" ;
+    rdfs:comment "AI proposes memory changes and a person decides what becomes durable." .
 
 rb:Source a owl:Class ;
     rdfs:subClassOf rb:Source,
         dcterms:ProvenanceEntity .
 
-<http://mygraph.local/topic/local-first> a rb:Topic ;
-    rdfs:label "Local-first software" ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
+<http://mygraph.local/topic/context-governance> a rb:Topic ;
+    rdfs:label "Context governance" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538807+00:00" ;
-    rb:nodeId "topic:local-first" ;
-    rdfs:comment "Software that keeps user data local unless the owner chooses otherwise." .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "topic:context-governance" ;
+    rdfs:comment "Rules for deciding what memory another tool should receive." .
 
-<http://mygraph.local/project/knowledge-worker> a rb:Project ;
-    rdfs:label "knowledge-worker" ;
-    rb:INVOLVES <http://mygraph.local/topic/knowledge-graphs>,
-        <http://mygraph.local/topic/local-first> ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
-    rb:SERVES <http://mygraph.local/goal/trusted-ai-assistance> ;
+<http://mygraph.local/topic/provenance> a rb:Topic ;
+    rdfs:label "Provenance" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/product-brief> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538799+00:00" ;
-    rb:nodeId "project:knowledge-worker" ;
-    rdfs:comment "A local-first toolkit for source-backed AI memory." .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "topic:provenance" ;
+    rdfs:comment "Traceability from durable claims back to source excerpts." .
 
-<http://mygraph.local/topic/knowledge-graphs> a rb:Topic ;
-    rdfs:label "Knowledge graphs" ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
+<http://mygraph.local/topic/research-workflow> a rb:Topic ;
+    rdfs:label "Research workflow" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538806+00:00" ;
-    rb:nodeId "topic:knowledge-graphs" ;
-    rdfs:comment "Structured concepts and relationships for durable context." .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "topic:research-workflow" ;
+    rdfs:comment "Processes for collecting, testing, and revising evidence." .
+
+<http://mygraph.local/goal/evidence-backed-research> a rb:Goal ;
+    rdfs:label "Evidence-backed research" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/evidence-backfill> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "goal:evidence-backed-research" ;
+    rdfs:comment "Keep research claims connected to supporting and challenging evidence." .
+
+<http://mygraph.local/goal/private-context-sharing> a rb:Goal ;
+    rdfs:label "Private context sharing" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/context-packs> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "goal:private-context-sharing" ;
+    rdfs:comment "Share only the bounded context needed for a task." .
+
+<http://mygraph.local/idea/evidence-backfill> a rb:Idea ;
+    rdfs:label "Evidence backfill" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/research-notes> ;
+    rb:RELATES_TO <http://mygraph.local/idea/context-packs>,
+        <http://mygraph.local/topic/research-workflow> ;
+    rb:SERVES <http://mygraph.local/goal/evidence-backed-research> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:evidence-backfill" ;
+    rdfs:comment "Central claims should accumulate supporting or challenging evidence over time." .
+
+rb:Concept a owl:Class .
+
+rb:Decision a owl:Class ;
+    rdfs:subClassOf rb:Concept .
 
 <http://mygraph.local/goal/trusted-ai-assistance> a rb:Goal ;
     rdfs:label "Trusted AI assistance" ;
-    rb:ENABLED_BY <http://mygraph.local/idea/provenance-first> ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
+    rb:ENABLED_BY <http://mygraph.local/idea/human-promotion-loop>,
+        <http://mygraph.local/idea/provenance-first> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/user-interviews> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538803+00:00" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
     rb:nodeId "goal:trusted-ai-assistance" ;
     rdfs:comment "Make assistant responses easier to verify and continue across sessions." .
 
-<http://mygraph.local/idea/provenance-first> a rb:Idea ;
-    rdfs:label "Provenance first" ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
-    rb:SERVES <http://mygraph.local/goal/trusted-ai-assistance> ;
+<http://mygraph.local/idea/local-first-storage> a rb:Idea ;
+    rdfs:label "Local-first storage" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
+    rb:RELATES_TO <http://mygraph.local/idea/reviewable-research>,
+        <http://mygraph.local/topic/local-first> ;
+    rb:SUPPORTED_BY <http://mygraph.local/reference/local-first> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538802+00:00" ;
-    rb:nodeId "idea:provenance-first" ;
-    rdfs:comment "Every durable claim should point back to source evidence." .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:local-first-storage" ;
+    rdfs:comment "Keep the canonical graph in files controlled by the owner." .
 
 <http://mygraph.local/source/architecture-note> a rb:Source ;
     rdfs:label "architecture-note.md" ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538796+00:00" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
     rb:nodeId "source:architecture-note" ;
-    rdfs:comment "Fictional architecture note for the public demo graph." .
+    rdfs:comment "Fictional architecture note for JSON storage, RDF export, and typed graph structure. Candidate: local storage may support reviewable research." .
 
-<http://mygraph.local/idea/context-memory> a rb:Idea ;
-    rdfs:label "Context memory" ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
-    rb:RELATES_TO <http://mygraph.local/topic/knowledge-graphs> ;
-    rb:SUPPORTED_BY <http://mygraph.local/reference/coggrag> ;
+rb:SERVES a owl:ObjectProperty .
+
+<http://mygraph.local/idea/memory-audit> a rb:Idea ;
+    rdfs:label "Memory Audit" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/launch-plan> ;
+    rb:RELATES_TO <http://mygraph.local/topic/graph-analytics> ;
+    rb:SERVES <http://mygraph.local/goal/public-alpha> ;
+    rb:SUPPORTED_BY <http://mygraph.local/reference/pagerank> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538800+00:00" ;
-    rb:nodeId "idea:context-memory" ;
-    rdfs:comment "AI sessions improve when durable context is stored as concepts instead of loose transcript chunks." .
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:memory-audit" ;
+    rdfs:comment "Ranked graph analytics make important, bridging, and weak memory inspectable." .
 
-rb:Concept a owl:Class .
+<http://mygraph.local/idea/provenance-first> a rb:Idea ;
+    rdfs:label "Provenance first" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/product-brief> ;
+    rb:RELATES_TO <http://mygraph.local/reference/rdf>,
+        <http://mygraph.local/topic/provenance> ;
+    rb:SERVES <http://mygraph.local/goal/trusted-ai-assistance> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:provenance-first" ;
+    rdfs:comment "Every durable claim should point back to source evidence." .
+
+rb:Idea a owl:Class ;
+    rdfs:subClassOf rb:Concept .
+
+<http://mygraph.local/idea/context-packs> a rb:Idea ;
+    rdfs:label "Context packs" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/privacy-review> ;
+    rb:RELATES_TO <http://mygraph.local/topic/context-governance> ;
+    rb:SERVES <http://mygraph.local/goal/private-context-sharing> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "idea:context-packs" ;
+    rdfs:comment "Export only the cited graph slice needed by another AI tool." .
+
+rb:ENABLED_BY a owl:ObjectProperty .
+
+<http://mygraph.local/source/launch-plan> a rb:Source ;
+    rdfs:label "launch-plan.md" ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "source:launch-plan" ;
+    rdfs:comment "Fictional public-alpha plan centered on ranked memory audit output. Candidate: typed relationships may clarify privacy boundaries." .
+
+<http://mygraph.local/source/product-brief> a rb:Source ;
+    rdfs:label "product-brief.md" ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "source:product-brief" ;
+    rdfs:comment "Fictional brief for reviewable, provenance-backed memory." .
+
+rb:RELATES_TO a owl:ObjectProperty .
+
+<http://mygraph.local/source/privacy-review> a rb:Source ;
+    rdfs:label "privacy-review.md" ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "source:privacy-review" ;
+    rdfs:comment "Fictional privacy review for local storage and scoped context sharing." .
+
+<http://mygraph.local/source/research-notes> a rb:Source ;
+    rdfs:label "research-notes.md" ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-06-09T12:00:00+00:00" ;
+    rb:nodeId "source:research-notes" ;
+    rdfs:comment "Fictional research notes connecting evidence, typed relationships, and retrieval." .
 
 rb:MENTIONED_IN a owl:ObjectProperty .
-
-<http://mygraph.local/source/demo-notes> a rb:Source ;
-    rdfs:label "demo-notes.md" ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-26T00:04:21.538646+00:00" ;
-    rb:nodeId "source:demo-notes" ;
-    rdfs:comment "Fictional project notes used to demonstrate provenance-backed memory." .

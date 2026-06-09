@@ -1,0 +1,3708 @@
+{
+  "centrality": {
+    "betweenness": [
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "score": 0.2281637272983426,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "score": 0.21853530728530726,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "score": 0.19373453469607319,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 0.1802763902763903,
+        "type": "person"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 0.1557109023455177,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "score": 0.13020288116441958,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:typed-relationships",
+        "label": "Typed relationships",
+        "score": 0.12805594690210076,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:audited-context-bridge",
+        "label": "Audited context bridge",
+        "score": 0.12523970687432223,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "score": 0.070348259290567,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "decision:ranked-audit-first",
+        "label": "Ranked audit before graph canvas",
+        "score": 0.06937881562881565,
+        "type": "decision"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:context-governance",
+        "label": "Context governance",
+        "score": 0.0693748523556216,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-governance-bridge",
+        "label": "Evidence governance bridge",
+        "score": 0.06619733187040878,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:reviewable-research",
+        "label": "Reviewable research memory",
+        "score": 0.06370046264277034,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "decision:fictional-demo-only",
+        "label": "Use fictional demo data",
+        "score": 0.06296855921855923,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:memory-workbench",
+        "label": "Memory Workbench",
+        "score": 0.05622738372738373,
+        "type": "project"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:rdf",
+        "label": "RDF 1.1 Concepts",
+        "score": 0.05095634066787913,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.048828112770420457,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 0.036120745351514584,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:research-workflow",
+        "label": "Research workflow",
+        "score": 0.02999373845527692,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:json-first",
+        "label": "Use JSON first",
+        "score": 0.026099456099456103,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:human-promotion-loop",
+        "label": "Human promotion loop",
+        "score": 0.02538638355946048,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "score": 0.020729085729085724,
+        "type": "goal"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 0.01907297830374754,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:research-assistant",
+        "label": "Research Assistant",
+        "score": 0.017964684887761814,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "goal:evidence-backed-research",
+        "label": "Evidence-backed research",
+        "score": 0.01793627312858082,
+        "type": "goal"
+      }
+    ],
+    "core_number": [
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:typed-relationships",
+        "label": "Typed relationships",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:audited-context-bridge",
+        "label": "Audited context bridge",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:context-governance",
+        "label": "Context governance",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 3.0,
+        "type": "person"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:human-promotion-loop",
+        "label": "Human promotion loop",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:memory-workbench",
+        "label": "Memory Workbench",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-governance-bridge",
+        "label": "Evidence governance bridge",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:launch-demo",
+        "label": "Public Launch Demo",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "decision:ranked-audit-first",
+        "label": "Ranked audit before graph canvas",
+        "score": 3.0,
+        "type": "decision"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:research-assistant",
+        "label": "Research Assistant",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:research-workflow",
+        "label": "Research workflow",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:reviewable-research",
+        "label": "Reviewable research memory",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "goal:evidence-backed-research",
+        "label": "Evidence-backed research",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:hipporag",
+        "label": "HippoRAG",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first",
+        "label": "Local-first software",
+        "score": 3.0,
+        "type": "reference"
+      }
+    ],
+    "pagerank": [
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:context-governance",
+        "label": "Context governance",
+        "score": 0.09571525142086607,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first",
+        "label": "Local-first software",
+        "score": 0.06198044267482044,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:pagerank",
+        "label": "PageRank",
+        "score": 0.05182084257382864,
+        "type": "reference"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 0.050503949118096865,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:hipporag",
+        "label": "HippoRAG",
+        "score": 0.04789111286773876,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:rdf",
+        "label": "RDF 1.1 Concepts",
+        "score": 0.04078246282117654,
+        "type": "reference"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "score": 0.040505271380404766,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "score": 0.03627312166938914,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:research-workflow",
+        "label": "Research workflow",
+        "score": 0.03544876275088957,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 0.03484704409710648,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "question:launch-signal",
+        "label": "What proves the public demo is useful?",
+        "score": 0.0331655312760622,
+        "type": "question"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "score": 0.030250228376500318,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 0.029394607871416435,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.026893421079360227,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "score": 0.026266354974552077,
+        "type": "question"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:launch-demo",
+        "label": "Public Launch Demo",
+        "score": 0.022200855085485326,
+        "type": "project"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "score": 0.021079039961307854,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "score": 0.0209269068449949,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:json-first",
+        "label": "Use JSON first",
+        "score": 0.018618605966943598,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 0.0182430438465535,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:research-assistant",
+        "label": "Research Assistant",
+        "score": 0.01775966453258005,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "score": 0.017607010071296027,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 0.017046874691891273,
+        "type": "goal"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:memory-workbench",
+        "label": "Memory Workbench",
+        "score": 0.016113402118031563,
+        "type": "project"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:scoped-exports",
+        "label": "Export scoped context",
+        "score": 0.01611218184850243,
+        "type": "decision"
+      }
+    ],
+    "semantic_in_degree": [
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "score": 5.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "score": 4.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 4.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:context-governance",
+        "label": "Context governance",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:research-workflow",
+        "label": "Research workflow",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "goal:evidence-backed-research",
+        "label": "Evidence-backed research",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:human-promotion-loop",
+        "label": "Human promotion loop",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "goal:public-alpha",
+        "label": "Public alpha",
+        "score": 2.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:reviewable-research",
+        "label": "Reviewable research memory",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:hipporag",
+        "label": "HippoRAG",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first",
+        "label": "Local-first software",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:pagerank",
+        "label": "PageRank",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:rdf",
+        "label": "RDF 1.1 Concepts",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "question:launch-signal",
+        "label": "What proves the public demo is useful?",
+        "score": 1.0,
+        "type": "question"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 1.0,
+        "type": "topic"
+      }
+    ],
+    "semantic_out_degree": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:typed-relationships",
+        "label": "Typed relationships",
+        "score": 4.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 4.0,
+        "type": "person"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:memory-workbench",
+        "label": "Memory Workbench",
+        "score": 4.0,
+        "type": "project"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:audited-context-bridge",
+        "label": "Audited context bridge",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-governance-bridge",
+        "label": "Evidence governance bridge",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:human-promotion-loop",
+        "label": "Human promotion loop",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:launch-demo",
+        "label": "Public Launch Demo",
+        "score": 2.0,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "decision:ranked-audit-first",
+        "label": "Ranked audit before graph canvas",
+        "score": 2.0,
+        "type": "decision"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:research-assistant",
+        "label": "Research Assistant",
+        "score": 2.0,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 2.0,
+        "type": "goal"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:json-first",
+        "label": "Use JSON first",
+        "score": 2.0,
+        "type": "decision"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "score": 1.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:reviewable-research",
+        "label": "Reviewable research memory",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "goal:evidence-backed-research",
+        "label": "Evidence-backed research",
+        "score": 1.0,
+        "type": "goal"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:scoped-exports",
+        "label": "Export scoped context",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "goal:public-alpha",
+        "label": "Public alpha",
+        "score": 1.0,
+        "type": "goal"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:review-before-merge",
+        "label": "Review before merge",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "decision:defer-sql",
+        "label": "Defer SQL storage",
+        "score": 1.0,
+        "type": "decision"
+      }
+    ]
+  },
+  "communities": [
+    {
+      "id": 0,
+      "members": [
+        "decision:provenance-required",
+        "decision:review-before-merge",
+        "goal:trusted-ai-assistance",
+        "idea:context-memory",
+        "idea:human-promotion-loop",
+        "idea:provenance-first",
+        "person:demo-owner",
+        "project:memory-workbench",
+        "topic:provenance"
+      ],
+      "size": 9,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 7,
+          "id": "idea:provenance-first",
+          "label": "Provenance first",
+          "score": 0.0182430438465535,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "goal:trusted-ai-assistance",
+          "label": "Trusted AI assistance",
+          "score": 0.017046874691891273,
+          "type": "goal"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "project:memory-workbench",
+          "label": "Memory Workbench",
+          "score": 0.016113402118031563,
+          "type": "project"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "idea:human-promotion-loop",
+          "label": "Human promotion loop",
+          "score": 0.015312113413942417,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:provenance",
+          "label": "Provenance",
+          "score": 0.012752956499790625,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "idea:context-memory",
+          "label": "Context memory",
+          "score": 0.010103336922599668,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "person:demo-owner",
+          "label": "Demo Owner",
+          "score": 0.00949913239933569,
+          "type": "person"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "decision:review-before-merge",
+          "label": "Review before merge",
+          "score": 0.007683892092693927,
+          "type": "decision"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "decision:provenance-required",
+          "label": "Require provenance",
+          "score": 0.005835639344961783,
+          "type": "decision"
+        }
+      ],
+      "types": {
+        "decision": 2,
+        "goal": 1,
+        "idea": 3,
+        "person": 1,
+        "project": 1,
+        "topic": 1
+      }
+    },
+    {
+      "id": 1,
+      "members": [
+        "goal:evidence-backed-research",
+        "idea:evidence-backfill",
+        "idea:evidence-governance-bridge",
+        "idea:reviewable-research",
+        "idea:typed-relationships",
+        "project:research-assistant",
+        "reference:coggrag",
+        "reference:hipporag",
+        "topic:research-workflow"
+      ],
+      "size": 9,
+      "top_members": [
+        {
+          "confidence": "medium",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:hipporag",
+          "label": "HippoRAG",
+          "score": 0.04789111286773876,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:research-workflow",
+          "label": "Research workflow",
+          "score": 0.03544876275088957,
+          "type": "topic"
+        },
+        {
+          "confidence": "medium",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:coggrag",
+          "label": "CogGRAG",
+          "score": 0.029394607871416435,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "project:research-assistant",
+          "label": "Research Assistant",
+          "score": 0.01775966453258005,
+          "type": "project"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "idea:evidence-backfill",
+          "label": "Evidence backfill",
+          "score": 0.017607010071296027,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "idea:reviewable-research",
+          "label": "Reviewable research memory",
+          "score": 0.013839122974042922,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "goal:evidence-backed-research",
+          "label": "Evidence-backed research",
+          "score": 0.013579691040718416,
+          "type": "goal"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 6,
+          "id": "idea:typed-relationships",
+          "label": "Typed relationships",
+          "score": 0.011353550141210728,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "idea:evidence-governance-bridge",
+          "label": "Evidence governance bridge",
+          "score": 0.01132111106808855,
+          "type": "idea"
+        }
+      ],
+      "types": {
+        "goal": 1,
+        "idea": 4,
+        "project": 1,
+        "reference": 2,
+        "topic": 1
+      }
+    },
+    {
+      "id": 2,
+      "members": [
+        "decision:fictional-demo-only",
+        "decision:ranked-audit-first",
+        "goal:public-alpha",
+        "idea:memory-audit",
+        "project:launch-demo",
+        "question:launch-signal",
+        "reference:pagerank",
+        "topic:graph-analytics"
+      ],
+      "size": 8,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:pagerank",
+          "label": "PageRank",
+          "score": 0.05182084257382864,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "topic:graph-analytics",
+          "label": "Graph analytics",
+          "score": 0.03484704409710648,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "question:launch-signal",
+          "label": "What proves the public demo is useful?",
+          "score": 0.0331655312760622,
+          "type": "question"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "project:launch-demo",
+          "label": "Public Launch Demo",
+          "score": 0.022200855085485326,
+          "type": "project"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 7,
+          "id": "idea:memory-audit",
+          "label": "Memory Audit",
+          "score": 0.0209269068449949,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "goal:public-alpha",
+          "label": "Public alpha",
+          "score": 0.015588640881168375,
+          "type": "goal"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "decision:ranked-audit-first",
+          "label": "Ranked audit before graph canvas",
+          "score": 0.01301390533523485,
+          "type": "decision"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "decision:fictional-demo-only",
+          "label": "Use fictional demo data",
+          "score": 0.0064239914693709245,
+          "type": "decision"
+        }
+      ],
+      "types": {
+        "decision": 2,
+        "goal": 1,
+        "idea": 1,
+        "project": 1,
+        "question": 1,
+        "reference": 1,
+        "topic": 1
+      }
+    },
+    {
+      "id": 3,
+      "members": [
+        "decision:local-default",
+        "idea:local-first-storage",
+        "idea:privacy-boundary",
+        "reference:local-first",
+        "topic:context-governance",
+        "topic:local-first"
+      ],
+      "size": 6,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "topic:context-governance",
+          "label": "Context governance",
+          "score": 0.09571525142086607,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:local-first",
+          "label": "Local-first software",
+          "score": 0.06198044267482044,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "topic:local-first",
+          "label": "Local-first software",
+          "score": 0.050503949118096865,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "idea:privacy-boundary",
+          "label": "Explicit privacy boundary",
+          "score": 0.040505271380404766,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 8,
+          "id": "idea:local-first-storage",
+          "label": "Local-first storage",
+          "score": 0.03627312166938914,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "decision:local-default",
+          "label": "Keep private memory local",
+          "score": 0.008223654775721456,
+          "type": "decision"
+        }
+      ],
+      "types": {
+        "decision": 1,
+        "idea": 2,
+        "reference": 1,
+        "topic": 2
+      }
+    },
+    {
+      "id": 4,
+      "members": [
+        "decision:defer-sql",
+        "decision:json-first",
+        "question:storage-backend",
+        "reference:rdf",
+        "topic:knowledge-graphs"
+      ],
+      "size": 5,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "reference:rdf",
+          "label": "RDF 1.1 Concepts",
+          "score": 0.04078246282117654,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:knowledge-graphs",
+          "label": "Knowledge graphs",
+          "score": 0.026893421079360227,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "question:storage-backend",
+          "label": "When should storage move beyond JSON?",
+          "score": 0.026266354974552077,
+          "type": "question"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "decision:json-first",
+          "label": "Use JSON first",
+          "score": 0.018618605966943598,
+          "type": "decision"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "decision:defer-sql",
+          "label": "Defer SQL storage",
+          "score": 0.008933808275907921,
+          "type": "decision"
+        }
+      ],
+      "types": {
+        "decision": 2,
+        "question": 1,
+        "reference": 1,
+        "topic": 1
+      }
+    },
+    {
+      "id": 5,
+      "members": [
+        "decision:scoped-exports",
+        "goal:private-context-sharing",
+        "idea:audited-context-bridge",
+        "idea:context-packs"
+      ],
+      "size": 4,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 7,
+          "id": "idea:context-packs",
+          "label": "Context packs",
+          "score": 0.030250228376500318,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "goal:private-context-sharing",
+          "label": "Private context sharing",
+          "score": 0.021079039961307854,
+          "type": "goal"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "decision:scoped-exports",
+          "label": "Export scoped context",
+          "score": 0.01611218184850243,
+          "type": "decision"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "idea:audited-context-bridge",
+          "label": "Audited context bridge",
+          "score": 0.009089463445416718,
+          "type": "idea"
+        }
+      ],
+      "types": {
+        "decision": 1,
+        "goal": 1,
+        "idea": 2
+      }
+    }
+  ],
+  "counts": {
+    "confidence": {
+      "edges": {
+        "high": 94,
+        "low": 3
+      },
+      "nodes": {
+        "high": 45,
+        "medium": 2
+      }
+    },
+    "edge_types": {
+      "ABOUT": 2,
+      "ENABLED_BY": 13,
+      "HAS_IDEA": 4,
+      "INVOLVES": 4,
+      "MENTIONED_IN": 41,
+      "RELATES_TO": 18,
+      "SERVES": 11,
+      "SUPPORTED_BY": 4
+    },
+    "node_types": {
+      "decision": 8,
+      "goal": 4,
+      "idea": 12,
+      "person": 1,
+      "project": 3,
+      "question": 2,
+      "reference": 5,
+      "source": 6,
+      "topic": 6
+    }
+  },
+  "directed_flow": {
+    "idea_attractors": [
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:context-packs",
+        "in_degree": 3,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 2
+        },
+        "label": "Context packs",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Is this a durable principle, an unresolved sink, or an over-compressed label? Write one next action.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "idea_generators": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 4,
+        "id": "idea:typed-relationships",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Typed relationships",
+        "out_degree": 4,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SUPPORTED_BY": 2
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 4.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:audited-context-bridge",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Audited context bridge",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:evidence-governance-bridge",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Evidence governance bridge",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:local-first-storage",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Local-first storage",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:evidence-backfill",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "RELATES_TO": 1
+        },
+        "label": "Evidence backfill",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:human-promotion-loop",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Human promotion loop",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:memory-audit",
+        "in_degree": 2,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 1
+        },
+        "label": "Memory Audit",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:provenance-first",
+        "in_degree": 2,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 1
+        },
+        "label": "Provenance first",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "note": "Directed flow uses semantic edges only. Provenance/source projection and back-reference edges are excluded so attractors and generators reflect relationship direction, not citation volume."
+  },
+  "generated_at": "2026-06-09T22:58:02.196662+00:00",
+  "legwork_queue": {
+    "idea_attractors": [
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:context-packs",
+        "in_degree": 3,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 2
+        },
+        "label": "Context packs",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Is this a durable principle, an unresolved sink, or an over-compressed label? Write one next action.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "idea_generators": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 4,
+        "id": "idea:typed-relationships",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Typed relationships",
+        "out_degree": 4,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SUPPORTED_BY": 2
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 4.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:audited-context-bridge",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Audited context bridge",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:evidence-governance-bridge",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Evidence governance bridge",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:local-first-storage",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Local-first storage",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:evidence-backfill",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "RELATES_TO": 1
+        },
+        "label": "Evidence backfill",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:human-promotion-loop",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Human promotion loop",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:memory-audit",
+        "in_degree": 2,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 1
+        },
+        "label": "Memory Audit",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:provenance-first",
+        "in_degree": 2,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 1
+        },
+        "label": "Provenance first",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "weak_claims": [
+      {
+        "confidence": "low",
+        "dst": "idea:context-packs",
+        "dst_label": "Context packs",
+        "dst_type": "idea",
+        "excerpt": "Candidate: evidence-backed packs may improve handoffs.",
+        "index": 94,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:user-interviews",
+        "src": "idea:evidence-backfill",
+        "src_label": "Evidence backfill",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "idea:reviewable-research",
+        "dst_label": "Reviewable research memory",
+        "dst_type": "idea",
+        "excerpt": "Candidate: local storage may support reviewable research.",
+        "index": 95,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:architecture-note",
+        "src": "idea:local-first-storage",
+        "src_label": "Local-first storage",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "idea:privacy-boundary",
+        "dst_label": "Explicit privacy boundary",
+        "dst_type": "idea",
+        "excerpt": "Candidate: typed relationships may clarify privacy boundaries.",
+        "index": 96,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:launch-plan",
+        "src": "idea:typed-relationships",
+        "src_label": "Typed relationships",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:coggrag",
+        "kind": "node_confidence",
+        "label": "CogGRAG",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:hipporag",
+        "kind": "node_confidence",
+        "label": "HippoRAG",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      }
+    ]
+  },
+  "low_confidence_edges": [
+    {
+      "confidence": "low",
+      "dst": "idea:context-packs",
+      "dst_label": "Context packs",
+      "dst_type": "idea",
+      "excerpt": "Candidate: evidence-backed packs may improve handoffs.",
+      "index": 94,
+      "source_id": "source:user-interviews",
+      "src": "idea:evidence-backfill",
+      "src_label": "Evidence backfill",
+      "src_type": "idea",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "low",
+      "dst": "idea:reviewable-research",
+      "dst_label": "Reviewable research memory",
+      "dst_type": "idea",
+      "excerpt": "Candidate: local storage may support reviewable research.",
+      "index": 95,
+      "source_id": "source:architecture-note",
+      "src": "idea:local-first-storage",
+      "src_label": "Local-first storage",
+      "src_type": "idea",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "low",
+      "dst": "idea:privacy-boundary",
+      "dst_label": "Explicit privacy boundary",
+      "dst_type": "idea",
+      "excerpt": "Candidate: typed relationships may clarify privacy boundaries.",
+      "index": 96,
+      "source_id": "source:launch-plan",
+      "src": "idea:typed-relationships",
+      "src_label": "Typed relationships",
+      "src_type": "idea",
+      "type": "RELATES_TO"
+    }
+  ],
+  "provenance_coverage": {
+    "edge_source_coverage": 1.0,
+    "edges_missing_source_id": [],
+    "edges_total": 97,
+    "edges_with_source_id": 97,
+    "excerpt_coverage": 1.0,
+    "missing_nodes": [],
+    "node_coverage": 1.0,
+    "nodes_with_provenance": 41,
+    "nodes_with_provenance_excerpt": 41,
+    "non_source_nodes": 41,
+    "provenance_edges": 41,
+    "provenance_edges_with_excerpt": 41
+  },
+  "ranked": {
+    "bridge_ideas": [
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "score": 0.2281637272983426,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "score": 0.21853530728530726,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "score": 0.19373453469607319,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 0.1802763902763903,
+        "type": "person"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 0.1557109023455177,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "score": 0.13020288116441958,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:typed-relationships",
+        "label": "Typed relationships",
+        "score": 0.12805594690210076,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:audited-context-bridge",
+        "label": "Audited context bridge",
+        "score": 0.12523970687432223,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "score": 0.070348259290567,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "decision:ranked-audit-first",
+        "label": "Ranked audit before graph canvas",
+        "score": 0.06937881562881565,
+        "type": "decision"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:context-governance",
+        "label": "Context governance",
+        "score": 0.0693748523556216,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-governance-bridge",
+        "label": "Evidence governance bridge",
+        "score": 0.06619733187040878,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:reviewable-research",
+        "label": "Reviewable research memory",
+        "score": 0.06370046264277034,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "decision:fictional-demo-only",
+        "label": "Use fictional demo data",
+        "score": 0.06296855921855923,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:memory-workbench",
+        "label": "Memory Workbench",
+        "score": 0.05622738372738373,
+        "type": "project"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:rdf",
+        "label": "RDF 1.1 Concepts",
+        "score": 0.05095634066787913,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.048828112770420457,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 0.036120745351514584,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:research-workflow",
+        "label": "Research workflow",
+        "score": 0.02999373845527692,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:json-first",
+        "label": "Use JSON first",
+        "score": 0.026099456099456103,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:human-promotion-loop",
+        "label": "Human promotion loop",
+        "score": 0.02538638355946048,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "score": 0.020729085729085724,
+        "type": "goal"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 0.01907297830374754,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:research-assistant",
+        "label": "Research Assistant",
+        "score": 0.017964684887761814,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "goal:evidence-backed-research",
+        "label": "Evidence-backed research",
+        "score": 0.01793627312858082,
+        "type": "goal"
+      }
+    ],
+    "idea_attractors": [
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:context-packs",
+        "in_degree": 3,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 2
+        },
+        "label": "Context packs",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Is this a durable principle, an unresolved sink, or an over-compressed label? Write one next action.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "idea_generators": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 4,
+        "id": "idea:typed-relationships",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Typed relationships",
+        "out_degree": 4,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SUPPORTED_BY": 2
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 4.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:audited-context-bridge",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Audited context bridge",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:evidence-governance-bridge",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Evidence governance bridge",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:local-first-storage",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Local-first storage",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:evidence-backfill",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "RELATES_TO": 1
+        },
+        "label": "Evidence backfill",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:human-promotion-loop",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Human promotion loop",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:memory-audit",
+        "in_degree": 2,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 1
+        },
+        "label": "Memory Audit",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:provenance-first",
+        "in_degree": 2,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1,
+          "RELATES_TO": 1
+        },
+        "label": "Provenance first",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 2,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "important_concepts": [
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:context-governance",
+        "label": "Context governance",
+        "score": 0.09571525142086607,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first",
+        "label": "Local-first software",
+        "score": 0.06198044267482044,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:pagerank",
+        "label": "PageRank",
+        "score": 0.05182084257382864,
+        "type": "reference"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 0.050503949118096865,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:hipporag",
+        "label": "HippoRAG",
+        "score": 0.04789111286773876,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:rdf",
+        "label": "RDF 1.1 Concepts",
+        "score": 0.04078246282117654,
+        "type": "reference"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "score": 0.040505271380404766,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "score": 0.03627312166938914,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:research-workflow",
+        "label": "Research workflow",
+        "score": 0.03544876275088957,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 0.03484704409710648,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "question:launch-signal",
+        "label": "What proves the public demo is useful?",
+        "score": 0.0331655312760622,
+        "type": "question"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "score": 0.030250228376500318,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 0.029394607871416435,
+        "type": "reference"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.026893421079360227,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "score": 0.026266354974552077,
+        "type": "question"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:launch-demo",
+        "label": "Public Launch Demo",
+        "score": 0.022200855085485326,
+        "type": "project"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "score": 0.021079039961307854,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "score": 0.0209269068449949,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:json-first",
+        "label": "Use JSON first",
+        "score": 0.018618605966943598,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 0.0182430438465535,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:research-assistant",
+        "label": "Research Assistant",
+        "score": 0.01775966453258005,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "score": 0.017607010071296027,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 0.017046874691891273,
+        "type": "goal"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:memory-workbench",
+        "label": "Memory Workbench",
+        "score": 0.016113402118031563,
+        "type": "project"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:scoped-exports",
+        "label": "Export scoped context",
+        "score": 0.01611218184850243,
+        "type": "decision"
+      }
+    ],
+    "proof_trail": [
+      {
+        "confidence": "high",
+        "id": "topic:context-governance",
+        "label": "Context governance",
+        "provenance": [
+          {
+            "excerpt": "Decide what memory another tool should receive.",
+            "source_id": "source:privacy-review",
+            "source_label": "privacy-review.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "reference:local-first",
+        "label": "Local-first software",
+        "provenance": [
+          {
+            "excerpt": "Local-first software prioritizes local data ownership.",
+            "source_id": "source:privacy-review",
+            "source_label": "privacy-review.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "high",
+        "id": "reference:pagerank",
+        "label": "PageRank",
+        "provenance": [
+          {
+            "excerpt": "PageRank ranks nodes using graph link structure.",
+            "source_id": "source:launch-plan",
+            "source_label": "launch-plan.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "provenance": [
+          {
+            "excerpt": "Keep user data under local control.",
+            "source_id": "source:privacy-review",
+            "source_label": "privacy-review.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:hipporag",
+        "label": "HippoRAG",
+        "provenance": [
+          {
+            "excerpt": "HippoRAG is a public reference for associative graph memory.",
+            "source_id": "source:research-notes",
+            "source_label": "research-notes.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "high",
+        "id": "reference:rdf",
+        "label": "RDF 1.1 Concepts",
+        "provenance": [
+          {
+            "excerpt": "RDF 1.1 defines a standard model for graph statements.",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "provenance": [
+          {
+            "excerpt": "Public infrastructure and private memory must remain separate.",
+            "source_id": "source:privacy-review",
+            "source_label": "privacy-review.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "provenance": [
+          {
+            "excerpt": "Keep the canonical graph in files controlled by the owner.",
+            "source_id": "source:privacy-review",
+            "source_label": "privacy-review.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:research-workflow",
+        "label": "Research workflow",
+        "provenance": [
+          {
+            "excerpt": "Collect, test, and revise evidence over time.",
+            "source_id": "source:research-notes",
+            "source_label": "research-notes.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "provenance": [
+          {
+            "excerpt": "Use network measures for importance, bridges, communities, and weak claims.",
+            "source_id": "source:launch-plan",
+            "source_label": "launch-plan.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "question:launch-signal",
+        "label": "What proves the public demo is useful?",
+        "provenance": [
+          {
+            "excerpt": "What proves the public demo is useful?",
+            "source_id": "source:launch-plan",
+            "source_label": "launch-plan.md"
+          }
+        ],
+        "type": "question"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "provenance": [
+          {
+            "excerpt": "Export only the cited graph slice needed by another AI tool.",
+            "source_id": "source:privacy-review",
+            "source_label": "privacy-review.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "provenance": [
+          {
+            "excerpt": "CogGRAG is a public reference for cognition-inspired graph retrieval.",
+            "source_id": "source:research-notes",
+            "source_label": "research-notes.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "provenance": [
+          {
+            "excerpt": "Use structured concepts and typed relationships.",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "provenance": [
+          {
+            "excerpt": "When should storage move beyond JSON?",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          }
+        ],
+        "type": "question"
+      },
+      {
+        "confidence": "high",
+        "id": "project:launch-demo",
+        "label": "Public Launch Demo",
+        "provenance": [
+          {
+            "excerpt": "Publish a public-safe demonstration using fictional graph data.",
+            "source_id": "source:launch-plan",
+            "source_label": "launch-plan.md"
+          }
+        ],
+        "type": "project"
+      },
+      {
+        "confidence": "high",
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "provenance": [
+          {
+            "excerpt": "Share only the bounded context needed for the current task.",
+            "source_id": "source:privacy-review",
+            "source_label": "privacy-review.md"
+          }
+        ],
+        "type": "goal"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "provenance": [
+          {
+            "excerpt": "Rank important concepts, bridge ideas, weak claims, and proof trails.",
+            "source_id": "source:launch-plan",
+            "source_label": "launch-plan.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "decision:json-first",
+        "label": "Use JSON first",
+        "provenance": [
+          {
+            "excerpt": "Use JSON first; add a database only when size or concurrency requires it.",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          }
+        ],
+        "type": "decision"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "provenance": [
+          {
+            "excerpt": "Every durable claim needs source evidence.",
+            "source_id": "source:product-brief",
+            "source_label": "product-brief.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "project:research-assistant",
+        "label": "Research Assistant",
+        "provenance": [
+          {
+            "excerpt": "The research assistant should keep claims connected to evidence.",
+            "source_id": "source:research-notes",
+            "source_label": "research-notes.md"
+          }
+        ],
+        "type": "project"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "provenance": [
+          {
+            "excerpt": "Central claims should accumulate supporting or challenging evidence over time.",
+            "source_id": "source:research-notes",
+            "source_label": "research-notes.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "provenance": [
+          {
+            "excerpt": "People want AI sessions to continue without losing the reasoning behind prior work.",
+            "source_id": "source:user-interviews",
+            "source_label": "user-interviews.md"
+          }
+        ],
+        "type": "goal"
+      },
+      {
+        "confidence": "high",
+        "id": "project:memory-workbench",
+        "label": "Memory Workbench",
+        "provenance": [
+          {
+            "excerpt": "Build a local workbench for reviewed, source-backed memory.",
+            "source_id": "source:product-brief",
+            "source_label": "product-brief.md"
+          }
+        ],
+        "type": "project"
+      },
+      {
+        "confidence": "high",
+        "id": "decision:scoped-exports",
+        "label": "Export scoped context",
+        "provenance": [
+          {
+            "excerpt": "Export a bounded context slice instead of the whole private graph.",
+            "source_id": "source:privacy-review",
+            "source_label": "privacy-review.md"
+          }
+        ],
+        "type": "decision"
+      }
+    ],
+    "structural_core": [
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 8,
+        "id": "idea:local-first-storage",
+        "label": "Local-first storage",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:context-packs",
+        "label": "Context packs",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:memory-audit",
+        "label": "Memory Audit",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 7,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:typed-relationships",
+        "label": "Typed relationships",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:audited-context-bridge",
+        "label": "Audited context bridge",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:context-governance",
+        "label": "Context governance",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 3.0,
+        "type": "person"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:privacy-boundary",
+        "label": "Explicit privacy boundary",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:human-promotion-loop",
+        "label": "Human promotion loop",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:memory-workbench",
+        "label": "Memory Workbench",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-backfill",
+        "label": "Evidence backfill",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:evidence-governance-bridge",
+        "label": "Evidence governance bridge",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:private-context-sharing",
+        "label": "Private context sharing",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:launch-demo",
+        "label": "Public Launch Demo",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "decision:ranked-audit-first",
+        "label": "Ranked audit before graph canvas",
+        "score": 3.0,
+        "type": "decision"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:research-assistant",
+        "label": "Research Assistant",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:research-workflow",
+        "label": "Research workflow",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:reviewable-research",
+        "label": "Reviewable research memory",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "goal:evidence-backed-research",
+        "label": "Evidence-backed research",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "topic:graph-analytics",
+        "label": "Graph analytics",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:hipporag",
+        "label": "HippoRAG",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first",
+        "label": "Local-first software",
+        "score": 3.0,
+        "type": "reference"
+      }
+    ],
+    "weak_claim_queue": [
+      {
+        "confidence": "low",
+        "dst": "idea:context-packs",
+        "dst_label": "Context packs",
+        "dst_type": "idea",
+        "excerpt": "Candidate: evidence-backed packs may improve handoffs.",
+        "index": 94,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:user-interviews",
+        "src": "idea:evidence-backfill",
+        "src_label": "Evidence backfill",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "idea:reviewable-research",
+        "dst_label": "Reviewable research memory",
+        "dst_type": "idea",
+        "excerpt": "Candidate: local storage may support reviewable research.",
+        "index": 95,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:architecture-note",
+        "src": "idea:local-first-storage",
+        "src_label": "Local-first storage",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "idea:privacy-boundary",
+        "dst_label": "Explicit privacy boundary",
+        "dst_type": "idea",
+        "excerpt": "Candidate: typed relationships may clarify privacy boundaries.",
+        "index": 96,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:launch-plan",
+        "src": "idea:typed-relationships",
+        "src_label": "Typed relationships",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:coggrag",
+        "kind": "node_confidence",
+        "label": "CogGRAG",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:hipporag",
+        "kind": "node_confidence",
+        "label": "HippoRAG",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      }
+    ],
+    "weak_claims": [
+      {
+        "confidence": "low",
+        "dst": "idea:context-packs",
+        "dst_label": "Context packs",
+        "dst_type": "idea",
+        "excerpt": "Candidate: evidence-backed packs may improve handoffs.",
+        "index": 94,
+        "kind": "edge_confidence",
+        "source_id": "source:user-interviews",
+        "src": "idea:evidence-backfill",
+        "src_label": "Evidence backfill",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "idea:reviewable-research",
+        "dst_label": "Reviewable research memory",
+        "dst_type": "idea",
+        "excerpt": "Candidate: local storage may support reviewable research.",
+        "index": 95,
+        "kind": "edge_confidence",
+        "source_id": "source:architecture-note",
+        "src": "idea:local-first-storage",
+        "src_label": "Local-first storage",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "idea:privacy-boundary",
+        "dst_label": "Explicit privacy boundary",
+        "dst_type": "idea",
+        "excerpt": "Candidate: typed relationships may clarify privacy boundaries.",
+        "index": 96,
+        "kind": "edge_confidence",
+        "source_id": "source:launch-plan",
+        "src": "idea:typed-relationships",
+        "src_label": "Typed relationships",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:coggrag",
+        "kind": "node_confidence",
+        "label": "CogGRAG",
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:hipporag",
+        "kind": "node_confidence",
+        "label": "HippoRAG",
+        "type": "reference"
+      }
+    ]
+  },
+  "schema_version": "memory-audit/v1",
+  "stats": {
+    "audit_edges": 79,
+    "communities": 6,
+    "edges": 97,
+    "max_core_number": 3,
+    "nodes": 47,
+    "semantic_components": 1,
+    "semantic_edges": 56,
+    "semantic_nodes": 41,
+    "source_nodes": 6,
+    "source_projection_edges": 35
+  }
+}

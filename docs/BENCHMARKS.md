@@ -29,6 +29,7 @@ python3 -m unittest tests/test_cli_smoke.py tests/test_benchmarks.py
 | B7 | Context compactness | LLM context export stays paste-sized | `context --max-ideas 5` emits fewer than 3000 characters |
 | B8 | Privacy boundary | Public fixture stays sanitized and private graph path remains ignored | Demo nodes/edges use public schema; no email or absolute home paths; default private graph is not tracked |
 | B9 | Negative query | Missing topics are reported plainly | Absent query prints `No nodes match ...` and does not return false positives |
+| B10 | Launch fixture | Public demo keeps its promised composition and useful audit topology | Exact type counts, two measurable bridge ideas, and at least three low-confidence candidate edges |
 
 ## Manual Commands
 
@@ -139,6 +140,16 @@ Pass criteria:
 
 - stdout contains `No nodes match 'unlikely-absent-benchmark-token'.`
 - stdout does not contain a normal match section
+
+### B10: Launch Fixture
+
+This is a static fixture and analytics check in `tests/test_benchmarks.py`.
+
+Pass criteria:
+
+- exactly 3 projects, 4 goals, 8 decisions, 12 ideas, 6 sources, and 5 references
+- `idea:audited-context-bridge` and `idea:evidence-governance-bridge` have positive betweenness
+- at least three low-confidence candidate edges feed the weak-claim queue
 
 ## Interpreting Failures
 

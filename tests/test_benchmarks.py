@@ -201,6 +201,31 @@ class BenchmarkTest(unittest.TestCase):
         self.assertIn(f"No nodes match '{missing_term}'.", result.stdout)
         self.assertNotIn("Matches for", result.stdout)
 
+    def test_b10_launch_fixture_shape_and_bridge_candidates(self):
+        graph = load_demo_graph()
+        node_counts = {}
+        for node in graph["nodes"].values():
+            node_counts[node["type"]] = node_counts.get(node["type"], 0) + 1
+
+        self.assertEqual(node_counts["project"], 3)
+        self.assertEqual(node_counts["goal"], 4)
+        self.assertEqual(node_counts["decision"], 8)
+        self.assertEqual(node_counts["idea"], 12)
+        self.assertEqual(node_counts["source"], 6)
+        self.assertEqual(node_counts["reference"], 5)
+
+        data = self.load_audit()
+        bridge_scores = {
+            item["id"]: item["score"]
+            for item in data["ranked"]["bridge_ideas"]
+        }
+        self.assertGreater(bridge_scores["idea:audited-context-bridge"], 0)
+        self.assertGreater(bridge_scores["idea:evidence-governance-bridge"], 0)
+
+        low_edges = data["low_confidence_edges"]
+        self.assertGreaterEqual(len(low_edges), 3)
+        self.assertTrue(all(edge["confidence"] == "low" for edge in low_edges))
+
 
 if __name__ == "__main__":
     unittest.main()

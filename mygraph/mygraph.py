@@ -233,79 +233,265 @@ def conf_tag(c: str) -> str:
 # ---------- seed --------------------------------------------------------------
 
 def seed() -> Graph:
-    """Write a small fictional demo graph to the active graph path.
+    """Write the fictional launch demo graph to the active graph path.
 
     The seed intentionally avoids private-owner facts so generated public
     examples can be committed safely.
     """
     g = Graph()
+    demo_time = "2026-06-09T12:00:00+00:00"
+
+    def node(id_: str, type_: str, label: str, body: str,
+             confidence: str = "high") -> Node:
+        return Node(
+            id=id_,
+            type=type_,
+            label=label,
+            body=body,
+            confidence=confidence,
+            created_at=demo_time,
+        )
 
     nodes = [
-        Node(id="source:demo-notes", type="source", label="demo-notes.md",
-             body="Fictional project notes used to demonstrate provenance-backed memory."),
-        Node(id="source:architecture-note", type="source", label="architecture-note.md",
-             body="Fictional architecture note for the public demo graph."),
-        Node(id="person:demo-owner", type="person", label="Demo Owner",
-             body="A fictional graph owner used only for public examples."),
-        Node(id="project:knowledge-worker", type="project", label="knowledge-worker",
-             body="A local-first toolkit for source-backed AI memory."),
-        Node(id="idea:context-memory", type="idea", label="Context memory",
-             body="AI sessions improve when durable context is stored as concepts instead of loose transcript chunks."),
-        Node(id="idea:provenance-first", type="idea", label="Provenance first",
-             body="Every durable claim should point back to source evidence."),
-        Node(id="goal:trusted-ai-assistance", type="goal", label="Trusted AI assistance",
-             body="Make assistant responses easier to verify and continue across sessions."),
-        Node(id="question:storage-backend", type="question", label="When should storage move beyond JSON?",
-             body="Open question: keep JSON until size or concurrency makes it awkward."),
-        Node(id="decision:json-first", type="decision", label="Use JSON first",
-             body="Start with a simple JSON store before introducing a database."),
-        Node(id="topic:knowledge-graphs", type="topic", label="Knowledge graphs",
-             body="Structured concepts and relationships for durable context."),
-        Node(id="topic:local-first", type="topic", label="Local-first software",
-             body="Software that keeps user data local unless the owner chooses otherwise."),
-        Node(id="reference:coggrag", type="reference", label="CogGRAG",
-             body="A public reference about cognition-inspired graph retrieval.", confidence="medium"),
+        node("source:product-brief", "source", "product-brief.md",
+             "Fictional brief for reviewable, provenance-backed memory."),
+        node("source:research-notes", "source", "research-notes.md",
+             "Fictional research notes connecting evidence, typed relationships, and retrieval."),
+        node("source:privacy-review", "source", "privacy-review.md",
+             "Fictional privacy review for local storage and scoped context sharing."),
+        node("source:user-interviews", "source", "user-interviews.md",
+             "Fictional interview synthesis about continuity across AI sessions. Candidate: evidence-backed packs may improve handoffs."),
+        node("source:architecture-note", "source", "architecture-note.md",
+             "Fictional architecture note for JSON storage, RDF export, and typed graph structure. Candidate: local storage may support reviewable research."),
+        node("source:launch-plan", "source", "launch-plan.md",
+             "Fictional public-alpha plan centered on ranked memory audit output. Candidate: typed relationships may clarify privacy boundaries."),
+        node("person:demo-owner", "person", "Demo Owner",
+             "A fictional graph owner used only for public examples."),
+        node("project:memory-workbench", "project", "Memory Workbench",
+             "A local toolkit for reviewed, source-backed AI memory."),
+        node("project:research-assistant", "project", "Research Assistant",
+             "A fictional assistant that keeps claims connected to evidence."),
+        node("project:launch-demo", "project", "Public Launch Demo",
+             "A public-safe demonstration of memory governance workflows."),
+        node("goal:trusted-ai-assistance", "goal", "Trusted AI assistance",
+             "Make assistant responses easier to verify and continue across sessions."),
+        node("goal:private-context-sharing", "goal", "Private context sharing",
+             "Share only the bounded context needed for a task."),
+        node("goal:evidence-backed-research", "goal", "Evidence-backed research",
+             "Keep research claims connected to supporting and challenging evidence."),
+        node("goal:public-alpha", "goal", "Public alpha",
+             "Publish a useful, fictional demonstration without exposing private memory."),
+        node("decision:json-first", "decision", "Use JSON first",
+             "Start with a transparent JSON graph before adding database infrastructure."),
+        node("decision:review-before-merge", "decision", "Review before merge",
+             "Human approval is required before proposed memory becomes durable."),
+        node("decision:provenance-required", "decision", "Require provenance",
+             "Every durable claim needs a source identifier and literal excerpt."),
+        node("decision:scoped-exports", "decision", "Export scoped context",
+             "Share bounded context packs instead of the full graph."),
+        node("decision:ranked-audit-first", "decision", "Ranked audit before graph canvas",
+             "Lead with important concepts, bridges, weak claims, and proof trails."),
+        node("decision:local-default", "decision", "Keep private memory local",
+             "Private graph data stays local unless the owner explicitly exports a slice."),
+        node("decision:defer-sql", "decision", "Defer SQL storage",
+             "Move beyond JSON only when graph size or concurrency requires it."),
+        node("decision:fictional-demo-only", "decision", "Use fictional demo data",
+             "The public repository must demonstrate behavior without private facts."),
+        node("idea:context-memory", "idea", "Context memory",
+             "Durable concepts preserve continuity better than loose transcript chunks."),
+        node("idea:provenance-first", "idea", "Provenance first",
+             "Every durable claim should point back to source evidence."),
+        node("idea:human-promotion-loop", "idea", "Human promotion loop",
+             "AI proposes memory changes and a person decides what becomes durable."),
+        node("idea:memory-audit", "idea", "Memory Audit",
+             "Ranked graph analytics make important, bridging, and weak memory inspectable."),
+        node("idea:context-packs", "idea", "Context packs",
+             "Export only the cited graph slice needed by another AI tool."),
+        node("idea:local-first-storage", "idea", "Local-first storage",
+             "Keep the canonical graph in files controlled by the owner."),
+        node("idea:typed-relationships", "idea", "Typed relationships",
+             "Named edges preserve why concepts are connected."),
+        node("idea:evidence-backfill", "idea", "Evidence backfill",
+             "Central claims should accumulate supporting or challenging evidence over time."),
+        node("idea:privacy-boundary", "idea", "Explicit privacy boundary",
+             "Public infrastructure and private memory should remain separate."),
+        node("idea:reviewable-research", "idea", "Reviewable research memory",
+             "Research synthesis should retain claims, sources, and uncertainty."),
+        node("idea:audited-context-bridge", "idea", "Audited context bridge",
+             "Memory Audit should identify the safest, most relevant concepts for context export."),
+        node("idea:evidence-governance-bridge", "idea", "Evidence governance bridge",
+             "Evidence quality should influence which memories are promoted and reused."),
+        node("reference:coggrag", "reference", "CogGRAG",
+             "A public reference about cognition-inspired graph retrieval.", confidence="medium"),
+        node("reference:hipporag", "reference", "HippoRAG",
+             "A public reference about associative graph memory for language models.", confidence="medium"),
+        node("reference:rdf", "reference", "RDF 1.1 Concepts",
+             "A public standard for representing graph statements."),
+        node("reference:local-first", "reference", "Local-first software",
+             "A public reference for software that prioritizes local data ownership."),
+        node("reference:pagerank", "reference", "PageRank",
+             "A public reference for ranking nodes using graph link structure."),
+        node("topic:knowledge-graphs", "topic", "Knowledge graphs",
+             "Structured concepts and typed relationships."),
+        node("topic:local-first", "topic", "Local-first software",
+             "Software that keeps user data under local control."),
+        node("topic:provenance", "topic", "Provenance",
+             "Traceability from durable claims back to source excerpts."),
+        node("topic:research-workflow", "topic", "Research workflow",
+             "Processes for collecting, testing, and revising evidence."),
+        node("topic:graph-analytics", "topic", "Graph analytics",
+             "Network measures for importance, bridges, communities, and weak claims."),
+        node("topic:context-governance", "topic", "Context governance",
+             "Rules for deciding what memory another tool should receive."),
+        node("question:storage-backend", "question", "When should storage move beyond JSON?",
+             "Keep JSON until size or concurrency makes a database necessary."),
+        node("question:launch-signal", "question", "What proves the public demo is useful?",
+             "Measure substantive conversations and repository interest after launch."),
     ]
     for node in nodes:
         g.add_node(node)
 
     def edge(src: str, dst: str, type_: str, source_id: str,
              excerpt: str = "", confidence: str = "high") -> None:
-        g.add_edge(Edge(src=src, dst=dst, type=type_, source_id=source_id,
-                        excerpt=excerpt, confidence=confidence))
+        g.add_edge(Edge(
+            src=src,
+            dst=dst,
+            type=type_,
+            source_id=source_id,
+            excerpt=excerpt,
+            confidence=confidence,
+            created_at=demo_time,
+            last_seen=demo_time,
+        ))
 
-    src_demo = "source:demo-notes"
-    src_arch = "source:architecture-note"
-    for node_id, excerpt in [
-        ("person:demo-owner", "The demo owner wants assistant memory that survives across sessions."),
-        ("project:knowledge-worker", "Build a local-first toolkit for source-backed AI memory."),
-        ("idea:context-memory", "Store durable concepts instead of loose transcript chunks."),
-        ("idea:provenance-first", "Every durable claim needs source evidence."),
-        ("goal:trusted-ai-assistance", "Make assistant responses easier to verify and continue."),
-        ("topic:knowledge-graphs", "Use a graph of concepts and relationships."),
-        ("topic:local-first", "Keep owner data local unless explicitly exported."),
-    ]:
-        edge(node_id, src_demo, "MENTIONED_IN", src_demo, excerpt)
+    provenance = {
+        "person:demo-owner": ("source:product-brief", "The fictional demo owner wants memory that can be reviewed before reuse."),
+        "project:memory-workbench": ("source:product-brief", "Build a local workbench for reviewed, source-backed memory."),
+        "project:research-assistant": ("source:research-notes", "The research assistant should keep claims connected to evidence."),
+        "project:launch-demo": ("source:launch-plan", "Publish a public-safe demonstration using fictional graph data."),
+        "goal:trusted-ai-assistance": ("source:user-interviews", "People want AI sessions to continue without losing the reasoning behind prior work."),
+        "goal:private-context-sharing": ("source:privacy-review", "Share only the bounded context needed for the current task."),
+        "goal:evidence-backed-research": ("source:research-notes", "Research claims should remain connected to supporting and challenging evidence."),
+        "goal:public-alpha": ("source:launch-plan", "Ship a useful public alpha without exposing private memory."),
+        "decision:json-first": ("source:architecture-note", "Use JSON first; add a database only when size or concurrency requires it."),
+        "decision:review-before-merge": ("source:product-brief", "A person reviews proposed memory before it becomes durable."),
+        "decision:provenance-required": ("source:product-brief", "Every durable claim requires a source identifier and literal excerpt."),
+        "decision:scoped-exports": ("source:privacy-review", "Export a bounded context slice instead of the whole private graph."),
+        "decision:ranked-audit-first": ("source:launch-plan", "Lead the demo with ranked audit panels before the graph canvas."),
+        "decision:local-default": ("source:privacy-review", "Keep private graph data local unless the owner explicitly exports it."),
+        "decision:defer-sql": ("source:architecture-note", "Defer SQL storage until JSON becomes the limiting factor."),
+        "decision:fictional-demo-only": ("source:launch-plan", "Use fictional data for every committed public demo artifact."),
+        "idea:context-memory": ("source:user-interviews", "Durable concepts preserve continuity better than loose transcript chunks."),
+        "idea:provenance-first": ("source:product-brief", "Every durable claim needs source evidence."),
+        "idea:human-promotion-loop": ("source:product-brief", "AI proposes memory changes and a person decides what becomes durable."),
+        "idea:memory-audit": ("source:launch-plan", "Rank important concepts, bridge ideas, weak claims, and proof trails."),
+        "idea:context-packs": ("source:privacy-review", "Export only the cited graph slice needed by another AI tool."),
+        "idea:local-first-storage": ("source:privacy-review", "Keep the canonical graph in files controlled by the owner."),
+        "idea:typed-relationships": ("source:research-notes", "Named edges preserve why research concepts are connected."),
+        "idea:evidence-backfill": ("source:research-notes", "Central claims should accumulate supporting or challenging evidence over time."),
+        "idea:privacy-boundary": ("source:privacy-review", "Public infrastructure and private memory must remain separate."),
+        "idea:reviewable-research": ("source:research-notes", "Research synthesis should retain claims, sources, and uncertainty."),
+        "idea:audited-context-bridge": ("source:product-brief", "Use Memory Audit to identify safe, relevant concepts for context export."),
+        "idea:evidence-governance-bridge": ("source:research-notes", "Evidence quality should influence which memories are promoted and reused."),
+        "reference:coggrag": ("source:research-notes", "CogGRAG is a public reference for cognition-inspired graph retrieval."),
+        "reference:hipporag": ("source:research-notes", "HippoRAG is a public reference for associative graph memory."),
+        "reference:rdf": ("source:architecture-note", "RDF 1.1 defines a standard model for graph statements."),
+        "reference:local-first": ("source:privacy-review", "Local-first software prioritizes local data ownership."),
+        "reference:pagerank": ("source:launch-plan", "PageRank ranks nodes using graph link structure."),
+        "topic:knowledge-graphs": ("source:architecture-note", "Use structured concepts and typed relationships."),
+        "topic:local-first": ("source:privacy-review", "Keep user data under local control."),
+        "topic:provenance": ("source:product-brief", "Trace durable claims back to source excerpts."),
+        "topic:research-workflow": ("source:research-notes", "Collect, test, and revise evidence over time."),
+        "topic:graph-analytics": ("source:launch-plan", "Use network measures for importance, bridges, communities, and weak claims."),
+        "topic:context-governance": ("source:privacy-review", "Decide what memory another tool should receive."),
+        "question:storage-backend": ("source:architecture-note", "When should storage move beyond JSON?"),
+        "question:launch-signal": ("source:launch-plan", "What proves the public demo is useful?"),
+    }
+    for node_id, (source_id, excerpt) in provenance.items():
+        edge(node_id, source_id, "MENTIONED_IN", source_id, excerpt)
 
-    for node_id, excerpt in [
-        ("question:storage-backend", "When should storage move beyond JSON?"),
-        ("decision:json-first", "Use JSON first; add a database only when needed."),
-        ("reference:coggrag", "CogGRAG is a public reference for graph retrieval."),
-    ]:
-        edge(node_id, src_arch, "MENTIONED_IN", src_arch, excerpt)
+    semantic_edges = [
+        ("person:demo-owner", "idea:context-memory", "HAS_IDEA", "source:user-interviews"),
+        ("person:demo-owner", "idea:provenance-first", "HAS_IDEA", "source:product-brief"),
+        ("person:demo-owner", "idea:memory-audit", "HAS_IDEA", "source:launch-plan"),
+        ("person:demo-owner", "idea:context-packs", "HAS_IDEA", "source:privacy-review"),
+        ("project:memory-workbench", "goal:trusted-ai-assistance", "SERVES", "source:product-brief"),
+        ("project:memory-workbench", "goal:private-context-sharing", "SERVES", "source:privacy-review"),
+        ("project:research-assistant", "goal:evidence-backed-research", "SERVES", "source:research-notes"),
+        ("project:launch-demo", "goal:public-alpha", "SERVES", "source:launch-plan"),
+        ("project:memory-workbench", "topic:provenance", "INVOLVES", "source:product-brief"),
+        ("project:memory-workbench", "topic:context-governance", "INVOLVES", "source:privacy-review"),
+        ("project:research-assistant", "topic:research-workflow", "INVOLVES", "source:research-notes"),
+        ("project:launch-demo", "topic:graph-analytics", "INVOLVES", "source:launch-plan"),
+        ("idea:context-memory", "topic:knowledge-graphs", "RELATES_TO", "source:user-interviews"),
+        ("idea:provenance-first", "topic:provenance", "RELATES_TO", "source:product-brief"),
+        ("idea:human-promotion-loop", "topic:provenance", "RELATES_TO", "source:product-brief"),
+        ("idea:memory-audit", "topic:graph-analytics", "RELATES_TO", "source:launch-plan"),
+        ("idea:context-packs", "topic:context-governance", "RELATES_TO", "source:privacy-review"),
+        ("idea:local-first-storage", "topic:local-first", "RELATES_TO", "source:privacy-review"),
+        ("idea:typed-relationships", "topic:knowledge-graphs", "RELATES_TO", "source:research-notes"),
+        ("idea:evidence-backfill", "topic:research-workflow", "RELATES_TO", "source:research-notes"),
+        ("idea:privacy-boundary", "topic:context-governance", "RELATES_TO", "source:privacy-review"),
+        ("idea:reviewable-research", "topic:research-workflow", "RELATES_TO", "source:research-notes"),
+        ("idea:provenance-first", "goal:trusted-ai-assistance", "SERVES", "source:product-brief"),
+        ("goal:trusted-ai-assistance", "idea:provenance-first", "ENABLED_BY", "source:product-brief"),
+        ("idea:human-promotion-loop", "goal:trusted-ai-assistance", "SERVES", "source:product-brief"),
+        ("goal:trusted-ai-assistance", "idea:human-promotion-loop", "ENABLED_BY", "source:product-brief"),
+        ("idea:context-packs", "goal:private-context-sharing", "SERVES", "source:privacy-review"),
+        ("goal:private-context-sharing", "idea:context-packs", "ENABLED_BY", "source:privacy-review"),
+        ("idea:evidence-backfill", "goal:evidence-backed-research", "SERVES", "source:research-notes"),
+        ("goal:evidence-backed-research", "idea:evidence-backfill", "ENABLED_BY", "source:research-notes"),
+        ("idea:memory-audit", "goal:public-alpha", "SERVES", "source:launch-plan"),
+        ("goal:public-alpha", "idea:memory-audit", "ENABLED_BY", "source:launch-plan"),
+        ("decision:review-before-merge", "idea:human-promotion-loop", "ENABLED_BY", "source:product-brief"),
+        ("decision:provenance-required", "idea:provenance-first", "ENABLED_BY", "source:product-brief"),
+        ("decision:scoped-exports", "idea:context-packs", "ENABLED_BY", "source:privacy-review"),
+        ("decision:ranked-audit-first", "idea:memory-audit", "ENABLED_BY", "source:launch-plan"),
+        ("decision:local-default", "idea:local-first-storage", "ENABLED_BY", "source:privacy-review"),
+        ("decision:json-first", "idea:local-first-storage", "ENABLED_BY", "source:architecture-note"),
+        ("decision:defer-sql", "idea:local-first-storage", "ENABLED_BY", "source:architecture-note"),
+        ("decision:fictional-demo-only", "idea:privacy-boundary", "ENABLED_BY", "source:launch-plan"),
+        ("decision:json-first", "question:storage-backend", "ABOUT", "source:architecture-note"),
+        ("decision:ranked-audit-first", "question:launch-signal", "ABOUT", "source:launch-plan"),
+        ("idea:typed-relationships", "reference:coggrag", "SUPPORTED_BY", "source:research-notes"),
+        ("idea:typed-relationships", "reference:hipporag", "SUPPORTED_BY", "source:research-notes"),
+        ("idea:local-first-storage", "reference:local-first", "SUPPORTED_BY", "source:privacy-review"),
+        ("idea:memory-audit", "reference:pagerank", "SUPPORTED_BY", "source:launch-plan"),
+        ("idea:provenance-first", "reference:rdf", "RELATES_TO", "source:architecture-note"),
+        ("idea:audited-context-bridge", "idea:memory-audit", "RELATES_TO", "source:product-brief"),
+        ("idea:audited-context-bridge", "idea:context-packs", "RELATES_TO", "source:product-brief"),
+        ("idea:audited-context-bridge", "goal:private-context-sharing", "SERVES", "source:product-brief"),
+        ("idea:evidence-governance-bridge", "idea:evidence-backfill", "RELATES_TO", "source:research-notes"),
+        ("idea:evidence-governance-bridge", "idea:provenance-first", "RELATES_TO", "source:research-notes"),
+        ("idea:evidence-governance-bridge", "goal:evidence-backed-research", "SERVES", "source:research-notes"),
+    ]
+    for src, dst, type_, source_id in semantic_edges:
+        edge(src, dst, type_, source_id)
 
-    edge("person:demo-owner", "idea:context-memory", "HAS_IDEA", src_demo)
-    edge("person:demo-owner", "idea:provenance-first", "HAS_IDEA", src_demo)
-    edge("project:knowledge-worker", "goal:trusted-ai-assistance", "SERVES", src_demo)
-    edge("project:knowledge-worker", "topic:knowledge-graphs", "INVOLVES", src_demo)
-    edge("project:knowledge-worker", "topic:local-first", "INVOLVES", src_demo)
-    edge("idea:context-memory", "topic:knowledge-graphs", "RELATES_TO", src_demo)
-    edge("idea:provenance-first", "goal:trusted-ai-assistance", "SERVES", src_demo)
-    edge("goal:trusted-ai-assistance", "idea:provenance-first", "ENABLED_BY", src_demo)
-    edge("decision:json-first", "idea:context-memory", "ENABLED_BY", src_arch)
-    edge("decision:json-first", "question:storage-backend", "ABOUT", src_arch)
-    edge("idea:context-memory", "reference:coggrag", "SUPPORTED_BY", src_arch,
-         excerpt="CogGRAG is a public reference for graph retrieval.", confidence="medium")
+    edge(
+        "idea:evidence-backfill",
+        "idea:context-packs",
+        "RELATES_TO",
+        "source:user-interviews",
+        "Candidate: evidence-backed packs may improve handoffs.",
+        "low",
+    )
+    edge(
+        "idea:local-first-storage",
+        "idea:reviewable-research",
+        "RELATES_TO",
+        "source:architecture-note",
+        "Candidate: local storage may support reviewable research.",
+        "low",
+    )
+    edge(
+        "idea:typed-relationships",
+        "idea:privacy-boundary",
+        "RELATES_TO",
+        "source:launch-plan",
+        "Candidate: typed relationships may clarify privacy boundaries.",
+        "low",
+    )
 
     g.save()
     return g

@@ -13,6 +13,7 @@ Transports:
 
 Default model: gemma4:e4b (override with OLLAMA_DEFAULT_MODEL env var).
 Ollama base : http://127.0.0.1:11434 (override with OLLAMA_BASE_URL).
+Keep-alive : 30s (override with OLLAMA_KEEP_ALIVE; use 0 to unload immediately).
 
 Usage:
     python server.py                  # stdio transport (default)
@@ -45,6 +46,7 @@ except ImportError as e:
 OLLAMA_BASE_URL = os.environ.get("OLLAMA_BASE_URL", "http://127.0.0.1:11434").rstrip("/")
 DEFAULT_MODEL = os.environ.get("OLLAMA_DEFAULT_MODEL", "gemma4:e4b")
 TIMEOUT_S = float(os.environ.get("OLLAMA_TIMEOUT_S", "300"))
+KEEP_ALIVE = os.environ.get("OLLAMA_KEEP_ALIVE", "30s")
 
 mcp = FastMCP("ollama-proxy")
 _client = httpx.Client(base_url=OLLAMA_BASE_URL, timeout=TIMEOUT_S)
@@ -68,6 +70,7 @@ def chat(
     model: str | None = None,
     options: dict | None = None,
     format: str | None = None,
+    keep_alive: str | int | None = None,
 ) -> dict:
     """Chat completion via Ollama /api/chat.
 
@@ -76,6 +79,8 @@ def chat(
         model:    Ollama model tag. Defaults to OLLAMA_DEFAULT_MODEL (gemma4:e4b).
         options:  Ollama runtime options (temperature, num_ctx, etc.).
         format:   "json" to force JSON-mode output.
+        keep_alive: how long Ollama should keep the model loaded after the call.
+                    Defaults to OLLAMA_KEEP_ALIVE (30s). Use 0 to unload immediately.
 
     Returns the raw Ollama response: {message: {role, content}, done, ...}
     """
@@ -83,6 +88,7 @@ def chat(
         "model": model or DEFAULT_MODEL,
         "messages": messages,
         "stream": False,
+        "keep_alive": KEEP_ALIVE if keep_alive is None else keep_alive,
     }
     if options:
         payload["options"] = options
@@ -98,6 +104,7 @@ def generate(
     options: dict | None = None,
     format: str | None = None,
     system: str | None = None,
+    keep_alive: str | int | None = None,
 ) -> dict:
     """Single-shot completion via Ollama /api/generate.
 
@@ -107,11 +114,14 @@ def generate(
         options:  Ollama runtime options
         format:   "json" to force JSON output
         system:   optional system prompt
+        keep_alive: how long Ollama should keep the model loaded after the call.
+                    Defaults to OLLAMA_KEEP_ALIVE (30s). Use 0 to unload immediately.
     """
     payload: dict[str, Any] = {
         "model": model or DEFAULT_MODEL,
         "prompt": prompt,
         "stream": False,
+        "keep_alive": KEEP_ALIVE if keep_alive is None else keep_alive,
     }
     if options:
         payload["options"] = options
@@ -129,16 +139,23 @@ def list_models() -> dict:
 
 
 @mcp.tool()
-def embed(input: str | list[str], model: str | None = None) -> dict:
+def embed(
+    input: str | list[str],
+    model: str | None = None,
+    keep_alive: str | int | None = None,
+) -> dict:
     """Get embeddings via Ollama /api/embed.
 
     Args:
         input: a string or list of strings to embed
         model: embedding-capable model tag (e.g. "nomic-embed-text")
+        keep_alive: how long Ollama should keep the model loaded after the call.
+                    Defaults to OLLAMA_KEEP_ALIVE (30s). Use 0 to unload immediately.
     """
     payload = {
         "model": model or DEFAULT_MODEL,
         "input": input,
+        "keep_alive": KEEP_ALIVE if keep_alive is None else keep_alive,
     }
     return _post("/api/embed", payload)
 

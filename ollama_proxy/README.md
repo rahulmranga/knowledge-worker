@@ -98,6 +98,7 @@ See `tailscale.md` for the full network setup.
 | `OLLAMA_BASE_URL` | `http://127.0.0.1:11434` | all |
 | `OLLAMA_DEFAULT_MODEL` | `gemma4:e4b` | server, adapter |
 | `OLLAMA_TIMEOUT_S` | `300` | server |
+| `OLLAMA_KEEP_ALIVE` | `30s` | server; use `0` to unload after each call |
 | `GEMMA_NUM_CTX` | `8192` | extractor_adapter |
 | `MCP_HOST` / `MCP_PORT` | `127.0.0.1` / `7421` | server (--sse mode) |
 | `PROXY_HOST` / `PROXY_PORT` | `127.0.0.1` / `11435` | proxy |

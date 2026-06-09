@@ -23,7 +23,10 @@ chat-to-wiki system. It keeps reasoning local, reviewable, and tied to literal
 provenance excerpts before claims become durable graph knowledge.
 
 See [Competitive Analysis](docs/COMPETITIVE_ANALYSIS.md) for the category
-matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
+matrix, [Mem0 Comparison](docs/MEM0_COMPARISON.md) for the closest agent-memory
+contrast, and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph
+checks. See [Context Packs](docs/CONTEXT_PACKS.md) for the roadmap direction on
+scoped, cited exports for AI handoffs.
 
 ## What It Does
 

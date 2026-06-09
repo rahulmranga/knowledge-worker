@@ -18,7 +18,20 @@
 
 - Complete and document the local MCP wrapper surface.
 - Add MCP smoke tests that do not require private graph data.
+- Define context packs as scoped, cited exports for handing a bounded graph
+  slice to another AI tool without exposing the whole graph.
 - Revisit named competitor rows only after a fresh source-verification pass.
+
+## v0.5: Context Pack Workflow
+
+- Add an `export-slice` workflow that starts from a query, node id, or path and
+  emits a reviewed Markdown or JSON context pack.
+- Include node ids, confidence labels, edge summaries, source ids, and
+  provenance excerpts by default.
+- Support basic scope controls such as hop count, node type filters, confidence
+  filters, and explicit exclusions.
+- Keep generated packs out of git by default and document a review-before-share
+  workflow.
 
 ## v1: Public Demo And Local Graphs
 

@@ -97,12 +97,88 @@ class CliSmokeTest(unittest.TestCase):
 
             summary = run_mykg("summary", env=env)
             self.assertEqual(summary.returncode, 0, summary.stderr)
-            self.assertIn("12 nodes, 19 edges", summary.stdout)
+            self.assertIn("12 nodes, 21 edges", summary.stdout)
 
             context = run_mykg("context", "--max-ideas", "2", env=env)
             self.assertEqual(context.returncode, 0, context.stderr)
             self.assertIn("# mygraph", context.stdout)
             self.assertIn("## Ideas", context.stdout)
+
+    def test_merge_adds_enabled_by_from_goal_and_decision_back_to_idea(self):
+        from mygraph.merge import merge
+
+        with tempfile.TemporaryDirectory() as tmp:
+            old_path = os.environ.get("MYGRAPH_PATH")
+            os.environ["MYGRAPH_PATH"] = str(Path(tmp) / "graph.json")
+            try:
+                approved = {
+                    "source": {
+                        "id": "source:test-note",
+                        "label": "test-note.md",
+                        "body": "The citation graph idea produces a reviewable goal.",
+                    },
+                    "nodes": [
+                        {
+                            "id": "idea:citation-graph",
+                            "type": "idea",
+                            "label": "Citation graph",
+                            "body": "Keep citations in the graph.",
+                            "confidence": "high",
+                        },
+                        {
+                            "id": "goal:reviewable-memory",
+                            "type": "goal",
+                            "label": "Reviewable memory",
+                            "body": "Make memory reviewable.",
+                            "confidence": "high",
+                        },
+                        {
+                            "id": "decision:json-storage",
+                            "type": "decision",
+                            "label": "JSON storage",
+                            "body": "Start with JSON storage.",
+                            "confidence": "high",
+                        },
+                    ],
+                    "edges": [
+                        {
+                            "src": "idea:citation-graph",
+                            "dst": "goal:reviewable-memory",
+                            "type": "SERVES",
+                            "confidence": "high",
+                            "excerpt": "citation graph idea produces a reviewable goal",
+                        },
+                        {
+                            "src": "idea:citation-graph",
+                            "dst": "decision:json-storage",
+                            "type": "SERVES",
+                            "confidence": "high",
+                            "excerpt": "citation graph idea produces a reviewable goal",
+                        },
+                    ],
+                }
+
+                merge(approved, interactive=False)
+
+                graph_path = Path(os.environ["MYGRAPH_PATH"])
+                graph = json.loads(graph_path.read_text())
+                edges = {
+                    (edge["src"], edge["dst"], edge["type"])
+                    for edge in graph["edges"]
+                }
+                self.assertIn(
+                    ("goal:reviewable-memory", "idea:citation-graph", "ENABLED_BY"),
+                    edges,
+                )
+                self.assertIn(
+                    ("decision:json-storage", "idea:citation-graph", "ENABLED_BY"),
+                    edges,
+                )
+            finally:
+                if old_path is None:
+                    os.environ.pop("MYGRAPH_PATH", None)
+                else:
+                    os.environ["MYGRAPH_PATH"] = old_path
 
     def test_legacy_private_node_types_are_readable(self):
         with tempfile.TemporaryDirectory() as tmp:

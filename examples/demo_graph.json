@@ -2,190 +2,210 @@
   "edges": [
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774985+00:00",
+      "created_at": "2026-05-26T00:04:21.538813+00:00",
       "dst": "source:demo-notes",
       "excerpt": "The demo owner wants assistant memory that survives across sessions.",
-      "last_seen": "2026-05-15T22:55:51.774994+00:00",
+      "last_seen": "2026-05-26T00:04:21.538814+00:00",
       "source_id": "source:demo-notes",
       "src": "person:demo-owner",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775006+00:00",
+      "created_at": "2026-05-26T00:04:21.538817+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Build a local-first toolkit for source-backed AI memory.",
-      "last_seen": "2026-05-15T22:55:51.775011+00:00",
+      "last_seen": "2026-05-26T00:04:21.538818+00:00",
       "source_id": "source:demo-notes",
       "src": "project:knowledge-worker",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775019+00:00",
+      "created_at": "2026-05-26T00:04:21.538821+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Store durable concepts instead of loose transcript chunks.",
-      "last_seen": "2026-05-15T22:55:51.775023+00:00",
+      "last_seen": "2026-05-26T00:04:21.538821+00:00",
       "source_id": "source:demo-notes",
       "src": "idea:context-memory",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775030+00:00",
+      "created_at": "2026-05-26T00:04:21.538823+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Every durable claim needs source evidence.",
-      "last_seen": "2026-05-15T22:55:51.775034+00:00",
+      "last_seen": "2026-05-26T00:04:21.538824+00:00",
       "source_id": "source:demo-notes",
       "src": "idea:provenance-first",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775042+00:00",
+      "created_at": "2026-05-26T00:04:21.538825+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Make assistant responses easier to verify and continue.",
-      "last_seen": "2026-05-15T22:55:51.775046+00:00",
+      "last_seen": "2026-05-26T00:04:21.538826+00:00",
       "source_id": "source:demo-notes",
       "src": "goal:trusted-ai-assistance",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775055+00:00",
+      "created_at": "2026-05-26T00:04:21.538827+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Use a graph of concepts and relationships.",
-      "last_seen": "2026-05-15T22:55:51.775060+00:00",
+      "last_seen": "2026-05-26T00:04:21.538828+00:00",
       "source_id": "source:demo-notes",
       "src": "topic:knowledge-graphs",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775069+00:00",
+      "created_at": "2026-05-26T00:04:21.538829+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Keep owner data local unless explicitly exported.",
-      "last_seen": "2026-05-15T22:55:51.775073+00:00",
+      "last_seen": "2026-05-26T00:04:21.538830+00:00",
       "source_id": "source:demo-notes",
       "src": "topic:local-first",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775083+00:00",
+      "created_at": "2026-05-26T00:04:21.538832+00:00",
       "dst": "source:architecture-note",
       "excerpt": "When should storage move beyond JSON?",
-      "last_seen": "2026-05-15T22:55:51.775087+00:00",
+      "last_seen": "2026-05-26T00:04:21.538833+00:00",
       "source_id": "source:architecture-note",
       "src": "question:storage-backend",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775097+00:00",
+      "created_at": "2026-05-26T00:04:21.538834+00:00",
       "dst": "source:architecture-note",
       "excerpt": "Use JSON first; add a database only when needed.",
-      "last_seen": "2026-05-15T22:55:51.775101+00:00",
+      "last_seen": "2026-05-26T00:04:21.538835+00:00",
       "source_id": "source:architecture-note",
       "src": "decision:json-first",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775111+00:00",
+      "created_at": "2026-05-26T00:04:21.538836+00:00",
       "dst": "source:architecture-note",
       "excerpt": "CogGRAG is a public reference for graph retrieval.",
-      "last_seen": "2026-05-15T22:55:51.775115+00:00",
+      "last_seen": "2026-05-26T00:04:21.538837+00:00",
       "source_id": "source:architecture-note",
       "src": "reference:coggrag",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775125+00:00",
+      "created_at": "2026-05-26T00:04:21.538839+00:00",
       "dst": "idea:context-memory",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775128+00:00",
+      "last_seen": "2026-05-26T00:04:21.538840+00:00",
       "source_id": "source:demo-notes",
       "src": "person:demo-owner",
       "type": "HAS_IDEA"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775139+00:00",
+      "created_at": "2026-05-26T00:04:21.538842+00:00",
       "dst": "idea:provenance-first",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775142+00:00",
+      "last_seen": "2026-05-26T00:04:21.538842+00:00",
       "source_id": "source:demo-notes",
       "src": "person:demo-owner",
       "type": "HAS_IDEA"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775152+00:00",
+      "created_at": "2026-05-26T00:04:21.538844+00:00",
       "dst": "goal:trusted-ai-assistance",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775156+00:00",
+      "last_seen": "2026-05-26T00:04:21.538845+00:00",
       "source_id": "source:demo-notes",
       "src": "project:knowledge-worker",
       "type": "SERVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775167+00:00",
+      "created_at": "2026-05-26T00:04:21.538847+00:00",
       "dst": "topic:knowledge-graphs",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775170+00:00",
+      "last_seen": "2026-05-26T00:04:21.538848+00:00",
       "source_id": "source:demo-notes",
       "src": "project:knowledge-worker",
       "type": "INVOLVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775181+00:00",
+      "created_at": "2026-05-26T00:04:21.538850+00:00",
       "dst": "topic:local-first",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775186+00:00",
+      "last_seen": "2026-05-26T00:04:21.538851+00:00",
       "source_id": "source:demo-notes",
       "src": "project:knowledge-worker",
       "type": "INVOLVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775200+00:00",
+      "created_at": "2026-05-26T00:04:21.538852+00:00",
       "dst": "topic:knowledge-graphs",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775204+00:00",
+      "last_seen": "2026-05-26T00:04:21.538853+00:00",
       "source_id": "source:demo-notes",
       "src": "idea:context-memory",
       "type": "RELATES_TO"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775218+00:00",
+      "created_at": "2026-05-26T00:04:21.538855+00:00",
       "dst": "goal:trusted-ai-assistance",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775222+00:00",
+      "last_seen": "2026-05-26T00:04:21.538856+00:00",
       "source_id": "source:demo-notes",
       "src": "idea:provenance-first",
       "type": "SERVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775237+00:00",
+      "created_at": "2026-05-26T00:04:21.538858+00:00",
+      "dst": "idea:provenance-first",
+      "excerpt": "",
+      "last_seen": "2026-05-26T00:04:21.538859+00:00",
+      "source_id": "source:demo-notes",
+      "src": "goal:trusted-ai-assistance",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-26T00:04:21.538861+00:00",
+      "dst": "idea:context-memory",
+      "excerpt": "",
+      "last_seen": "2026-05-26T00:04:21.538861+00:00",
+      "source_id": "source:architecture-note",
+      "src": "decision:json-first",
+      "type": "ENABLED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-26T00:04:21.538863+00:00",
       "dst": "question:storage-backend",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775241+00:00",
+      "last_seen": "2026-05-26T00:04:21.538864+00:00",
       "source_id": "source:architecture-note",
       "src": "decision:json-first",
       "type": "ABOUT"
     },
     {
       "confidence": "medium",
-      "created_at": "2026-05-15T22:55:51.775257+00:00",
+      "created_at": "2026-05-26T00:04:21.538867+00:00",
       "dst": "reference:coggrag",
       "excerpt": "CogGRAG is a public reference for graph retrieval.",
-      "last_seen": "2026-05-15T22:55:51.775261+00:00",
+      "last_seen": "2026-05-26T00:04:21.538867+00:00",
       "source_id": "source:architecture-note",
       "src": "idea:context-memory",
       "type": "SUPPORTED_BY"
@@ -195,7 +215,7 @@
     "decision:json-first": {
       "body": "Start with a simple JSON store before introducing a database.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774863+00:00",
+      "created_at": "2026-05-26T00:04:21.538805+00:00",
       "id": "decision:json-first",
       "label": "Use JSON first",
       "type": "decision"
@@ -203,7 +223,7 @@
     "goal:trusted-ai-assistance": {
       "body": "Make assistant responses easier to verify and continue across sessions.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774852+00:00",
+      "created_at": "2026-05-26T00:04:21.538803+00:00",
       "id": "goal:trusted-ai-assistance",
       "label": "Trusted AI assistance",
       "type": "goal"
@@ -211,7 +231,7 @@
     "idea:context-memory": {
       "body": "AI sessions improve when durable context is stored as concepts instead of loose transcript chunks.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774842+00:00",
+      "created_at": "2026-05-26T00:04:21.538800+00:00",
       "id": "idea:context-memory",
       "label": "Context memory",
       "type": "idea"
@@ -219,7 +239,7 @@
     "idea:provenance-first": {
       "body": "Every durable claim should point back to source evidence.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774847+00:00",
+      "created_at": "2026-05-26T00:04:21.538802+00:00",
       "id": "idea:provenance-first",
       "label": "Provenance first",
       "type": "idea"
@@ -227,7 +247,7 @@
     "person:demo-owner": {
       "body": "A fictional graph owner used only for public examples.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774831+00:00",
+      "created_at": "2026-05-26T00:04:21.538798+00:00",
       "id": "person:demo-owner",
       "label": "Demo Owner",
       "type": "person"
@@ -235,7 +255,7 @@
     "project:knowledge-worker": {
       "body": "A local-first toolkit for source-backed AI memory.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774837+00:00",
+      "created_at": "2026-05-26T00:04:21.538799+00:00",
       "id": "project:knowledge-worker",
       "label": "knowledge-worker",
       "type": "project"
@@ -243,7 +263,7 @@
     "question:storage-backend": {
       "body": "Open question: keep JSON until size or concurrency makes it awkward.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774857+00:00",
+      "created_at": "2026-05-26T00:04:21.538804+00:00",
       "id": "question:storage-backend",
       "label": "When should storage move beyond JSON?",
       "type": "question"
@@ -251,7 +271,7 @@
     "reference:coggrag": {
       "body": "A public reference about cognition-inspired graph retrieval.",
       "confidence": "medium",
-      "created_at": "2026-05-15T22:55:51.774880+00:00",
+      "created_at": "2026-05-26T00:04:21.538808+00:00",
       "id": "reference:coggrag",
       "label": "CogGRAG",
       "type": "reference"
@@ -259,7 +279,7 @@
     "source:architecture-note": {
       "body": "Fictional architecture note for the public demo graph.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774823+00:00",
+      "created_at": "2026-05-26T00:04:21.538796+00:00",
       "id": "source:architecture-note",
       "label": "architecture-note.md",
       "type": "source"
@@ -267,7 +287,7 @@
     "source:demo-notes": {
       "body": "Fictional project notes used to demonstrate provenance-backed memory.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774750+00:00",
+      "created_at": "2026-05-26T00:04:21.538646+00:00",
       "id": "source:demo-notes",
       "label": "demo-notes.md",
       "type": "source"
@@ -275,7 +295,7 @@
     "topic:knowledge-graphs": {
       "body": "Structured concepts and relationships for durable context.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774868+00:00",
+      "created_at": "2026-05-26T00:04:21.538806+00:00",
       "id": "topic:knowledge-graphs",
       "label": "Knowledge graphs",
       "type": "topic"
@@ -283,7 +303,7 @@
     "topic:local-first": {
       "body": "Software that keeps user data local unless the owner chooses otherwise.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774874+00:00",
+      "created_at": "2026-05-26T00:04:21.538807+00:00",
       "id": "topic:local-first",
       "label": "Local-first software",
       "type": "topic"

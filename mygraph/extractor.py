@@ -97,7 +97,9 @@ Rules:
 7. Do NOT invent biographical facts. If the source doesn't say it, it doesn't go in.
 8. The Source node `id` MUST equal: {source_id}
 9. Every NEW concept node MUST have a `MENTIONED_IN` edge to the Source.
-10. Output the tool call exactly per schema. No prose.
+10. If a source shows an idea producing or enabling a goal or decision, connect the
+    goal/decision back to that idea with `ENABLED_BY`.
+11. Output the tool call exactly per schema. No prose.
 
 Allowed node types: {node_types}
 Allowed edge types: {edge_types}

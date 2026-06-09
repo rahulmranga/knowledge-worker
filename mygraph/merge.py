@@ -58,6 +58,18 @@ def _resolve_body_conflict(existing: Node, cand: dict, interactive: bool) -> str
     return (existing.body + "\n\n--- (appended) ---\n" + cand.get("body", "")).strip()
 
 
+def _is_enabled_by_candidate(g: Graph, edge: Edge) -> bool:
+    src = g.nodes.get(edge.src)
+    dst = g.nodes.get(edge.dst)
+    return bool(
+        edge.type == "SERVES"
+        and src
+        and dst
+        and src.type == "idea"
+        and dst.type in {"decision", "goal"}
+    )
+
+
 def merge(approved: dict, interactive: bool = True) -> tuple[int, int]:
     """
     Merge approved nodes/edges into the graph. Returns (nodes_added, edges_added).
@@ -110,6 +122,16 @@ def merge(approved: dict, interactive: bool = True) -> tuple[int, int]:
                    (e.src, e.dst, e.type, e.source_id):
                     existing.last_seen = _now()
                     break
+
+        # Preserve idea flow while adding a navigable back-reference.
+        if _is_enabled_by_candidate(g, e):
+            reverse = Edge(src=e.dst, dst=e.src, type="ENABLED_BY",
+                           source_id=src_id, excerpt=e.excerpt,
+                           confidence=e.confidence)
+            before = len(g.edges)
+            g.add_edge(reverse)
+            if len(g.edges) > before:
+                edges_added += 1
 
     # 4. Auto-inject MENTIONED_IN for any approved node missing one to this source
     new_concept_ids = {n["id"] for n in approved.get("nodes", [])}

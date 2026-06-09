@@ -6,11 +6,11 @@
 
 <http://mygraph.local/_assertion/0> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774985+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538813+00:00" ;
     rb:dstId "source:demo-notes" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "The demo owner wants assistant memory that survives across sessions." ;
-    rb:lastSeen "2026-05-15T22:55:51.774994+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538814+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "person:demo-owner" ;
     rdf:object <http://mygraph.local/source/demo-notes> ;
@@ -19,11 +19,11 @@
 
 <http://mygraph.local/_assertion/1> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775006+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538817+00:00" ;
     rb:dstId "source:demo-notes" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "Build a local-first toolkit for source-backed AI memory." ;
-    rb:lastSeen "2026-05-15T22:55:51.775011+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538818+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "project:knowledge-worker" ;
     rdf:object <http://mygraph.local/source/demo-notes> ;
@@ -32,10 +32,10 @@
 
 <http://mygraph.local/_assertion/10> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775125+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538839+00:00" ;
     rb:dstId "idea:context-memory" ;
     rb:edgeType "HAS_IDEA" ;
-    rb:lastSeen "2026-05-15T22:55:51.775128+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538840+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "person:demo-owner" ;
     rdf:object <http://mygraph.local/idea/context-memory> ;
@@ -44,10 +44,10 @@
 
 <http://mygraph.local/_assertion/11> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775139+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538842+00:00" ;
     rb:dstId "idea:provenance-first" ;
     rb:edgeType "HAS_IDEA" ;
-    rb:lastSeen "2026-05-15T22:55:51.775142+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538842+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "person:demo-owner" ;
     rdf:object <http://mygraph.local/idea/provenance-first> ;
@@ -56,10 +56,10 @@
 
 <http://mygraph.local/_assertion/12> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775152+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538844+00:00" ;
     rb:dstId "goal:trusted-ai-assistance" ;
     rb:edgeType "SERVES" ;
-    rb:lastSeen "2026-05-15T22:55:51.775156+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538845+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "project:knowledge-worker" ;
     rdf:object <http://mygraph.local/goal/trusted-ai-assistance> ;
@@ -68,10 +68,10 @@
 
 <http://mygraph.local/_assertion/13> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775167+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538847+00:00" ;
     rb:dstId "topic:knowledge-graphs" ;
     rb:edgeType "INVOLVES" ;
-    rb:lastSeen "2026-05-15T22:55:51.775170+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538848+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "project:knowledge-worker" ;
     rdf:object <http://mygraph.local/topic/knowledge-graphs> ;
@@ -80,10 +80,10 @@
 
 <http://mygraph.local/_assertion/14> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775181+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538850+00:00" ;
     rb:dstId "topic:local-first" ;
     rb:edgeType "INVOLVES" ;
-    rb:lastSeen "2026-05-15T22:55:51.775186+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538851+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "project:knowledge-worker" ;
     rdf:object <http://mygraph.local/topic/local-first> ;
@@ -92,10 +92,10 @@
 
 <http://mygraph.local/_assertion/15> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775200+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538852+00:00" ;
     rb:dstId "topic:knowledge-graphs" ;
     rb:edgeType "RELATES_TO" ;
-    rb:lastSeen "2026-05-15T22:55:51.775204+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538853+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "idea:context-memory" ;
     rdf:object <http://mygraph.local/topic/knowledge-graphs> ;
@@ -104,10 +104,10 @@
 
 <http://mygraph.local/_assertion/16> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775218+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538855+00:00" ;
     rb:dstId "goal:trusted-ai-assistance" ;
     rb:edgeType "SERVES" ;
-    rb:lastSeen "2026-05-15T22:55:51.775222+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538856+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "idea:provenance-first" ;
     rdf:object <http://mygraph.local/goal/trusted-ai-assistance> ;
@@ -116,49 +116,73 @@
 
 <http://mygraph.local/_assertion/17> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775237+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538858+00:00" ;
+    rb:dstId "idea:provenance-first" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-05-26T00:04:21.538859+00:00" ;
+    rb:sourceId "source:demo-notes" ;
+    rb:srcId "goal:trusted-ai-assistance" ;
+    rdf:object <http://mygraph.local/idea/provenance-first> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/goal/trusted-ai-assistance> .
+
+<http://mygraph.local/_assertion/18> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-05-26T00:04:21.538861+00:00" ;
+    rb:dstId "idea:context-memory" ;
+    rb:edgeType "ENABLED_BY" ;
+    rb:lastSeen "2026-05-26T00:04:21.538861+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "decision:json-first" ;
+    rdf:object <http://mygraph.local/idea/context-memory> ;
+    rdf:predicate rb:ENABLED_BY ;
+    rdf:subject <http://mygraph.local/decision/json-first> .
+
+<http://mygraph.local/_assertion/19> a rb:Assertion ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-05-26T00:04:21.538863+00:00" ;
     rb:dstId "question:storage-backend" ;
     rb:edgeType "ABOUT" ;
-    rb:lastSeen "2026-05-15T22:55:51.775241+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538864+00:00" ;
     rb:sourceId "source:architecture-note" ;
     rb:srcId "decision:json-first" ;
     rdf:object <http://mygraph.local/question/storage-backend> ;
     rdf:predicate rb:ABOUT ;
     rdf:subject <http://mygraph.local/decision/json-first> .
 
-<http://mygraph.local/_assertion/18> a rb:Assertion ;
-    rb:confidence "medium" ;
-    rb:createdAt "2026-05-15T22:55:51.775257+00:00" ;
-    rb:dstId "reference:coggrag" ;
-    rb:edgeType "SUPPORTED_BY" ;
-    rb:excerpt "CogGRAG is a public reference for graph retrieval." ;
-    rb:lastSeen "2026-05-15T22:55:51.775261+00:00" ;
-    rb:sourceId "source:architecture-note" ;
-    rb:srcId "idea:context-memory" ;
-    rdf:object <http://mygraph.local/reference/coggrag> ;
-    rdf:predicate rb:SUPPORTED_BY ;
-    rdf:subject <http://mygraph.local/idea/context-memory> .
-
 <http://mygraph.local/_assertion/2> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775019+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538821+00:00" ;
     rb:dstId "source:demo-notes" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "Store durable concepts instead of loose transcript chunks." ;
-    rb:lastSeen "2026-05-15T22:55:51.775023+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538821+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "idea:context-memory" ;
     rdf:object <http://mygraph.local/source/demo-notes> ;
     rdf:predicate rb:MENTIONED_IN ;
     rdf:subject <http://mygraph.local/idea/context-memory> .
 
+<http://mygraph.local/_assertion/20> a rb:Assertion ;
+    rb:confidence "medium" ;
+    rb:createdAt "2026-05-26T00:04:21.538867+00:00" ;
+    rb:dstId "reference:coggrag" ;
+    rb:edgeType "SUPPORTED_BY" ;
+    rb:excerpt "CogGRAG is a public reference for graph retrieval." ;
+    rb:lastSeen "2026-05-26T00:04:21.538867+00:00" ;
+    rb:sourceId "source:architecture-note" ;
+    rb:srcId "idea:context-memory" ;
+    rdf:object <http://mygraph.local/reference/coggrag> ;
+    rdf:predicate rb:SUPPORTED_BY ;
+    rdf:subject <http://mygraph.local/idea/context-memory> .
+
 <http://mygraph.local/_assertion/3> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775030+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538823+00:00" ;
     rb:dstId "source:demo-notes" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "Every durable claim needs source evidence." ;
-    rb:lastSeen "2026-05-15T22:55:51.775034+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538824+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "idea:provenance-first" ;
     rdf:object <http://mygraph.local/source/demo-notes> ;
@@ -167,11 +191,11 @@
 
 <http://mygraph.local/_assertion/4> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775042+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538825+00:00" ;
     rb:dstId "source:demo-notes" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "Make assistant responses easier to verify and continue." ;
-    rb:lastSeen "2026-05-15T22:55:51.775046+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538826+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "goal:trusted-ai-assistance" ;
     rdf:object <http://mygraph.local/source/demo-notes> ;
@@ -180,11 +204,11 @@
 
 <http://mygraph.local/_assertion/5> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775055+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538827+00:00" ;
     rb:dstId "source:demo-notes" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "Use a graph of concepts and relationships." ;
-    rb:lastSeen "2026-05-15T22:55:51.775060+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538828+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "topic:knowledge-graphs" ;
     rdf:object <http://mygraph.local/source/demo-notes> ;
@@ -193,11 +217,11 @@
 
 <http://mygraph.local/_assertion/6> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775069+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538829+00:00" ;
     rb:dstId "source:demo-notes" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "Keep owner data local unless explicitly exported." ;
-    rb:lastSeen "2026-05-15T22:55:51.775073+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538830+00:00" ;
     rb:sourceId "source:demo-notes" ;
     rb:srcId "topic:local-first" ;
     rdf:object <http://mygraph.local/source/demo-notes> ;
@@ -206,11 +230,11 @@
 
 <http://mygraph.local/_assertion/7> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775083+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538832+00:00" ;
     rb:dstId "source:architecture-note" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "When should storage move beyond JSON?" ;
-    rb:lastSeen "2026-05-15T22:55:51.775087+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538833+00:00" ;
     rb:sourceId "source:architecture-note" ;
     rb:srcId "question:storage-backend" ;
     rdf:object <http://mygraph.local/source/architecture-note> ;
@@ -219,11 +243,11 @@
 
 <http://mygraph.local/_assertion/8> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775097+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538834+00:00" ;
     rb:dstId "source:architecture-note" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "Use JSON first; add a database only when needed." ;
-    rb:lastSeen "2026-05-15T22:55:51.775101+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538835+00:00" ;
     rb:sourceId "source:architecture-note" ;
     rb:srcId "decision:json-first" ;
     rdf:object <http://mygraph.local/source/architecture-note> ;
@@ -232,11 +256,11 @@
 
 <http://mygraph.local/_assertion/9> a rb:Assertion ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.775111+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538836+00:00" ;
     rb:dstId "source:architecture-note" ;
     rb:edgeType "MENTIONED_IN" ;
     rb:excerpt "CogGRAG is a public reference for graph retrieval." ;
-    rb:lastSeen "2026-05-15T22:55:51.775115+00:00" ;
+    rb:lastSeen "2026-05-26T00:04:21.538837+00:00" ;
     rb:sourceId "source:architecture-note" ;
     rb:srcId "reference:coggrag" ;
     rdf:object <http://mygraph.local/source/architecture-note> ;
@@ -271,14 +295,7 @@ rb:Reference a owl:Class ;
 
 rb:SUPPORTED_BY a owl:ObjectProperty .
 
-<http://mygraph.local/decision/json-first> a rb:Decision ;
-    rdfs:label "Use JSON first" ;
-    rb:ABOUT <http://mygraph.local/question/storage-backend> ;
-    rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774863+00:00" ;
-    rb:nodeId "decision:json-first" ;
-    rdfs:comment "Start with a simple JSON store before introducing a database." .
+rb:ENABLED_BY a owl:ObjectProperty .
 
 rb:HAS_IDEA a owl:ObjectProperty .
 
@@ -292,13 +309,23 @@ rb:SERVES a owl:ObjectProperty .
 rb:Topic a owl:Class ;
     rdfs:subClassOf rb:Concept .
 
+<http://mygraph.local/decision/json-first> a rb:Decision ;
+    rdfs:label "Use JSON first" ;
+    rb:ABOUT <http://mygraph.local/question/storage-backend> ;
+    rb:ENABLED_BY <http://mygraph.local/idea/context-memory> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-05-26T00:04:21.538805+00:00" ;
+    rb:nodeId "decision:json-first" ;
+    rdfs:comment "Start with a simple JSON store before introducing a database." .
+
 <http://mygraph.local/person/demo-owner> a rb:Person ;
     rdfs:label "Demo Owner" ;
     rb:HAS_IDEA <http://mygraph.local/idea/context-memory>,
         <http://mygraph.local/idea/provenance-first> ;
     rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774831+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538798+00:00" ;
     rb:nodeId "person:demo-owner" ;
     rdfs:comment "A fictional graph owner used only for public examples." .
 
@@ -306,7 +333,7 @@ rb:Topic a owl:Class ;
     rdfs:label "When should storage move beyond JSON?" ;
     rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774857+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538804+00:00" ;
     rb:nodeId "question:storage-backend" ;
     rdfs:comment "Open question: keep JSON until size or concurrency makes it awkward." .
 
@@ -314,7 +341,7 @@ rb:Topic a owl:Class ;
     rdfs:label "CogGRAG" ;
     rb:MENTIONED_IN <http://mygraph.local/source/architecture-note> ;
     rb:confidence "medium" ;
-    rb:createdAt "2026-05-15T22:55:51.774880+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538808+00:00" ;
     rb:nodeId "reference:coggrag" ;
     rdfs:comment "A public reference about cognition-inspired graph retrieval." .
 
@@ -326,18 +353,9 @@ rb:Source a owl:Class ;
     rdfs:label "Local-first software" ;
     rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774874+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538807+00:00" ;
     rb:nodeId "topic:local-first" ;
     rdfs:comment "Software that keeps user data local unless the owner chooses otherwise." .
-
-<http://mygraph.local/idea/provenance-first> a rb:Idea ;
-    rdfs:label "Provenance first" ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
-    rb:SERVES <http://mygraph.local/goal/trusted-ai-assistance> ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774847+00:00" ;
-    rb:nodeId "idea:provenance-first" ;
-    rdfs:comment "Every durable claim should point back to source evidence." .
 
 <http://mygraph.local/project/knowledge-worker> a rb:Project ;
     rdfs:label "knowledge-worker" ;
@@ -346,17 +364,42 @@ rb:Source a owl:Class ;
     rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
     rb:SERVES <http://mygraph.local/goal/trusted-ai-assistance> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774837+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538799+00:00" ;
     rb:nodeId "project:knowledge-worker" ;
     rdfs:comment "A local-first toolkit for source-backed AI memory." .
 
-<http://mygraph.local/goal/trusted-ai-assistance> a rb:Goal ;
-    rdfs:label "Trusted AI assistance" ;
+<http://mygraph.local/topic/knowledge-graphs> a rb:Topic ;
+    rdfs:label "Knowledge graphs" ;
     rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774852+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538806+00:00" ;
+    rb:nodeId "topic:knowledge-graphs" ;
+    rdfs:comment "Structured concepts and relationships for durable context." .
+
+<http://mygraph.local/goal/trusted-ai-assistance> a rb:Goal ;
+    rdfs:label "Trusted AI assistance" ;
+    rb:ENABLED_BY <http://mygraph.local/idea/provenance-first> ;
+    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-05-26T00:04:21.538803+00:00" ;
     rb:nodeId "goal:trusted-ai-assistance" ;
     rdfs:comment "Make assistant responses easier to verify and continue across sessions." .
+
+<http://mygraph.local/idea/provenance-first> a rb:Idea ;
+    rdfs:label "Provenance first" ;
+    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
+    rb:SERVES <http://mygraph.local/goal/trusted-ai-assistance> ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-05-26T00:04:21.538802+00:00" ;
+    rb:nodeId "idea:provenance-first" ;
+    rdfs:comment "Every durable claim should point back to source evidence." .
+
+<http://mygraph.local/source/architecture-note> a rb:Source ;
+    rdfs:label "architecture-note.md" ;
+    rb:confidence "high" ;
+    rb:createdAt "2026-05-26T00:04:21.538796+00:00" ;
+    rb:nodeId "source:architecture-note" ;
+    rdfs:comment "Fictional architecture note for the public demo graph." .
 
 <http://mygraph.local/idea/context-memory> a rb:Idea ;
     rdfs:label "Context memory" ;
@@ -364,24 +407,9 @@ rb:Source a owl:Class ;
     rb:RELATES_TO <http://mygraph.local/topic/knowledge-graphs> ;
     rb:SUPPORTED_BY <http://mygraph.local/reference/coggrag> ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774842+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538800+00:00" ;
     rb:nodeId "idea:context-memory" ;
     rdfs:comment "AI sessions improve when durable context is stored as concepts instead of loose transcript chunks." .
-
-<http://mygraph.local/topic/knowledge-graphs> a rb:Topic ;
-    rdfs:label "Knowledge graphs" ;
-    rb:MENTIONED_IN <http://mygraph.local/source/demo-notes> ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774868+00:00" ;
-    rb:nodeId "topic:knowledge-graphs" ;
-    rdfs:comment "Structured concepts and relationships for durable context." .
-
-<http://mygraph.local/source/architecture-note> a rb:Source ;
-    rdfs:label "architecture-note.md" ;
-    rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774823+00:00" ;
-    rb:nodeId "source:architecture-note" ;
-    rdfs:comment "Fictional architecture note for the public demo graph." .
 
 rb:Concept a owl:Class .
 
@@ -390,6 +418,6 @@ rb:MENTIONED_IN a owl:ObjectProperty .
 <http://mygraph.local/source/demo-notes> a rb:Source ;
     rdfs:label "demo-notes.md" ;
     rb:confidence "high" ;
-    rb:createdAt "2026-05-15T22:55:51.774750+00:00" ;
+    rb:createdAt "2026-05-26T00:04:21.538646+00:00" ;
     rb:nodeId "source:demo-notes" ;
     rdfs:comment "Fictional project notes used to demonstrate provenance-backed memory." .

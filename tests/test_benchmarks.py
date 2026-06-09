@@ -31,6 +31,7 @@ PUBLIC_EDGE_TYPES = {
     "SERVES",
     "INVOLVES",
     "ABOUT",
+    "ENABLED_BY",
     "MENTIONED_IN",
     "MADE_AT",
 }

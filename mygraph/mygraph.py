@@ -51,7 +51,7 @@ NODE_TYPES = {
 
 EDGE_TYPES = {
     "HAS_IDEA", "RELATES_TO", "SUPPORTED_BY", "CHALLENGES",
-    "SERVES", "INVOLVES", "ABOUT", "MENTIONED_IN", "MADE_AT",
+    "SERVES", "INVOLVES", "ABOUT", "ENABLED_BY", "MENTIONED_IN", "MADE_AT",
 }
 
 CONFIDENCE = {"high", "medium", "low"}
@@ -298,6 +298,8 @@ def seed() -> Graph:
     edge("project:knowledge-worker", "topic:local-first", "INVOLVES", src_demo)
     edge("idea:context-memory", "topic:knowledge-graphs", "RELATES_TO", src_demo)
     edge("idea:provenance-first", "goal:trusted-ai-assistance", "SERVES", src_demo)
+    edge("goal:trusted-ai-assistance", "idea:provenance-first", "ENABLED_BY", src_demo)
+    edge("decision:json-first", "idea:context-memory", "ENABLED_BY", src_arch)
     edge("decision:json-first", "question:storage-backend", "ABOUT", src_arch)
     edge("idea:context-memory", "reference:coggrag", "SUPPORTED_BY", src_arch,
          excerpt="CogGRAG is a public reference for graph retrieval.", confidence="medium")

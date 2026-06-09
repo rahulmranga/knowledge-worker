@@ -25,7 +25,7 @@ Node types:
 Edge types:
 
 `HAS_IDEA`, `RELATES_TO`, `SUPPORTED_BY`, `CHALLENGES`, `SERVES`, `INVOLVES`,
-`ABOUT`, `MENTIONED_IN`, `MADE_AT`.
+`ABOUT`, `ENABLED_BY`, `MENTIONED_IN`, `MADE_AT`.
 
 ## Invariants
 

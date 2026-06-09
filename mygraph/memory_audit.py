@@ -29,6 +29,7 @@ except ImportError:  # direct script execution: python mygraph/memory_audit.py
 
 
 PROVENANCE_EDGE_TYPES = {"MENTIONED_IN", "MADE_AT"}
+BACK_REFERENCE_EDGE_TYPES = {"ENABLED_BY"}
 CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}
 
 
@@ -44,6 +45,11 @@ def _semantic_edges(g: Graph, ids: set[str]) -> list[Edge]:
         and edge.dst in ids
         and edge.type not in PROVENANCE_EDGE_TYPES
     ]
+
+
+def _idea_flow_edges(edges: Iterable[Edge]) -> list[Edge]:
+    """Keep causal back-references from canceling forward idea-flow signals."""
+    return [edge for edge in edges if edge.type not in BACK_REFERENCE_EDGE_TYPES]
 
 
 def _source_projection_edges(g: Graph, ids: set[str]) -> set[tuple[str, str]]:
@@ -619,7 +625,9 @@ def build_memory_audit(g: Graph, *, limit: int = 25, max_communities: int = 12) 
     communities = _community_partition(ids, undirected, max_communities=max_communities)
     coverage = _provenance_coverage(g)
     semantic_in_degree, semantic_out_degree = _directed_counts(ids, semantic_edges)
-    semantic_in_types, semantic_out_types = _directed_edge_types(ids, semantic_edges)
+    flow_edges = _idea_flow_edges(semantic_edges)
+    flow_in_degree, flow_out_degree = _directed_counts(ids, flow_edges)
+    flow_in_types, flow_out_types = _directed_edge_types(ids, flow_edges)
 
     important = _ranked_nodes(g, pagerank, degree, core, communities, limit, include_zero=True)
     bridges = _ranked_nodes(g, betweenness, degree, core, communities, limit)
@@ -637,10 +645,10 @@ def build_memory_audit(g: Graph, *, limit: int = 25, max_communities: int = 12) 
     idea_attractors = _idea_flow_records(
         g,
         ids,
-        semantic_in_degree,
-        semantic_out_degree,
-        semantic_in_types,
-        semantic_out_types,
+        flow_in_degree,
+        flow_out_degree,
+        flow_in_types,
+        flow_out_types,
         communities,
         limit,
         mode="attractor",
@@ -648,10 +656,10 @@ def build_memory_audit(g: Graph, *, limit: int = 25, max_communities: int = 12) 
     idea_generators = _idea_flow_records(
         g,
         ids,
-        semantic_in_degree,
-        semantic_out_degree,
-        semantic_in_types,
-        semantic_out_types,
+        flow_in_degree,
+        flow_out_degree,
+        flow_in_types,
+        flow_out_types,
         communities,
         limit,
         mode="generator",
@@ -713,8 +721,9 @@ def build_memory_audit(g: Graph, *, limit: int = 25, max_communities: int = 12) 
         },
         "directed_flow": {
             "note": (
-                "Directed flow uses semantic edges only. Provenance/source projection edges are excluded "
-                "so attractors and generators reflect relationship direction, not citation volume."
+                "Directed flow uses semantic edges only. Provenance/source projection and "
+                "back-reference edges are excluded so attractors and generators reflect "
+                "relationship direction, not citation volume."
             ),
             "idea_attractors": idea_attractors,
             "idea_generators": idea_generators,

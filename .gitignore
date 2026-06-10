@@ -20,6 +20,8 @@ mygraph/eval_record.jsonl
 mygraph/state_log.jsonl
 ollama_proxy/proxy.log.jsonl
 *.candidates.json
+# committed fictional demo output is the one exception
+!examples/demo_discovery.candidates.json
 /knowledge-worker-demo.mov
 
 # Local environment and secrets

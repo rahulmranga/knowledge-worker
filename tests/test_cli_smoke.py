@@ -97,7 +97,7 @@ class CliSmokeTest(unittest.TestCase):
 
             summary = run_mykg("summary", env=env)
             self.assertEqual(summary.returncode, 0, summary.stderr)
-            self.assertIn("12 nodes, 19 edges", summary.stdout)
+            self.assertIn("49 nodes, 91 edges", summary.stdout)
 
             context = run_mykg("context", "--max-ideas", "2", env=env)
             self.assertEqual(context.returncode, 0, context.stderr)

@@ -1,0 +1,739 @@
+{
+  "bridges": {
+    "bridge_edges": [
+      {
+        "communities": [
+          0,
+          1
+        ],
+        "dst": "topic:knowledge-graphs",
+        "dst_label": "Knowledge graphs",
+        "edge_type": "RELATES_TO",
+        "score": 0.736581,
+        "src": "idea:sensor-data-as-memory",
+        "src_label": "Sensor data as memory",
+        "type": "BRIDGES"
+      },
+      {
+        "communities": [
+          0,
+          2
+        ],
+        "dst": "topic:knowledge-graphs",
+        "dst_label": "Knowledge graphs",
+        "edge_type": "RELATES_TO",
+        "score": 0.704209,
+        "src": "idea:show-the-graph",
+        "src_label": "Show the graph",
+        "type": "BRIDGES"
+      },
+      {
+        "communities": [
+          1,
+          3
+        ],
+        "dst": "topic:sensor-networks",
+        "dst_label": "Sensor networks",
+        "edge_type": "RELATES_TO",
+        "score": 0.38344,
+        "src": "idea:low-power-mesh",
+        "src_label": "Low-power sensor mesh",
+        "type": "BRIDGES"
+      },
+      {
+        "communities": [
+          0,
+          1
+        ],
+        "dst": "topic:provenance",
+        "dst_label": "Provenance",
+        "edge_type": "RELATES_TO",
+        "score": 0.182521,
+        "src": "idea:provenance-first",
+        "src_label": "Provenance first",
+        "type": "BRIDGES"
+      },
+      {
+        "communities": [
+          0,
+          5
+        ],
+        "dst": "idea:drip-irrigation-loop",
+        "dst_label": "Drip irrigation loop",
+        "edge_type": "HAS_IDEA",
+        "score": 0.155235,
+        "src": "person:demo-owner",
+        "src_label": "Demo Owner",
+        "type": "BRIDGES"
+      },
+      {
+        "communities": [
+          0,
+          1
+        ],
+        "dst": "reference:coggrag",
+        "dst_label": "CogGRAG",
+        "edge_type": "SUPPORTED_BY",
+        "score": 0.12515,
+        "src": "idea:context-memory",
+        "src_label": "Context memory",
+        "type": "BRIDGES"
+      }
+    ],
+    "bridge_nodes": [
+      {
+        "betweenness": 0.402927,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs"
+      },
+      {
+        "betweenness": 0.333654,
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory"
+      },
+      {
+        "betweenness": 0.301282,
+        "id": "idea:show-the-graph",
+        "label": "Show the graph"
+      },
+      {
+        "betweenness": 0.212286,
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks"
+      },
+      {
+        "betweenness": 0.171154,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh"
+      },
+      {
+        "betweenness": 0.166667,
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly"
+      },
+      {
+        "betweenness": 0.102564,
+        "id": "topic:provenance",
+        "label": "Provenance"
+      },
+      {
+        "betweenness": 0.101816,
+        "id": "idea:drip-irrigation-loop",
+        "label": "Drip irrigation loop"
+      },
+      {
+        "betweenness": 0.09,
+        "id": "idea:context-memory",
+        "label": "Context memory"
+      },
+      {
+        "betweenness": 0.079957,
+        "id": "idea:provenance-first",
+        "label": "Provenance first"
+      }
+    ],
+    "communities": 6,
+    "spine_removed": [
+      "project:garden-sensors",
+      "idea:write-what-you-build"
+    ]
+  },
+  "co_mentions": [
+    {
+      "dst": "topic:provenance",
+      "dst_label": "Provenance",
+      "evidence_sources": [
+        "source:architecture-note",
+        "source:greenhouse-journal"
+      ],
+      "rationale": "co-mentioned in 2 distinct sources with no direct edge",
+      "score": 2.0,
+      "src": "idea:sensor-data-as-memory",
+      "src_label": "Sensor data as memory",
+      "status": "proposed",
+      "type": "CO_MENTIONED_WITH"
+    },
+    {
+      "dst": "project:garden-sensors",
+      "dst_label": "garden-sensors",
+      "evidence_sources": [
+        "source:newsletter-plan",
+        "source:quarterly-review"
+      ],
+      "rationale": "co-mentioned in 2 distinct sources with no direct edge",
+      "score": 2.0,
+      "src": "idea:write-what-you-build",
+      "src_label": "Write what you build",
+      "status": "proposed",
+      "type": "CO_MENTIONED_WITH"
+    }
+  ],
+  "corroboration": {
+    "single_source": [
+      {
+        "centrality": 1.0,
+        "excerpt": "Use a graph of concepts and relationships.",
+        "flag": "SINGLE_SOURCE",
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "source": "source:demo-notes",
+        "type": "topic"
+      },
+      {
+        "centrality": 0.625,
+        "excerpt": "Keep owner data local unless explicitly exported.",
+        "flag": "SINGLE_SOURCE",
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "source": "source:demo-notes",
+        "type": "topic"
+      },
+      {
+        "centrality": 0.5845,
+        "excerpt": "The deep-sleep guide documents real-world power draw.",
+        "flag": "SINGLE_SOURCE",
+        "id": "reference:esp32-deep-sleep-guide",
+        "label": "ESP32 deep-sleep guide",
+        "source": "source:hardware-retro",
+        "type": "reference"
+      },
+      {
+        "centrality": 0.5381,
+        "excerpt": "The local-first paper defines the storage principles.",
+        "flag": "SINGLE_SOURCE",
+        "id": "reference:local-first-paper",
+        "label": "Local-first software paper",
+        "source": "source:demo-notes",
+        "type": "reference"
+      },
+      {
+        "centrality": 0.4912,
+        "excerpt": "The digital-garden essay argues for evolving notes.",
+        "flag": "SINGLE_SOURCE",
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "source": "source:newsletter-plan",
+        "type": "reference"
+      },
+      {
+        "centrality": 0.484,
+        "excerpt": "The GraphRAG survey maps the retrieval landscape.",
+        "flag": "SINGLE_SOURCE",
+        "id": "reference:graphrag-survey",
+        "label": "GraphRAG survey",
+        "source": "source:architecture-note",
+        "type": "reference"
+      },
+      {
+        "centrality": 0.4467,
+        "excerpt": "CogGRAG is a public reference for graph retrieval.",
+        "flag": "SINGLE_SOURCE",
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "source": "source:architecture-note",
+        "type": "reference"
+      },
+      {
+        "centrality": 0.4408,
+        "excerpt": "The greenhouse should mostly look after itself.",
+        "flag": "SINGLE_SOURCE",
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "source": "source:greenhouse-journal",
+        "type": "goal"
+      },
+      {
+        "centrality": 0.4353,
+        "excerpt": "A handful of nodes reporting over one protocol.",
+        "flag": "SINGLE_SOURCE",
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "source": "source:greenhouse-journal",
+        "type": "topic"
+      },
+      {
+        "centrality": 0.4008,
+        "excerpt": "Hard power budgets change every design choice.",
+        "flag": "SINGLE_SOURCE",
+        "id": "topic:embedded-systems",
+        "label": "Embedded systems",
+        "source": "source:hardware-retro",
+        "type": "topic"
+      }
+    ],
+    "source_count_distribution": {
+      "1": 39,
+      "2": 3,
+      "3": 1
+    }
+  },
+  "question_debt": {
+    "answers_detected": [
+      {
+        "dst": "question:storage-backend",
+        "src": "decision:json-first",
+        "type": "ANSWERS"
+      }
+    ],
+    "open": [
+      {
+        "age_days": 81.0,
+        "centrality": 0.3455,
+        "debt_score": 28.3298,
+        "evidence_edges": 0,
+        "flag": "UNANSWERED",
+        "id": "question:battery-life-winter",
+        "label": "Will batteries survive winter?"
+      },
+      {
+        "age_days": 26.0,
+        "centrality": 0.1111,
+        "debt_score": 2.9995,
+        "evidence_edges": 0,
+        "flag": "UNANSWERED",
+        "id": "question:audience-growth",
+        "label": "Does the newsletter need an audience?"
+      },
+      {
+        "age_days": 0.0,
+        "centrality": 0.3596,
+        "debt_score": 0.3596,
+        "evidence_edges": 0,
+        "flag": "UNANSWERED",
+        "id": "question:when-to-automate-ingest",
+        "label": "When should ingest become automatic?"
+      }
+    ]
+  },
+  "related_candidates": [
+    {
+      "dst": "topic:local-first",
+      "dst_label": "Local-first software",
+      "evidence_sources": [
+        "decision:public-demo-data-only",
+        "idea:scoped-exports",
+        "project:knowledge-worker"
+      ],
+      "rationale": "Adamic-Adar 2.685 via 3 shared neighbors",
+      "score": 2.685365,
+      "src": "goal:trusted-ai-assistance",
+      "src_label": "Trusted AI assistance",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "topic:technical-writing",
+      "dst_label": "Technical writing",
+      "evidence_sources": [
+        "decision:plain-text-newsletter",
+        "idea:weekly-shipping-log",
+        "project:field-notes"
+      ],
+      "rationale": "Adamic-Adar 2.353 via 3 shared neighbors",
+      "score": 2.352934,
+      "src": "goal:publish-monthly",
+      "src_label": "Publish monthly",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "topic:embedded-systems",
+      "dst_label": "Embedded systems",
+      "evidence_sources": [
+        "decision:esp32-over-rpi",
+        "reference:esp32-deep-sleep-guide"
+      ],
+      "rationale": "Adamic-Adar 2.353 via 2 shared neighbors",
+      "score": 2.352934,
+      "src": "idea:low-power-mesh",
+      "src_label": "Low-power sensor mesh",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "project:garden-sensors",
+      "dst_label": "garden-sensors",
+      "evidence_sources": [
+        "project:field-notes",
+        "question:audience-growth"
+      ],
+      "rationale": "Adamic-Adar 2.164 via 2 shared neighbors",
+      "score": 2.164043,
+      "src": "goal:publish-monthly",
+      "src_label": "Publish monthly",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "project:knowledge-worker",
+      "dst_label": "knowledge-worker",
+      "evidence_sources": [
+        "goal:trusted-ai-assistance",
+        "reference:local-first-paper",
+        "topic:local-first"
+      ],
+      "rationale": "Adamic-Adar 2.153 via 3 shared neighbors",
+      "score": 2.152909,
+      "src": "idea:scoped-exports",
+      "src_label": "Scoped exports",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "project:field-notes",
+      "dst_label": "field-notes",
+      "evidence_sources": [
+        "goal:publish-monthly",
+        "idea:write-what-you-build",
+        "topic:technical-writing"
+      ],
+      "rationale": "Adamic-Adar 1.901 via 3 shared neighbors",
+      "score": 1.900793,
+      "src": "idea:weekly-shipping-log",
+      "src_label": "Weekly shipping log",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "topic:provenance",
+      "dst_label": "Provenance",
+      "evidence_sources": [
+        "idea:promotion-queue",
+        "project:garden-sensors",
+        "topic:sensor-networks"
+      ],
+      "rationale": "Adamic-Adar 1.898 via 3 shared neighbors",
+      "score": 1.897815,
+      "src": "idea:sensor-data-as-memory",
+      "src_label": "Sensor data as memory",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "person:demo-owner",
+      "dst_label": "Demo Owner",
+      "evidence_sources": [
+        "idea:context-memory",
+        "idea:provenance-first",
+        "project:knowledge-worker"
+      ],
+      "rationale": "Adamic-Adar 1.864 via 3 shared neighbors",
+      "score": 1.864005,
+      "src": "goal:trusted-ai-assistance",
+      "src_label": "Trusted AI assistance",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "topic:local-first",
+      "dst_label": "Local-first software",
+      "evidence_sources": [
+        "idea:scoped-exports",
+        "project:knowledge-worker",
+        "topic:knowledge-graphs"
+      ],
+      "rationale": "Adamic-Adar 1.801 via 3 shared neighbors",
+      "score": 1.80078,
+      "src": "reference:local-first-paper",
+      "src_label": "Local-first software paper",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    },
+    {
+      "dst": "project:knowledge-worker",
+      "dst_label": "knowledge-worker",
+      "evidence_sources": [
+        "goal:trusted-ai-assistance",
+        "person:demo-owner",
+        "topic:knowledge-graphs"
+      ],
+      "rationale": "Adamic-Adar 1.738 via 3 shared neighbors",
+      "score": 1.737556,
+      "src": "idea:context-memory",
+      "src_label": "Context memory",
+      "status": "proposed",
+      "type": "RELATES_TO"
+    }
+  ],
+  "schema_version": 1,
+  "serves_candidates": [
+    {
+      "dst": "goal:publish-monthly",
+      "dst_label": "Publish monthly",
+      "evidence_sources": [
+        "project:field-notes",
+        "question:audience-growth"
+      ],
+      "rationale": "shares 2 neighbors with the goal but has no contribution path to it",
+      "score": 2.164043,
+      "src": "project:garden-sensors",
+      "src_label": "garden-sensors",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:publish-monthly",
+      "dst_label": "Publish monthly",
+      "evidence_sources": [
+        "decision:monthly-cadence"
+      ],
+      "rationale": "shares 1 neighbors with the goal but has no contribution path to it",
+      "score": 1.442695,
+      "src": "decision:plain-text-newsletter",
+      "src_label": "Plain-text newsletter format",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:publish-monthly",
+      "dst_label": "Publish monthly",
+      "evidence_sources": [
+        "idea:weekly-shipping-log",
+        "project:field-notes"
+      ],
+      "rationale": "shares 2 neighbors with the goal but has no contribution path to it",
+      "score": 1.442695,
+      "src": "idea:write-what-you-build",
+      "src_label": "Write what you build",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:sustainable-side-projects",
+      "dst_label": "Sustainable side projects",
+      "evidence_sources": [
+        "idea:boring-tech-default"
+      ],
+      "rationale": "shares 1 neighbors with the goal but has no contribution path to it",
+      "score": 1.442695,
+      "src": "idea:write-what-you-build",
+      "src_label": "Write what you build",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:automated-greenhouse",
+      "dst_label": "Automated greenhouse",
+      "evidence_sources": [
+        "idea:drip-irrigation-loop",
+        "project:garden-sensors"
+      ],
+      "rationale": "shares 2 neighbors with the goal but has no contribution path to it",
+      "score": 1.365359,
+      "src": "idea:sensor-data-as-memory",
+      "src_label": "Sensor data as memory",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:publish-monthly",
+      "dst_label": "Publish monthly",
+      "evidence_sources": [
+        "idea:weekly-shipping-log"
+      ],
+      "rationale": "shares 1 neighbors with the goal but has no contribution path to it",
+      "score": 0.721348,
+      "src": "idea:show-the-graph",
+      "src_label": "Show the graph",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:trusted-ai-assistance",
+      "dst_label": "Trusted AI assistance",
+      "evidence_sources": [
+        "idea:provenance-first"
+      ],
+      "rationale": "shares 1 neighbors with the goal but has no contribution path to it",
+      "score": 0.621335,
+      "src": "idea:context-memory",
+      "src_label": "Context memory",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:trusted-ai-assistance",
+      "dst_label": "Trusted AI assistance",
+      "evidence_sources": [
+        "idea:scoped-exports"
+      ],
+      "rationale": "shares 1 neighbors with the goal but has no contribution path to it",
+      "score": 0.621335,
+      "src": "idea:single-owner-tools",
+      "src_label": "Single-owner tools",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:automated-greenhouse",
+      "dst_label": "Automated greenhouse",
+      "evidence_sources": [
+        "project:garden-sensors"
+      ],
+      "rationale": "shares 1 neighbors with the goal but has no contribution path to it",
+      "score": 0.45512,
+      "src": "idea:write-what-you-build",
+      "src_label": "Write what you build",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    },
+    {
+      "dst": "goal:automated-greenhouse",
+      "dst_label": "Automated greenhouse",
+      "evidence_sources": [
+        "project:garden-sensors"
+      ],
+      "rationale": "shares 1 neighbors with the goal but has no contribution path to it",
+      "score": 0.45512,
+      "src": "project:field-notes",
+      "src_label": "field-notes",
+      "status": "proposed",
+      "type": "SERVES_CANDIDATE"
+    }
+  ],
+  "staleness_radar": {
+    "reference_time": "2026-06-08T10:00:00+00:00",
+    "stale": [
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "reference:esp32-deep-sleep-guide",
+        "importance": 0.5845,
+        "label": "ESP32 deep-sleep guide",
+        "staleness_score": 40.918,
+        "type": "reference"
+      },
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "goal:automated-greenhouse",
+        "importance": 0.4408,
+        "label": "Automated greenhouse",
+        "staleness_score": 30.859,
+        "type": "goal"
+      },
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "topic:sensor-networks",
+        "importance": 0.4353,
+        "label": "Sensor networks",
+        "staleness_score": 30.4733,
+        "type": "topic"
+      },
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "topic:embedded-systems",
+        "importance": 0.4008,
+        "label": "Embedded systems",
+        "staleness_score": 28.0541,
+        "type": "topic"
+      },
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "question:battery-life-winter",
+        "importance": 0.3455,
+        "label": "Will batteries survive winter?",
+        "staleness_score": 24.184,
+        "type": "question"
+      },
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "idea:drip-irrigation-loop",
+        "importance": 0.307,
+        "label": "Drip irrigation loop",
+        "staleness_score": 21.4899,
+        "type": "idea"
+      },
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "idea:low-power-mesh",
+        "importance": 0.2352,
+        "label": "Low-power sensor mesh",
+        "staleness_score": 16.4614,
+        "type": "idea"
+      },
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "decision:solar-power-budget",
+        "importance": 0.2344,
+        "label": "Size the solar panel to winter output",
+        "staleness_score": 16.4109,
+        "type": "decision"
+      },
+      {
+        "days_stale": 70.0,
+        "flag": "STALE",
+        "id": "decision:esp32-over-rpi",
+        "importance": 0.0971,
+        "label": "Use ESP32 boards instead of a Raspberry Pi",
+        "staleness_score": 6.7938,
+        "type": "decision"
+      }
+    ],
+    "stale_days_threshold": 30
+  },
+  "stats": {
+    "semantic_edges": 43,
+    "semantic_nodes": 43
+  },
+  "tensions": [
+    {
+      "dst": "idea:low-power-mesh",
+      "dst_label": "Low-power sensor mesh",
+      "evidence_sources": [
+        "reference:esp32-deep-sleep-guide"
+      ],
+      "rationale": "target has 1 supporting and 1 challenging edges \u2014 contested claim",
+      "score": 2.0,
+      "src": "question:battery-life-winter",
+      "src_label": "Will batteries survive winter?",
+      "status": "proposed",
+      "type": "TENSION_WITH"
+    },
+    {
+      "dst": "decision:monthly-cadence",
+      "dst_label": "Commit to a monthly cadence",
+      "evidence_sources": [
+        "goal:publish-monthly"
+      ],
+      "rationale": "challenges goal:publish-monthly, which this node SERVES \u2014 the contribution inherits the risk",
+      "score": 1.0,
+      "src": "question:audience-growth",
+      "src_label": "Does the newsletter need an audience?",
+      "status": "proposed",
+      "type": "TENSION_WITH"
+    },
+    {
+      "dst": "idea:weekly-shipping-log",
+      "dst_label": "Weekly shipping log",
+      "evidence_sources": [
+        "goal:publish-monthly"
+      ],
+      "rationale": "challenges goal:publish-monthly, which this node SERVES \u2014 the contribution inherits the risk",
+      "score": 1.0,
+      "src": "question:audience-growth",
+      "src_label": "Does the newsletter need an audience?",
+      "status": "proposed",
+      "type": "TENSION_WITH"
+    },
+    {
+      "dst": "project:field-notes",
+      "dst_label": "field-notes",
+      "evidence_sources": [
+        "goal:publish-monthly"
+      ],
+      "rationale": "challenges goal:publish-monthly, which this node SERVES \u2014 the contribution inherits the risk",
+      "score": 1.0,
+      "src": "question:audience-growth",
+      "src_label": "Does the newsletter need an audience?",
+      "status": "proposed",
+      "type": "TENSION_WITH"
+    }
+  ]
+}

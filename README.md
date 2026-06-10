@@ -194,7 +194,27 @@ Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, 
 | `context` | Print a compact LLM-ready context snapshot |
 | `viz` | Generate an offline single-file HTML viewer |
 | `audit` | Emit graph analytics, directed idea-flow queues, and optional Memory Audit HTML |
+| `discover` | Propose derived edges and second-order insights (read-only, promotion queue) |
 | `state "<entry>"` | Append a mood/state sidecar entry |
+| `dump` | Print the raw graph JSON |
+| `reset` | Delete the active graph file |
+
+## Why Graph Analytics?
+
+AI memory should be inspectable.
+
+`knowledge-worker` does not just store more context. It models memory as a
+typed, provenance-backed graph and uses network analytics to make that memory
+governable:
+
+- PageRank: which concepts matter because important concepts point to them
+- Betweenness: which ideas bridge otherwise separate parts of your work
+- k-core: which concepts are structurally embedded versus one-off notes
+- Community detection: which themes are forming without a hand-written taxonomy
+- Provenance checks: which claims can be traced back to source excerpts
+
+The result is not "chat history search." It is controlled context memory for
+AI tools.
 
 ## Memory Audit
 
@@ -215,6 +235,37 @@ MYGRAPH_PATH=examples/demo_graph.json mykg audit \
 The generated HTML puts ranked panels and legwork queues first, with the graph
 canvas second. This keeps the feature focused on memory governance instead of
 making the raw graph view the product.
+
+## Discovery Layer
+
+Where `audit` ranks what the graph already says, `mykg discover` infers what it
+implies but does not yet say — and turns every inference into a reviewable
+proposal:
+
+- **Staleness radar**: important nodes whose evidence trail has gone cold,
+  scored by importance × days since the graph last touched them.
+- **Co-mention candidates**: pairs that recur together across multiple sources
+  but were never linked (`CO_MENTIONED_WITH`).
+- **Goal-alignment candidates**: ideas and decisions structurally entangled
+  with a goal they have no contribution path to (`SERVES_CANDIDATE`).
+- **Link prediction**: Adamic-Adar over the semantic graph (`RELATES_TO`).
+- **Question debt**: open questions ranked by age, centrality, and missing
+  evidence; answered questions are detected via decision `ABOUT` edges.
+- **Corroboration**: claims that hang on a single source (`SINGLE_SOURCE`).
+- **Bridge finder**: cross-community connectors that remain after removing
+  dominant hub "spines" that mask real bridges (`BRIDGES`).
+- **Tension detector**: claims that are both supported and challenged, and
+  goal contributions that inherit a challenge to the goal (`TENSION_WITH`).
+
+```bash
+MYGRAPH_PATH=examples/demo_graph.json mykg discover \
+  --out /tmp/discovery.json \
+  --candidates /tmp/discovery.candidates.json
+```
+
+Discover never mutates the graph. Derived edges land in a candidates file — a
+promotion queue for human review. AI proposes, provenance verifies, the owner
+promotes. Committed sample output: [`examples/demo_discovery.json`](examples/demo_discovery.json).
 
 ## Local LLM Support
 

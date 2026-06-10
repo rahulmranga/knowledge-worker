@@ -54,10 +54,16 @@ python3 mygraph/mygraph.py summary
 python3 mygraph/mygraph.py query <term>
 python3 mygraph/mygraph.py list <type>
 python3 mygraph/mygraph.py path <node_id> <node_id>
+python3 mygraph/mygraph.py state "<entry>"
+python3 mygraph/mygraph.py dump
+python3 mygraph/mygraph.py reset
 python3 mygraph/mygraph.py ingest <file.md>
 python3 mygraph/mygraph.py check --provenance
 python3 mygraph/mygraph.py export --ttl --out <file.ttl>
+python3 mygraph/mygraph.py context --out <file.md>
 python3 mygraph/mygraph.py viz --graph <file.json> --out <file.html> --no-open
+python3 mygraph/mygraph.py audit --graph <file.json> --out <analytics.json>
+python3 mygraph/mygraph.py discover --graph <file.json> --out <discovery.json> --candidates <candidates.json>
 ```
 
 ## Public Demo

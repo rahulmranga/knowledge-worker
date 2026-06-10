@@ -1,0 +1,4009 @@
+{
+  "centrality": {
+    "betweenness": [
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 9,
+        "id": "project:garden-sensors",
+        "label": "garden-sensors",
+        "score": 0.3553309962717628,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:write-what-you-build",
+        "label": "Write what you build",
+        "score": 0.20481831048033133,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory",
+        "score": 0.18539545691113635,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "score": 0.1618231845583762,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.16042062853909542,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 0.13194900015457506,
+        "type": "person"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "score": 0.09902383717714727,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "idea:boring-tech-default",
+        "label": "Boring tech by default",
+        "score": 0.09291521486643438,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly",
+        "score": 0.08331025343220463,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 0.07876500193573362,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:embedded-systems",
+        "label": "Embedded systems",
+        "score": 0.07504839334107628,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:show-the-graph",
+        "label": "Show the graph",
+        "score": 0.07249822380484398,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 0.06138810537765241,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "score": 0.05967866821525357,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:field-notes",
+        "label": "field-notes",
+        "score": 0.05724198372281997,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "score": 0.05381984772228675,
+        "type": "question"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "score": 0.0527438492595287,
+        "type": "goal"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "goal:sustainable-side-projects",
+        "label": "Sustainable side projects",
+        "score": 0.047619047619047616,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 0.03753387533875338,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:drip-irrigation-loop",
+        "label": "Drip irrigation loop",
+        "score": 0.03347989602345003,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "score": 0.031292375194814225,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 0.0275454897406117,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:weekly-shipping-log",
+        "label": "Weekly shipping log",
+        "score": 0.02736560123319706,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 0.026306620209059235,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 0.02600796416127427,
+        "type": "reference"
+      }
+    ],
+    "core_number": [
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 9,
+        "id": "project:garden-sensors",
+        "label": "garden-sensors",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 3.0,
+        "type": "person"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:scoped-exports",
+        "label": "Scoped exports",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:write-what-you-build",
+        "label": "Write what you build",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:field-notes",
+        "label": "field-notes",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:show-the-graph",
+        "label": "Show the graph",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:technical-writing",
+        "label": "Technical writing",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:weekly-shipping-log",
+        "label": "Weekly shipping log",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first-paper",
+        "label": "Local-first software paper",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "idea:single-owner-tools",
+        "label": "Single-owner tools",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:promotion-queue",
+        "label": "Promotion queue",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "score": 2.0,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 2.0,
+        "type": "reference"
+      }
+    ],
+    "pagerank": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.07409020855988697,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "score": 0.05717632419550529,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 9,
+        "id": "project:garden-sensors",
+        "label": "garden-sensors",
+        "score": 0.05021547175821721,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 0.046303344795382645,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:esp32-deep-sleep-guide",
+        "label": "ESP32 deep-sleep guide",
+        "score": 0.04330888472213064,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first-paper",
+        "label": "Local-first software paper",
+        "score": 0.03986810371039594,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "score": 0.036389450711256835,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:graphrag-survey",
+        "label": "GraphRAG survey",
+        "score": 0.035856148668285806,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 0.0330984290279468,
+        "type": "reference"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "score": 0.03266216131314169,
+        "type": "goal"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "score": 0.03225393670762898,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:embedded-systems",
+        "label": "Embedded systems",
+        "score": 0.02969331365726325,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory",
+        "score": 0.029086576004735784,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:technical-writing",
+        "label": "Technical writing",
+        "score": 0.02907515115419108,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "question:when-to-automate-ingest",
+        "label": "When should ingest become automatic?",
+        "score": 0.02664295545970645,
+        "type": "question"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "question:battery-life-winter",
+        "label": "Will batteries survive winter?",
+        "score": 0.025597083592771425,
+        "type": "question"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly",
+        "score": 0.024118814779260672,
+        "type": "goal"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:drip-irrigation-loop",
+        "label": "Drip irrigation loop",
+        "score": 0.02274563490190584,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:write-what-you-build",
+        "label": "Write what you build",
+        "score": 0.022098432509755322,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 0.021687562152020938,
+        "type": "project"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "goal:sustainable-side-projects",
+        "label": "Sustainable side projects",
+        "score": 0.021679260459113718,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "score": 0.021382943598927822,
+        "type": "question"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 0.018089305040849026,
+        "type": "goal"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "score": 0.01742322584415855,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "idea:boring-tech-default",
+        "label": "Boring tech by default",
+        "score": 0.017397974696566877,
+        "type": "idea"
+      }
+    ],
+    "semantic_in_degree": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 4.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly",
+        "score": 4.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 4.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 4.0,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:technical-writing",
+        "label": "Technical writing",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:embedded-systems",
+        "label": "Embedded systems",
+        "score": 2.0,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "goal:sustainable-side-projects",
+        "label": "Sustainable side projects",
+        "score": 2.0,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:write-what-you-build",
+        "label": "Write what you build",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:drip-irrigation-loop",
+        "label": "Drip irrigation loop",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:esp32-deep-sleep-guide",
+        "label": "ESP32 deep-sleep guide",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:graphrag-survey",
+        "label": "GraphRAG survey",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first-paper",
+        "label": "Local-first software paper",
+        "score": 1.0,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "score": 1.0,
+        "type": "question"
+      }
+    ],
+    "semantic_out_degree": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 4.0,
+        "type": "person"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 9,
+        "id": "project:garden-sensors",
+        "label": "garden-sensors",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:scoped-exports",
+        "label": "Scoped exports",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:field-notes",
+        "label": "field-notes",
+        "score": 2.0,
+        "type": "project"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:promotion-queue",
+        "label": "Promotion queue",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:show-the-graph",
+        "label": "Show the graph",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:weekly-shipping-log",
+        "label": "Weekly shipping log",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "decision:public-demo-data-only",
+        "label": "Only fictional data in public examples",
+        "score": 2.0,
+        "type": "decision"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:drip-irrigation-loop",
+        "label": "Drip irrigation loop",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:markdown-sources",
+        "label": "Ingest Markdown sources only",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "decision:plain-text-newsletter",
+        "label": "Plain-text newsletter format",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "idea:single-owner-tools",
+        "label": "Single-owner tools",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "idea:boring-tech-default",
+        "label": "Boring tech by default",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "decision:monthly-cadence",
+        "label": "Commit to a monthly cadence",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "question:audience-growth",
+        "label": "Does the newsletter need an audience?",
+        "score": 1.0,
+        "type": "question"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "decision:esp32-over-rpi",
+        "label": "Use ESP32 boards instead of a Raspberry Pi",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "decision:json-first",
+        "label": "Use JSON first",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "question:battery-life-winter",
+        "label": "Will batteries survive winter?",
+        "score": 1.0,
+        "type": "question"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 1,
+        "id": "decision:one-project-per-quarter",
+        "label": "One active project per quarter",
+        "score": 1.0,
+        "type": "decision"
+      },
+      {
+        "community": 6,
+        "confidence": "medium",
+        "core_number": 1,
+        "degree": 1,
+        "id": "decision:solar-power-budget",
+        "label": "Size the solar panel to winter output",
+        "score": 1.0,
+        "type": "decision"
+      }
+    ]
+  },
+  "communities": [
+    {
+      "id": 0,
+      "members": [
+        "decision:monthly-cadence",
+        "decision:plain-text-newsletter",
+        "goal:publish-monthly",
+        "idea:show-the-graph",
+        "idea:weekly-shipping-log",
+        "idea:write-what-you-build",
+        "project:field-notes",
+        "project:garden-sensors",
+        "question:audience-growth",
+        "reference:digital-garden-essay",
+        "topic:technical-writing"
+      ],
+      "size": 11,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 9,
+          "id": "project:garden-sensors",
+          "label": "garden-sensors",
+          "score": 0.05021547175821721,
+          "type": "project"
+        },
+        {
+          "confidence": "medium",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:digital-garden-essay",
+          "label": "Digital garden essay",
+          "score": 0.036389450711256835,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:technical-writing",
+          "label": "Technical writing",
+          "score": 0.02907515115419108,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 6,
+          "id": "goal:publish-monthly",
+          "label": "Publish monthly",
+          "score": 0.024118814779260672,
+          "type": "goal"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "idea:write-what-you-build",
+          "label": "Write what you build",
+          "score": 0.022098432509755322,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "decision:plain-text-newsletter",
+          "label": "Plain-text newsletter format",
+          "score": 0.017305269366782557,
+          "type": "decision"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "idea:show-the-graph",
+          "label": "Show the graph",
+          "score": 0.016210013195467804,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "project:field-notes",
+          "label": "field-notes",
+          "score": 0.012926861334180252,
+          "type": "project"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "idea:weekly-shipping-log",
+          "label": "Weekly shipping log",
+          "score": 0.011628916805444669,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "decision:monthly-cadence",
+          "label": "Commit to a monthly cadence",
+          "score": 0.008391531746981424,
+          "type": "decision"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "question:audience-growth",
+          "label": "Does the newsletter need an audience?",
+          "score": 0.008230944425822367,
+          "type": "question"
+        }
+      ],
+      "types": {
+        "decision": 2,
+        "goal": 1,
+        "idea": 3,
+        "project": 2,
+        "question": 1,
+        "reference": 1,
+        "topic": 1
+      }
+    },
+    {
+      "id": 1,
+      "members": [
+        "decision:public-demo-data-only",
+        "goal:trusted-ai-assistance",
+        "idea:context-memory",
+        "idea:provenance-first",
+        "idea:scoped-exports",
+        "idea:single-owner-tools",
+        "person:demo-owner",
+        "project:knowledge-worker",
+        "reference:local-first-paper",
+        "topic:knowledge-graphs",
+        "topic:local-first"
+      ],
+      "size": 11,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 6,
+          "id": "topic:knowledge-graphs",
+          "label": "Knowledge graphs",
+          "score": 0.07409020855988697,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "topic:local-first",
+          "label": "Local-first software",
+          "score": 0.046303344795382645,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "reference:local-first-paper",
+          "label": "Local-first software paper",
+          "score": 0.03986810371039594,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "project:knowledge-worker",
+          "label": "knowledge-worker",
+          "score": 0.021687562152020938,
+          "type": "project"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "goal:trusted-ai-assistance",
+          "label": "Trusted AI assistance",
+          "score": 0.018089305040849026,
+          "type": "goal"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "idea:context-memory",
+          "label": "Context memory",
+          "score": 0.014343236142307012,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "decision:public-demo-data-only",
+          "label": "Only fictional data in public examples",
+          "score": 0.0111763267351345,
+          "type": "decision"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "idea:provenance-first",
+          "label": "Provenance first",
+          "score": 0.008996063172064622,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 6,
+          "id": "person:demo-owner",
+          "label": "Demo Owner",
+          "score": 0.00886055988131667,
+          "type": "person"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 5,
+          "id": "idea:scoped-exports",
+          "label": "Scoped exports",
+          "score": 0.007085337739740621,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 3,
+          "id": "idea:single-owner-tools",
+          "label": "Single-owner tools",
+          "score": 0.0059481254919125995,
+          "type": "idea"
+        }
+      ],
+      "types": {
+        "decision": 1,
+        "goal": 1,
+        "idea": 4,
+        "person": 1,
+        "project": 1,
+        "reference": 1,
+        "topic": 2
+      }
+    },
+    {
+      "id": 2,
+      "members": [
+        "decision:json-first",
+        "decision:markdown-sources",
+        "idea:promotion-queue",
+        "question:storage-backend",
+        "question:when-to-automate-ingest",
+        "reference:coggrag",
+        "reference:graphrag-survey",
+        "topic:provenance"
+      ],
+      "size": 8,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 6,
+          "id": "topic:provenance",
+          "label": "Provenance",
+          "score": 0.05717632419550529,
+          "type": "topic"
+        },
+        {
+          "confidence": "medium",
+          "core_number": 2,
+          "degree": 3,
+          "id": "reference:graphrag-survey",
+          "label": "GraphRAG survey",
+          "score": 0.035856148668285806,
+          "type": "reference"
+        },
+        {
+          "confidence": "medium",
+          "core_number": 2,
+          "degree": 3,
+          "id": "reference:coggrag",
+          "label": "CogGRAG",
+          "score": 0.0330984290279468,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "question:when-to-automate-ingest",
+          "label": "When should ingest become automatic?",
+          "score": 0.02664295545970645,
+          "type": "question"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "question:storage-backend",
+          "label": "When should storage move beyond JSON?",
+          "score": 0.021382943598927822,
+          "type": "question"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 4,
+          "id": "idea:promotion-queue",
+          "label": "Promotion queue",
+          "score": 0.009886991603872804,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "decision:markdown-sources",
+          "label": "Ingest Markdown sources only",
+          "score": 0.008040074976867961,
+          "type": "decision"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "decision:json-first",
+          "label": "Use JSON first",
+          "score": 0.005766393336476468,
+          "type": "decision"
+        }
+      ],
+      "types": {
+        "decision": 2,
+        "idea": 1,
+        "question": 2,
+        "reference": 2,
+        "topic": 1
+      }
+    },
+    {
+      "id": 3,
+      "members": [
+        "decision:esp32-over-rpi",
+        "idea:low-power-mesh",
+        "question:battery-life-winter",
+        "reference:esp32-deep-sleep-guide",
+        "topic:embedded-systems"
+      ],
+      "size": 5,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "reference:esp32-deep-sleep-guide",
+          "label": "ESP32 deep-sleep guide",
+          "score": 0.04330888472213064,
+          "type": "reference"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "topic:embedded-systems",
+          "label": "Embedded systems",
+          "score": 0.02969331365726325,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "question:battery-life-winter",
+          "label": "Will batteries survive winter?",
+          "score": 0.025597083592771425,
+          "type": "question"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 4,
+          "id": "idea:low-power-mesh",
+          "label": "Low-power sensor mesh",
+          "score": 0.01742322584415855,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 2,
+          "id": "decision:esp32-over-rpi",
+          "label": "Use ESP32 boards instead of a Raspberry Pi",
+          "score": 0.007190807585048208,
+          "type": "decision"
+        }
+      ],
+      "types": {
+        "decision": 1,
+        "idea": 1,
+        "question": 1,
+        "reference": 1,
+        "topic": 1
+      }
+    },
+    {
+      "id": 4,
+      "members": [
+        "decision:one-project-per-quarter",
+        "goal:sustainable-side-projects",
+        "idea:boring-tech-default"
+      ],
+      "size": 3,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 1,
+          "degree": 2,
+          "id": "goal:sustainable-side-projects",
+          "label": "Sustainable side projects",
+          "score": 0.021679260459113718,
+          "type": "goal"
+        },
+        {
+          "confidence": "high",
+          "core_number": 1,
+          "degree": 2,
+          "id": "idea:boring-tech-default",
+          "label": "Boring tech by default",
+          "score": 0.017397974696566877,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 1,
+          "degree": 1,
+          "id": "decision:one-project-per-quarter",
+          "label": "One active project per quarter",
+          "score": 0.012702057788208994,
+          "type": "decision"
+        }
+      ],
+      "types": {
+        "decision": 1,
+        "goal": 1,
+        "idea": 1
+      }
+    },
+    {
+      "id": 5,
+      "members": [
+        "idea:drip-irrigation-loop",
+        "idea:sensor-data-as-memory",
+        "topic:sensor-networks"
+      ],
+      "size": 3,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 4,
+          "id": "topic:sensor-networks",
+          "label": "Sensor networks",
+          "score": 0.03225393670762898,
+          "type": "topic"
+        },
+        {
+          "confidence": "high",
+          "core_number": 3,
+          "degree": 6,
+          "id": "idea:sensor-data-as-memory",
+          "label": "Sensor data as memory",
+          "score": 0.029086576004735784,
+          "type": "idea"
+        },
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "idea:drip-irrigation-loop",
+          "label": "Drip irrigation loop",
+          "score": 0.02274563490190584,
+          "type": "idea"
+        }
+      ],
+      "types": {
+        "idea": 2,
+        "topic": 1
+      }
+    },
+    {
+      "id": 6,
+      "members": [
+        "decision:solar-power-budget",
+        "goal:automated-greenhouse"
+      ],
+      "size": 2,
+      "top_members": [
+        {
+          "confidence": "high",
+          "core_number": 2,
+          "degree": 3,
+          "id": "goal:automated-greenhouse",
+          "label": "Automated greenhouse",
+          "score": 0.03266216131314169,
+          "type": "goal"
+        },
+        {
+          "confidence": "medium",
+          "core_number": 1,
+          "degree": 1,
+          "id": "decision:solar-power-budget",
+          "label": "Size the solar panel to winter output",
+          "score": 0.017369790651364875,
+          "type": "decision"
+        }
+      ],
+      "types": {
+        "decision": 1,
+        "goal": 1
+      }
+    }
+  ],
+  "counts": {
+    "confidence": {
+      "edges": {
+        "high": 86,
+        "low": 2,
+        "medium": 3
+      },
+      "nodes": {
+        "high": 45,
+        "medium": 4
+      }
+    },
+    "edge_types": {
+      "ABOUT": 4,
+      "CHALLENGES": 2,
+      "HAS_IDEA": 4,
+      "INVOLVES": 5,
+      "MENTIONED_IN": 48,
+      "RELATES_TO": 11,
+      "SERVES": 12,
+      "SUPPORTED_BY": 5
+    },
+    "node_types": {
+      "decision": 8,
+      "goal": 4,
+      "idea": 12,
+      "person": 1,
+      "project": 3,
+      "question": 4,
+      "reference": 5,
+      "source": 6,
+      "topic": 6
+    }
+  },
+  "directed_flow": {
+    "idea_attractors": [
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:write-what-you-build",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Write what you build",
+        "out_degree": 0,
+        "outbound_edge_types": {},
+        "prompt": "Is this a durable principle, an unresolved sink, or an over-compressed label? Write one next action.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "idea_generators": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:scoped-exports",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Scoped exports",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:promotion-queue",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Promotion queue",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:sensor-data-as-memory",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Sensor data as memory",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 2
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:show-the-graph",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Show the graph",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:weekly-shipping-log",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Weekly shipping log",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:context-memory",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Context memory",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:low-power-mesh",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "CHALLENGES": 1
+        },
+        "label": "Low-power sensor mesh",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:provenance-first",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Provenance first",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:boring-tech-default",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Boring tech by default",
+        "out_degree": 1,
+        "outbound_edge_types": {
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:single-owner-tools",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Single-owner tools",
+        "out_degree": 1,
+        "outbound_edge_types": {
+          "RELATES_TO": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "note": "Directed flow uses semantic edges only. Provenance/source projection edges are excluded so attractors and generators reflect relationship direction, not citation volume."
+  },
+  "generated_at": "2026-06-10T00:55:05.201024+00:00",
+  "legwork_queue": {
+    "idea_attractors": [
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:write-what-you-build",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Write what you build",
+        "out_degree": 0,
+        "outbound_edge_types": {},
+        "prompt": "Is this a durable principle, an unresolved sink, or an over-compressed label? Write one next action.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "idea_generators": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:scoped-exports",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Scoped exports",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:promotion-queue",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Promotion queue",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:sensor-data-as-memory",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Sensor data as memory",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 2
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:show-the-graph",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Show the graph",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:weekly-shipping-log",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Weekly shipping log",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:context-memory",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Context memory",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:low-power-mesh",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "CHALLENGES": 1
+        },
+        "label": "Low-power sensor mesh",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:provenance-first",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Provenance first",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:boring-tech-default",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Boring tech by default",
+        "out_degree": 1,
+        "outbound_edge_types": {
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:single-owner-tools",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Single-owner tools",
+        "out_degree": 1,
+        "outbound_edge_types": {
+          "RELATES_TO": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "weak_claims": [
+      {
+        "confidence": "low",
+        "dst": "topic:sensor-networks",
+        "dst_label": "Sensor networks",
+        "dst_type": "topic",
+        "excerpt": "",
+        "index": 72,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:hardware-retro",
+        "src": "idea:low-power-mesh",
+        "src_label": "Low-power sensor mesh",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "reference:digital-garden-essay",
+        "dst_label": "Digital garden essay",
+        "dst_type": "reference",
+        "excerpt": "",
+        "index": 84,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:newsletter-plan",
+        "src": "idea:show-the-graph",
+        "src_label": "Show the graph",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "dst": "goal:automated-greenhouse",
+        "dst_label": "Automated greenhouse",
+        "dst_type": "goal",
+        "excerpt": "",
+        "index": 76,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:greenhouse-journal",
+        "src": "decision:solar-power-budget",
+        "src_label": "Size the solar panel to winter output",
+        "src_type": "decision",
+        "type": "SERVES"
+      },
+      {
+        "confidence": "medium",
+        "dst": "reference:coggrag",
+        "dst_label": "CogGRAG",
+        "dst_type": "reference",
+        "excerpt": "CogGRAG is a public reference for graph retrieval.",
+        "index": 56,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:architecture-note",
+        "src": "idea:context-memory",
+        "src_label": "Context memory",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "dst": "reference:graphrag-survey",
+        "dst_label": "GraphRAG survey",
+        "dst_type": "reference",
+        "excerpt": "",
+        "index": 61,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:architecture-note",
+        "src": "idea:promotion-queue",
+        "src_label": "Promotion queue",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "id": "decision:solar-power-budget",
+        "kind": "node_confidence",
+        "label": "Size the solar panel to winter output",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "decision"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:coggrag",
+        "kind": "node_confidence",
+        "label": "CogGRAG",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:digital-garden-essay",
+        "kind": "node_confidence",
+        "label": "Digital garden essay",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:graphrag-survey",
+        "kind": "node_confidence",
+        "label": "GraphRAG survey",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      }
+    ]
+  },
+  "low_confidence_edges": [
+    {
+      "confidence": "medium",
+      "dst": "reference:coggrag",
+      "dst_label": "CogGRAG",
+      "dst_type": "reference",
+      "excerpt": "CogGRAG is a public reference for graph retrieval.",
+      "index": 56,
+      "source_id": "source:architecture-note",
+      "src": "idea:context-memory",
+      "src_label": "Context memory",
+      "src_type": "idea",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "medium",
+      "dst": "reference:graphrag-survey",
+      "dst_label": "GraphRAG survey",
+      "dst_type": "reference",
+      "excerpt": "",
+      "index": 61,
+      "source_id": "source:architecture-note",
+      "src": "idea:promotion-queue",
+      "src_label": "Promotion queue",
+      "src_type": "idea",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "low",
+      "dst": "topic:sensor-networks",
+      "dst_label": "Sensor networks",
+      "dst_type": "topic",
+      "excerpt": "",
+      "index": 72,
+      "source_id": "source:hardware-retro",
+      "src": "idea:low-power-mesh",
+      "src_label": "Low-power sensor mesh",
+      "src_type": "idea",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "medium",
+      "dst": "goal:automated-greenhouse",
+      "dst_label": "Automated greenhouse",
+      "dst_type": "goal",
+      "excerpt": "",
+      "index": 76,
+      "source_id": "source:greenhouse-journal",
+      "src": "decision:solar-power-budget",
+      "src_label": "Size the solar panel to winter output",
+      "src_type": "decision",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "low",
+      "dst": "reference:digital-garden-essay",
+      "dst_label": "Digital garden essay",
+      "dst_type": "reference",
+      "excerpt": "",
+      "index": 84,
+      "source_id": "source:newsletter-plan",
+      "src": "idea:show-the-graph",
+      "src_label": "Show the graph",
+      "src_type": "idea",
+      "type": "SUPPORTED_BY"
+    }
+  ],
+  "provenance_coverage": {
+    "edge_source_coverage": 1.0,
+    "edges_missing_source_id": [],
+    "edges_total": 91,
+    "edges_with_source_id": 91,
+    "excerpt_coverage": 1.0,
+    "missing_nodes": [],
+    "node_coverage": 1.0,
+    "nodes_with_provenance": 43,
+    "nodes_with_provenance_excerpt": 43,
+    "non_source_nodes": 43,
+    "provenance_edges": 48,
+    "provenance_edges_with_excerpt": 48
+  },
+  "ranked": {
+    "bridge_ideas": [
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 9,
+        "id": "project:garden-sensors",
+        "label": "garden-sensors",
+        "score": 0.3553309962717628,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:write-what-you-build",
+        "label": "Write what you build",
+        "score": 0.20481831048033133,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory",
+        "score": 0.18539545691113635,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "score": 0.1618231845583762,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.16042062853909542,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 0.13194900015457506,
+        "type": "person"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "score": 0.09902383717714727,
+        "type": "topic"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "idea:boring-tech-default",
+        "label": "Boring tech by default",
+        "score": 0.09291521486643438,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly",
+        "score": 0.08331025343220463,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 0.07876500193573362,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:embedded-systems",
+        "label": "Embedded systems",
+        "score": 0.07504839334107628,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:show-the-graph",
+        "label": "Show the graph",
+        "score": 0.07249822380484398,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 0.06138810537765241,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "score": 0.05967866821525357,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:field-notes",
+        "label": "field-notes",
+        "score": 0.05724198372281997,
+        "type": "project"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "score": 0.05381984772228675,
+        "type": "question"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "score": 0.0527438492595287,
+        "type": "goal"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "goal:sustainable-side-projects",
+        "label": "Sustainable side projects",
+        "score": 0.047619047619047616,
+        "type": "goal"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 0.03753387533875338,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:drip-irrigation-loop",
+        "label": "Drip irrigation loop",
+        "score": 0.03347989602345003,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "score": 0.031292375194814225,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 0.0275454897406117,
+        "type": "project"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:weekly-shipping-log",
+        "label": "Weekly shipping log",
+        "score": 0.02736560123319706,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 0.026306620209059235,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 0.02600796416127427,
+        "type": "reference"
+      }
+    ],
+    "idea_attractors": [
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:write-what-you-build",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Write what you build",
+        "out_degree": 0,
+        "outbound_edge_types": {},
+        "prompt": "Is this a durable principle, an unresolved sink, or an over-compressed label? Write one next action.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "idea_generators": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 3,
+        "id": "idea:scoped-exports",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Scoped exports",
+        "out_degree": 3,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:promotion-queue",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Promotion queue",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:sensor-data-as-memory",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Sensor data as memory",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 2
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:show-the-graph",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Show the graph",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "flow_balance": 2,
+        "id": "idea:weekly-shipping-log",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Weekly shipping log",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:context-memory",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Context memory",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:low-power-mesh",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "CHALLENGES": 1
+        },
+        "label": "Low-power sensor mesh",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SUPPORTED_BY": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:provenance-first",
+        "in_degree": 1,
+        "inbound_edge_types": {
+          "HAS_IDEA": 1
+        },
+        "label": "Provenance first",
+        "out_degree": 2,
+        "outbound_edge_types": {
+          "RELATES_TO": 1,
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:boring-tech-default",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Boring tech by default",
+        "out_degree": 1,
+        "outbound_edge_types": {
+          "SERVES": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "flow_balance": 1,
+        "id": "idea:single-owner-tools",
+        "in_degree": 0,
+        "inbound_edge_types": {},
+        "label": "Single-owner tools",
+        "out_degree": 1,
+        "outbound_edge_types": {
+          "RELATES_TO": 1
+        },
+        "prompt": "Which branch deserves leg work next? Choose one edge to operationalize, verify, or prune.",
+        "score": 1.0,
+        "type": "idea"
+      }
+    ],
+    "important_concepts": [
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 0.07409020855988697,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "score": 0.05717632419550529,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 9,
+        "id": "project:garden-sensors",
+        "label": "garden-sensors",
+        "score": 0.05021547175821721,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 0.046303344795382645,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:esp32-deep-sleep-guide",
+        "label": "ESP32 deep-sleep guide",
+        "score": 0.04330888472213064,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first-paper",
+        "label": "Local-first software paper",
+        "score": 0.03986810371039594,
+        "type": "reference"
+      },
+      {
+        "community": 0,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "score": 0.036389450711256835,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:graphrag-survey",
+        "label": "GraphRAG survey",
+        "score": 0.035856148668285806,
+        "type": "reference"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 0.0330984290279468,
+        "type": "reference"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "score": 0.03266216131314169,
+        "type": "goal"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "score": 0.03225393670762898,
+        "type": "topic"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "topic:embedded-systems",
+        "label": "Embedded systems",
+        "score": 0.02969331365726325,
+        "type": "topic"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory",
+        "score": 0.029086576004735784,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:technical-writing",
+        "label": "Technical writing",
+        "score": 0.02907515115419108,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "question:when-to-automate-ingest",
+        "label": "When should ingest become automatic?",
+        "score": 0.02664295545970645,
+        "type": "question"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 2,
+        "id": "question:battery-life-winter",
+        "label": "Will batteries survive winter?",
+        "score": 0.025597083592771425,
+        "type": "question"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly",
+        "score": 0.024118814779260672,
+        "type": "goal"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "idea:drip-irrigation-loop",
+        "label": "Drip irrigation loop",
+        "score": 0.02274563490190584,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:write-what-you-build",
+        "label": "Write what you build",
+        "score": 0.022098432509755322,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 0.021687562152020938,
+        "type": "project"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "goal:sustainable-side-projects",
+        "label": "Sustainable side projects",
+        "score": 0.021679260459113718,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "score": 0.021382943598927822,
+        "type": "question"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 0.018089305040849026,
+        "type": "goal"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "score": 0.01742322584415855,
+        "type": "idea"
+      },
+      {
+        "community": 4,
+        "confidence": "high",
+        "core_number": 1,
+        "degree": 2,
+        "id": "idea:boring-tech-default",
+        "label": "Boring tech by default",
+        "score": 0.017397974696566877,
+        "type": "idea"
+      }
+    ],
+    "proof_trail": [
+      {
+        "confidence": "high",
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "provenance": [
+          {
+            "excerpt": "Use a graph of concepts and relationships.",
+            "source_id": "source:demo-notes",
+            "source_label": "demo-notes.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "provenance": [
+          {
+            "excerpt": "Track where every claim came from.",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          },
+          {
+            "excerpt": "Sensor logs are evidence: timestamped, source-attributed readings.",
+            "source_id": "source:greenhouse-journal",
+            "source_label": "greenhouse-journal.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "project:garden-sensors",
+        "label": "garden-sensors",
+        "provenance": [
+          {
+            "excerpt": "Garden sensors: a small ESP32 build for the greenhouse.",
+            "source_id": "source:greenhouse-journal",
+            "source_label": "greenhouse-journal.md"
+          },
+          {
+            "excerpt": "The greenhouse build is the first newsletter arc.",
+            "source_id": "source:newsletter-plan",
+            "source_label": "newsletter-plan.md"
+          },
+          {
+            "excerpt": "The sensor project consumed the whole quarter.",
+            "source_id": "source:quarterly-review",
+            "source_label": "quarterly-review.md"
+          }
+        ],
+        "type": "project"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "provenance": [
+          {
+            "excerpt": "Keep owner data local unless explicitly exported.",
+            "source_id": "source:demo-notes",
+            "source_label": "demo-notes.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "reference:esp32-deep-sleep-guide",
+        "label": "ESP32 deep-sleep guide",
+        "provenance": [
+          {
+            "excerpt": "The deep-sleep guide documents real-world power draw.",
+            "source_id": "source:hardware-retro",
+            "source_label": "hardware-retro.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "high",
+        "id": "reference:local-first-paper",
+        "label": "Local-first software paper",
+        "provenance": [
+          {
+            "excerpt": "The local-first paper defines the storage principles.",
+            "source_id": "source:demo-notes",
+            "source_label": "demo-notes.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "provenance": [
+          {
+            "excerpt": "The digital-garden essay argues for evolving notes.",
+            "source_id": "source:newsletter-plan",
+            "source_label": "newsletter-plan.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:graphrag-survey",
+        "label": "GraphRAG survey",
+        "provenance": [
+          {
+            "excerpt": "The GraphRAG survey maps the retrieval landscape.",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "provenance": [
+          {
+            "excerpt": "CogGRAG is a public reference for graph retrieval.",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          }
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "high",
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "provenance": [
+          {
+            "excerpt": "The greenhouse should mostly look after itself.",
+            "source_id": "source:greenhouse-journal",
+            "source_label": "greenhouse-journal.md"
+          }
+        ],
+        "type": "goal"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "provenance": [
+          {
+            "excerpt": "A handful of nodes reporting over one protocol.",
+            "source_id": "source:greenhouse-journal",
+            "source_label": "greenhouse-journal.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:embedded-systems",
+        "label": "Embedded systems",
+        "provenance": [
+          {
+            "excerpt": "Hard power budgets change every design choice.",
+            "source_id": "source:hardware-retro",
+            "source_label": "hardware-retro.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory",
+        "provenance": [
+          {
+            "excerpt": "Sensor readings could enter the graph as provenance-backed observations.",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          },
+          {
+            "excerpt": "A sensor log line is an excerpt about the world.",
+            "source_id": "source:greenhouse-journal",
+            "source_label": "greenhouse-journal.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "topic:technical-writing",
+        "label": "Technical writing",
+        "provenance": [
+          {
+            "excerpt": "Writing about systems clarifies them.",
+            "source_id": "source:newsletter-plan",
+            "source_label": "newsletter-plan.md"
+          }
+        ],
+        "type": "topic"
+      },
+      {
+        "confidence": "high",
+        "id": "question:when-to-automate-ingest",
+        "label": "When should ingest become automatic?",
+        "provenance": [
+          {
+            "excerpt": "Manual review is the bottleneck; when does ingest become automatic?",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          }
+        ],
+        "type": "question"
+      },
+      {
+        "confidence": "high",
+        "id": "question:battery-life-winter",
+        "label": "Will batteries survive winter?",
+        "provenance": [
+          {
+            "excerpt": "Cold weather halves capacity; winter is the real test.",
+            "source_id": "source:hardware-retro",
+            "source_label": "hardware-retro.md"
+          }
+        ],
+        "type": "question"
+      },
+      {
+        "confidence": "high",
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly",
+        "provenance": [
+          {
+            "excerpt": "One issue a month, no heroics.",
+            "source_id": "source:newsletter-plan",
+            "source_label": "newsletter-plan.md"
+          }
+        ],
+        "type": "goal"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:drip-irrigation-loop",
+        "label": "Drip irrigation loop",
+        "provenance": [
+          {
+            "excerpt": "Let soil moisture drive the drip valve directly.",
+            "source_id": "source:greenhouse-journal",
+            "source_label": "greenhouse-journal.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:write-what-you-build",
+        "label": "Write what you build",
+        "provenance": [
+          {
+            "excerpt": "Every project doubles as newsletter material.",
+            "source_id": "source:newsletter-plan",
+            "source_label": "newsletter-plan.md"
+          },
+          {
+            "excerpt": "Writing pressure kept the sensor build honest.",
+            "source_id": "source:quarterly-review",
+            "source_label": "quarterly-review.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "provenance": [
+          {
+            "excerpt": "Build a local-first toolkit for source-backed AI memory.",
+            "source_id": "source:demo-notes",
+            "source_label": "demo-notes.md"
+          }
+        ],
+        "type": "project"
+      },
+      {
+        "confidence": "high",
+        "id": "goal:sustainable-side-projects",
+        "label": "Sustainable side projects",
+        "provenance": [
+          {
+            "excerpt": "Projects should end finished, not abandoned.",
+            "source_id": "source:quarterly-review",
+            "source_label": "quarterly-review.md"
+          }
+        ],
+        "type": "goal"
+      },
+      {
+        "confidence": "high",
+        "id": "question:storage-backend",
+        "label": "When should storage move beyond JSON?",
+        "provenance": [
+          {
+            "excerpt": "When should storage move beyond JSON?",
+            "source_id": "source:architecture-note",
+            "source_label": "architecture-note.md"
+          }
+        ],
+        "type": "question"
+      },
+      {
+        "confidence": "high",
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "provenance": [
+          {
+            "excerpt": "Make assistant responses easier to verify and continue.",
+            "source_id": "source:demo-notes",
+            "source_label": "demo-notes.md"
+          }
+        ],
+        "type": "goal"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "provenance": [
+          {
+            "excerpt": "Deep-sleep nodes might run for months on small cells.",
+            "source_id": "source:hardware-retro",
+            "source_label": "hardware-retro.md"
+          }
+        ],
+        "type": "idea"
+      },
+      {
+        "confidence": "high",
+        "id": "idea:boring-tech-default",
+        "label": "Boring tech by default",
+        "provenance": [
+          {
+            "excerpt": "Boring tech unless the project is the experiment.",
+            "source_id": "source:quarterly-review",
+            "source_label": "quarterly-review.md"
+          }
+        ],
+        "type": "idea"
+      }
+    ],
+    "structural_core": [
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 9,
+        "id": "project:garden-sensors",
+        "label": "garden-sensors",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "person:demo-owner",
+        "label": "Demo Owner",
+        "score": 3.0,
+        "type": "person"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:knowledge-graphs",
+        "label": "Knowledge graphs",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "topic:provenance",
+        "label": "Provenance",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "goal:publish-monthly",
+        "label": "Publish monthly",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 6,
+        "id": "idea:sensor-data-as-memory",
+        "label": "Sensor data as memory",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:context-memory",
+        "label": "Context memory",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "project:knowledge-worker",
+        "label": "knowledge-worker",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "topic:local-first",
+        "label": "Local-first software",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:provenance-first",
+        "label": "Provenance first",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:scoped-exports",
+        "label": "Scoped exports",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "goal:trusted-ai-assistance",
+        "label": "Trusted AI assistance",
+        "score": 3.0,
+        "type": "goal"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 5,
+        "id": "idea:write-what-you-build",
+        "label": "Write what you build",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "project:field-notes",
+        "label": "field-notes",
+        "score": 3.0,
+        "type": "project"
+      },
+      {
+        "community": 5,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:sensor-networks",
+        "label": "Sensor networks",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:show-the-graph",
+        "label": "Show the graph",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "topic:technical-writing",
+        "label": "Technical writing",
+        "score": 3.0,
+        "type": "topic"
+      },
+      {
+        "community": 0,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 4,
+        "id": "idea:weekly-shipping-log",
+        "label": "Weekly shipping log",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 0,
+        "confidence": "medium",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:digital-garden-essay",
+        "label": "Digital garden essay",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "reference:local-first-paper",
+        "label": "Local-first software paper",
+        "score": 3.0,
+        "type": "reference"
+      },
+      {
+        "community": 1,
+        "confidence": "high",
+        "core_number": 3,
+        "degree": 3,
+        "id": "idea:single-owner-tools",
+        "label": "Single-owner tools",
+        "score": 3.0,
+        "type": "idea"
+      },
+      {
+        "community": 3,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:low-power-mesh",
+        "label": "Low-power sensor mesh",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 2,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 4,
+        "id": "idea:promotion-queue",
+        "label": "Promotion queue",
+        "score": 2.0,
+        "type": "idea"
+      },
+      {
+        "community": 6,
+        "confidence": "high",
+        "core_number": 2,
+        "degree": 3,
+        "id": "goal:automated-greenhouse",
+        "label": "Automated greenhouse",
+        "score": 2.0,
+        "type": "goal"
+      },
+      {
+        "community": 2,
+        "confidence": "medium",
+        "core_number": 2,
+        "degree": 3,
+        "id": "reference:coggrag",
+        "label": "CogGRAG",
+        "score": 2.0,
+        "type": "reference"
+      }
+    ],
+    "weak_claim_queue": [
+      {
+        "confidence": "low",
+        "dst": "topic:sensor-networks",
+        "dst_label": "Sensor networks",
+        "dst_type": "topic",
+        "excerpt": "",
+        "index": 72,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:hardware-retro",
+        "src": "idea:low-power-mesh",
+        "src_label": "Low-power sensor mesh",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "reference:digital-garden-essay",
+        "dst_label": "Digital garden essay",
+        "dst_type": "reference",
+        "excerpt": "",
+        "index": 84,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:newsletter-plan",
+        "src": "idea:show-the-graph",
+        "src_label": "Show the graph",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "dst": "goal:automated-greenhouse",
+        "dst_label": "Automated greenhouse",
+        "dst_type": "goal",
+        "excerpt": "",
+        "index": 76,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:greenhouse-journal",
+        "src": "decision:solar-power-budget",
+        "src_label": "Size the solar panel to winter output",
+        "src_type": "decision",
+        "type": "SERVES"
+      },
+      {
+        "confidence": "medium",
+        "dst": "reference:coggrag",
+        "dst_label": "CogGRAG",
+        "dst_type": "reference",
+        "excerpt": "CogGRAG is a public reference for graph retrieval.",
+        "index": 56,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:architecture-note",
+        "src": "idea:context-memory",
+        "src_label": "Context memory",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "dst": "reference:graphrag-survey",
+        "dst_label": "GraphRAG survey",
+        "dst_type": "reference",
+        "excerpt": "",
+        "index": 61,
+        "kind": "edge_confidence",
+        "prompt": "Inspect this relationship: verify it, downgrade it, or turn it into an open question.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "source_id": "source:architecture-note",
+        "src": "idea:promotion-queue",
+        "src_label": "Promotion queue",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "id": "decision:solar-power-budget",
+        "kind": "node_confidence",
+        "label": "Size the solar panel to winter output",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "decision"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:coggrag",
+        "kind": "node_confidence",
+        "label": "CogGRAG",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:digital-garden-essay",
+        "kind": "node_confidence",
+        "label": "Digital garden essay",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:graphrag-survey",
+        "kind": "node_confidence",
+        "label": "GraphRAG survey",
+        "prompt": "Choose: verify, downgrade, convert to question, ignore for now.",
+        "review_options": [
+          "verify",
+          "downgrade",
+          "convert_to_question",
+          "ignore_for_now"
+        ],
+        "type": "reference"
+      }
+    ],
+    "weak_claims": [
+      {
+        "confidence": "low",
+        "dst": "topic:sensor-networks",
+        "dst_label": "Sensor networks",
+        "dst_type": "topic",
+        "excerpt": "",
+        "index": 72,
+        "kind": "edge_confidence",
+        "source_id": "source:hardware-retro",
+        "src": "idea:low-power-mesh",
+        "src_label": "Low-power sensor mesh",
+        "src_type": "idea",
+        "type": "RELATES_TO"
+      },
+      {
+        "confidence": "low",
+        "dst": "reference:digital-garden-essay",
+        "dst_label": "Digital garden essay",
+        "dst_type": "reference",
+        "excerpt": "",
+        "index": 84,
+        "kind": "edge_confidence",
+        "source_id": "source:newsletter-plan",
+        "src": "idea:show-the-graph",
+        "src_label": "Show the graph",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "dst": "goal:automated-greenhouse",
+        "dst_label": "Automated greenhouse",
+        "dst_type": "goal",
+        "excerpt": "",
+        "index": 76,
+        "kind": "edge_confidence",
+        "source_id": "source:greenhouse-journal",
+        "src": "decision:solar-power-budget",
+        "src_label": "Size the solar panel to winter output",
+        "src_type": "decision",
+        "type": "SERVES"
+      },
+      {
+        "confidence": "medium",
+        "dst": "reference:coggrag",
+        "dst_label": "CogGRAG",
+        "dst_type": "reference",
+        "excerpt": "CogGRAG is a public reference for graph retrieval.",
+        "index": 56,
+        "kind": "edge_confidence",
+        "source_id": "source:architecture-note",
+        "src": "idea:context-memory",
+        "src_label": "Context memory",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "dst": "reference:graphrag-survey",
+        "dst_label": "GraphRAG survey",
+        "dst_type": "reference",
+        "excerpt": "",
+        "index": 61,
+        "kind": "edge_confidence",
+        "source_id": "source:architecture-note",
+        "src": "idea:promotion-queue",
+        "src_label": "Promotion queue",
+        "src_type": "idea",
+        "type": "SUPPORTED_BY"
+      },
+      {
+        "confidence": "medium",
+        "id": "decision:solar-power-budget",
+        "kind": "node_confidence",
+        "label": "Size the solar panel to winter output",
+        "type": "decision"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:coggrag",
+        "kind": "node_confidence",
+        "label": "CogGRAG",
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:digital-garden-essay",
+        "kind": "node_confidence",
+        "label": "Digital garden essay",
+        "type": "reference"
+      },
+      {
+        "confidence": "medium",
+        "id": "reference:graphrag-survey",
+        "kind": "node_confidence",
+        "label": "GraphRAG survey",
+        "type": "reference"
+      }
+    ]
+  },
+  "schema_version": "memory-audit/v1",
+  "stats": {
+    "audit_edges": 79,
+    "communities": 7,
+    "edges": 91,
+    "max_core_number": 3,
+    "nodes": 49,
+    "semantic_components": 1,
+    "semantic_edges": 43,
+    "semantic_nodes": 43,
+    "source_nodes": 6,
+    "source_projection_edges": 42
+  }
+}

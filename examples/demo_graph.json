@@ -2,264 +2,1216 @@
   "edges": [
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774985+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:demo-notes",
       "excerpt": "The demo owner wants assistant memory that survives across sessions.",
-      "last_seen": "2026-05-15T22:55:51.774994+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "person:demo-owner",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775006+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Build a local-first toolkit for source-backed AI memory.",
-      "last_seen": "2026-05-15T22:55:51.775011+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "project:knowledge-worker",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775019+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Store durable concepts instead of loose transcript chunks.",
-      "last_seen": "2026-05-15T22:55:51.775023+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "idea:context-memory",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775030+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Every durable claim needs source evidence.",
-      "last_seen": "2026-05-15T22:55:51.775034+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "idea:provenance-first",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775042+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:demo-notes",
+      "excerpt": "Export a task-sized slice, never the whole graph.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "idea:scoped-exports",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:demo-notes",
+      "excerpt": "Software for one user can cut every corner.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "idea:single-owner-tools",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Make assistant responses easier to verify and continue.",
-      "last_seen": "2026-05-15T22:55:51.775046+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "goal:trusted-ai-assistance",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775055+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:demo-notes",
+      "excerpt": "Only fictional data ships in public examples.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "decision:public-demo-data-only",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Use a graph of concepts and relationships.",
-      "last_seen": "2026-05-15T22:55:51.775060+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "topic:knowledge-graphs",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775069+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:demo-notes",
       "excerpt": "Keep owner data local unless explicitly exported.",
-      "last_seen": "2026-05-15T22:55:51.775073+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "topic:local-first",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775083+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:demo-notes",
+      "excerpt": "The local-first paper defines the storage principles.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "reference:local-first-paper",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:architecture-note",
       "excerpt": "When should storage move beyond JSON?",
-      "last_seen": "2026-05-15T22:55:51.775087+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:architecture-note",
       "src": "question:storage-backend",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775097+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "Manual review is the bottleneck; when does ingest become automatic?",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "question:when-to-automate-ingest",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:architecture-note",
       "excerpt": "Use JSON first; add a database only when needed.",
-      "last_seen": "2026-05-15T22:55:51.775101+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:architecture-note",
       "src": "decision:json-first",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775111+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "Ingest Markdown only; it stays diffable and reviewable.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "decision:markdown-sources",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "Candidates wait in a review queue until the owner promotes them.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "idea:promotion-queue",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "Track where every claim came from.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "topic:provenance",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "source:architecture-note",
       "excerpt": "CogGRAG is a public reference for graph retrieval.",
-      "last_seen": "2026-05-15T22:55:51.775115+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:architecture-note",
       "src": "reference:coggrag",
       "type": "MENTIONED_IN"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775125+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "The GraphRAG survey maps the retrieval landscape.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "reference:graphrag-survey",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "source:architecture-note",
+      "excerpt": "Sensor readings could enter the graph as provenance-backed observations.",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "idea:sensor-data-as-memory",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:greenhouse-journal",
+      "excerpt": "Garden sensors: a small ESP32 build for the greenhouse.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "project:garden-sensors",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:greenhouse-journal",
+      "excerpt": "The greenhouse should mostly look after itself.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "goal:automated-greenhouse",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:greenhouse-journal",
+      "excerpt": "Let soil moisture drive the drip valve directly.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "idea:drip-irrigation-loop",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:greenhouse-journal",
+      "excerpt": "A sensor log line is an excerpt about the world.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "idea:sensor-data-as-memory",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:greenhouse-journal",
+      "excerpt": "Size the panel for December, not for June.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "decision:solar-power-budget",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:greenhouse-journal",
+      "excerpt": "A handful of nodes reporting over one protocol.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "topic:sensor-networks",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:greenhouse-journal",
+      "excerpt": "Sensor logs are evidence: timestamped, source-attributed readings.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "topic:provenance",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:hardware-retro",
+      "excerpt": "Deep-sleep nodes might run for months on small cells.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "idea:low-power-mesh",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:hardware-retro",
+      "excerpt": "The Pi drew too much power; ESP32 boards won.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "decision:esp32-over-rpi",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:hardware-retro",
+      "excerpt": "Cold weather halves capacity; winter is the real test.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "question:battery-life-winter",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:hardware-retro",
+      "excerpt": "Hard power budgets change every design choice.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "topic:embedded-systems",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "source:hardware-retro",
+      "excerpt": "The deep-sleep guide documents real-world power draw.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "reference:esp32-deep-sleep-guide",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "Field notes: a monthly build-log newsletter.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "project:field-notes",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "The greenhouse build is the first newsletter arc.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "project:garden-sensors",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "One issue a month, no heroics.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "goal:publish-monthly",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "Every project doubles as newsletter material.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "idea:write-what-you-build",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "Publish the knowledge graph as the artifact.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "idea:show-the-graph",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "A weekly log makes the monthly issue write itself.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "idea:weekly-shipping-log",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "Monthly is sustainable; weekly was not.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "decision:monthly-cadence",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "Plain text ships on time.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "decision:plain-text-newsletter",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "Writing about systems clarifies them.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "topic:technical-writing",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:newsletter-plan",
+      "excerpt": "The digital-garden essay argues for evolving notes.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "reference:digital-garden-essay",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:quarterly-review",
+      "excerpt": "Projects should end finished, not abandoned.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "goal:sustainable-side-projects",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:quarterly-review",
+      "excerpt": "Writing pressure kept the sensor build honest.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "idea:write-what-you-build",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:quarterly-review",
+      "excerpt": "Boring tech unless the project is the experiment.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "idea:boring-tech-default",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:quarterly-review",
+      "excerpt": "Serialize projects; parallel ones all stall.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "decision:one-project-per-quarter",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:quarterly-review",
+      "excerpt": "The sensor project consumed the whole quarter.",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "project:garden-sensors",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "source:quarterly-review",
+      "excerpt": "Is writing for zero readers sustainable?",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "question:audience-growth",
+      "type": "MENTIONED_IN"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "idea:context-memory",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775128+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "person:demo-owner",
       "type": "HAS_IDEA"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775139+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "idea:provenance-first",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775142+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "person:demo-owner",
       "type": "HAS_IDEA"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775152+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "goal:trusted-ai-assistance",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775156+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "project:knowledge-worker",
       "type": "SERVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775167+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "topic:knowledge-graphs",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775170+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "project:knowledge-worker",
       "type": "INVOLVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775181+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "topic:local-first",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775186+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "project:knowledge-worker",
       "type": "INVOLVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775200+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "topic:knowledge-graphs",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775204+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "idea:context-memory",
       "type": "RELATES_TO"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775218+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "goal:trusted-ai-assistance",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775222+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:demo-notes",
       "src": "idea:provenance-first",
       "type": "SERVES"
     },
     {
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.775237+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "question:storage-backend",
       "excerpt": "",
-      "last_seen": "2026-05-15T22:55:51.775241+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:architecture-note",
       "src": "decision:json-first",
       "type": "ABOUT"
     },
     {
       "confidence": "medium",
-      "created_at": "2026-05-15T22:55:51.775257+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "dst": "reference:coggrag",
       "excerpt": "CogGRAG is a public reference for graph retrieval.",
-      "last_seen": "2026-05-15T22:55:51.775261+00:00",
+      "last_seen": "2026-06-08T10:00:00+00:00",
       "source_id": "source:architecture-note",
       "src": "idea:context-memory",
       "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "topic:local-first",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "idea:scoped-exports",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "goal:trusted-ai-assistance",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "idea:scoped-exports",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "reference:local-first-paper",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "idea:scoped-exports",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "topic:provenance",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "idea:promotion-queue",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "medium",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "reference:graphrag-survey",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "idea:promotion-queue",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "topic:local-first",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "idea:single-owner-tools",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "topic:provenance",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "idea:provenance-first",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "topic:provenance",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "decision:markdown-sources",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "goal:trusted-ai-assistance",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "decision:public-demo-data-only",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "topic:local-first",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:demo-notes",
+      "src": "decision:public-demo-data-only",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "goal:automated-greenhouse",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "project:garden-sensors",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "topic:embedded-systems",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "project:garden-sensors",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "topic:sensor-networks",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "project:garden-sensors",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "idea:drip-irrigation-loop",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "person:demo-owner",
+      "type": "HAS_IDEA"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "goal:automated-greenhouse",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "idea:drip-irrigation-loop",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "low",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "topic:sensor-networks",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "idea:low-power-mesh",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "reference:esp32-deep-sleep-guide",
+      "excerpt": "The deep-sleep guide documents real-world power draw.",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "idea:low-power-mesh",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "idea:low-power-mesh",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "question:battery-life-winter",
+      "type": "CHALLENGES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "topic:embedded-systems",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:hardware-retro",
+      "src": "decision:esp32-over-rpi",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "medium",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "goal:automated-greenhouse",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "decision:solar-power-budget",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "dst": "topic:knowledge-graphs",
+      "excerpt": "",
+      "last_seen": "2026-06-08T10:00:00+00:00",
+      "source_id": "source:architecture-note",
+      "src": "idea:sensor-data-as-memory",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "dst": "topic:sensor-networks",
+      "excerpt": "",
+      "last_seen": "2026-03-30T10:00:00+00:00",
+      "source_id": "source:greenhouse-journal",
+      "src": "idea:sensor-data-as-memory",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "goal:publish-monthly",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "project:field-notes",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "topic:technical-writing",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "project:field-notes",
+      "type": "INVOLVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "idea:write-what-you-build",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "person:demo-owner",
+      "type": "HAS_IDEA"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "goal:publish-monthly",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "idea:weekly-shipping-log",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "topic:technical-writing",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "idea:weekly-shipping-log",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "low",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "reference:digital-garden-essay",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "idea:show-the-graph",
+      "type": "SUPPORTED_BY"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "topic:knowledge-graphs",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "idea:show-the-graph",
+      "type": "RELATES_TO"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "goal:sustainable-side-projects",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "idea:boring-tech-default",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "goal:publish-monthly",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "decision:monthly-cadence",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "topic:technical-writing",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:newsletter-plan",
+      "src": "decision:plain-text-newsletter",
+      "type": "ABOUT"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "goal:sustainable-side-projects",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "decision:one-project-per-quarter",
+      "type": "SERVES"
+    },
+    {
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "dst": "goal:publish-monthly",
+      "excerpt": "",
+      "last_seen": "2026-05-12T10:00:00+00:00",
+      "source_id": "source:quarterly-review",
+      "src": "question:audience-growth",
+      "type": "CHALLENGES"
     }
   ],
   "nodes": {
+    "decision:esp32-over-rpi": {
+      "body": "Microcontrollers beat a full computer for battery-powered sensing.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "decision:esp32-over-rpi",
+      "label": "Use ESP32 boards instead of a Raspberry Pi",
+      "type": "decision"
+    },
     "decision:json-first": {
       "body": "Start with a simple JSON store before introducing a database.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774863+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "decision:json-first",
       "label": "Use JSON first",
       "type": "decision"
     },
+    "decision:markdown-sources": {
+      "body": "Markdown keeps source notes diffable and human-reviewable.",
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "decision:markdown-sources",
+      "label": "Ingest Markdown sources only",
+      "type": "decision"
+    },
+    "decision:monthly-cadence": {
+      "body": "Monthly is slow enough to sustain and fast enough to matter.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "decision:monthly-cadence",
+      "label": "Commit to a monthly cadence",
+      "type": "decision"
+    },
+    "decision:one-project-per-quarter": {
+      "body": "Serialize side projects instead of running them in parallel.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "decision:one-project-per-quarter",
+      "label": "One active project per quarter",
+      "type": "decision"
+    },
+    "decision:plain-text-newsletter": {
+      "body": "No templates, no images: plain text ships on time.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "decision:plain-text-newsletter",
+      "label": "Plain-text newsletter format",
+      "type": "decision"
+    },
+    "decision:public-demo-data-only": {
+      "body": "The public repo ships fictional demo data; real graphs stay local.",
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "decision:public-demo-data-only",
+      "label": "Only fictional data in public examples",
+      "type": "decision"
+    },
+    "decision:solar-power-budget": {
+      "body": "Plan the power budget around the worst month, not the average.",
+      "confidence": "medium",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "decision:solar-power-budget",
+      "label": "Size the solar panel to winter output",
+      "type": "decision"
+    },
+    "goal:automated-greenhouse": {
+      "body": "Keep greenhouse plants alive with minimal manual checking.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "goal:automated-greenhouse",
+      "label": "Automated greenhouse",
+      "type": "goal"
+    },
+    "goal:publish-monthly": {
+      "body": "Ship one newsletter issue every month without heroics.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "goal:publish-monthly",
+      "label": "Publish monthly",
+      "type": "goal"
+    },
+    "goal:sustainable-side-projects": {
+      "body": "Keep hobby projects fun and finished instead of abandoned.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "goal:sustainable-side-projects",
+      "label": "Sustainable side projects",
+      "type": "goal"
+    },
     "goal:trusted-ai-assistance": {
       "body": "Make assistant responses easier to verify and continue across sessions.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774852+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "goal:trusted-ai-assistance",
       "label": "Trusted AI assistance",
       "type": "goal"
     },
+    "idea:boring-tech-default": {
+      "body": "Choose boring technology unless the project IS the experiment.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "idea:boring-tech-default",
+      "label": "Boring tech by default",
+      "type": "idea"
+    },
     "idea:context-memory": {
       "body": "AI sessions improve when durable context is stored as concepts instead of loose transcript chunks.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774842+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "idea:context-memory",
       "label": "Context memory",
+      "type": "idea"
+    },
+    "idea:drip-irrigation-loop": {
+      "body": "Close the loop: soil moisture readings drive the drip valve directly.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "idea:drip-irrigation-loop",
+      "label": "Drip irrigation loop",
+      "type": "idea"
+    },
+    "idea:low-power-mesh": {
+      "body": "Deep-sleep ESP32 nodes could run a mesh for months on small batteries.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "idea:low-power-mesh",
+      "label": "Low-power sensor mesh",
+      "type": "idea"
+    },
+    "idea:promotion-queue": {
+      "body": "AI proposes candidate memories; a human review queue decides what is promoted.",
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "idea:promotion-queue",
+      "label": "Promotion queue",
       "type": "idea"
     },
     "idea:provenance-first": {
       "body": "Every durable claim should point back to source evidence.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774847+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "idea:provenance-first",
       "label": "Provenance first",
+      "type": "idea"
+    },
+    "idea:scoped-exports": {
+      "body": "Share a task-sized slice of the graph with an AI, never the whole thing.",
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "idea:scoped-exports",
+      "label": "Scoped exports",
+      "type": "idea"
+    },
+    "idea:sensor-data-as-memory": {
+      "body": "Sensor logs are provenance too: a reading is a source excerpt about the world.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "idea:sensor-data-as-memory",
+      "label": "Sensor data as memory",
+      "type": "idea"
+    },
+    "idea:show-the-graph": {
+      "body": "Publish the project knowledge graph itself as the newsletter artifact.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "idea:show-the-graph",
+      "label": "Show the graph",
+      "type": "idea"
+    },
+    "idea:single-owner-tools": {
+      "body": "Tools built for exactly one user can cut every scope corner that team software cannot.",
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "idea:single-owner-tools",
+      "label": "Single-owner tools",
+      "type": "idea"
+    },
+    "idea:weekly-shipping-log": {
+      "body": "A small weekly log makes the monthly issue almost write itself.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "idea:weekly-shipping-log",
+      "label": "Weekly shipping log",
+      "type": "idea"
+    },
+    "idea:write-what-you-build": {
+      "body": "Each project becomes newsletter material; writing pressure improves the build.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "idea:write-what-you-build",
+      "label": "Write what you build",
       "type": "idea"
     },
     "person:demo-owner": {
       "body": "A fictional graph owner used only for public examples.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774831+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "person:demo-owner",
       "label": "Demo Owner",
       "type": "person"
     },
+    "project:field-notes": {
+      "body": "A fictional monthly newsletter documenting the owner's builds.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "project:field-notes",
+      "label": "field-notes",
+      "type": "project"
+    },
+    "project:garden-sensors": {
+      "body": "A fictional ESP32 sensor network for a backyard greenhouse.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "project:garden-sensors",
+      "label": "garden-sensors",
+      "type": "project"
+    },
     "project:knowledge-worker": {
       "body": "A local-first toolkit for source-backed AI memory.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774837+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "project:knowledge-worker",
       "label": "knowledge-worker",
       "type": "project"
     },
+    "question:audience-growth": {
+      "body": "Open question: writing for zero readers may not stay motivating.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "question:audience-growth",
+      "label": "Does the newsletter need an audience?",
+      "type": "question"
+    },
+    "question:battery-life-winter": {
+      "body": "Open question: cold halves battery capacity; the mesh may not last the season.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "question:battery-life-winter",
+      "label": "Will batteries survive winter?",
+      "type": "question"
+    },
     "question:storage-backend": {
       "body": "Open question: keep JSON until size or concurrency makes it awkward.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774857+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "question:storage-backend",
       "label": "When should storage move beyond JSON?",
+      "type": "question"
+    },
+    "question:when-to-automate-ingest": {
+      "body": "Open question: manual review catches errors, but does not scale past a few notes a week.",
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "question:when-to-automate-ingest",
+      "label": "When should ingest become automatic?",
       "type": "question"
     },
     "reference:coggrag": {
       "body": "A public reference about cognition-inspired graph retrieval.",
       "confidence": "medium",
-      "created_at": "2026-05-15T22:55:51.774880+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "reference:coggrag",
       "label": "CogGRAG",
+      "type": "reference"
+    },
+    "reference:digital-garden-essay": {
+      "body": "A public essay on publishing evolving notes instead of finished posts.",
+      "confidence": "medium",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "reference:digital-garden-essay",
+      "label": "Digital garden essay",
+      "type": "reference"
+    },
+    "reference:esp32-deep-sleep-guide": {
+      "body": "A public guide to microcontroller deep-sleep power budgets.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "reference:esp32-deep-sleep-guide",
+      "label": "ESP32 deep-sleep guide",
+      "type": "reference"
+    },
+    "reference:graphrag-survey": {
+      "body": "A survey of graph-based retrieval-augmented generation systems.",
+      "confidence": "medium",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "reference:graphrag-survey",
+      "label": "GraphRAG survey",
+      "type": "reference"
+    },
+    "reference:local-first-paper": {
+      "body": "The essay defining local-first software principles.",
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "reference:local-first-paper",
+      "label": "Local-first software paper",
       "type": "reference"
     },
     "source:architecture-note": {
       "body": "Fictional architecture note for the public demo graph.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774823+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "source:architecture-note",
       "label": "architecture-note.md",
       "type": "source"
@@ -267,15 +1219,55 @@
     "source:demo-notes": {
       "body": "Fictional project notes used to demonstrate provenance-backed memory.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774750+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "source:demo-notes",
       "label": "demo-notes.md",
       "type": "source"
     },
+    "source:greenhouse-journal": {
+      "body": "Fictional build journal for a small greenhouse sensor project.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "source:greenhouse-journal",
+      "label": "greenhouse-journal.md",
+      "type": "source"
+    },
+    "source:hardware-retro": {
+      "body": "Fictional retrospective on the greenhouse sensor hardware.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "source:hardware-retro",
+      "label": "hardware-retro.md",
+      "type": "source"
+    },
+    "source:newsletter-plan": {
+      "body": "Fictional planning note for a monthly build-log newsletter.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "source:newsletter-plan",
+      "label": "newsletter-plan.md",
+      "type": "source"
+    },
+    "source:quarterly-review": {
+      "body": "Fictional quarterly review of all side projects.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "source:quarterly-review",
+      "label": "quarterly-review.md",
+      "type": "source"
+    },
+    "topic:embedded-systems": {
+      "body": "Small computers with hard power and memory constraints.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "topic:embedded-systems",
+      "label": "Embedded systems",
+      "type": "topic"
+    },
     "topic:knowledge-graphs": {
       "body": "Structured concepts and relationships for durable context.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774868+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "topic:knowledge-graphs",
       "label": "Knowledge graphs",
       "type": "topic"
@@ -283,9 +1275,33 @@
     "topic:local-first": {
       "body": "Software that keeps user data local unless the owner chooses otherwise.",
       "confidence": "high",
-      "created_at": "2026-05-15T22:55:51.774874+00:00",
+      "created_at": "2026-05-28T10:00:00+00:00",
       "id": "topic:local-first",
       "label": "Local-first software",
+      "type": "topic"
+    },
+    "topic:provenance": {
+      "body": "Where a claim came from and whether it can be traced to evidence.",
+      "confidence": "high",
+      "created_at": "2026-05-28T10:00:00+00:00",
+      "id": "topic:provenance",
+      "label": "Provenance",
+      "type": "topic"
+    },
+    "topic:sensor-networks": {
+      "body": "Many small devices reporting measurements over a shared protocol.",
+      "confidence": "high",
+      "created_at": "2026-03-08T10:00:00+00:00",
+      "id": "topic:sensor-networks",
+      "label": "Sensor networks",
+      "type": "topic"
+    },
+    "topic:technical-writing": {
+      "body": "Explaining systems in prose, for readers and future self.",
+      "confidence": "high",
+      "created_at": "2026-05-02T10:00:00+00:00",
+      "id": "topic:technical-writing",
+      "label": "Technical writing",
       "type": "topic"
     }
   }

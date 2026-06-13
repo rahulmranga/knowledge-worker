@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "knowledge-worker"
-version = "0.4.0"
+version = "0.5.0"
 description = "Provenance-backed personal knowledge graph for local AI workflows"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
-authors = [{ name = "Rahul Rangarao", email = "rahulmohanrangarao@gmail.com" }]
+authors = [{ name = "Rahul Rangarao", email = "rahulmranga@gmail.com" }]
 keywords = [
     "knowledge-graph",
     "llm-memory",
@@ -35,6 +35,7 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
+rdf = ["rdflib>=7.0.0"]
 anthropic = ["anthropic>=0.39.0", "rdflib>=7.0.0"]
 openai = ["openai>=1.68.0", "rdflib>=7.0.0"]
 llm = ["anthropic>=0.39.0", "openai>=1.68.0", "rdflib>=7.0.0"]

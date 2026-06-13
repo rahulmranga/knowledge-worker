@@ -30,10 +30,10 @@ ollama_proxy/
 ## Install
 
 ```bash
-cd /path/to/knowledge-worker/ollama_proxy
-python3 -m venv ../.venv
-source ../.venv/bin/activate
-python -m pip install -r requirements.txt
+cd /path/to/knowledge-worker
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[ollama,proxy]"
 ollama list   # confirm your local model is present
 ollama serve  # if not already running
 ```
@@ -41,20 +41,18 @@ ollama serve  # if not already running
 ## Quick test
 
 ```bash
-# 1. MCP server (stdio — for Claude Code config)
-python server.py
+# 1. MCP server (stdio, for Claude Code config)
+python ollama_proxy/server.py
 
 # 2. Proxy (logging passthrough on :11435)
-python proxy.py
+python ollama_proxy/proxy.py
 curl http://127.0.0.1:11435/healthz   # → {"ok": true, "models": [...]}
 
-# 3. Extractor adapter (drop-in for mygraph)
-cd ../mygraph
-OLLAMA_DEFAULT_MODEL=gemma4:e4b python mygraph.py ingest ../inspiration.md --backend ollama --non-interactive
+# 3. Extractor adapter through the main CLI
+OLLAMA_DEFAULT_MODEL=gemma4:e4b mykg ingest path/to/notes.md --backend ollama --non-interactive
 
 # 4. A/B comparison
-cd ../ollama_proxy
-OLLAMA_DEFAULT_MODEL=gemma4:e4b python eval_compare.py ../inspiration.md
+OLLAMA_DEFAULT_MODEL=gemma4:e4b python ollama_proxy/eval_compare.py path/to/notes.md
 ```
 
 ## Wiring into Claude Code / Cowork

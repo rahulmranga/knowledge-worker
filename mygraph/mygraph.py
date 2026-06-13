@@ -1,7 +1,7 @@
 """
 mygraph.py — personal knowledge graph (v0 schema, v1 ingest/check/export/viz).
 
-Single-file core, stdlib-only. Read SPEC.md → V1_DESIGN.md → V1_PLAN.md.
+Single-file core, stdlib-only. Read SPEC.md and DESIGN.md.
 
 Usage:
     mykg seed                                             # populate fictional demo graph

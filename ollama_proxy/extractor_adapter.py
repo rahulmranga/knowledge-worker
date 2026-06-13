@@ -12,7 +12,7 @@ Ollama's `format` (JSON mode + optional JSON schema). This adapter:
 
 Usage (drop-in):
     from ollama_proxy.extractor_adapter import extract as gemma_extract
-    payload = gemma_extract(Path("inspiration.md"), out_path=Path("out.json"))
+    payload = gemma_extract(Path("notes.md"), out_path=Path("out.json"))
 
 Or via the helper CLI:
     python ollama_proxy/extractor_adapter.py path/to/file.md [out.json]

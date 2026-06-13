@@ -1,4 +1,4 @@
-# knowledge-worker v1 Design
+# knowledge-worker Design
 
 ## Pipeline
 

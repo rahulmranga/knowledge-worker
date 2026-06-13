@@ -4,7 +4,7 @@ owl_io.py — Turtle (OWL) sibling serialization for the graph.
 JSON stays canonical. mygraph.ttl is generated from JSON at any time and can be
 re-imported losslessly (round-trip on node + edge counts is a hard test).
 
-Mapping (per V1_DESIGN.md §8 + V1_PLAN.md §M3):
+Mapping follows the graph model in SPEC.md and the pipeline in DESIGN.md:
 
   - Node type           → owl:Class under rb:Concept
   - Edge type           → owl:ObjectProperty
@@ -14,7 +14,7 @@ Mapping (per V1_DESIGN.md §8 + V1_PLAN.md §M3):
                           rb:excerpt, rb:sourceId, rb:createdAt, rb:lastSeen
   - Source node         → rb:Source (subclass of dcterms:ProvenanceEntity)
 
-Requires `rdflib` (pip install rdflib).
+Requires `rdflib` (`pip install -e ".[rdf]"`).
 """
 
 from __future__ import annotations
@@ -36,7 +36,7 @@ def _require_rdflib():
     except ImportError as e:
         raise SystemExit(
             "owl_io: `rdflib` is not installed. Run:\n"
-            "    pip install rdflib"
+            '    pip install -e ".[rdf]"'
         ) from e
 
 

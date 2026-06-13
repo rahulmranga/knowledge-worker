@@ -1,6 +1,10 @@
 # knowledge-worker
 
-**Source-backed memory for AI work. Local files in, durable context out.**
+**A personal knowledge graph that survives between AI conversations.**
+
+User-centered, not conversation-centered. Provenance first. Built on boring infrastructure.
+
+> *Your AI is only as smart as what it remembers about you.*
 
 <p align="center">
   <img src="docs/assets/knowledge-worker-demo.gif" alt="knowledge-worker graph visualizer demo" width="900">
@@ -8,11 +12,17 @@
 
 `knowledge-worker` is a local-first personal knowledge graph for carrying context across AI sessions. It turns notes into reviewable concepts, decisions, goals, and relationships, keeps source excerpts attached, and exports compact context you can paste into Claude, GPT, Ollama, or any other LLM workflow.
 
-Your private graph stays on your machine.
+Your private graph stays on your machine, preserving the thread of your own
+reasoning across AI sessions.
 
 ## Why
 
 AI conversations usually start from zero. You clarify a decision, name a constraint, sketch a goal, and then the next session forgets it. RAG can be heavy, full-note prompts are noisy, and most note apps do not plug cleanly into chat workflows.
+
+Stop dumping context. Build memory. `knowledge-worker` turns chats, notes,
+decisions, and sources into a local provenance-backed knowledge graph. Graph
+analytics then show what matters, what connects, what is weak, and what context
+an AI should see.
 
 `knowledge-worker` keeps the useful parts: cited claims, explicit relationships, human review, and a small context snapshot when you need continuity.
 
@@ -36,9 +46,20 @@ matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
   claims, and provenance coverage.
 - Generates an offline HTML graph viewer for exploration and demos.
 
+## Design Principles
+
+**Provenance first.** Every durable claim points back to a source document and literal excerpt.
+
+**Local first.** The graph is a file on your machine. No cloud sync, accounts, or telemetry.
+
+**Review before merge.** The LLM proposes. You decide. Deterministic validation runs before anything enters the graph.
+
+**Boring persistence.** Plain JSON until it becomes the limiting factor. The schema stays stable across storage backends.
+
 ## Quick Start
 
-Requirements: Python 3.10+ on macOS or Linux. The core demo CLI has no runtime dependencies beyond the standard library and does not need a package install.
+Requirements: Python 3.10+ on macOS, Linux, or Windows. The public demo CLI uses
+only the standard library and does not need a package install.
 
 ```bash
 git clone https://github.com/rahulmranga/knowledge-worker
@@ -58,13 +79,9 @@ MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py audit --out /tm
 python3 mygraph/mygraph.py viz --graph examples/demo_graph.json --out /tmp/demo.html
 ```
 
-One-command smoke test:
+### Install the CLI
 
-```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py query provenance
-```
-
-If you want the shorter `mykg` command, install it inside a virtual environment:
+For the shorter `mykg` command, install the project inside a virtual environment:
 
 ```bash
 python3 -m venv .venv
@@ -94,45 +111,75 @@ session and activate again:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-Run the test suite with:
+## Commands
+
+| Command | What it does | Requirements |
+|---|---|---|
+| `seed` | Populate a fictional demo graph | Core |
+| `summary` | Show node and edge counts by type | Core |
+| `query <term>` | Search nodes, neighbors, and provenance | Core |
+| `list <type>` | List nodes of a given type | Core |
+| `path <a> <b>` | Find the shortest path between two nodes | Core |
+| `ingest <file.md>` | Extract, validate, review, merge, and evaluate candidates | Provider extra, or `--candidates-file` |
+| `check --provenance` | Flag nodes with missing source citations | Core |
+| `export --ttl` | Emit Turtle/RDF | `.[rdf]` |
+| `context` | Print a compact LLM-ready context snapshot | Core |
+| `viz` | Generate an offline single-file HTML viewer | Core |
+| `audit` | Emit graph analytics and optional Memory Audit HTML | Core |
+| `discover` | Propose derived edges and second-order insights without mutating the graph | Core |
+| `state "<entry>"` | Append a mood/state sidecar entry | Core |
+| `dump` | Print the raw graph JSON | Core |
+| `reset` | Delete the active graph file | Core |
+
+Install optional features into the active virtual environment:
 
 ```bash
-python3 -m unittest
-```
-
-Run the public-demo benchmark suite with:
-
-```bash
-python3 -m unittest tests/test_benchmarks.py
+python -m pip install -e ".[anthropic]"  # Anthropic-backed ingest
+python -m pip install -e ".[openai]"     # OpenAI-backed ingest
+python -m pip install -e ".[ollama]"     # Local Ollama ingest
+python -m pip install -e ".[rdf]"        # Turtle/RDF export
+python -m pip install -e ".[all]"        # All ingest backends and RDF export
 ```
 
 ## Use Your Own Notes
 
-You can ingest your notes with or without an API key.
+Keep your real graph outside the repository and point the CLI at it:
+
+```bash
+mkdir -p ~/my-private-graph
+export MYGRAPH_PATH=~/my-private-graph/mygraph.json
+```
+
+You can then ingest notes with or without an API key.
 
 ### Claude or Codex App, No API Key
 
-If you are already working with Claude, Codex, or ChatGPT in an app session, you do **not** need an API key. Ask the assistant to produce a `*.candidates.json` file that follows the schema in `mygraph/extractor.py`, then let the local CLI validate, review, and merge it:
+If a file-capable assistant is already working in this checkout, you do **not**
+need an API key. Ask it:
+
+> Read `path/to/your/notes.md` and the `EXTRACTION_TOOL` schema and
+> `PROMPT_TEMPLATE` in `mygraph/extractor.py`. Write
+> `path/to/your/notes.candidates.json`. Use only literal source excerpts, do
+> not invent personal facts, and add a `MENTIONED_IN` edge from every new
+> concept to the source node.
+
+Then let the local CLI validate, review, and merge the proposals:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e .
-
 mykg ingest path/to/your/notes.md --candidates-file path/to/your/notes.candidates.json
 ```
 
-The app subscription helps you create the candidates file. The repo still keeps graph validation and merge local.
+Candidate files are ignored by git. Validation, review, and graph merge remain
+local.
 
 ### Automated API-Backed Ingest
 
-If you want the CLI to call an LLM directly, use a provider API key or local Ollama.
+If you want the CLI to call an LLM directly, install the matching optional
+dependency and use a provider API key or local Ollama.
 
 For Anthropic API:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 python -m pip install -e ".[anthropic]"
 export ANTHROPIC_API_KEY=...
 
@@ -148,24 +195,24 @@ The Claude backend also auto-detects Anthropic-compatible provider env:
 For OpenAI API:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 python -m pip install -e ".[openai]"
 export OPENAI_API_KEY=...
 
-mykg ingest path/to/your/notes.md --backend openai --model gpt-5.2
+mykg ingest path/to/your/notes.md --backend openai
 ```
 
 For local Ollama:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 python -m pip install -e ".[ollama]"
-mykg ingest notes.md --backend ollama --model llama3
+ollama list
+ollama serve  # run in another terminal if Ollama is not already running
+
+mykg ingest path/to/your/notes.md --backend ollama --model llama3
 ```
 
-If you prefer a traditional requirements file, activate a virtual environment first, then run `python -m pip install -r requirements.txt`. That installs the CLI plus optional dependencies for Anthropic API ingest, OpenAI API ingest, Ollama ingest, and Turtle/RDF export.
+The traditional `python -m pip install -r requirements.txt` installs all ingest
+backends and RDF export support.
 
 ## Private Graph Workflow
 
@@ -177,44 +224,9 @@ MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg query "architecture"
 MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg context
 ```
 
-Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, state logs, and local env files are ignored by default.
-
-## Commands
-
-| Command | What it does |
-|---|---|
-| `seed` | Populate a fictional demo graph |
-| `summary` | Show node and edge counts by type |
-| `query <term>` | Search nodes, neighbors, and provenance |
-| `list <type>` | List nodes of a given type |
-| `path <a> <b>` | Find the shortest path between two nodes |
-| `ingest <file.md>` | Extract, validate, review, merge, and eval candidates |
-| `check --provenance` | Flag nodes with missing source citations |
-| `export --ttl` | Emit Turtle/RDF |
-| `context` | Print a compact LLM-ready context snapshot |
-| `viz` | Generate an offline single-file HTML viewer |
-| `audit` | Emit graph analytics, directed idea-flow queues, and optional Memory Audit HTML |
-| `discover` | Propose derived edges and second-order insights (read-only, promotion queue) |
-| `state "<entry>"` | Append a mood/state sidecar entry |
-| `dump` | Print the raw graph JSON |
-| `reset` | Delete the active graph file |
-
-## Why Graph Analytics?
-
-AI memory should be inspectable.
-
-`knowledge-worker` does not just store more context. It models memory as a
-typed, provenance-backed graph and uses network analytics to make that memory
-governable:
-
-- PageRank: which concepts matter because important concepts point to them
-- Betweenness: which ideas bridge otherwise separate parts of your work
-- k-core: which concepts are structurally embedded versus one-off notes
-- Community detection: which themes are forming without a hand-written taxonomy
-- Provenance checks: which claims can be traced back to source excerpts
-
-The result is not "chat history search." It is controlled context memory for
-AI tools.
+The default graph and standard sidecar paths under `mygraph/` are ignored by
+git. Custom graph, viewer, TTL, and log paths are not automatically ignored, so
+keep private outputs outside the repository.
 
 ## Memory Audit
 
@@ -263,7 +275,7 @@ MYGRAPH_PATH=examples/demo_graph.json mykg discover \
   --candidates /tmp/discovery.candidates.json
 ```
 
-Discover never mutates the graph. Derived edges land in a candidates file — a
+Discover never mutates the graph. Derived edges land in a candidates file, a
 promotion queue for human review. AI proposes, provenance verifies, the owner
 promotes. Committed sample output: [`examples/demo_discovery.json`](examples/demo_discovery.json).
 
@@ -277,15 +289,14 @@ The `ollama_proxy/` package adds three local-model surfaces:
 
 See [ollama_proxy/README.md](ollama_proxy/README.md) for setup.
 
-## Design Principles
+## Verification
 
-**Provenance first.** Every durable claim points back to a source document and literal excerpt.
+Run the full test suite and the public-demo provenance check:
 
-**Local first.** The graph is a file on your machine. No cloud sync, accounts, or telemetry.
-
-**Review before merge.** The LLM proposes. You decide. Deterministic validation runs before anything enters the graph.
-
-**Boring persistence.** Plain JSON until it becomes the limiting factor. The schema stays stable across storage backends.
+```bash
+python3 -m unittest
+MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py check --provenance
+```
 
 ## Repository Layout
 
@@ -296,7 +307,7 @@ docs/             Roadmap and public assets
 ollama_proxy/     Adapter, MCP server, and proxy for local Ollama workflows
 tests/            CLI smoke tests
 SPEC.md           Graph model specification
-V1_DESIGN.md      Pipeline design notes
+DESIGN.md         Pipeline design notes
 ```
 
 ## Contributing

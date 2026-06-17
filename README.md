@@ -44,7 +44,7 @@ matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
 - Exports an LLM-ready context snapshot for a fresh chat session.
 - Audits memory shape with PageRank, betweenness, k-core, communities, weak
   claims, and provenance coverage.
-- Generates an offline HTML graph viewer for exploration and demos.
+- Generates a D3-powered HTML graph viewer for exploration and demos.
 
 ## Design Principles
 
@@ -75,7 +75,7 @@ MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py context
 # Audit memory structure and proof coverage
 MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py audit --out /tmp/analytics.json --html /tmp/memory_audit.html
 
-# Visualize the graph as a self-contained HTML file
+# Visualize the graph as an HTML file with embedded graph data
 python3 mygraph/mygraph.py viz --graph examples/demo_graph.json --out /tmp/demo.html
 ```
 
@@ -124,7 +124,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 | `check --provenance` | Flag nodes with missing source citations | Core |
 | `export --ttl` | Emit Turtle/RDF | `.[rdf]` |
 | `context` | Print a compact LLM-ready context snapshot | Core |
-| `viz` | Generate an offline single-file HTML viewer | Core |
+| `viz` | Generate a D3-powered HTML viewer with embedded graph data | Core |
 | `audit` | Emit graph analytics and optional Memory Audit HTML | Core |
 | `discover` | Propose derived edges and second-order insights without mutating the graph | Core |
 | `state "<entry>"` | Append a mood/state sidecar entry | Core |

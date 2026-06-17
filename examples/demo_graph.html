@@ -1,79 +1,114 @@
 <!doctype html>
 <meta charset="utf-8" />
-<title>mygraph viewer</title>
+<title>mygraph — visualizer</title>
 <style>
   :root {
-    --bg: #101214;
-    --fg: #edf0f2;
-    --muted: #9ba3ad;
-    --line: #2c333a;
-    --panel: #191d22;
-    --accent: #72d1b0;
-    --warn: #e5c07b;
+    --bg: #0f1115;
+    --fg: #e6e8ea;
+    --muted: #8a9099;
+    --panel: #181b21;
+    --accent: #d2b48c;
   }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; width: 100%; height: 100%; overflow: hidden;
-    background: var(--bg); color: var(--fg);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-  header { height: 44px; display: flex; align-items: center; gap: 16px;
-    padding: 0 14px; border-bottom: 1px solid var(--line); font-size: 13px; }
-  header strong { color: var(--accent); }
-  #counts, #hint { color: var(--muted); }
-  #hint { margin-left: auto; }
-  #stage { width: 100vw; height: calc(100vh - 44px); }
-  svg { width: 100%; height: 100%; cursor: grab; user-select: none; }
-  .link { stroke: #52606d; stroke-opacity: 0.5; stroke-width: 1.2; }
-  .link.low { stroke-dasharray: 4 4; stroke-opacity: 0.35; }
-  .link.medium { stroke-opacity: 0.42; }
-  .edge-label { fill: var(--muted); font-size: 9px; pointer-events: none; }
-  .node circle { stroke: #0a0c0e; stroke-width: 1.5; cursor: pointer; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg);
+               font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+               overflow: hidden; }
+  #header { padding: 8px 14px; border-bottom: 1px solid #222;
+            display: flex; align-items: center; gap: 14px; font-size: 12px; }
+  #header strong { color: var(--accent); letter-spacing: 0; }
+  #header .legend { display: flex; gap: 10px; flex-wrap: wrap; }
+  #header .legend span { display: inline-flex; align-items: center; gap: 4px; }
+  #header .legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  #stage { width: 100vw; height: calc(100vh - 38px); }
+  svg { width: 100%; height: 100%; cursor: grab; }
+  .link { stroke: #3a3f47; stroke-opacity: 0.55; }
+  .link.high { stroke-opacity: 0.9; }
+  .link.medium { stroke-opacity: 0.6; }
+  .link.low   { stroke-opacity: 0.3; stroke-dasharray: 3 3; }
+  .node circle { stroke: #0f1115; stroke-width: 1.5; cursor: pointer; }
   .node text { fill: var(--fg); font-size: 10px; pointer-events: none;
-    text-shadow: 0 1px 2px #000, 0 0 4px #000; }
-  .node.selected circle { stroke: var(--accent); stroke-width: 3; }
-  #panel { position: fixed; right: 12px; top: 56px; width: min(390px, calc(100vw - 24px));
-    max-height: calc(100vh - 72px); overflow: auto; background: var(--panel);
-    border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: none;
-    box-shadow: 0 18px 60px rgba(0,0,0,.35); font-size: 13px; line-height: 1.45; }
+               text-shadow: 0 0 3px #0f1115, 0 0 3px #0f1115, 0 0 3px #0f1115; }
+  .edge-label { fill: var(--muted); font-size: 9px; pointer-events: none; }
+  #sitrep { position: fixed; top: 50px; left: 12px; width: min(312px, calc(100vw - 24px));
+            max-height: calc(100vh - 64px); overflow: auto; background: rgba(24, 27, 33, 0.88);
+            border: 1px solid #2a2f37; border-radius: 6px; font-size: 12px;
+            box-shadow: 0 12px 44px rgba(0,0,0,.24); }
+  #sitrep .head { display: flex; align-items: center; justify-content: space-between;
+                  gap: 10px; padding: 10px 12px; border-bottom: 1px solid #2a2f37; }
+  #sitrep .title { color: var(--accent); font-weight: 700; text-transform: uppercase; }
+  #sitrep .state { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+  #sitrep .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+                     border-bottom: 1px solid #2a2f37; }
+  #sitrep .metric { min-height: 56px; padding: 10px 12px; border-right: 1px solid #2a2f37;
+                    border-bottom: 1px solid #2a2f37; }
+  #sitrep .metric:nth-child(even) { border-right: 0; }
+  #sitrep .metric:nth-last-child(-n+2) { border-bottom: 0; }
+  #sitrep .value { color: var(--accent); font-size: 20px; line-height: 1; }
+  #sitrep .label { margin-top: 6px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
+  #sitrep .block { padding: 11px 12px; border-top: 1px solid #2a2f37; }
+  #sitrep .block:first-of-type { border-top: 0; }
+  #sitrep .block-title { margin-bottom: 8px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
+  #sitrep .row { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 7px 0;
+                 border-top: 1px solid rgba(138, 144, 153, 0.16); color: var(--fg); }
+  #sitrep .row:first-child { border-top: 0; }
+  #sitrep button.row { width: 100%; border-right: 0; border-left: 0; border-bottom: 0;
+                       background: transparent; text-align: left; cursor: pointer; font: inherit; }
+  #sitrep button.row:hover { color: #fff; }
+  #sitrep .row-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #sitrep .row-meta { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+  #sitrep .type-bars { display: grid; gap: 7px; }
+  #sitrep .type-bar { display: grid; grid-template-columns: 72px 1fr 24px; gap: 8px; align-items: center; }
+  #sitrep .type-name, #sitrep .type-count { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+  #sitrep .bar-track { height: 6px; background: rgba(138, 144, 153, 0.18); border-radius: 999px; overflow: hidden; }
+  #sitrep .bar-fill { height: 100%; background: var(--accent); }
+  #panel { position: fixed; top: 50px; right: 12px; width: 360px; max-height: 80vh;
+           overflow: auto; background: var(--panel); border: 1px solid #2a2f37;
+           border-radius: 6px; padding: 12px 14px; font-size: 12px; line-height: 1.45;
+           display: none; }
   #panel.open { display: block; }
-  #panel h2 { margin: 0 26px 4px 0; font-size: 16px; color: var(--accent); }
-  #panel code { color: var(--muted); }
-  #panel .meta { color: var(--muted); font-size: 12px; }
-  #panel .body { margin: 10px 0; }
-  #panel .section-title { margin-top: 14px; color: var(--muted); font-size: 11px;
-    text-transform: uppercase; letter-spacing: .08em; }
-  #panel ul { margin: 6px 0 0 0; padding-left: 18px; }
-  #panel li { margin-bottom: 5px; }
-  #panel button { position: absolute; top: 10px; right: 10px; border: 0;
-    background: transparent; color: var(--muted); font-size: 22px; cursor: pointer; }
-  #panel a { color: #9cc9ff; cursor: pointer; text-decoration: none; }
+  #panel h3 { margin: 0 0 4px 0; color: var(--accent); font-size: 13px; }
+  #panel .meta { color: var(--muted); font-size: 11px; }
+  #panel .body { margin: 8px 0; }
+  #panel .section { margin-top: 10px; }
+  #panel .section-title { color: var(--muted); text-transform: uppercase;
+                          letter-spacing: 0; font-size: 10px; margin-bottom: 4px; }
+  #panel ul { margin: 0; padding-left: 16px; }
+  #panel a { color: #87b7e0; text-decoration: none; cursor: pointer; }
   #panel a:hover { text-decoration: underline; }
-  .pill { display: inline-block; margin-left: 4px; padding: 1px 6px;
-    border-radius: 999px; background: #263039; color: var(--muted); font-size: 11px; }
-  .pill.low { color: #ffb4a8; }
-  .pill.medium { color: var(--warn); }
+  .pill { display: inline-block; padding: 0 6px; border-radius: 3px;
+          background: #2a2f37; color: var(--muted); font-size: 10px; margin-left: 4px; }
+  #close { float: right; cursor: pointer; color: var(--muted); }
+  @media (max-width: 860px) {
+    #sitrep { display: none; }
+    #panel { left: 12px; right: 12px; width: auto; }
+  }
 </style>
-<header>
+
+<div id="header">
   <strong>mygraph</strong>
-  <span id="counts"></span>
-  <span id="hint">click nodes · drag canvas · scroll to zoom</span>
-</header>
-<div id="stage"><svg id="graph" viewBox="0 0 1200 760" aria-label="knowledge graph"></svg></div>
-<aside id="panel"></aside>
+  <span id="counts">loading…</span>
+  <span class="legend" id="legend"></span>
+  <span style="margin-left:auto; color: var(--muted)">click a node · drag to pan · scroll to zoom</span>
+</div>
+<div id="stage"><svg aria-label="knowledge graph"></svg></div>
+<aside id="sitrep" aria-label="graph sitrep"></aside>
+<div id="panel"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <script>
 const GRAPH_DATA = {"nodes": {"decision:esp32-over-rpi": {"id": "decision:esp32-over-rpi", "type": "decision", "label": "Use ESP32 boards instead of a Raspberry Pi", "body": "Microcontrollers beat a full computer for battery-powered sensing.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "decision:json-first": {"id": "decision:json-first", "type": "decision", "label": "Use JSON first", "body": "Start with a simple JSON store before introducing a database.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "decision:markdown-sources": {"id": "decision:markdown-sources", "type": "decision", "label": "Ingest Markdown sources only", "body": "Markdown keeps source notes diffable and human-reviewable.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "decision:monthly-cadence": {"id": "decision:monthly-cadence", "type": "decision", "label": "Commit to a monthly cadence", "body": "Monthly is slow enough to sustain and fast enough to matter.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "decision:one-project-per-quarter": {"id": "decision:one-project-per-quarter", "type": "decision", "label": "One active project per quarter", "body": "Serialize side projects instead of running them in parallel.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "decision:plain-text-newsletter": {"id": "decision:plain-text-newsletter", "type": "decision", "label": "Plain-text newsletter format", "body": "No templates, no images: plain text ships on time.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "decision:public-demo-data-only": {"id": "decision:public-demo-data-only", "type": "decision", "label": "Only fictional data in public examples", "body": "The public repo ships fictional demo data; real graphs stay local.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "decision:solar-power-budget": {"id": "decision:solar-power-budget", "type": "decision", "label": "Size the solar panel to winter output", "body": "Plan the power budget around the worst month, not the average.", "confidence": "medium", "created_at": "2026-03-08T10:00:00+00:00"}, "goal:automated-greenhouse": {"id": "goal:automated-greenhouse", "type": "goal", "label": "Automated greenhouse", "body": "Keep greenhouse plants alive with minimal manual checking.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "goal:publish-monthly": {"id": "goal:publish-monthly", "type": "goal", "label": "Publish monthly", "body": "Ship one newsletter issue every month without heroics.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "goal:sustainable-side-projects": {"id": "goal:sustainable-side-projects", "type": "goal", "label": "Sustainable side projects", "body": "Keep hobby projects fun and finished instead of abandoned.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "goal:trusted-ai-assistance": {"id": "goal:trusted-ai-assistance", "type": "goal", "label": "Trusted AI assistance", "body": "Make assistant responses easier to verify and continue across sessions.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "idea:boring-tech-default": {"id": "idea:boring-tech-default", "type": "idea", "label": "Boring tech by default", "body": "Choose boring technology unless the project IS the experiment.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "idea:context-memory": {"id": "idea:context-memory", "type": "idea", "label": "Context memory", "body": "AI sessions improve when durable context is stored as concepts instead of loose transcript chunks.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "idea:drip-irrigation-loop": {"id": "idea:drip-irrigation-loop", "type": "idea", "label": "Drip irrigation loop", "body": "Close the loop: soil moisture readings drive the drip valve directly.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "idea:low-power-mesh": {"id": "idea:low-power-mesh", "type": "idea", "label": "Low-power sensor mesh", "body": "Deep-sleep ESP32 nodes could run a mesh for months on small batteries.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "idea:promotion-queue": {"id": "idea:promotion-queue", "type": "idea", "label": "Promotion queue", "body": "AI proposes candidate memories; a human review queue decides what is promoted.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "idea:provenance-first": {"id": "idea:provenance-first", "type": "idea", "label": "Provenance first", "body": "Every durable claim should point back to source evidence.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "idea:scoped-exports": {"id": "idea:scoped-exports", "type": "idea", "label": "Scoped exports", "body": "Share a task-sized slice of the graph with an AI, never the whole thing.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "idea:sensor-data-as-memory": {"id": "idea:sensor-data-as-memory", "type": "idea", "label": "Sensor data as memory", "body": "Sensor logs are provenance too: a reading is a source excerpt about the world.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "idea:show-the-graph": {"id": "idea:show-the-graph", "type": "idea", "label": "Show the graph", "body": "Publish the project knowledge graph itself as the newsletter artifact.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "idea:single-owner-tools": {"id": "idea:single-owner-tools", "type": "idea", "label": "Single-owner tools", "body": "Tools built for exactly one user can cut every scope corner that team software cannot.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "idea:weekly-shipping-log": {"id": "idea:weekly-shipping-log", "type": "idea", "label": "Weekly shipping log", "body": "A small weekly log makes the monthly issue almost write itself.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "idea:write-what-you-build": {"id": "idea:write-what-you-build", "type": "idea", "label": "Write what you build", "body": "Each project becomes newsletter material; writing pressure improves the build.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "person:demo-owner": {"id": "person:demo-owner", "type": "person", "label": "Demo Owner", "body": "A fictional graph owner used only for public examples.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "project:field-notes": {"id": "project:field-notes", "type": "project", "label": "field-notes", "body": "A fictional monthly newsletter documenting the owner's builds.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "project:garden-sensors": {"id": "project:garden-sensors", "type": "project", "label": "garden-sensors", "body": "A fictional ESP32 sensor network for a backyard greenhouse.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "project:knowledge-worker": {"id": "project:knowledge-worker", "type": "project", "label": "knowledge-worker", "body": "A local-first toolkit for source-backed AI memory.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "question:audience-growth": {"id": "question:audience-growth", "type": "question", "label": "Does the newsletter need an audience?", "body": "Open question: writing for zero readers may not stay motivating.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "question:battery-life-winter": {"id": "question:battery-life-winter", "type": "question", "label": "Will batteries survive winter?", "body": "Open question: cold halves battery capacity; the mesh may not last the season.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "question:storage-backend": {"id": "question:storage-backend", "type": "question", "label": "When should storage move beyond JSON?", "body": "Open question: keep JSON until size or concurrency makes it awkward.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "question:when-to-automate-ingest": {"id": "question:when-to-automate-ingest", "type": "question", "label": "When should ingest become automatic?", "body": "Open question: manual review catches errors, but does not scale past a few notes a week.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "reference:coggrag": {"id": "reference:coggrag", "type": "reference", "label": "CogGRAG", "body": "A public reference about cognition-inspired graph retrieval.", "confidence": "medium", "created_at": "2026-05-28T10:00:00+00:00"}, "reference:digital-garden-essay": {"id": "reference:digital-garden-essay", "type": "reference", "label": "Digital garden essay", "body": "A public essay on publishing evolving notes instead of finished posts.", "confidence": "medium", "created_at": "2026-05-02T10:00:00+00:00"}, "reference:esp32-deep-sleep-guide": {"id": "reference:esp32-deep-sleep-guide", "type": "reference", "label": "ESP32 deep-sleep guide", "body": "A public guide to microcontroller deep-sleep power budgets.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "reference:graphrag-survey": {"id": "reference:graphrag-survey", "type": "reference", "label": "GraphRAG survey", "body": "A survey of graph-based retrieval-augmented generation systems.", "confidence": "medium", "created_at": "2026-05-28T10:00:00+00:00"}, "reference:local-first-paper": {"id": "reference:local-first-paper", "type": "reference", "label": "Local-first software paper", "body": "The essay defining local-first software principles.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "source:architecture-note": {"id": "source:architecture-note", "type": "source", "label": "architecture-note.md", "body": "Fictional architecture note for the public demo graph.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "source:demo-notes": {"id": "source:demo-notes", "type": "source", "label": "demo-notes.md", "body": "Fictional project notes used to demonstrate provenance-backed memory.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "source:greenhouse-journal": {"id": "source:greenhouse-journal", "type": "source", "label": "greenhouse-journal.md", "body": "Fictional build journal for a small greenhouse sensor project.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "source:hardware-retro": {"id": "source:hardware-retro", "type": "source", "label": "hardware-retro.md", "body": "Fictional retrospective on the greenhouse sensor hardware.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "source:newsletter-plan": {"id": "source:newsletter-plan", "type": "source", "label": "newsletter-plan.md", "body": "Fictional planning note for a monthly build-log newsletter.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "source:quarterly-review": {"id": "source:quarterly-review", "type": "source", "label": "quarterly-review.md", "body": "Fictional quarterly review of all side projects.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}, "topic:embedded-systems": {"id": "topic:embedded-systems", "type": "topic", "label": "Embedded systems", "body": "Small computers with hard power and memory constraints.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "topic:knowledge-graphs": {"id": "topic:knowledge-graphs", "type": "topic", "label": "Knowledge graphs", "body": "Structured concepts and relationships for durable context.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "topic:local-first": {"id": "topic:local-first", "type": "topic", "label": "Local-first software", "body": "Software that keeps user data local unless the owner chooses otherwise.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "topic:provenance": {"id": "topic:provenance", "type": "topic", "label": "Provenance", "body": "Where a claim came from and whether it can be traced to evidence.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00"}, "topic:sensor-networks": {"id": "topic:sensor-networks", "type": "topic", "label": "Sensor networks", "body": "Many small devices reporting measurements over a shared protocol.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00"}, "topic:technical-writing": {"id": "topic:technical-writing", "type": "topic", "label": "Technical writing", "body": "Explaining systems in prose, for readers and future self.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00"}}, "edges": [{"src": "person:demo-owner", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "The demo owner wants assistant memory that survives across sessions.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "project:knowledge-worker", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Build a local-first toolkit for source-backed AI memory.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:context-memory", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Store durable concepts instead of loose transcript chunks.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:provenance-first", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Every durable claim needs source evidence.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:scoped-exports", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Export a task-sized slice, never the whole graph.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:single-owner-tools", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Software for one user can cut every corner.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "goal:trusted-ai-assistance", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Make assistant responses easier to verify and continue.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "decision:public-demo-data-only", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Only fictional data ships in public examples.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "topic:knowledge-graphs", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Use a graph of concepts and relationships.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "topic:local-first", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "Keep owner data local unless explicitly exported.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "reference:local-first-paper", "dst": "source:demo-notes", "type": "MENTIONED_IN", "source_id": "source:demo-notes", "excerpt": "The local-first paper defines the storage principles.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "question:storage-backend", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "When should storage move beyond JSON?", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "question:when-to-automate-ingest", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "Manual review is the bottleneck; when does ingest become automatic?", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "decision:json-first", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "Use JSON first; add a database only when needed.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "decision:markdown-sources", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "Ingest Markdown only; it stays diffable and reviewable.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:promotion-queue", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "Candidates wait in a review queue until the owner promotes them.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "topic:provenance", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "Track where every claim came from.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "reference:coggrag", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "CogGRAG is a public reference for graph retrieval.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "reference:graphrag-survey", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "The GraphRAG survey maps the retrieval landscape.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:sensor-data-as-memory", "dst": "source:architecture-note", "type": "MENTIONED_IN", "source_id": "source:architecture-note", "excerpt": "Sensor readings could enter the graph as provenance-backed observations.", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "project:garden-sensors", "dst": "source:greenhouse-journal", "type": "MENTIONED_IN", "source_id": "source:greenhouse-journal", "excerpt": "Garden sensors: a small ESP32 build for the greenhouse.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "goal:automated-greenhouse", "dst": "source:greenhouse-journal", "type": "MENTIONED_IN", "source_id": "source:greenhouse-journal", "excerpt": "The greenhouse should mostly look after itself.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "idea:drip-irrigation-loop", "dst": "source:greenhouse-journal", "type": "MENTIONED_IN", "source_id": "source:greenhouse-journal", "excerpt": "Let soil moisture drive the drip valve directly.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "idea:sensor-data-as-memory", "dst": "source:greenhouse-journal", "type": "MENTIONED_IN", "source_id": "source:greenhouse-journal", "excerpt": "A sensor log line is an excerpt about the world.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "decision:solar-power-budget", "dst": "source:greenhouse-journal", "type": "MENTIONED_IN", "source_id": "source:greenhouse-journal", "excerpt": "Size the panel for December, not for June.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "topic:sensor-networks", "dst": "source:greenhouse-journal", "type": "MENTIONED_IN", "source_id": "source:greenhouse-journal", "excerpt": "A handful of nodes reporting over one protocol.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "topic:provenance", "dst": "source:greenhouse-journal", "type": "MENTIONED_IN", "source_id": "source:greenhouse-journal", "excerpt": "Sensor logs are evidence: timestamped, source-attributed readings.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "idea:low-power-mesh", "dst": "source:hardware-retro", "type": "MENTIONED_IN", "source_id": "source:hardware-retro", "excerpt": "Deep-sleep nodes might run for months on small cells.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "decision:esp32-over-rpi", "dst": "source:hardware-retro", "type": "MENTIONED_IN", "source_id": "source:hardware-retro", "excerpt": "The Pi drew too much power; ESP32 boards won.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "question:battery-life-winter", "dst": "source:hardware-retro", "type": "MENTIONED_IN", "source_id": "source:hardware-retro", "excerpt": "Cold weather halves capacity; winter is the real test.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "topic:embedded-systems", "dst": "source:hardware-retro", "type": "MENTIONED_IN", "source_id": "source:hardware-retro", "excerpt": "Hard power budgets change every design choice.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "reference:esp32-deep-sleep-guide", "dst": "source:hardware-retro", "type": "MENTIONED_IN", "source_id": "source:hardware-retro", "excerpt": "The deep-sleep guide documents real-world power draw.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "project:field-notes", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "Field notes: a monthly build-log newsletter.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "project:garden-sensors", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "The greenhouse build is the first newsletter arc.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "goal:publish-monthly", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "One issue a month, no heroics.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:write-what-you-build", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "Every project doubles as newsletter material.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:show-the-graph", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "Publish the knowledge graph as the artifact.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:weekly-shipping-log", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "A weekly log makes the monthly issue write itself.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "decision:monthly-cadence", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "Monthly is sustainable; weekly was not.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "decision:plain-text-newsletter", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "Plain text ships on time.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "topic:technical-writing", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "Writing about systems clarifies them.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "reference:digital-garden-essay", "dst": "source:newsletter-plan", "type": "MENTIONED_IN", "source_id": "source:newsletter-plan", "excerpt": "The digital-garden essay argues for evolving notes.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "goal:sustainable-side-projects", "dst": "source:quarterly-review", "type": "MENTIONED_IN", "source_id": "source:quarterly-review", "excerpt": "Projects should end finished, not abandoned.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:write-what-you-build", "dst": "source:quarterly-review", "type": "MENTIONED_IN", "source_id": "source:quarterly-review", "excerpt": "Writing pressure kept the sensor build honest.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:boring-tech-default", "dst": "source:quarterly-review", "type": "MENTIONED_IN", "source_id": "source:quarterly-review", "excerpt": "Boring tech unless the project is the experiment.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "decision:one-project-per-quarter", "dst": "source:quarterly-review", "type": "MENTIONED_IN", "source_id": "source:quarterly-review", "excerpt": "Serialize projects; parallel ones all stall.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "project:garden-sensors", "dst": "source:quarterly-review", "type": "MENTIONED_IN", "source_id": "source:quarterly-review", "excerpt": "The sensor project consumed the whole quarter.", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "question:audience-growth", "dst": "source:quarterly-review", "type": "MENTIONED_IN", "source_id": "source:quarterly-review", "excerpt": "Is writing for zero readers sustainable?", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "person:demo-owner", "dst": "idea:context-memory", "type": "HAS_IDEA", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "person:demo-owner", "dst": "idea:provenance-first", "type": "HAS_IDEA", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "project:knowledge-worker", "dst": "goal:trusted-ai-assistance", "type": "SERVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:knowledge-graphs", "type": "INVOLVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "project:knowledge-worker", "dst": "topic:local-first", "type": "INVOLVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:context-memory", "dst": "topic:knowledge-graphs", "type": "RELATES_TO", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:provenance-first", "dst": "goal:trusted-ai-assistance", "type": "SERVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "decision:json-first", "dst": "question:storage-backend", "type": "ABOUT", "source_id": "source:architecture-note", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:context-memory", "dst": "reference:coggrag", "type": "SUPPORTED_BY", "source_id": "source:architecture-note", "excerpt": "CogGRAG is a public reference for graph retrieval.", "confidence": "medium", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:scoped-exports", "dst": "topic:local-first", "type": "RELATES_TO", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:scoped-exports", "dst": "goal:trusted-ai-assistance", "type": "SERVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:scoped-exports", "dst": "reference:local-first-paper", "type": "SUPPORTED_BY", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:promotion-queue", "dst": "topic:provenance", "type": "RELATES_TO", "source_id": "source:architecture-note", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:promotion-queue", "dst": "reference:graphrag-survey", "type": "SUPPORTED_BY", "source_id": "source:architecture-note", "excerpt": "", "confidence": "medium", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:single-owner-tools", "dst": "topic:local-first", "type": "RELATES_TO", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:provenance-first", "dst": "topic:provenance", "type": "RELATES_TO", "source_id": "source:architecture-note", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "decision:markdown-sources", "dst": "topic:provenance", "type": "ABOUT", "source_id": "source:architecture-note", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "decision:public-demo-data-only", "dst": "goal:trusted-ai-assistance", "type": "SERVES", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "decision:public-demo-data-only", "dst": "topic:local-first", "type": "RELATES_TO", "source_id": "source:demo-notes", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "project:garden-sensors", "dst": "goal:automated-greenhouse", "type": "SERVES", "source_id": "source:greenhouse-journal", "excerpt": "", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "project:garden-sensors", "dst": "topic:embedded-systems", "type": "INVOLVES", "source_id": "source:hardware-retro", "excerpt": "", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "project:garden-sensors", "dst": "topic:sensor-networks", "type": "INVOLVES", "source_id": "source:greenhouse-journal", "excerpt": "", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "person:demo-owner", "dst": "idea:drip-irrigation-loop", "type": "HAS_IDEA", "source_id": "source:greenhouse-journal", "excerpt": "", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "idea:drip-irrigation-loop", "dst": "goal:automated-greenhouse", "type": "SERVES", "source_id": "source:greenhouse-journal", "excerpt": "", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "idea:low-power-mesh", "dst": "topic:sensor-networks", "type": "RELATES_TO", "source_id": "source:hardware-retro", "excerpt": "", "confidence": "low", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "idea:low-power-mesh", "dst": "reference:esp32-deep-sleep-guide", "type": "SUPPORTED_BY", "source_id": "source:hardware-retro", "excerpt": "The deep-sleep guide documents real-world power draw.", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "question:battery-life-winter", "dst": "idea:low-power-mesh", "type": "CHALLENGES", "source_id": "source:hardware-retro", "excerpt": "", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "decision:esp32-over-rpi", "dst": "topic:embedded-systems", "type": "ABOUT", "source_id": "source:hardware-retro", "excerpt": "", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "decision:solar-power-budget", "dst": "goal:automated-greenhouse", "type": "SERVES", "source_id": "source:greenhouse-journal", "excerpt": "", "confidence": "medium", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "idea:sensor-data-as-memory", "dst": "topic:knowledge-graphs", "type": "RELATES_TO", "source_id": "source:architecture-note", "excerpt": "", "confidence": "high", "created_at": "2026-05-28T10:00:00+00:00", "last_seen": "2026-06-08T10:00:00+00:00"}, {"src": "idea:sensor-data-as-memory", "dst": "topic:sensor-networks", "type": "RELATES_TO", "source_id": "source:greenhouse-journal", "excerpt": "", "confidence": "high", "created_at": "2026-03-08T10:00:00+00:00", "last_seen": "2026-03-30T10:00:00+00:00"}, {"src": "project:field-notes", "dst": "goal:publish-monthly", "type": "SERVES", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "project:field-notes", "dst": "topic:technical-writing", "type": "INVOLVES", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "person:demo-owner", "dst": "idea:write-what-you-build", "type": "HAS_IDEA", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:weekly-shipping-log", "dst": "goal:publish-monthly", "type": "SERVES", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:weekly-shipping-log", "dst": "topic:technical-writing", "type": "RELATES_TO", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:show-the-graph", "dst": "reference:digital-garden-essay", "type": "SUPPORTED_BY", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "low", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:show-the-graph", "dst": "topic:knowledge-graphs", "type": "RELATES_TO", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "idea:boring-tech-default", "dst": "goal:sustainable-side-projects", "type": "SERVES", "source_id": "source:quarterly-review", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "decision:monthly-cadence", "dst": "goal:publish-monthly", "type": "SERVES", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "decision:plain-text-newsletter", "dst": "topic:technical-writing", "type": "ABOUT", "source_id": "source:newsletter-plan", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "decision:one-project-per-quarter", "dst": "goal:sustainable-side-projects", "type": "SERVES", "source_id": "source:quarterly-review", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}, {"src": "question:audience-growth", "dst": "goal:publish-monthly", "type": "CHALLENGES", "source_id": "source:quarterly-review", "excerpt": "", "confidence": "high", "created_at": "2026-05-02T10:00:00+00:00", "last_seen": "2026-05-12T10:00:00+00:00"}]};
-const COLORS = {
-  person: "#ef7d7d", topic: "#78aee8", idea: "#e3c56f", project: "#76d99d",
-  goal: "#c18be8", question: "#f0a06d", decision: "#72d1b0",
-  reference: "#dc83bd", source: "#9ba3ad"
+const TYPE_COLORS = {
+  person:    "#e07b7b",
+  topic:     "#7bb0e0",
+  idea:      "#d2b48c",
+  project:   "#7be0a8",
+  goal:      "#b07be0",
+  question:  "#e0c87b",
+  decision:  "#7be0c8",
+  reference: "#e07bb0",
+  source:    "#8a9099",
 };
-const RADII = { source: 6, topic: 8, person: 9, project: 10, goal: 10,
-  idea: 9, question: 8, decision: 8, reference: 8 };
-const nodes = Object.values(GRAPH_DATA.nodes || {});
-const edges = GRAPH_DATA.edges || [];
-const nodeById = new Map(nodes.map(n => [n.id, n]));
-const svg = document.getElementById("graph");
-const panel = document.getElementById("panel");
-document.getElementById("counts").textContent = `${nodes.length} nodes · ${edges.length} edges`;
+const TYPE_RADIUS = { source: 5, topic: 6, person: 8, project: 9, goal: 9,
+                      idea: 8, question: 7, decision: 7, reference: 7 };
 
 function escapeHtml(value) {
   return String(value || "").replace(/[&<>"]/g, c => ({
@@ -81,101 +116,228 @@ function escapeHtml(value) {
   }[c]));
 }
 
-function layout() {
-  const groups = {};
-  for (const node of nodes) (groups[node.type] ||= []).push(node);
-  const typeOrder = Object.keys(groups).sort();
-  const centerX = 600, centerY = 380;
-  const ringGap = Math.max(76, Math.min(118, 440 / Math.max(1, typeOrder.length)));
-  typeOrder.forEach((type, ringIndex) => {
-    const ring = groups[type];
-    const radius = 70 + ringIndex * ringGap;
-    ring.forEach((node, i) => {
-      const angle = (Math.PI * 2 * i / Math.max(1, ring.length)) + ringIndex * 0.45;
-      node.x = centerX + Math.cos(angle) * radius;
-      node.y = centerY + Math.sin(angle) * radius;
+(function() {
+  const data = GRAPH_DATA;
+  const nodes = Object.values(data.nodes || {}).map(n => ({ ...n }));
+  const originalEdges = data.edges || [];
+  const edges = originalEdges.map(e => ({ ...e, source: e.src, target: e.dst }));
+  const nodeById = new Map(nodes.map(n => [n.id, n]));
+  document.getElementById("counts").textContent = `${nodes.length} nodes · ${edges.length} edges`;
+
+  const legend = document.getElementById("legend");
+  Object.keys(TYPE_COLORS).forEach(type => {
+    const span = document.createElement("span");
+    span.innerHTML = `<i style="background:${TYPE_COLORS[type]}"></i>${escapeHtml(type)}`;
+    legend.appendChild(span);
+  });
+  renderSitrep();
+
+  if (typeof d3 === "undefined") {
+    document.getElementById("counts").textContent = "failed to load D3.js";
+    return;
+  }
+
+  const svg = d3.select("svg");
+  const viewport = svg.append("g");
+  svg.call(d3.zoom()
+    .scaleExtent([0.2, 4])
+    .on("zoom", ev => viewport.attr("transform", ev.transform)));
+
+  const sim = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(edges).id(d => d.id).distance(80).strength(0.5))
+    .force("charge", d3.forceManyBody().strength(-160))
+    .force("center", d3.forceCenter(window.innerWidth / 2, (window.innerHeight - 38) / 2))
+    .force("collide", d3.forceCollide().radius(d => (TYPE_RADIUS[d.type] || 7) + 4));
+
+  const link = viewport.append("g").attr("class", "links").selectAll("line")
+    .data(edges).join("line")
+    .attr("class", d => `link ${d.confidence || "medium"}`);
+
+  const edgeLabel = viewport.append("g").attr("class", "edge-labels").selectAll("text")
+    .data(edges).join("text")
+    .attr("class", "edge-label")
+    .text(d => d.type);
+
+  const node = viewport.append("g").attr("class", "nodes").selectAll("g.node")
+    .data(nodes).join("g")
+    .attr("class", "node")
+    .call(drag(sim));
+
+  node.append("circle")
+    .attr("r", d => TYPE_RADIUS[d.type] || 7)
+    .attr("fill", d => TYPE_COLORS[d.type] || "#888");
+  node.append("text")
+    .attr("dx", 11)
+    .attr("dy", 3)
+    .text(d => d.label || d.id);
+
+  node.on("click", (ev, d) => {
+    ev.stopPropagation();
+    openPanel(d);
+  });
+  svg.on("click", () => document.getElementById("panel").classList.remove("open"));
+
+  sim.on("tick", () => {
+    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+    edgeLabel.attr("x", d => (d.source.x + d.target.x) / 2)
+             .attr("y", d => (d.source.y + d.target.y) / 2);
+    node.attr("transform", d => `translate(${d.x},${d.y})`);
+  });
+
+  function drag(sim) {
+    return d3.drag()
+      .on("start", (ev, d) => {
+        if (!ev.active) sim.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      })
+      .on("drag", (ev, d) => {
+        d.fx = ev.x;
+        d.fy = ev.y;
+      })
+      .on("end", (ev, d) => {
+        if (!ev.active) sim.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      });
+  }
+
+  function countBy(items, keyFn) {
+    const counts = new Map();
+    items.forEach(item => {
+      const key = keyFn(item) || "unknown";
+      counts.set(key, (counts.get(key) || 0) + 1);
     });
-  });
-}
-
-function make(tag, attrs = {}, parent = svg) {
-  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
-  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
-  parent.appendChild(el);
-  return el;
-}
-
-function render() {
-  layout();
-  svg.innerHTML = "";
-  const root = make("g", { id: "viewport" });
-  for (const edge of edges) {
-    const src = nodeById.get(edge.src), dst = nodeById.get(edge.dst);
-    if (!src || !dst) continue;
-    make("line", { class: `link ${edge.confidence || "medium"}`,
-      x1: src.x, y1: src.y, x2: dst.x, y2: dst.y }, root);
-    make("text", { class: "edge-label", x: (src.x + dst.x) / 2, y: (src.y + dst.y) / 2 }, root)
-      .textContent = edge.type;
+    return counts;
   }
-  for (const node of nodes) {
-    const g = make("g", { class: "node", transform: `translate(${node.x},${node.y})`,
-      "data-id": node.id }, root);
-    make("circle", { r: RADII[node.type] || 8, fill: COLORS[node.type] || "#aaa" }, g);
-    make("text", { x: 13, y: 4 }, g).textContent = node.label || node.id;
-    g.addEventListener("click", ev => { ev.stopPropagation(); openPanel(node.id); });
+
+  function shortLabel(value, max = 42) {
+    const text = String(value || "");
+    return text.length <= max ? text : `${text.slice(0, max - 1)}…`;
   }
-  enablePanZoom(root);
-}
 
-function relatedEdges(id) {
-  return edges.filter(e => e.src === id || e.dst === id);
-}
+  function renderSitrep() {
+    const sitrep = document.getElementById("sitrep");
+    const typeCounts = countBy(nodes, n => n.type);
+    const confidenceCounts = countBy(nodes, n => n.confidence);
+    const highConfidence = confidenceCounts.get("high") || 0;
+    const mentioned = new Set(originalEdges.filter(e => e.type === "MENTIONED_IN").map(e => e.src));
+    const nonSource = nodes.filter(n => n.type !== "source").length;
+    const provenance = nonSource ? Math.round((mentioned.size / nonSource) * 100) : 100;
+    const degree = new Map(nodes.map(n => [n.id, { in: 0, out: 0, total: 0 }]));
+    originalEdges.forEach(edge => {
+      if (degree.has(edge.src)) {
+        degree.get(edge.src).out += 1;
+        degree.get(edge.src).total += 1;
+      }
+      if (degree.has(edge.dst)) {
+        degree.get(edge.dst).in += 1;
+        degree.get(edge.dst).total += 1;
+      }
+    });
+    const topNodes = nodes
+      .map(node => ({ node, degree: degree.get(node.id) || { total: 0 } }))
+      .sort((a, b) => b.degree.total - a.degree.total || String(a.node.id).localeCompare(String(b.node.id)))
+      .slice(0, 5);
+    const latest = nodes
+      .slice()
+      .sort((a, b) => String(b.created_at || "").localeCompare(String(a.created_at || "")))
+      .slice(0, 4);
+    const maxType = Math.max(1, ...typeCounts.values());
+    const topTypes = Array.from(typeCounts.entries())
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+      .slice(0, 5);
 
-function openPanel(id) {
-  const node = nodeById.get(id);
-  if (!node) return;
-  document.querySelectorAll(".node").forEach(el => el.classList.toggle("selected", el.dataset.id === id));
-  const rel = relatedEdges(id);
-  const provenance = rel.filter(e => e.type === "MENTIONED_IN" || e.type === "MADE_AT");
-  panel.classList.add("open");
-  panel.innerHTML = `
-    <button aria-label="Close">×</button>
-    <h2>${escapeHtml(node.label || node.id)}</h2>
-    <div class="meta">${escapeHtml(node.type)} · <code>${escapeHtml(node.id)}</code>
-      <span class="pill ${escapeHtml(node.confidence || "")}">${escapeHtml(node.confidence || "?")}</span>
-    </div>
-    ${node.body ? `<div class="body">${escapeHtml(node.body)}</div>` : ""}
-    ${provenance.length ? `<div class="section-title">provenance</div><ul>${provenance.map(e => {
-      const other = e.src === id ? e.dst : e.src;
-      return `<li><a data-id="${escapeHtml(other)}">${escapeHtml(other)}</a>${e.excerpt ? `<div class="meta">"${escapeHtml(e.excerpt)}"</div>` : ""}</li>`;
-    }).join("")}</ul>` : ""}
-    <div class="section-title">neighbors</div>
-    <ul>${rel.map(e => {
-      const other = e.src === id ? e.dst : e.src;
-      const dir = e.src === id ? "to" : "from";
-      return `<li>${escapeHtml(e.type)} ${dir} <a data-id="${escapeHtml(other)}">${escapeHtml(other)}</a></li>`;
-    }).join("") || "<li>none</li>"}</ul>
-  `;
-  panel.querySelector("button").onclick = () => panel.classList.remove("open");
-  panel.querySelectorAll("a[data-id]").forEach(a => a.onclick = () => openPanel(a.dataset.id));
-}
+    sitrep.innerHTML = `
+      <div class="head">
+        <div class="title">SITREP</div>
+        <div class="state">embedded graph</div>
+      </div>
+      <div class="metrics">
+        <div class="metric"><div class="value">${nodes.length}</div><div class="label">nodes</div></div>
+        <div class="metric"><div class="value">${edges.length}</div><div class="label">edges</div></div>
+        <div class="metric"><div class="value">${provenance}%</div><div class="label">provenance</div></div>
+        <div class="metric"><div class="value">${highConfidence}</div><div class="label">high confidence</div></div>
+      </div>
+      <div class="block">
+        <div class="block-title">Top Connected</div>
+        ${topNodes.map(({ node, degree }) => `
+          <button class="row" data-id="${escapeHtml(node.id)}">
+            <span class="row-label">${escapeHtml(shortLabel(node.label || node.id))}</span>
+            <span class="row-meta">${escapeHtml(node.type)} / ${degree.total}</span>
+          </button>
+        `).join("")}
+      </div>
+      <div class="block">
+        <div class="block-title">Node Mix</div>
+        <div class="type-bars">
+          ${topTypes.map(([type, count]) => `
+            <div class="type-bar">
+              <span class="type-name">${escapeHtml(type)}</span>
+              <span class="bar-track"><span class="bar-fill" style="width:${Math.round((count / maxType) * 100)}%"></span></span>
+              <span class="type-count">${count}</span>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+      <div class="block">
+        <div class="block-title">Latest Signal</div>
+        ${latest.map(node => `
+          <button class="row" data-id="${escapeHtml(node.id)}">
+            <span class="row-label">${escapeHtml(shortLabel(node.label || node.id))}</span>
+            <span class="row-meta">${escapeHtml(node.type)}</span>
+          </button>
+        `).join("")}
+      </div>
+    `;
+    sitrep.querySelectorAll("[data-id]").forEach(el => {
+      el.addEventListener("click", ev => {
+        ev.stopPropagation();
+        const node = nodeById.get(el.dataset.id);
+        if (node) openPanel(node);
+      });
+    });
+  }
 
-function enablePanZoom(root) {
-  let scale = 1, tx = 0, ty = 0, dragging = false, start = null;
-  const apply = () => root.setAttribute("transform", `translate(${tx},${ty}) scale(${scale})`);
-  svg.addEventListener("mousedown", ev => { dragging = true; start = [ev.clientX - tx, ev.clientY - ty]; });
-  window.addEventListener("mouseup", () => dragging = false);
-  window.addEventListener("mousemove", ev => {
-    if (!dragging) return;
-    tx = ev.clientX - start[0]; ty = ev.clientY - start[1]; apply();
-  });
-  svg.addEventListener("wheel", ev => {
-    ev.preventDefault();
-    const next = Math.max(0.35, Math.min(3.5, scale * (ev.deltaY < 0 ? 1.08 : 0.92)));
-    scale = next; apply();
-  }, { passive: false });
-  svg.addEventListener("click", () => panel.classList.remove("open"));
-}
+  function openPanel(n) {
+    const panel = document.getElementById("panel");
+    const out = originalEdges.filter(e => e.src === n.id);
+    const inc = originalEdges.filter(e => e.dst === n.id);
+    const prov = originalEdges.filter(e =>
+      (e.type === "MENTIONED_IN" || e.type === "MADE_AT") &&
+      (e.src === n.id || e.dst === n.id));
+    panel.classList.add("open");
+    panel.innerHTML = `
+      <span id="close">×</span>
+      <h3>${escapeHtml(n.label || n.id)}</h3>
+      <div class="meta">${escapeHtml(n.type)} · <code>${escapeHtml(n.id)}</code>
+        <span class="pill">${escapeHtml(n.confidence || "?")}</span></div>
+      ${n.body ? `<div class="body">${escapeHtml(n.body)}</div>` : ""}
+      ${prov.length ? `<div class="section">
+        <div class="section-title">provenance</div>
+        <ul>${prov.map(e => {
+          const sid = e.src === n.id ? e.dst : e.src;
+          const ex = e.excerpt ? `<div class="meta">"${escapeHtml(e.excerpt)}"</div>` : "";
+          return `<li><a data-id="${escapeHtml(sid)}">${escapeHtml(sid)}</a>${ex}</li>`;
+        }).join("")}</ul></div>` : ""}
+      ${out.length ? `<div class="section">
+        <div class="section-title">outgoing (${out.length})</div>
+        <ul>${out.map(e =>
+          `<li>${escapeHtml(e.type)} → <a data-id="${escapeHtml(e.dst)}">${escapeHtml(e.dst)}</a></li>`).join("")}</ul></div>` : ""}
+      ${inc.length ? `<div class="section">
+        <div class="section-title">incoming (${inc.length})</div>
+        <ul>${inc.map(e =>
+          `<li><a data-id="${escapeHtml(e.src)}">${escapeHtml(e.src)}</a> → ${escapeHtml(e.type)}</li>`).join("")}</ul></div>` : ""}
+    `;
+    document.getElementById("close").onclick = () => panel.classList.remove("open");
+    panel.querySelectorAll("a[data-id]").forEach(a => {
+      a.onclick = () => {
+        const target = nodeById.get(a.dataset.id);
+        if (target) openPanel(target);
+      };
+    });
+  }
+})();
 
-render();
 </script>

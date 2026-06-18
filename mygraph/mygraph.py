@@ -96,7 +96,7 @@ class Graph:
         path = resolve_graph_path(path)
         if not os.path.exists(path):
             return cls()
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             data = json.load(f)
         # forward-compat: drop unknown fields, default missing optional fields
         node_fields = {f.name for f in Node.__dataclass_fields__.values()}
@@ -121,7 +121,7 @@ class Graph:
             "edges": [asdict(e) for e in self.edges],
         }
         os.makedirs(os.path.dirname(path), exist_ok=True)
-        with open(path, "w") as f:
+        with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, sort_keys=True)
 
     # --- mutation -------------------------------------------------------------
@@ -222,10 +222,10 @@ def conf_tag(c: str) -> str:
     if c == "high":
         return ""
     if c == "medium":
-        return "  ⚠ medium (paraphrase)"
+        return "  WARN medium (paraphrase)"
     if c == "low":
-        return "  ⚠ LOW — UNVERIFIED"
-    return f"  ⚠ {c}"
+        return "  WARN LOW - UNVERIFIED"
+    return f"  WARN {c}"
 
 
 # ---------- seed --------------------------------------------------------------
@@ -517,7 +517,7 @@ def summary() -> None:
     for e in g.edges:
         edge_by_type[e.type] = edge_by_type.get(e.type, 0) + 1
 
-    print(f"mygraph — {resolve_graph_path()}")
+    print(f"mygraph - {resolve_graph_path()}")
     print(f"  {len(g.nodes)} nodes, {len(g.edges)} edges")
     print()
     print("  Nodes by type:")
@@ -539,7 +539,7 @@ def query(needle: str) -> None:
     # Surface non-high confidence summary at the top
     non_high = [n for n in hits if n.confidence != "high"]
     if non_high:
-        print(f"⚠ {len(non_high)} of {len(hits)} matched node(s) are NOT high-confidence — see flags below.")
+        print(f"WARN {len(non_high)} of {len(hits)} matched node(s) are NOT high-confidence - see flags below.")
     print(f"Matches for '{needle}':\n")
 
     for node in hits:
@@ -553,7 +553,7 @@ def query(needle: str) -> None:
         if nbrs:
             print(f"    edges:")
             for e, other, direction in nbrs:
-                arrow = "→" if direction == "out" else "←"
+                arrow = "->" if direction == "out" else "<-"
                 ex = f"  // \"{e.excerpt}\"" if e.excerpt else ""
                 edge_flag = conf_tag(e.confidence)
                 target_flag = conf_tag(other.confidence)
@@ -564,10 +564,10 @@ def query(needle: str) -> None:
             print(f"    provenance:")
             for source_id, ex in prov:
                 tag = f' "{ex}"' if ex else ""
-                print(f"      ← {source_id}{tag}")
-        # If the node is non-high, repeat the warning at the end too — paraphrase guard
+                print(f"      <- {source_id}{tag}")
+        # If the node is non-high, repeat the warning at the end too.
         if node.confidence != "high":
-            print(f"    ⚠ Treat content as confidence={node.confidence}; do not quote as verbatim source.")
+            print(f"    WARN Treat content as confidence={node.confidence}; do not quote as verbatim source.")
         print()
 
 
@@ -584,7 +584,7 @@ def path(a: str, b: str) -> None:
 
 
 def dump() -> None:
-    with open(resolve_graph_path()) as f:
+    with open(resolve_graph_path(), encoding="utf-8") as f:
         print(f.read())
 
 
@@ -613,13 +613,13 @@ def list_nodes(type_: str) -> None:
         return
     non_high = [n for n in matches if n.confidence != "high"]
     if non_high:
-        print(f"⚠ {len(non_high)} of {len(matches)} are NOT high-confidence.")
+        print(f"WARN {len(non_high)} of {len(matches)} are NOT high-confidence.")
     print(f"All {t}s ({len(matches)}):\n")
     for n in sorted(matches, key=lambda x: x.label):
         print(f"  [{n.type}] {n.id}{conf_tag(n.confidence)}")
         print(f"    {n.label}")
         if n.body:
-            body = n.body if len(n.body) < 200 else n.body[:200] + "…"
+            body = n.body if len(n.body) < 200 else n.body[:200] + "..."
             print(f"    {body}")
         print()
 
@@ -632,9 +632,9 @@ def state(entry: str) -> None:
         "ts": datetime.now(timezone.utc).isoformat(),
         "entry": entry,
     }
-    with open(log, "a") as f:
+    with open(log, "a", encoding="utf-8") as f:
         f.write(json.dumps(record) + "\n")
-    print(f"Logged state → {log}")
+    print(f"Logged state -> {log}")
     print(f"  {record['ts']}: {entry}")
 
 
@@ -675,7 +675,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         return 0
     if cmd == "seed":
         g = seed()
-        print(f"Seeded. {len(g.nodes)} nodes, {len(g.edges)} edges → {resolve_graph_path()}")
+        print(f"Seeded. {len(g.nodes)} nodes, {len(g.edges)} edges -> {resolve_graph_path()}")
         return 0
     if cmd == "summary":
         summary()
@@ -757,6 +757,9 @@ def main(argv: Optional[list[str]] = None) -> int:
 
 
 def cli() -> int:
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="replace")
     try:
         return main(sys.argv)
     except BrokenPipeError:

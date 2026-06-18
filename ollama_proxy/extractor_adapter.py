@@ -101,7 +101,7 @@ def extract(md_path: Path, out_path: Path | None = None,
     mygraph.extractor.extract — drop-in compatible with validate()/review()/merge()."""
     g = Graph.load()
     decl = build_source_decl(md_path)
-    source_text = md_path.read_text()
+    source_text = md_path.read_text(encoding="utf-8")
     existing_ids = sorted(g.nodes.keys())
     prompt = PROMPT_TEMPLATE.format(
         source_id=decl["source_id"],
@@ -137,7 +137,7 @@ def extract(md_path: Path, out_path: Path | None = None,
     payload["_meta"]["backend"] = "ollama"
 
     if out_path:
-        out_path.write_text(json.dumps(payload, indent=2))
+        out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     return payload
 
 
@@ -160,7 +160,7 @@ def main(argv: list[str]) -> int:
     payload = extract(md, out, model=model)
     print(f"extractor_adapter: model={model}  "
           f"nodes={len(payload.get('nodes', []))}  "
-          f"edges={len(payload.get('edges', []))}  →  {out}")
+          f"edges={len(payload.get('edges', []))}  ->  {out}")
     return 0
 
 

@@ -45,3 +45,7 @@ venv/
 build/
 dist/
 *.egg-info/
+
+# Claude Code local state (ship .claude/skills/, ignore local-only files)
+.claude/settings.local.json
+.claude/worktrees/

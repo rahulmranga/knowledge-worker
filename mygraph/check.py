@@ -204,7 +204,7 @@ def check_source_candidates(g: Graph, dir_path: Path) -> list[dict]:
     for p in sorted(dir_path.glob("*.md")) + sorted(dir_path.glob("*.txt")):
         if str(p) in existing_source_paths:
             continue
-        content = p.read_text()[:8000]
+        content = p.read_text(encoding="utf-8")[:8000]
         prompt = SOURCE_CANDIDATE_PROMPT.format(fname=p.name, content=content)
         result = _call_claude_json(prompt)
         records.append({
@@ -252,7 +252,7 @@ def run_check(args: list[str]) -> int:
         v = check_provenance(g)
         print(f"provenance violations: {len(v)}")
         for r in v[:10]:
-            print(f"  - {r['subkind']}: {r.get('node_id') or r.get('src')+'→'+r.get('dst')}")
+            print(f"  - {r['subkind']}: {r.get('node_id') or r.get('src')+'->'+r.get('dst')}")
         if v:
             rc = 2  # non-zero exit on hard-invariant break
     if run_all or "--stale-edges" in only:

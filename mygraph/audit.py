@@ -88,7 +88,7 @@ def check_completeness(question, refs, g, resp):
 
 def audit(audit_path: Path) -> list[dict]:
     g = Graph.load()
-    md = audit_path.read_text()
+    md = audit_path.read_text(encoding="utf-8")
     blocks = parse_audit(md)
     records = []
     ts = datetime.now(timezone.utc).isoformat()
@@ -111,7 +111,7 @@ def audit(audit_path: Path) -> list[dict]:
             "claude_verdict": "ok" if not misses else "miss",
             "misses": misses,
         })
-    with EVAL_LOG.open("a") as f:
+    with EVAL_LOG.open("a", encoding="utf-8") as f:
         for r in records:
             f.write(json.dumps(r) + "\n")
     return records
@@ -124,7 +124,7 @@ def main(argv):
         return 1
     records = audit(path)
     misses = [r for r in records if r["misses"]]
-    print(f"Wrote {len(records)} eval_records → {EVAL_LOG}")
+    print(f"Wrote {len(records)} eval_records -> {EVAL_LOG}")
     print(f"  {len(misses)}/{len(records)} responses flagged with misses\n")
     for r in misses:
         print(f"  Q{r['q_index']}: {r['question'][:60]}")

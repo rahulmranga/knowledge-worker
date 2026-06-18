@@ -38,7 +38,7 @@ def load_repo_env() -> None:
     for env_path in candidates:
         if not env_path.is_file():
             continue
-        for raw_line in env_path.read_text().splitlines():
+        for raw_line in env_path.read_text(encoding="utf-8").splitlines():
             line = raw_line.strip()
             if not line or line.startswith("#"):
                 continue

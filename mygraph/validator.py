@@ -138,8 +138,8 @@ def main():
     if len(sys.argv) < 3:
         print("Usage: python validator.py <candidates.json> <source.md>")
         return 1
-    payload = json.loads(Path(sys.argv[1]).read_text())
-    src_text = Path(sys.argv[2]).read_text()
+    payload = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+    src_text = Path(sys.argv[2]).read_text(encoding="utf-8")
     _, manifest = validate(payload, src_text)
     print(manifest.summary())
     return 0

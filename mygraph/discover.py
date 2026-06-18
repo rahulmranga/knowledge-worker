@@ -565,19 +565,19 @@ def _print_pairs(title: str, rows: list[dict], empty: str) -> None:
         print(f"  {empty}")
         return
     for row in rows:
-        print(f"  {row['src']} ↔ {row['dst']}  [{row['type']} {row['score']}]")
+        print(f"  {row['src']} <-> {row['dst']}  [{row['type']} {row['score']}]")
         print(f"    {row['rationale']}")
 
 
 def print_report(report: dict) -> None:
     stats = report["stats"]
     print(f"discover: {stats['semantic_nodes']} semantic nodes, "
-          f"{stats['semantic_edges']} semantic edges — proposals only, graph untouched")
+          f"{stats['semantic_edges']} semantic edges - proposals only, graph untouched")
 
     radar = report["staleness_radar"]
-    print(f"\nStaleness radar (≥{radar['stale_days_threshold']} days behind latest activity)")
+    print(f"\nStaleness radar (>={radar['stale_days_threshold']} days behind latest activity)")
     if not radar["stale"]:
-        print("  nothing stale — memory is warm")
+        print("  nothing stale - memory is warm")
     for row in radar["stale"]:
         print(f"  {row['id']}  {row['days_stale']}d cold, importance {row['importance']}")
 
@@ -605,7 +605,7 @@ def print_report(report: dict) -> None:
     print(f"\nBridges after removing spine [{spine}] "
           f"({bridges['communities']} communities)")
     for row in bridges["bridge_edges"]:
-        print(f"  {row['src']} —{row['edge_type']}— {row['dst']}  "
+        print(f"  {row['src']} --{row['edge_type']}-- {row['dst']}  "
               f"communities {row['communities']}")
 
     _print_pairs("Tensions", report["tensions"], "no contested claims detected")
@@ -639,14 +639,14 @@ def run_discover(args: list[str]) -> int:
         print_report(report)
         if parsed.out:
             path = Path(parsed.out).expanduser().resolve()
-            path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+            path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             print(f"\ndiscover: wrote {path}")
 
     if parsed.candidates:
         payload = extract_candidates(report)
         path = Path(parsed.candidates).expanduser().resolve()
-        path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
-        print(f"discover: wrote {len(payload['proposals'])} proposals → {path}")
+        path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(f"discover: wrote {len(payload['proposals'])} proposals -> {path}")
     return 0
 
 

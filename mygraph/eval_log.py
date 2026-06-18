@@ -22,7 +22,7 @@ def now() -> str:
 
 def append(record: dict, path: Path = EVAL_LOG) -> None:
     record.setdefault("ts", now())
-    with path.open("a") as f:
+    with path.open("a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
@@ -30,7 +30,7 @@ def append_many(records: list[dict], path: Path = EVAL_LOG) -> None:
     if not records:
         return
     ts = now()
-    with path.open("a") as f:
+    with path.open("a", encoding="utf-8") as f:
         for r in records:
             r.setdefault("ts", ts)
             f.write(json.dumps(r, ensure_ascii=False) + "\n")

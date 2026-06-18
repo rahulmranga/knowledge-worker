@@ -16,7 +16,7 @@ except ImportError:  # direct script execution: python mygraph/export_context.py
 
 def load(path=None):
     path = resolve_graph_path(path)
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 def export_context(g, max_ideas=20):
@@ -32,12 +32,12 @@ def export_context(g, max_ideas=20):
         return [n for n in nodes.values() if n.get("type") == t]
 
     def conf_marker(c):
-        if c == "low": return " ⚠"
+        if c == "low": return " WARN"
         if c == "medium": return " ~"
         return ""
 
     lines = []
-    lines.append("# mygraph — Context Snapshot")
+    lines.append("# mygraph - Context Snapshot")
     lines.append(f"*Generated: {datetime.datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')} | "
                  f"{len(nodes)} nodes, {len(edges)} edges*\n")
 
@@ -61,7 +61,7 @@ def export_context(g, max_ideas=20):
                 lines.append(f"  {n['body'][:100]}")
         lines.append("")
 
-    # Ideas — sort by incoming edge count (most connected first)
+    # Ideas: sort by incoming edge count (most connected first)
     ideas = by_type("idea")
     ideas_sorted = sorted(ideas, key=lambda n: -len(in_edges.get(n["id"], [])))
     lines.append("## Ideas")
@@ -73,13 +73,13 @@ def export_context(g, max_ideas=20):
             lines.append(f"  {n['body'][:120]}")
     lines.append("")
 
-    # Topics (core only — k-core proxy: more than 1 incoming edge)
+    # Topics: k-core proxy, more than 1 incoming edge.
     topics = [n for n in by_type("topic") if len(in_edges.get(n["id"],[])) > 1]
     topics_sorted = sorted(topics, key=lambda n: -len(in_edges.get(n["id"],[])))
     if topics_sorted:
         lines.append("## Core Topics")
         for n in topics_sorted[:20]:
-            lines.append(f"- {n['label']} *(×{len(in_edges[n['id']])})*")
+            lines.append(f"- {n['label']} *(x{len(in_edges[n['id']])})*")
         lines.append("")
 
     # Recent sources (last 5)
@@ -112,7 +112,7 @@ def run_export_context(args: list[str]) -> int:
     text = export_context(g, max_ideas=parsed.max_ideas)
 
     if parsed.out:
-        with open(parsed.out, "w") as f:
+        with open(parsed.out, "w", encoding="utf-8") as f:
             f.write(text)
         print(f"Written to {parsed.out}")
     else:

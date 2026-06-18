@@ -1,8 +1,9 @@
 # knowledge-worker
 
-**A personal knowledge graph that survives between AI conversations.**
+[![PyPI](https://img.shields.io/pypi/v/knowledge-worker.svg)](https://pypi.org/project/knowledge-worker/)
 
-User-centered, not conversation-centered. Provenance first. Built on boring infrastructure.
+**A personal knowledge graph that survives between AI conversations.**  
+User-centered (not conversation-centered). Provenance-or-bust. Built on boring infrastructure.
 
 > *Your AI is only as smart as what it remembers about you.*
 
@@ -12,17 +13,13 @@ User-centered, not conversation-centered. Provenance first. Built on boring infr
 
 `knowledge-worker` is a local-first personal knowledge graph for carrying context across AI sessions. It turns notes into reviewable concepts, decisions, goals, and relationships, keeps source excerpts attached, and exports compact context you can paste into Claude, GPT, Ollama, or any other LLM workflow.
 
-Your private graph stays on your machine, preserving the thread of your own
-reasoning across AI sessions.
+Your private graph stays on your machine, enabling you to preserve the thread of your own reasoning across AI sessions.
 
 ## Why
 
 AI conversations usually start from zero. You clarify a decision, name a constraint, sketch a goal, and then the next session forgets it. RAG can be heavy, full-note prompts are noisy, and most note apps do not plug cleanly into chat workflows.
 
-Stop dumping context. Build memory. `knowledge-worker` turns chats, notes,
-decisions, and sources into a local provenance-backed knowledge graph. Graph
-analytics then show what matters, what connects, what is weak, and what context
-an AI should see.
+Stop dumping context. Build memory. `knowledge-worker` turns chats, notes, decisions, and sources into a local provenance-backed knowledge graph, then uses graph analytics to show what matters, what connects, what is weak, and what context an AI should see.
 
 `knowledge-worker` keeps the useful parts: cited claims, explicit relationships, human review, and a small context snapshot when you need continuity.
 
@@ -44,7 +41,7 @@ matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
 - Exports an LLM-ready context snapshot for a fresh chat session.
 - Audits memory shape with PageRank, betweenness, k-core, communities, weak
   claims, and provenance coverage.
-- Generates a D3-powered HTML graph viewer for exploration and demos.
+- Generates an offline HTML graph viewer for exploration and demos.
 
 ## Design Principles
 
@@ -58,8 +55,43 @@ matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
 
 ## Quick Start
 
-Requirements: Python 3.10+ on macOS, Linux, or Windows. The public demo CLI uses
-only the standard library and does not need a package install.
+Requirements: Python 3.10+ on macOS, Linux, or Windows.
+
+### Install from PyPI
+
+The core CLI has no runtime dependencies beyond the standard library. Optional
+extras pull in LLM backends and RDF export only when you need them:
+
+```bash
+python -m pip install knowledge-worker               # core CLI, stdlib only (mykg / mygraph)
+python -m pip install "knowledge-worker[rdf]"        # + Turtle/RDF export (rdflib)
+python -m pip install "knowledge-worker[anthropic]"  # + Claude-backed ingest
+python -m pip install "knowledge-worker[openai]"     # + OpenAI-backed ingest
+python -m pip install "knowledge-worker[ollama]"     # + local Ollama ingest
+python -m pip install "knowledge-worker[all]"        # all ingest backends + RDF
+```
+
+Verify the install (no clone needed — `seed` generates its own demo graph):
+
+```bash
+mykg --help
+MYGRAPH_PATH=/tmp/knowledge-worker-demo.json mykg seed
+MYGRAPH_PATH=/tmp/knowledge-worker-demo.json mykg summary
+```
+
+Using a virtual environment avoids Homebrew/system Python's externally-managed
+install errors:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install knowledge-worker
+```
+
+### Run from a clone (no install)
+
+The core demo CLI uses only the standard library, so you can run it straight
+from a checkout without installing anything:
 
 ```bash
 git clone https://github.com/rahulmranga/knowledge-worker
@@ -75,13 +107,12 @@ MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py context
 # Audit memory structure and proof coverage
 MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py audit --out /tmp/analytics.json --html /tmp/memory_audit.html
 
-# Visualize the graph as an HTML file with embedded graph data
+# Visualize the graph as a self-contained HTML file
 python3 mygraph/mygraph.py viz --graph examples/demo_graph.json --out /tmp/demo.html
 ```
 
-### Install the CLI
-
-For the shorter `mykg` command, install the project inside a virtual environment:
+For the shorter `mykg` command from a clone, install it editable inside a
+virtual environment:
 
 ```bash
 python3 -m venv .venv
@@ -90,13 +121,21 @@ python -m pip install -e .
 MYGRAPH_PATH=examples/demo_graph.json mykg query provenance
 ```
 
-Using a virtual environment avoids Homebrew/system Python's externally-managed install errors.
-
 On Windows PowerShell:
 
 ```powershell
 py -3 -m venv .venv
 .\.venv\Scripts\Activate.ps1
+python -m pip install knowledge-worker
+
+$env:MYGRAPH_PATH = "$env:TEMP\knowledge-worker-demo.json"
+mykg seed
+mykg summary
+```
+
+From a clone, install editable instead:
+
+```powershell
 python -m pip install -e .
 
 $env:MYGRAPH_PATH = "examples\demo_graph.json"
@@ -111,75 +150,55 @@ session and activate again:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
+
 ## Commands
 
-| Command | What it does | Requirements |
-|---|---|---|
-| `seed` | Populate a fictional demo graph | Core |
-| `summary` | Show node and edge counts by type | Core |
-| `query <term>` | Search nodes, neighbors, and provenance | Core |
-| `list <type>` | List nodes of a given type | Core |
-| `path <a> <b>` | Find the shortest path between two nodes | Core |
-| `ingest <file.md>` | Extract, validate, review, merge, and evaluate candidates | Provider extra, or `--candidates-file` |
-| `check --provenance` | Flag nodes with missing source citations | Core |
-| `export --ttl` | Emit Turtle/RDF | `.[rdf]` |
-| `context` | Print a compact LLM-ready context snapshot | Core |
-| `viz` | Generate a D3-powered HTML viewer with embedded graph data | Core |
-| `audit` | Emit graph analytics and optional Memory Audit HTML | Core |
-| `discover` | Propose derived edges and second-order insights without mutating the graph | Core |
-| `state "<entry>"` | Append a mood/state sidecar entry | Core |
-| `dump` | Print the raw graph JSON | Core |
-| `reset` | Delete the active graph file | Core |
+| Command | What it does |
+|---|---|
+| `seed` | Populate a fictional demo graph |
+| `summary` | Show node and edge counts by type |
+| `query <term>` | Search nodes, neighbors, and provenance |
+| `list <type>` | List nodes of a given type |
+| `path <a> <b>` | Find the shortest path between two nodes |
+| `ingest <file.md>` | Extract, validate, review, merge, and eval candidates |
+| `check --provenance` | Flag nodes with missing source citations |
+| `export --ttl` | Emit Turtle/RDF |
+| `context` | Print a compact LLM-ready context snapshot |
+| `viz` | Generate an offline single-file HTML viewer |
+| `audit` | Emit graph analytics, directed idea-flow queues, and optional Memory Audit HTML |
+| `discover` | Propose derived edges and second-order insights (read-only, promotion queue) |
+| `state "<entry>"` | Append a mood/state sidecar entry |
+| `dump` | Print the raw graph JSON |
+| `reset` | Delete the active graph file |
 
-Install optional features into the active virtual environment:
-
-```bash
-python -m pip install -e ".[anthropic]"  # Anthropic-backed ingest
-python -m pip install -e ".[openai]"     # OpenAI-backed ingest
-python -m pip install -e ".[ollama]"     # Local Ollama ingest
-python -m pip install -e ".[rdf]"        # Turtle/RDF export
-python -m pip install -e ".[all]"        # All ingest backends and RDF export
-```
 
 ## Use Your Own Notes
 
-Keep your real graph outside the repository and point the CLI at it:
-
-```bash
-mkdir -p ~/my-private-graph
-export MYGRAPH_PATH=~/my-private-graph/mygraph.json
-```
-
-You can then ingest notes with or without an API key.
+You can ingest your notes with or without an API key.
 
 ### Claude or Codex App, No API Key
 
-If a file-capable assistant is already working in this checkout, you do **not**
-need an API key. Ask it:
-
-> Read `path/to/your/notes.md` and the `EXTRACTION_TOOL` schema and
-> `PROMPT_TEMPLATE` in `mygraph/extractor.py`. Write
-> `path/to/your/notes.candidates.json`. Use only literal source excerpts, do
-> not invent personal facts, and add a `MENTIONED_IN` edge from every new
-> concept to the source node.
-
-Then let the local CLI validate, review, and merge the proposals:
+If you are already working with Claude, Codex, or ChatGPT in an app session, you do **not** need an API key. Ask the assistant to produce a `*.candidates.json` file that follows the schema in `mygraph/extractor.py`, then let the local CLI validate, review, and merge it. In Claude Code, the bundled [`/ingest-notes`](.claude/skills/ingest-notes/SKILL.md) skill runs this flow for you:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+
 mykg ingest path/to/your/notes.md --candidates-file path/to/your/notes.candidates.json
 ```
 
-Candidate files are ignored by git. Validation, review, and graph merge remain
-local.
+The app subscription helps you create the candidates file. The repo still keeps graph validation and merge local.
 
 ### Automated API-Backed Ingest
 
-If you want the CLI to call an LLM directly, install the matching optional
-dependency and use a provider API key or local Ollama.
+If you want the CLI to call an LLM directly, use a provider API key or local Ollama.
 
 For Anthropic API:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 python -m pip install -e ".[anthropic]"
 export ANTHROPIC_API_KEY=...
 
@@ -195,26 +214,14 @@ The Claude backend also auto-detects Anthropic-compatible provider env:
 For OpenAI API:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 python -m pip install -e ".[openai]"
 export OPENAI_API_KEY=...
 
-mykg ingest path/to/your/notes.md --backend openai
+mykg ingest path/to/your/notes.md --backend openai --model gpt-5.2
 ```
-
-For local Ollama:
-
-```bash
-python -m pip install -e ".[ollama]"
-ollama list
-ollama serve  # run in another terminal if Ollama is not already running
-
-mykg ingest path/to/your/notes.md --backend ollama --model llama3
-```
-
-The traditional `python -m pip install -r requirements.txt` installs all ingest
-backends and RDF export support.
-
-## Private Graph Workflow
+## Graph Workflow
 
 The public repo ships code, docs, and a fictional demo graph. Your real graph should live outside the repo or in the ignored default path, then be loaded explicitly:
 
@@ -224,9 +231,8 @@ MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg query "architecture"
 MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg context
 ```
 
-The default graph and standard sidecar paths under `mygraph/` are ignored by
-git. Custom graph, viewer, TTL, and log paths are not automatically ignored, so
-keep private outputs outside the repository.
+Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, state logs, and local env files are ignored by default.
+
 
 ## Memory Audit
 
@@ -275,7 +281,7 @@ MYGRAPH_PATH=examples/demo_graph.json mykg discover \
   --candidates /tmp/discovery.candidates.json
 ```
 
-Discover never mutates the graph. Derived edges land in a candidates file, a
+Discover never mutates the graph. Derived edges land in a candidates file — a
 promotion queue for human review. AI proposes, provenance verifies, the owner
 promotes. Committed sample output: [`examples/demo_discovery.json`](examples/demo_discovery.json).
 
@@ -289,14 +295,6 @@ The `ollama_proxy/` package adds three local-model surfaces:
 
 See [ollama_proxy/README.md](ollama_proxy/README.md) for setup.
 
-## Verification
-
-Run the full test suite and the public-demo provenance check:
-
-```bash
-python3 -m unittest
-MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py check --provenance
-```
 
 ## Repository Layout
 

@@ -109,7 +109,7 @@ def extract(md_path: Path, out_path: Path | None = None,
     """End-to-end extract via OpenAI. Same return shape as extractor.extract."""
     g = Graph.load()
     decl = build_source_decl(md_path)
-    source_text = md_path.read_text()
+    source_text = md_path.read_text(encoding="utf-8")
     existing_ids = sorted(g.nodes.keys())
     prompt = PROMPT_TEMPLATE.format(
         source_id=decl["source_id"],
@@ -134,7 +134,7 @@ def extract(md_path: Path, out_path: Path | None = None,
     payload["_meta"]["model"] = model
     payload["_meta"]["backend"] = "openai"
     if out_path:
-        out_path.write_text(json.dumps(payload, indent=2))
+        out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     return payload
 
 

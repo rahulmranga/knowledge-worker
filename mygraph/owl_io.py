@@ -189,7 +189,7 @@ def run_export(args: list[str]) -> int:
         out = Path(args[i + 1]).expanduser().resolve()
     g = Graph.load(str(graph_path))
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(to_turtle(g))
+    out.write_text(to_turtle(g), encoding="utf-8")
     print(f"export: wrote {out}")
     if "--round-trip" in args:
         ok, msg = round_trip_test(graph_path)

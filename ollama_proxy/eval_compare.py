@@ -98,7 +98,7 @@ def _id_diff(a_summary: dict, b_summary: dict) -> dict:
 
 def run(md_path: Path, claude_only: bool = False, gemma_only: bool = False,
         gemma_model: str | None = None, claude_model: str | None = None) -> dict:
-    src_text = md_path.read_text()
+    src_text = md_path.read_text(encoding="utf-8")
 
     claude_summary: dict | None = None
     gemma_summary: dict | None = None
@@ -133,7 +133,7 @@ def run(md_path: Path, claude_only: bool = False, gemma_only: bool = False,
 
     # write to mygraph/eval_record.jsonl (canonical eval log location)
     log_path = _MYGRAPH / "eval_record.jsonl"
-    with log_path.open("a") as f:
+    with log_path.open("a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
     return record
 

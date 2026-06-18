@@ -198,7 +198,7 @@ def extract(md_path: Path, out_path: Path | None = None,
     """End-to-end extract: read markdown, call LLM, write candidates.json."""
     g = Graph.load()
     decl = build_source_decl(md_path)
-    source_text = md_path.read_text()
+    source_text = md_path.read_text(encoding="utf-8")
     existing_ids = sorted(g.nodes.keys())
     prompt = PROMPT_TEMPLATE.format(
         source_id=decl["source_id"],
@@ -223,7 +223,7 @@ def extract(md_path: Path, out_path: Path | None = None,
     payload["_meta"]["ingested_at"] = decl["ingested_at"]
     payload["_meta"]["model"] = model or os.environ.get("MYGRAPH_MODEL", DEFAULT_MODEL)
     if out_path:
-        out_path.write_text(json.dumps(payload, indent=2))
+        out_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     return payload
 
 
@@ -235,7 +235,7 @@ def main(argv: list[str]) -> int:
     out = Path(argv[2]).resolve() if len(argv) > 2 else md.parent / f"{md.stem}.candidates.json"
     payload = extract(md, out)
     print(f"extractor: wrote {len(payload.get('nodes', []))} nodes, "
-          f"{len(payload.get('edges', []))} edges → {out}")
+          f"{len(payload.get('edges', []))} edges -> {out}")
     return 0
 
 

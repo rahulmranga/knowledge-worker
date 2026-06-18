@@ -106,18 +106,18 @@ def run_ingest(args: list[str]) -> int:
     # ---- Stage 1: Extract --------------------------------------------------
     if candidates_file:
         print(f"[1/5] using candidates from: {candidates_file}")
-        payload = json.loads(candidates_file.read_text())
+        payload = json.loads(candidates_file.read_text(encoding="utf-8"))
         candidates_path = candidates_file
     else:
         extract = _load_extractor(backend)
-        print(f"[1/5] extract → backend={backend} on {md_path.name} ...")
+        print(f"[1/5] extract -> backend={backend} on {md_path.name} ...")
         candidates_path = md_path.parent / f"{md_path.stem}.candidates.json"
         payload = extract(md_path, candidates_path, model=model) if model else extract(md_path, candidates_path)
         print(f"      wrote {candidates_path}")
 
     # ---- Stage 2: Validate -------------------------------------------------
     print("[2/5] validate ...")
-    src_text = md_path.read_text()
+    src_text = md_path.read_text(encoding="utf-8")
     validated, manifest = validate(payload, src_text)
     print(manifest.summary())
 

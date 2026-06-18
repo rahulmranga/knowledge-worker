@@ -57,7 +57,7 @@ _client = httpx.AsyncClient(base_url=OLLAMA_BASE_URL, timeout=300.0)
 def _log(record: dict) -> None:
     record.setdefault("ts", datetime.now(timezone.utc).isoformat())
     try:
-        with LOG_PATH.open("a") as f:
+        with LOG_PATH.open("a", encoding="utf-8") as f:
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
     except OSError:
         pass  # never let logging break a request
@@ -130,11 +130,11 @@ def main(argv: list[str]) -> int:
     p.add_argument("--host", default=os.environ.get("PROXY_HOST", "127.0.0.1"),
                    help="Bind host (set 0.0.0.0 to be reachable on the tailnet)")
     p.add_argument("--port", type=int, default=int(os.environ.get("PROXY_PORT", "11435")),
-                   help="Bind port (default 11435 — Ollama's 11434 + 1)")
+                   help="Bind port (default 11435, Ollama's 11434 + 1)")
     args = p.parse_args(argv)
-    print(f"proxy: forwarding http://{args.host}:{args.port}/* → {OLLAMA_BASE_URL}/*",
+    print(f"proxy: forwarding http://{args.host}:{args.port}/* -> {OLLAMA_BASE_URL}/*",
           file=sys.stderr)
-    print(f"proxy: log → {LOG_PATH}", file=sys.stderr)
+    print(f"proxy: log -> {LOG_PATH}", file=sys.stderr)
     uvicorn.run(app, host=args.host, port=args.port, log_level="warning")
     return 0
 

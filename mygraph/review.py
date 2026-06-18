@@ -53,12 +53,12 @@ def _print_edge(edge: dict) -> None:
 
 def _edit_in_editor(payload: dict) -> dict:
     editor = os.environ.get("EDITOR", "vi")
-    with tempfile.NamedTemporaryFile("w+", suffix=".json", delete=False) as f:
+    with tempfile.NamedTemporaryFile("w+", suffix=".json", delete=False, encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
         path = f.name
     try:
         subprocess.run([editor, path], check=False)
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
     finally:
         os.unlink(path)

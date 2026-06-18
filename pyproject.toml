@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "knowledge-worker"
-version = "0.6.1"
+version = "0.6.2"
 description = "Provenance-backed personal knowledge graph for local AI workflows"
 readme = "README.md"
 license = "MIT"
@@ -12,22 +12,34 @@ requires-python = ">=3.10"
 authors = [{ name = "Rahul Rangarao", email = "rahulmranga@gmail.com" }]
 keywords = [
     "knowledge-graph",
+    "ai-memory",
     "llm-memory",
+    "memory",
+    "context-management",
     "local-first",
     "provenance",
     "personal-knowledge-management",
+    "rag",
+    "mcp",
     "ai",
     "claude",
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Text Processing :: Markup :: Markdown",
 ]
 
 # Core graph (seed/summary/query/viz/export_context) — stdlib only, no deps.

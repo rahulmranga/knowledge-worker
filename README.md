@@ -8,7 +8,7 @@ User-centered (not conversation-centered). Provenance-or-bust. Built on boring i
 > *Your AI is only as smart as what it remembers about you.*
 
 <p align="center">
-  <img src="docs/assets/knowledge-worker-demo.gif" alt="knowledge-worker graph visualizer demo" width="900">
+  <img src="https://raw.githubusercontent.com/rahulmranga/knowledge-worker/main/docs/assets/knowledge-worker-demo.gif" alt="knowledge-worker graph visualizer demo" width="900">
 </p>
 
 `knowledge-worker` is a local-first personal knowledge graph for carrying context across AI sessions. It turns notes into reviewable concepts, decisions, goals, and relationships, keeps source excerpts attached, and exports compact context you can paste into Claude, GPT, Ollama, or any other LLM workflow.

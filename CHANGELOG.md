@@ -15,6 +15,12 @@
   memory and where deep-dive fits before ingest.
 - Updated the public roadmap to make v0.7.0 the interaction-model and
   deep-dive workspace release, with memory analyzer work tracked next.
+- Added broader CLI regression coverage for help/error paths and the existing
+  query, list, path, check, export, context, viz, audit, discover, ingest, and
+  deep-dive command surfaces.
+- Added GitHub Actions CI for pull requests and main-branch pushes across
+  Python 3.10, 3.11, 3.12, and 3.13, including the unittest suite and demo
+  graph provenance check.
 
 ## 0.6.x
 

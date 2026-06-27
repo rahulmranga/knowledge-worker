@@ -1,4 +1,5 @@
 import json
+import importlib.util
 import os
 import subprocess
 import sys
@@ -91,9 +92,14 @@ class CliRegressionTest(unittest.TestCase):
 
             result = run_mykg("export", "--ttl", "--out", str(out))
 
-            self.assertEqual(result.returncode, 0, result.stderr)
-            self.assertTrue(out.exists())
-            self.assertIn("@prefix", out.read_text(encoding="utf-8"))
+            if importlib.util.find_spec("rdflib") is None:
+                self.assertEqual(result.returncode, 1)
+                self.assertIn("rdflib", result.stderr + result.stdout)
+                self.assertFalse(out.exists())
+            else:
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertTrue(out.exists())
+                self.assertIn("@prefix", out.read_text(encoding="utf-8"))
 
     def test_context_out_writes_file_without_stdout_dump(self):
         with tempfile.TemporaryDirectory() as tmp_raw:

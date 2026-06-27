@@ -18,6 +18,7 @@ Usage:
     mykg viz                                              # v1 M4: write offline HTML viewer
     mykg audit                                            # memory audit analytics + optional HTML
     mykg discover                                         # derived-edge proposals + second-order analytics
+    mykg deep-dive <source.md> --out-dir <dir>            # pre-ingest reasoning workspace
 
 Graph file: ./mygraph.json by default, or MYGRAPH_PATH=/absolute/path.json.
 """
@@ -661,6 +662,9 @@ Usage:
   mykg audit [--graph <path>] [--out analytics.json] [--html memory_audit.html]
   mykg discover [--graph <path>] [--out discovery.json]
                [--candidates <path>] [--limit N] [--stale-days N]
+  mykg deep-dive <source.md> --out-dir <workspace>
+  mykg deep-dive inspect <workspace>
+  mykg deep-dive add-to-graph <workspace>
 """
 
 
@@ -752,6 +756,12 @@ def main(argv: Optional[list[str]] = None) -> int:
         else:
             from discover import run_discover
         return run_discover(argv[2:])
+    if cmd == "deep-dive":
+        if __package__:
+            from .deep_dive import run_deep_dive
+        else:
+            from deep_dive import run_deep_dive
+        return run_deep_dive(argv[2:])
     print(USAGE)
     return 1
 

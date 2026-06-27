@@ -35,6 +35,8 @@ matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
 ## What It Does
 
 - Ingests markdown notes into candidate graph nodes and edges.
+- Generates pre-ingest deep-dive workspaces for sources that need synthesis
+  before graph promotion.
 - Requires provenance excerpts before claims become durable memory.
 - Lets you review, accept, reject, or edit LLM proposals before merge.
 - Searches by term, lists nodes by type, and finds paths between ideas.
@@ -161,6 +163,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 | `list <type>` | List nodes of a given type |
 | `path <a> <b>` | Find the shortest path between two nodes |
 | `ingest <file.md>` | Extract, validate, review, merge, and eval candidates |
+| `deep-dive <file.md>` | Generate a pre-ingest workspace with artifacts and candidates |
 | `check --provenance` | Flag nodes with missing source citations |
 | `export --ttl` | Emit Turtle/RDF |
 | `context` | Print a compact LLM-ready context snapshot |
@@ -176,6 +179,26 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 You can ingest your notes with or without an API key.
 
+### How Memory Enters The Graph
+
+Graph memory is promoted through a review lifecycle:
+
+```text
+source note
+  -> candidates.json
+  -> validate
+  -> review
+  -> merge accepted items into MYGRAPH_PATH
+```
+
+Candidates are proposals, not memory. Validation checks schema, IDs,
+provenance excerpts, and edge endpoints. Review is the promotion gate. The
+active graph changes only after accepted candidates are merged.
+
+The product contract is:
+
+> The model proposes. Artifacts expose reasoning. Provenance verifies. Human review promotes.
+
 ### Claude or Codex App, No API Key
 
 If you are already working with Claude, Codex, or ChatGPT in an app session, you do **not** need an API key. Ask the assistant to produce a `*.candidates.json` file that follows the schema in `mygraph/extractor.py`, then let the local CLI validate, review, and merge it. In Claude Code, the bundled [`/ingest-notes`](.claude/skills/ingest-notes/SKILL.md) skill runs this flow for you:
@@ -189,6 +212,28 @@ mykg ingest path/to/your/notes.md --candidates-file path/to/your/notes.candidate
 ```
 
 The app subscription helps you create the candidates file. The repo still keeps graph validation and merge local.
+
+### Deep Dive Workflow
+
+Use `deep-dive` when a source needs synthesis, challenge, or a reasoning
+workspace before it becomes graph memory:
+
+```bash
+mykg deep-dive notes.md --out-dir ~/private/deepdives/notes
+mykg deep-dive inspect ~/private/deepdives/notes
+mykg deep-dive add-to-graph ~/private/deepdives/notes
+```
+
+Generation creates a workspace with `manifest.json`, `artifact-plan.json`,
+Markdown artifacts, validation reports, an artifact-local graph summary, and
+canonical candidates. It does **not** mutate `MYGRAPH_PATH`.
+
+`add-to-graph` reads the workspace manifest and delegates to the existing ingest
+validation/review/merge path. Keep using `ingest` directly when you already have
+a focused source note or hand-curated candidates file.
+
+See [Deep-Dive Interaction Model](docs/DEEP_DIVE_INTERACTION_MODEL.md) for the
+generate, inspect, challenge, approve, and add-to-graph semantics.
 
 ### Automated API-Backed Ingest
 

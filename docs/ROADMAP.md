@@ -40,7 +40,19 @@
   add-to-graph, approve, and don't-ingest-yet.
 - Keep `ingest` as the canonical graph mutation path.
 
-## v0.8: Memory Analyzer Layer
+## v0.8: Open-Web Storage Contract
+
+- Keep JSON as the canonical local graph store.
+- Use JSONL for append-only review/eval/event history.
+- Ship JSON-LD export as the JSON-native RDF/open-web bridge alongside
+  Turtle/RDF export.
+- Document Kuzu as a future optional read/query backend and graphify.net as a
+  future publishing or interchange target, not as v0.8.0 storage dependencies.
+- Keep the core graph CLI stdlib-only except for optional RDF export extras.
+- Preserve provenance checks, public-demo safety, and private-by-default graph
+  loading as release gates.
+
+## v0.9: Memory Analyzer Layer
 
 - Combine audit, context export, discovery, and deep-dive outputs into a single
   user-facing memory analyzer report.
@@ -59,6 +71,9 @@
 
 ## v2: Storage Evolution
 
-- Move from JSON to SQL-backed persistence only when graph size or concurrency
-  makes JSON awkward.
-- Preserve the public node/edge schema and CLI behavior.
+- Move from JSON-only persistence to optional database-backed read models only
+  when graph size, query ergonomics, or concurrency makes JSON awkward.
+- Prefer adapters that preserve the public node/edge schema, CLI behavior,
+  provenance invariants, and local-first/private-by-default workflow.
+- Explore Kuzu for local graph analytics after JSON, JSONL, and JSON-LD/RDF
+  contracts are stable.

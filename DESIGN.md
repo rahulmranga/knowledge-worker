@@ -32,8 +32,15 @@ Export and visualization also accept explicit output paths:
 
 ```bash
 python3 mygraph/mygraph.py export --ttl --out examples/demo_graph.ttl
+python3 mygraph/mygraph.py export --jsonld --out /tmp/demo_graph.jsonld
 python3 mygraph/mygraph.py viz --graph examples/demo_graph.json --out examples/demo_graph.html --no-open
 ```
+
+JSON remains the canonical graph store. JSONL records are for append-only
+review, eval, analyzer, and replay history. Turtle/RDF and JSON-LD exports are
+derived open-web artifacts. Kuzu can become an optional read/query adapter
+later; graphify.net can become a publishing or interchange surface once the
+JSON-LD contract is stable.
 
 ## Visualization
 

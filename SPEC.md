@@ -33,7 +33,8 @@ Edge types:
 - Every edge has a `source_id`.
 - High-confidence claims must have literal excerpts where available.
 - Private graph data is loaded by path, not committed.
-- JSON is canonical; Turtle and HTML are generated artifacts.
+- JSON is canonical; JSONL history, Turtle/RDF, JSON-LD, and HTML are generated
+  or derived artifacts.
 
 ## Storage
 
@@ -45,6 +46,20 @@ MYGRAPH_PATH=/absolute/path/to/mygraph.json python3 mygraph/mygraph.py summary
 ```
 
 This keeps public demo data and private graph data cleanly separated.
+
+The storage contract is intentionally layered:
+
+| Format | Purpose |
+|---|---|
+| JSON | Canonical graph store for nodes and edges. |
+| JSONL | Append-only records for reviews, evals, analyzer runs, and future replay. |
+| Turtle/RDF | Generated semantic-web export. |
+| JSON-LD | Open-web export using the same graph schema and provenance model. |
+
+Database-backed graph engines are adapters, not canonical storage. Kuzu is a
+candidate for a future optional read/query backend when local graph size or
+query ergonomics justify it. Hosted or networked graph surfaces such as
+graphify.net are publishing/interchange experiments, not private graph storage.
 
 ## CLI Surface
 
@@ -60,6 +75,7 @@ python3 mygraph/mygraph.py reset
 python3 mygraph/mygraph.py ingest <file.md>
 python3 mygraph/mygraph.py check --provenance
 python3 mygraph/mygraph.py export --ttl --out <file.ttl>
+python3 mygraph/mygraph.py export --jsonld --out <file.jsonld>
 python3 mygraph/mygraph.py context --out <file.md>
 python3 mygraph/mygraph.py viz --graph <file.json> --out <file.html> --no-open
 python3 mygraph/mygraph.py audit --graph <file.json> --out <analytics.json>

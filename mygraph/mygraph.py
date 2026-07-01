@@ -13,7 +13,8 @@ Usage:
 
     mykg ingest <path/to/file.md>                         # v1 M1: 5-stage extractor pipeline
     mykg check [--provenance|--stale-edges|--pairs N|--source-candidates DIR]
-    mykg export --ttl                                     # v1 M3: emit Turtle
+    mykg export --ttl                                     # emit Turtle/RDF
+    mykg export --jsonld                                  # emit JSON-LD/RDF
     mykg context                                          # LLM-ready context snapshot
     mykg viz                                              # v1 M4: write offline HTML viewer
     mykg audit                                            # memory audit analytics + optional HTML
@@ -656,7 +657,7 @@ Usage:
                                 [--backend claude|openai|ollama] [--model <name>]
   mykg check [--provenance] [--stale-edges] [--pairs N]
              [--source-candidates <dir>]
-  mykg export --ttl [--out <path>]
+  mykg export (--ttl | --jsonld) [--out <path>]
   mykg context [--out <path>] [--max-ideas N]
   mykg viz [--graph <path>] [--out <path>] [--no-open]
   mykg audit [--graph <path>] [--out analytics.json] [--html memory_audit.html]

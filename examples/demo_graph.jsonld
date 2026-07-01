@@ -1,0 +1,7462 @@
+[
+  {
+    "@id": "http://mygraph.local/topic/knowledge-graphs",
+    "@type": [
+      "http://mygraph.local/schema#Topic"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "topic:knowledge-graphs"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Structured concepts and relationships for durable context."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Knowledge graphs"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/35",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Every project doubles as newsletter material."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:write-what-you-build"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/write-what-you-build"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/11",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "When should storage move beyond JSON?"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "question:storage-backend"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/question/storage-backend"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/17",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "CogGRAG is a public reference for graph retrieval."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "reference:coggrag"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/reference/coggrag"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/48",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "idea:context-memory"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "HAS_IDEA"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "person:demo-owner"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/idea/context-memory"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#HAS_IDEA"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/person/demo-owner"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/52",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:local-first"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "INVOLVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:knowledge-worker"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#INVOLVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/knowledge-worker"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/55",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "question:storage-backend"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "ABOUT"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:json-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/question/storage-backend"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#ABOUT"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/json-first"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#INVOLVES",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/66",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:local-first"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:public-demo-data-only"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/public-demo-data-only"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/21",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The greenhouse should mostly look after itself."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "goal:automated-greenhouse"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/goal/automated-greenhouse"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/62",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:local-first"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:single-owner-tools"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/single-owner-tools"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/23",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "A sensor log line is an excerpt about the world."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:sensor-data-as-memory"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/sensor-data-as-memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/9",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Keep owner data local unless explicitly exported."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "topic:local-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/reference/digital-garden-essay",
+    "@type": [
+      "http://mygraph.local/schema#Reference"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "medium"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "reference:digital-garden-essay"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A public essay on publishing evolving notes instead of finished posts."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Digital garden essay"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/4",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Export a task-sized slice, never the whole graph."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:scoped-exports"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/scoped-exports"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/87",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:publish-monthly"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:monthly-cadence"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/monthly-cadence"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#RELATES_TO",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/30",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Hard power budgets change every design choice."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "topic:embedded-systems"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/topic/embedded-systems"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/5",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Software for one user can cut every corner."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:single-owner-tools"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/single-owner-tools"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/46",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The sensor project consumed the whole quarter."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:garden-sensors"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/garden-sensors"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/goal/publish-monthly",
+    "@type": [
+      "http://mygraph.local/schema#Goal"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "goal:publish-monthly"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Ship one newsletter issue every month without heroics."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Publish monthly"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Source",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://purl.org/dc/terms/ProvenanceEntity"
+      },
+      {
+        "@id": "http://mygraph.local/schema#Source"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/question/when-to-automate-ingest",
+    "@type": [
+      "http://mygraph.local/schema#Question"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "question:when-to-automate-ingest"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Open question: manual review catches errors, but does not scale past a few notes a week."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "When should ingest become automatic?"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/source/newsletter-plan",
+    "@type": [
+      "http://mygraph.local/schema#Source"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Fictional planning note for a monthly build-log newsletter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "newsletter-plan.md"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/63",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:provenance"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:provenance-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/provenance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/provenance-first"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/82",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:publish-monthly"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:weekly-shipping-log"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/weekly-shipping-log"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/goal/automated-greenhouse",
+    "@type": [
+      "http://mygraph.local/schema#Goal"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "goal:automated-greenhouse"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Keep greenhouse plants alive with minimal manual checking."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Automated greenhouse"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/source/demo-notes",
+    "@type": [
+      "http://mygraph.local/schema#Source"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Fictional project notes used to demonstrate provenance-backed memory."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "demo-notes.md"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/project/knowledge-worker",
+    "@type": [
+      "http://mygraph.local/schema#Project"
+    ],
+    "http://mygraph.local/schema#INVOLVES": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      },
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "project:knowledge-worker"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A local-first toolkit for source-backed AI memory."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "knowledge-worker"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/25",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "A handful of nodes reporting over one protocol."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "topic:sensor-networks"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/topic/sensor-networks"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#HAS_IDEA",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/75",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:embedded-systems"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "ABOUT"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:esp32-over-rpi"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/embedded-systems"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#ABOUT"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/esp32-over-rpi"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/goal/sustainable-side-projects",
+    "@type": [
+      "http://mygraph.local/schema#Goal"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "goal:sustainable-side-projects"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Keep hobby projects fun and finished instead of abandoned."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Sustainable side projects"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/boring-tech-default",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/sustainable-side-projects"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:boring-tech-default"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Choose boring technology unless the project IS the experiment."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Boring tech by default"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/10",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The local-first paper defines the storage principles."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "reference:local-first-paper"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/reference/local-first-paper"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/73",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "reference:esp32-deep-sleep-guide"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SUPPORTED_BY"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The deep-sleep guide documents real-world power draw."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:low-power-mesh"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/reference/esp32-deep-sleep-guide"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SUPPORTED_BY"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/low-power-mesh"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/topic/technical-writing",
+    "@type": [
+      "http://mygraph.local/schema#Topic"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "topic:technical-writing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Explaining systems in prose, for readers and future self."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Technical writing"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/decision/public-demo-data-only",
+    "@type": [
+      "http://mygraph.local/schema#Decision"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "decision:public-demo-data-only"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The public repo ships fictional demo data; real graphs stay local."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Only fictional data in public examples"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/76",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "medium"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:automated-greenhouse"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:solar-power-budget"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/automated-greenhouse"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/solar-power-budget"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/59",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "reference:local-first-paper"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SUPPORTED_BY"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:scoped-exports"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/reference/local-first-paper"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SUPPORTED_BY"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/scoped-exports"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/2",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Store durable concepts instead of loose transcript chunks."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:context-memory"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/context-memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/88",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:technical-writing"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "ABOUT"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:plain-text-newsletter"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/technical-writing"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#ABOUT"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/plain-text-newsletter"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/3",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Every durable claim needs source evidence."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:provenance-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/provenance-first"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/45",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Serialize projects; parallel ones all stall."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:one-project-per-quarter"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/one-project-per-quarter"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/decision/one-project-per-quarter",
+    "@type": [
+      "http://mygraph.local/schema#Decision"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/sustainable-side-projects"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "decision:one-project-per-quarter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Serialize side projects instead of running them in parallel."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "One active project per quarter"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Goal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://mygraph.local/schema#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/decision/esp32-over-rpi",
+    "@type": [
+      "http://mygraph.local/schema#Decision"
+    ],
+    "http://mygraph.local/schema#ABOUT": [
+      {
+        "@id": "http://mygraph.local/topic/embedded-systems"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "decision:esp32-over-rpi"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Microcontrollers beat a full computer for battery-powered sensing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Use ESP32 boards instead of a Raspberry Pi"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/scoped-exports",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ],
+    "http://mygraph.local/schema#SUPPORTED_BY": [
+      {
+        "@id": "http://mygraph.local/reference/local-first-paper"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:scoped-exports"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Share a task-sized slice of the graph with an AI, never the whole thing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Scoped exports"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/single-owner-tools",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:single-owner-tools"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Tools built for exactly one user can cut every scope corner that team software cannot."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Single-owner tools"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/71",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:automated-greenhouse"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:drip-irrigation-loop"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/automated-greenhouse"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/drip-irrigation-loop"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/60",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:provenance"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:promotion-queue"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/provenance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/promotion-queue"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/write-what-you-build",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      },
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:write-what-you-build"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Each project becomes newsletter material; writing pressure improves the build."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Write what you build"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/19",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Sensor readings could enter the graph as provenance-backed observations."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:sensor-data-as-memory"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/sensor-data-as-memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/question/battery-life-winter",
+    "@type": [
+      "http://mygraph.local/schema#Question"
+    ],
+    "http://mygraph.local/schema#CHALLENGES": [
+      {
+        "@id": "http://mygraph.local/idea/low-power-mesh"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "question:battery-life-winter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Open question: cold halves battery capacity; the mesh may not last the season."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Will batteries survive winter?"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#SUPPORTED_BY",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/26",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Sensor logs are evidence: timestamped, source-attributed readings."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "topic:provenance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/topic/provenance"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/weekly-shipping-log",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/technical-writing"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:weekly-shipping-log"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A small weekly log makes the monthly issue almost write itself."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Weekly shipping log"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/source/greenhouse-journal",
+    "@type": [
+      "http://mygraph.local/schema#Source"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Fictional build journal for a small greenhouse sensor project."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "greenhouse-journal.md"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/70",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "idea:drip-irrigation-loop"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "HAS_IDEA"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "person:demo-owner"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/idea/drip-irrigation-loop"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#HAS_IDEA"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/person/demo-owner"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/67",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:automated-greenhouse"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:garden-sensors"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/automated-greenhouse"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/garden-sensors"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Question",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://mygraph.local/schema#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/53",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:knowledge-graphs"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:context-memory"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/context-memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/14",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Ingest Markdown only; it stays diffable and reviewable."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:markdown-sources"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/markdown-sources"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/56",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "medium"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "reference:coggrag"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SUPPORTED_BY"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "CogGRAG is a public reference for graph retrieval."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:context-memory"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/reference/coggrag"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SUPPORTED_BY"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/context-memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Decision",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://mygraph.local/schema#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/22",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Let soil moisture drive the drip valve directly."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:drip-irrigation-loop"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/drip-irrigation-loop"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/40",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Writing about systems clarifies them."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "topic:technical-writing"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/topic/technical-writing"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/topic/local-first",
+    "@type": [
+      "http://mygraph.local/schema#Topic"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "topic:local-first"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Software that keeps user data local unless the owner chooses otherwise."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Local-first software"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#ABOUT",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/provenance-first",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/provenance"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:provenance-first"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Every durable claim should point back to source evidence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Provenance first"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/79",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:publish-monthly"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:field-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/field-notes"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/reference/coggrag",
+    "@type": [
+      "http://mygraph.local/schema#Reference"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "medium"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "reference:coggrag"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A public reference about cognition-inspired graph retrieval."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "CogGRAG"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/decision/json-first",
+    "@type": [
+      "http://mygraph.local/schema#Decision"
+    ],
+    "http://mygraph.local/schema#ABOUT": [
+      {
+        "@id": "http://mygraph.local/question/storage-backend"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "decision:json-first"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Start with a simple JSON store before introducing a database."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Use JSON first"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/12",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Manual review is the bottleneck; when does ingest become automatic?"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "question:when-to-automate-ingest"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/question/when-to-automate-ingest"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/project/garden-sensors",
+    "@type": [
+      "http://mygraph.local/schema#Project"
+    ],
+    "http://mygraph.local/schema#INVOLVES": [
+      {
+        "@id": "http://mygraph.local/topic/embedded-systems"
+      },
+      {
+        "@id": "http://mygraph.local/topic/sensor-networks"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      },
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      },
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/automated-greenhouse"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "project:garden-sensors"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A fictional ESP32 sensor network for a backyard greenhouse."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "garden-sensors"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/drip-irrigation-loop",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/automated-greenhouse"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:drip-irrigation-loop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Close the loop: soil moisture readings drive the drip valve directly."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Drip irrigation loop"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/31",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The deep-sleep guide documents real-world power draw."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "reference:esp32-deep-sleep-guide"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/reference/esp32-deep-sleep-guide"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Topic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://mygraph.local/schema#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/86",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:sustainable-side-projects"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:boring-tech-default"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/sustainable-side-projects"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/boring-tech-default"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Reference",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://mygraph.local/schema#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/18",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The GraphRAG survey maps the retrieval landscape."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "reference:graphrag-survey"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/reference/graphrag-survey"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/low-power-mesh",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/sensor-networks"
+      }
+    ],
+    "http://mygraph.local/schema#SUPPORTED_BY": [
+      {
+        "@id": "http://mygraph.local/reference/esp32-deep-sleep-guide"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:low-power-mesh"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Deep-sleep ESP32 nodes could run a mesh for months on small batteries."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Low-power sensor mesh"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/7",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Only fictional data ships in public examples."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:public-demo-data-only"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/public-demo-data-only"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/69",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:sensor-networks"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "INVOLVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:garden-sensors"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/sensor-networks"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#INVOLVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/garden-sensors"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/16",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Track where every claim came from."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "topic:provenance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/topic/provenance"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/36",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Publish the knowledge graph as the artifact."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:show-the-graph"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/show-the-graph"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/83",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:technical-writing"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:weekly-shipping-log"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/technical-writing"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/weekly-shipping-log"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/source/hardware-retro",
+    "@type": [
+      "http://mygraph.local/schema#Source"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Fictional retrospective on the greenhouse sensor hardware."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "hardware-retro.md"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/81",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "idea:write-what-you-build"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "HAS_IDEA"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "person:demo-owner"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/idea/write-what-you-build"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#HAS_IDEA"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/person/demo-owner"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Concept",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/44",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Boring tech unless the project is the experiment."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:boring-tech-default"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/boring-tech-default"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/74",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "idea:low-power-mesh"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "CHALLENGES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "question:battery-life-winter"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/idea/low-power-mesh"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#CHALLENGES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/question/battery-life-winter"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/question/storage-backend",
+    "@type": [
+      "http://mygraph.local/schema#Question"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "question:storage-backend"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Open question: keep JSON until size or concurrency makes it awkward."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "When should storage move beyond JSON?"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/person/demo-owner",
+    "@type": [
+      "http://mygraph.local/schema#Person"
+    ],
+    "http://mygraph.local/schema#HAS_IDEA": [
+      {
+        "@id": "http://mygraph.local/idea/context-memory"
+      },
+      {
+        "@id": "http://mygraph.local/idea/provenance-first"
+      },
+      {
+        "@id": "http://mygraph.local/idea/drip-irrigation-loop"
+      },
+      {
+        "@id": "http://mygraph.local/idea/write-what-you-build"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "person:demo-owner"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A fictional graph owner used only for public examples."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Demo Owner"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/1",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Build a local-first toolkit for source-backed AI memory."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:knowledge-worker"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/knowledge-worker"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/54",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:trusted-ai-assistance"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:provenance-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/provenance-first"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/8",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Use a graph of concepts and relationships."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "topic:knowledge-graphs"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/85",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:knowledge-graphs"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:show-the-graph"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/show-the-graph"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/project/field-notes",
+    "@type": [
+      "http://mygraph.local/schema#Project"
+    ],
+    "http://mygraph.local/schema#INVOLVES": [
+      {
+        "@id": "http://mygraph.local/topic/technical-writing"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "project:field-notes"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A fictional monthly newsletter documenting the owner's builds."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "field-notes"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/32",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Field notes: a monthly build-log newsletter."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:field-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/field-notes"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/promotion-queue",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/provenance"
+      }
+    ],
+    "http://mygraph.local/schema#SUPPORTED_BY": [
+      {
+        "@id": "http://mygraph.local/reference/graphrag-survey"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:promotion-queue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "AI proposes candidate memories; a human review queue decides what is promoted."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Promotion queue"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/72",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "low"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:sensor-networks"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:low-power-mesh"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/sensor-networks"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/low-power-mesh"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/58",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:trusted-ai-assistance"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:scoped-exports"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/scoped-exports"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Project",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://mygraph.local/schema#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/68",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:embedded-systems"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "INVOLVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:garden-sensors"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/embedded-systems"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#INVOLVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/garden-sensors"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/50",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:trusted-ai-assistance"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:knowledge-worker"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/knowledge-worker"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/reference/esp32-deep-sleep-guide",
+    "@type": [
+      "http://mygraph.local/schema#Reference"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "reference:esp32-deep-sleep-guide"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A public guide to microcontroller deep-sleep power budgets."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ESP32 deep-sleep guide"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/15",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Candidates wait in a review queue until the owner promotes them."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:promotion-queue"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/promotion-queue"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/context-memory",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      }
+    ],
+    "http://mygraph.local/schema#SUPPORTED_BY": [
+      {
+        "@id": "http://mygraph.local/reference/coggrag"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:context-memory"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "AI sessions improve when durable context is stored as concepts instead of loose transcript chunks."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Context memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/decision/solar-power-budget",
+    "@type": [
+      "http://mygraph.local/schema#Decision"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/automated-greenhouse"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "medium"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "decision:solar-power-budget"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Plan the power budget around the worst month, not the average."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Size the solar panel to winter output"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/41",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The digital-garden essay argues for evolving notes."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "reference:digital-garden-essay"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/reference/digital-garden-essay"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/decision/markdown-sources",
+    "@type": [
+      "http://mygraph.local/schema#Decision"
+    ],
+    "http://mygraph.local/schema#ABOUT": [
+      {
+        "@id": "http://mygraph.local/topic/provenance"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "decision:markdown-sources"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Markdown keeps source notes diffable and human-reviewable."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Ingest Markdown sources only"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/question/audience-growth",
+    "@type": [
+      "http://mygraph.local/schema#Question"
+    ],
+    "http://mygraph.local/schema#CHALLENGES": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "question:audience-growth"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Open question: writing for zero readers may not stay motivating."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Does the newsletter need an audience?"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/37",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "A weekly log makes the monthly issue write itself."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:weekly-shipping-log"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/weekly-shipping-log"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/27",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Deep-sleep nodes might run for months on small cells."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:low-power-mesh"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/low-power-mesh"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/13",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Use JSON first; add a database only when needed."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:json-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/json-first"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#MENTIONED_IN",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/65",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:trusted-ai-assistance"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:public-demo-data-only"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/public-demo-data-only"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/38",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Monthly is sustainable; weekly was not."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:monthly-cadence"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/monthly-cadence"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/42",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Projects should end finished, not abandoned."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "goal:sustainable-side-projects"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/goal/sustainable-side-projects"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#CHALLENGES",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/39",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Plain text ships on time."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:plain-text-newsletter"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/plain-text-newsletter"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/reference/local-first-paper",
+    "@type": [
+      "http://mygraph.local/schema#Reference"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "reference:local-first-paper"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "The essay defining local-first software principles."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Local-first software paper"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/34",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "One issue a month, no heroics."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "goal:publish-monthly"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/source/architecture-note",
+    "@type": [
+      "http://mygraph.local/schema#Source"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Fictional architecture note for the public demo graph."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "architecture-note.md"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/90",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:publish-monthly"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "CHALLENGES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "question:audience-growth"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#CHALLENGES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/question/audience-growth"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/57",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:local-first"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:scoped-exports"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/local-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/scoped-exports"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/0",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The demo owner wants assistant memory that survives across sessions."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "person:demo-owner"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/person/demo-owner"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/goal/trusted-ai-assistance",
+    "@type": [
+      "http://mygraph.local/schema#Goal"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "goal:trusted-ai-assistance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Make assistant responses easier to verify and continue across sessions."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Trusted AI assistance"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/decision/monthly-cadence",
+    "@type": [
+      "http://mygraph.local/schema#Decision"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#SERVES": [
+      {
+        "@id": "http://mygraph.local/goal/publish-monthly"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "decision:monthly-cadence"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Monthly is slow enough to sustain and fast enough to matter."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Commit to a monthly cadence"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/topic/sensor-networks",
+    "@type": [
+      "http://mygraph.local/schema#Topic"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "topic:sensor-networks"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Many small devices reporting measurements over a shared protocol."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Sensor networks"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#SERVES",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/77",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:knowledge-graphs"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:sensor-data-as-memory"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/sensor-data-as-memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/24",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Size the panel for December, not for June."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:solar-power-budget"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/solar-power-budget"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Idea",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://mygraph.local/schema#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/78",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:sensor-networks"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "RELATES_TO"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:sensor-data-as-memory"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/sensor-networks"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#RELATES_TO"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/sensor-data-as-memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/64",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:provenance"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "ABOUT"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:markdown-sources"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/provenance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#ABOUT"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/markdown-sources"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/reference/graphrag-survey",
+    "@type": [
+      "http://mygraph.local/schema#Reference"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "medium"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "reference:graphrag-survey"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A survey of graph-based retrieval-augmented generation systems."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "GraphRAG survey"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#MADE_AT",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/33",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The greenhouse build is the first newsletter arc."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:garden-sensors"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/garden-sensors"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/topic/embedded-systems",
+    "@type": [
+      "http://mygraph.local/schema#Topic"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "topic:embedded-systems"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Small computers with hard power and memory constraints."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Embedded systems"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/47",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Is writing for zero readers sustainable?"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "question:audience-growth"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/question/audience-growth"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/51",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:knowledge-graphs"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "INVOLVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:knowledge-worker"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#INVOLVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/knowledge-worker"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/80",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "topic:technical-writing"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "INVOLVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:field-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/topic/technical-writing"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#INVOLVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/field-notes"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/84",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "low"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "reference:digital-garden-essay"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SUPPORTED_BY"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:show-the-graph"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/reference/digital-garden-essay"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SUPPORTED_BY"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/show-the-graph"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/49",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "idea:provenance-first"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "HAS_IDEA"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "person:demo-owner"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/idea/provenance-first"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#HAS_IDEA"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/person/demo-owner"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/sensor-data-as-memory",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      },
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      },
+      {
+        "@id": "http://mygraph.local/topic/sensor-networks"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:sensor-data-as-memory"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Sensor logs are provenance too: a reading is a source excerpt about the world."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Sensor data as memory"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/topic/provenance",
+    "@type": [
+      "http://mygraph.local/schema#Topic"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/architecture-note"
+      },
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "topic:provenance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Where a claim came from and whether it can be traced to evidence."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Provenance"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/43",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Writing pressure kept the sensor build honest."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:write-what-you-build"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/quarterly-review"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/write-what-you-build"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/28",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "The Pi drew too much power; ESP32 boards won."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:esp32-over-rpi"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/esp32-over-rpi"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/idea/show-the-graph",
+    "@type": [
+      "http://mygraph.local/schema#Idea"
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#RELATES_TO": [
+      {
+        "@id": "http://mygraph.local/topic/knowledge-graphs"
+      }
+    ],
+    "http://mygraph.local/schema#SUPPORTED_BY": [
+      {
+        "@id": "http://mygraph.local/reference/digital-garden-essay"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "idea:show-the-graph"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Publish the project knowledge graph itself as the newsletter artifact."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Show the graph"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/6",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Make assistant responses easier to verify and continue."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:demo-notes"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "goal:trusted-ai-assistance"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/demo-notes"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/goal/trusted-ai-assistance"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/61",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "medium"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-28T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "reference:graphrag-survey"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SUPPORTED_BY"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-06-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:architecture-note"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "idea:promotion-queue"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/reference/graphrag-survey"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SUPPORTED_BY"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/idea/promotion-queue"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/source/quarterly-review",
+    "@type": [
+      "http://mygraph.local/schema#Source"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Fictional quarterly review of all side projects."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "quarterly-review.md"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/schema#Person",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://mygraph.local/schema#Concept"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/20",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Garden sensors: a small ESP32 build for the greenhouse."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:greenhouse-journal"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "project:garden-sensors"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/greenhouse-journal"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/project/garden-sensors"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/decision/plain-text-newsletter",
+    "@type": [
+      "http://mygraph.local/schema#Decision"
+    ],
+    "http://mygraph.local/schema#ABOUT": [
+      {
+        "@id": "http://mygraph.local/topic/technical-writing"
+      }
+    ],
+    "http://mygraph.local/schema#MENTIONED_IN": [
+      {
+        "@id": "http://mygraph.local/source/newsletter-plan"
+      }
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#nodeId": [
+      {
+        "@value": "decision:plain-text-newsletter"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "No templates, no images: plain text ships on time."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Plain-text newsletter format"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/29",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-03-08T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "MENTIONED_IN"
+      }
+    ],
+    "http://mygraph.local/schema#excerpt": [
+      {
+        "@value": "Cold weather halves capacity; winter is the real test."
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-03-30T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:hardware-retro"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "question:battery-life-winter"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/source/hardware-retro"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#MENTIONED_IN"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/question/battery-life-winter"
+      }
+    ]
+  },
+  {
+    "@id": "http://mygraph.local/_assertion/89",
+    "@type": [
+      "http://mygraph.local/schema#Assertion"
+    ],
+    "http://mygraph.local/schema#confidence": [
+      {
+        "@value": "high"
+      }
+    ],
+    "http://mygraph.local/schema#createdAt": [
+      {
+        "@value": "2026-05-02T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#dstId": [
+      {
+        "@value": "goal:sustainable-side-projects"
+      }
+    ],
+    "http://mygraph.local/schema#edgeType": [
+      {
+        "@value": "SERVES"
+      }
+    ],
+    "http://mygraph.local/schema#lastSeen": [
+      {
+        "@value": "2026-05-12T10:00:00+00:00"
+      }
+    ],
+    "http://mygraph.local/schema#sourceId": [
+      {
+        "@value": "source:quarterly-review"
+      }
+    ],
+    "http://mygraph.local/schema#srcId": [
+      {
+        "@value": "decision:one-project-per-quarter"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#object": [
+      {
+        "@id": "http://mygraph.local/goal/sustainable-side-projects"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate": [
+      {
+        "@id": "http://mygraph.local/schema#SERVES"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject": [
+      {
+        "@id": "http://mygraph.local/decision/one-project-per-quarter"
+      }
+    ]
+  }
+]

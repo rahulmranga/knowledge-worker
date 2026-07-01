@@ -17,6 +17,10 @@ Use simple JSON until it becomes the limiting factor. Add SQL-backed storage onl
 when operational needs justify it, and keep the graph schema stable across
 storage backends.
 
+Use append-only JSONL for history and replay before introducing a database.
+Export JSON-LD/RDF for open-web interoperability without making the local source
+of truth depend on a hosted service.
+
 ## 4. Review Before Merge
 
 LLMs can propose structure, but deterministic validation and human review decide

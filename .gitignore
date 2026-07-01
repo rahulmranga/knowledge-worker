@@ -7,11 +7,13 @@ network_theory.md
 *:Zone.Identifier
 mygraph/mygraph.json
 mygraph/mygraph.ttl
+mygraph/mygraph.jsonld
 mygraph/mygraph_viz.html
 mygraph/analytics.json
 mygraph/memory_audit.html
 mygraph/private_*.html
 mygraph/private_*.ttl
+mygraph/private_*.jsonld
 analytics.json
 memory_audit.html
 

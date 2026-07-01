@@ -1,8 +1,8 @@
 """
-owl_io.py — Turtle (OWL) sibling serialization for the graph.
+owl_io.py — RDF sibling serializations for the graph.
 
-JSON stays canonical. mygraph.ttl is generated from JSON at any time and can be
-re-imported losslessly (round-trip on node + edge counts is a hard test).
+JSON stays canonical. RDF exports are generated from JSON at any time. Turtle
+can be re-imported losslessly (round-trip on node + edge counts is a hard test).
 
 Mapping follows the graph model in SPEC.md and the pipeline in DESIGN.md:
 
@@ -46,7 +46,7 @@ def _iri(rdflib, suffix: str):
     return rdflib.URIRef(NS + safe)
 
 
-def to_turtle(g: Graph) -> str:
+def to_rdflib_graph(g: Graph):
     rdflib = _require_rdflib()
     from rdflib import Graph as RG, Literal, RDF, RDFS, OWL, Namespace
     rg = RG()
@@ -106,7 +106,17 @@ def to_turtle(g: Graph) -> str:
         if e.excerpt:
             rg.add((a_iri, rb_ns.excerpt, Literal(e.excerpt)))
 
+    return rg
+
+
+def to_turtle(g: Graph) -> str:
+    rg = to_rdflib_graph(g)
     return rg.serialize(format="turtle")
+
+
+def to_jsonld(g: Graph) -> str:
+    rg = to_rdflib_graph(g)
+    return rg.serialize(format="json-ld", indent=2)
 
 
 def from_turtle(path: Path) -> Graph:
@@ -176,22 +186,29 @@ def round_trip_test(graph_path: Path | None = None) -> tuple[bool, str]:
 
 
 def run_export(args: list[str]) -> int:
-    if "--ttl" not in args:
-        print("Usage: mykg export --ttl [--graph <path>] [--out <path>] [--round-trip]")
+    if "--ttl" not in args and "--jsonld" not in args:
+        print("Usage: mykg export (--ttl | --jsonld) [--graph <path>] [--out <path>] [--round-trip]")
+        return 1
+    if "--ttl" in args and "--jsonld" in args:
+        print("Usage: choose one export format: --ttl or --jsonld")
         return 1
     graph_path = Path(resolve_graph_path())
     if "--graph" in args:
         i = args.index("--graph")
         graph_path = Path(args[i + 1]).expanduser().resolve()
-    out = graph_path.with_suffix(".ttl")
+    is_jsonld = "--jsonld" in args
+    out = graph_path.with_suffix(".jsonld" if is_jsonld else ".ttl")
     if "--out" in args:
         i = args.index("--out")
         out = Path(args[i + 1]).expanduser().resolve()
     g = Graph.load(str(graph_path))
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(to_turtle(g), encoding="utf-8")
+    out.write_text(to_jsonld(g) if is_jsonld else to_turtle(g), encoding="utf-8")
     print(f"export: wrote {out}")
     if "--round-trip" in args:
+        if is_jsonld:
+            print("round-trip: only --ttl supports round-trip import today")
+            return 1
         ok, msg = round_trip_test(graph_path)
         print(f"round-trip: {msg}")
         return 0 if ok else 2

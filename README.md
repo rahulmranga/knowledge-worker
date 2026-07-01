@@ -55,6 +55,10 @@ matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
 
 **Boring persistence.** Plain JSON until it becomes the limiting factor. The schema stays stable across storage backends.
 
+**Open-web exports.** Local JSON is the source of truth; JSONL records capture
+history, and RDF/JSON-LD exports let the graph participate in linked-data
+workflows without moving private memory into a hosted system.
+
 ## Quick Start
 
 Requirements: Python 3.10+ on macOS, Linux, or Windows.
@@ -66,11 +70,11 @@ extras pull in LLM backends and RDF export only when you need them:
 
 ```bash
 python -m pip install knowledge-worker               # core CLI, stdlib only (mykg / mygraph)
-python -m pip install "knowledge-worker[rdf]"        # + Turtle/RDF export (rdflib)
+python -m pip install "knowledge-worker[rdf]"        # + Turtle/JSON-LD RDF export (rdflib)
 python -m pip install "knowledge-worker[anthropic]"  # + Claude-backed ingest
 python -m pip install "knowledge-worker[openai]"     # + OpenAI-backed ingest
 python -m pip install "knowledge-worker[ollama]"     # + local Ollama ingest
-python -m pip install "knowledge-worker[all]"        # all ingest backends + RDF
+python -m pip install "knowledge-worker[all]"        # all ingest backends + RDF exports
 ```
 
 Verify the install (no clone needed — `seed` generates its own demo graph):
@@ -166,6 +170,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 | `deep-dive <file.md>` | Generate a pre-ingest workspace with artifacts and candidates |
 | `check --provenance` | Flag nodes with missing source citations |
 | `export --ttl` | Emit Turtle/RDF |
+| `export --jsonld` | Emit JSON-LD/RDF |
 | `context` | Print a compact LLM-ready context snapshot |
 | `viz` | Generate an offline single-file HTML viewer |
 | `audit` | Emit graph analytics, directed idea-flow queues, and optional Memory Audit HTML |
@@ -278,6 +283,16 @@ MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg context
 
 Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, state logs, and local env files are ignored by default.
 
+## Storage Direction
+
+In v0.8.0, `knowledge-worker` resolves the storage question this way: plain JSON
+remains the canonical local graph; JSONL is the append-only history layer for
+reviews, evals, analyzer runs, and future replay; RDF/Turtle and JSON-LD exports
+are the open-web bridge. Kuzu is a future optional local query backend, and
+graphify.net is a future publishing or interchange target.
+
+See [Storage Decision](docs/STORAGE_DECISION.md) for the full decision record.
+
 
 ## Memory Audit
 
@@ -345,7 +360,7 @@ See [ollama_proxy/README.md](ollama_proxy/README.md) for setup.
 
 ```text
 mygraph/          Core CLI and pipeline modules
-examples/         Fictional demo graph, TTL, and HTML viewer
+examples/         Fictional demo graph, RDF exports, and HTML viewer
 docs/             Roadmap and public assets
 ollama_proxy/     Adapter, MCP server, and proxy for local Ollama workflows
 tests/            CLI smoke tests

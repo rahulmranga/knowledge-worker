@@ -43,7 +43,7 @@ class CliSmokeTest(unittest.TestCase):
         result = run_mykg(
             "query",
             "provenance",
-            env={"MYGRAPH_PATH": str(ROOT / "examples" / "demo_graph.json")},
+            env={"MYGRAPH_PATH": str(ROOT / "examples" / "demo_graph.jsonld")},
         )
 
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -60,7 +60,7 @@ class CliSmokeTest(unittest.TestCase):
                 str(out),
                 "--html",
                 str(html),
-                env={"MYGRAPH_PATH": str(ROOT / "examples" / "demo_graph.json")},
+                env={"MYGRAPH_PATH": str(ROOT / "examples" / "demo_graph.jsonld")},
             )
 
             self.assertEqual(result.returncode, 0, result.stderr)
@@ -90,11 +90,15 @@ class CliSmokeTest(unittest.TestCase):
 
     def test_seed_summary_and_context_use_temp_graph(self):
         with tempfile.TemporaryDirectory() as tmp:
-            env = {"MYGRAPH_PATH": str(Path(tmp) / "demo.json")}
+            graph_path = Path(tmp) / "demo.jsonld"
+            env = {"MYGRAPH_PATH": str(graph_path)}
 
             seed = run_mykg("seed", env=env)
             self.assertEqual(seed.returncode, 0, seed.stderr)
             self.assertIn("Seeded.", seed.stdout)
+            data = json.loads(graph_path.read_text(encoding="utf-8"))
+            self.assertEqual(data["schema_version"], "knowledge-worker/jsonld/v1")
+            self.assertIn("@context", data)
 
             summary = run_mykg("summary", env=env)
             self.assertEqual(summary.returncode, 0, summary.stderr)

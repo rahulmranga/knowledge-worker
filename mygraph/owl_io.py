@@ -1,8 +1,9 @@
 """
-owl_io.py — RDF sibling serializations for the graph.
+owl_io.py — JSON-LD storage export and RDF sibling serialization for the graph.
 
-JSON stays canonical. RDF exports are generated from JSON at any time. Turtle
-can be re-imported losslessly (round-trip on node + edge counts is a hard test).
+JSON-LD stays canonical. Turtle/RDF exports are generated from JSON-LD storage
+at any time. Turtle can be re-imported losslessly (round-trip on node + edge
+counts is a hard test).
 
 Mapping follows the graph model in SPEC.md and the pipeline in DESIGN.md:
 
@@ -115,8 +116,8 @@ def to_turtle(g: Graph) -> str:
 
 
 def to_jsonld(g: Graph) -> str:
-    rg = to_rdflib_graph(g)
-    return rg.serialize(format="json-ld", indent=2)
+    import json
+    return json.dumps(g.to_jsonld_data(), indent=2, sort_keys=True)
 
 
 def from_turtle(path: Path) -> Graph:
@@ -187,8 +188,7 @@ def round_trip_test(graph_path: Path | None = None) -> tuple[bool, str]:
 
 def run_export(args: list[str]) -> int:
     if "--ttl" not in args and "--jsonld" not in args:
-        print("Usage: mykg export (--ttl | --jsonld) [--graph <path>] [--out <path>] [--round-trip]")
-        return 1
+        args = ["--jsonld", *args]
     if "--ttl" in args and "--jsonld" in args:
         print("Usage: choose one export format: --ttl or --jsonld")
         return 1

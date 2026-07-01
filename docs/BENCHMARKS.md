@@ -1,7 +1,7 @@
 # Benchmarks
 
 `knowledge-worker` benchmarks are public-demo-safe checks that run entirely
-against `examples/demo_graph.json`. They do not need an API key, private graph,
+against `examples/demo_graph.jsonld`. They do not need an API key, private graph,
 network access, or generated artifact committed to the repo.
 
 Run the benchmark suite:
@@ -35,7 +35,7 @@ python3 -m unittest tests/test_cli_smoke.py tests/test_benchmarks.py
 ### B1: Provenance Check
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 -m mygraph.mygraph check --provenance
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 -m mygraph.mygraph check --provenance
 ```
 
 Pass criteria:
@@ -46,7 +46,7 @@ Pass criteria:
 ### B2: Audit Coverage
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 -m mygraph.mygraph audit --out /tmp/knowledge-worker-audit.json
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 -m mygraph.mygraph audit --out /tmp/knowledge-worker-audit.json
 ```
 
 Pass criteria:
@@ -58,7 +58,7 @@ Pass criteria:
 ### B3: Query Recall With Excerpts
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 -m mygraph.mygraph query provenance
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 -m mygraph.mygraph query provenance
 ```
 
 Pass criteria:
@@ -69,7 +69,7 @@ Pass criteria:
 ### B4: Path Finding
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 -m mygraph.mygraph path person:demo-owner goal:trusted-ai-assistance
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 -m mygraph.mygraph path person:demo-owner goal:trusted-ai-assistance
 ```
 
 Pass criteria:
@@ -81,7 +81,7 @@ Pass criteria:
 ### B5: Weak-Claim Queue
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 -m mygraph.mygraph audit --out /tmp/knowledge-worker-audit.json
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 -m mygraph.mygraph audit --out /tmp/knowledge-worker-audit.json
 ```
 
 Pass criteria:
@@ -93,7 +93,7 @@ Pass criteria:
 ### B6: Directed Audit Shape
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 -m mygraph.mygraph audit --out /tmp/knowledge-worker-audit.json
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 -m mygraph.mygraph audit --out /tmp/knowledge-worker-audit.json
 ```
 
 Pass criteria:
@@ -109,7 +109,7 @@ the minimal fixture rather than forcing synthetic graph data.
 ### B7: Context Compactness
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 -m mygraph.mygraph context --max-ideas 5
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 -m mygraph.mygraph context --max-ideas 5
 ```
 
 Pass criteria:
@@ -126,13 +126,14 @@ Pass criteria:
 - every demo node type is listed in `SPEC.md`
 - every demo edge type is listed in `SPEC.md`
 - demo graph strings do not contain emails or absolute home-directory paths
-- `mygraph/mygraph.json` remains ignored and untracked; developers may still
+- `mygraph/mygraph.jsonld` and legacy `mygraph/mygraph.json` remain ignored and
+  untracked; developers may still
   have a local ignored private graph at that path
 
 ### B9: Negative Query
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 -m mygraph.mygraph query unlikely-absent-benchmark-token
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 -m mygraph.mygraph query unlikely-absent-benchmark-token
 ```
 
 Pass criteria:

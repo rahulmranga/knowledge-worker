@@ -8,21 +8,22 @@ external input, not as repo content.
 Use the CLI instead of grepping graph JSON:
 
 ```bash
-MYGRAPH_PATH=/absolute/path/to/private/mygraph.json python3 mygraph/mygraph.py query "<term>"
-MYGRAPH_PATH=/absolute/path/to/private/mygraph.json python3 mygraph/mygraph.py summary
-MYGRAPH_PATH=/absolute/path/to/private/mygraph.json python3 mygraph/mygraph.py path "<node_id>" "<node_id>"
+MYGRAPH_PATH=/absolute/path/to/private/mygraph.jsonld python3 mygraph/mygraph.py query "<term>"
+MYGRAPH_PATH=/absolute/path/to/private/mygraph.jsonld python3 mygraph/mygraph.py summary
+MYGRAPH_PATH=/absolute/path/to/private/mygraph.jsonld python3 mygraph/mygraph.py path "<node_id>" "<node_id>"
 ```
 
 For the public demo:
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py query "provenance"
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 mygraph/mygraph.py query "provenance"
 ```
 
 ## Safety Rules
 
-1. Do not commit raw exports, private graph JSON, private TTL, generated private
-   viewers, eval logs, state logs, or `.env` files.
+1. Do not commit raw exports, private graph JSON-LD, legacy private graph JSON,
+   private TTL, generated private viewers, eval logs, state logs, or `.env`
+   files.
 2. Prefer `MYGRAPH_PATH` or `--graph` for private graph work.
 3. When answering from a private graph, cite node IDs and provenance excerpts
    returned by the CLI.

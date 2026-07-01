@@ -9,8 +9,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEMO_GRAPH = ROOT / "examples" / "demo_graph.json"
-DEMO_JSONLD = ROOT / "examples" / "demo_graph.jsonld"
+DEMO_GRAPH = ROOT / "examples" / "demo_graph.jsonld"
+DEMO_JSONLD = DEMO_GRAPH
 
 
 def run_mykg(*args, env=None):
@@ -108,19 +108,28 @@ class CliRegressionTest(unittest.TestCase):
 
             result = run_mykg("export", "--jsonld", "--out", str(out))
 
-            if importlib.util.find_spec("rdflib") is None:
-                self.assertEqual(result.returncode, 1)
-                self.assertIn("rdflib", result.stderr + result.stdout)
-                self.assertFalse(out.exists())
-            else:
-                self.assertEqual(result.returncode, 0, result.stderr)
-                self.assertTrue(out.exists())
-                data = json.loads(out.read_text(encoding="utf-8"))
-                self.assertTrue(isinstance(data, list) or "@graph" in data)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue(out.exists())
+            data = json.loads(out.read_text(encoding="utf-8"))
+            self.assertEqual(data["schema_version"], "knowledge-worker/jsonld/v1")
+            self.assertIn("@context", data)
+            self.assertIn("nodes", data)
+            self.assertIn("edges", data)
+
+    def test_export_defaults_to_jsonld(self):
+        with tempfile.TemporaryDirectory() as tmp_raw:
+            out = Path(tmp_raw) / "demo-default.jsonld"
+
+            result = run_mykg("export", "--out", str(out))
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            data = json.loads(out.read_text(encoding="utf-8"))
+            self.assertEqual(data["schema_version"], "knowledge-worker/jsonld/v1")
 
     def test_committed_demo_jsonld_is_valid_json(self):
         data = json.loads(DEMO_JSONLD.read_text(encoding="utf-8"))
-        self.assertTrue(isinstance(data, list) or "@graph" in data)
+        self.assertEqual(data["schema_version"], "knowledge-worker/jsonld/v1")
+        self.assertIn("@context", data)
 
     def test_context_out_writes_file_without_stdout_dump(self):
         with tempfile.TemporaryDirectory() as tmp_raw:

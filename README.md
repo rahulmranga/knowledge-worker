@@ -53,10 +53,10 @@ matrix and [Benchmarks](docs/BENCHMARKS.md) for the offline demo-graph checks.
 
 **Review before merge.** The LLM proposes. You decide. Deterministic validation runs before anything enters the graph.
 
-**Boring persistence.** Plain JSON until it becomes the limiting factor. The schema stays stable across storage backends.
+**Boring persistence.** Compact JSON-LD until it becomes the limiting factor. The schema stays stable across storage backends.
 
-**Open-web exports.** Local JSON is the source of truth; JSONL records capture
-history, and RDF/JSON-LD exports let the graph participate in linked-data
+**Open-web storage.** Local JSON-LD is the source of truth; JSONL records
+capture history, and Turtle/RDF exports let the graph participate in linked-data
 workflows without moving private memory into a hosted system.
 
 ## Quick Start
@@ -70,7 +70,7 @@ extras pull in LLM backends and RDF export only when you need them:
 
 ```bash
 python -m pip install knowledge-worker               # core CLI, stdlib only (mykg / mygraph)
-python -m pip install "knowledge-worker[rdf]"        # + Turtle/JSON-LD RDF export (rdflib)
+python -m pip install "knowledge-worker[rdf]"        # + Turtle/RDF export (rdflib)
 python -m pip install "knowledge-worker[anthropic]"  # + Claude-backed ingest
 python -m pip install "knowledge-worker[openai]"     # + OpenAI-backed ingest
 python -m pip install "knowledge-worker[ollama]"     # + local Ollama ingest
@@ -81,8 +81,8 @@ Verify the install (no clone needed — `seed` generates its own demo graph):
 
 ```bash
 mykg --help
-MYGRAPH_PATH=/tmp/knowledge-worker-demo.json mykg seed
-MYGRAPH_PATH=/tmp/knowledge-worker-demo.json mykg summary
+MYGRAPH_PATH=/tmp/knowledge-worker-demo.jsonld mykg seed
+MYGRAPH_PATH=/tmp/knowledge-worker-demo.jsonld mykg summary
 ```
 
 Using a virtual environment avoids Homebrew/system Python's externally-managed
@@ -104,17 +104,17 @@ git clone https://github.com/rahulmranga/knowledge-worker
 cd knowledge-worker
 
 # Run the public demo graph, no API key needed
-MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py summary
-MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py query "provenance"
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 mygraph/mygraph.py summary
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 mygraph/mygraph.py query "provenance"
 
 # Generate an LLM-ready context snapshot
-MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py context
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 mygraph/mygraph.py context
 
 # Audit memory structure and proof coverage
-MYGRAPH_PATH=examples/demo_graph.json python3 mygraph/mygraph.py audit --out /tmp/analytics.json --html /tmp/memory_audit.html
+MYGRAPH_PATH=examples/demo_graph.jsonld python3 mygraph/mygraph.py audit --out /tmp/analytics.json --html /tmp/memory_audit.html
 
 # Visualize the graph as a self-contained HTML file
-python3 mygraph/mygraph.py viz --graph examples/demo_graph.json --out /tmp/demo.html
+python3 mygraph/mygraph.py viz --graph examples/demo_graph.jsonld --out /tmp/demo.html
 ```
 
 For the shorter `mykg` command from a clone, install it editable inside a
@@ -124,7 +124,7 @@ virtual environment:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
-MYGRAPH_PATH=examples/demo_graph.json mykg query provenance
+MYGRAPH_PATH=examples/demo_graph.jsonld mykg query provenance
 ```
 
 On Windows PowerShell:
@@ -134,7 +134,7 @@ py -3 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install knowledge-worker
 
-$env:MYGRAPH_PATH = "$env:TEMP\knowledge-worker-demo.json"
+$env:MYGRAPH_PATH = "$env:TEMP\knowledge-worker-demo.jsonld"
 mykg seed
 mykg summary
 ```
@@ -144,7 +144,7 @@ From a clone, install editable instead:
 ```powershell
 python -m pip install -e .
 
-$env:MYGRAPH_PATH = "examples\demo_graph.json"
+$env:MYGRAPH_PATH = "examples\demo_graph.jsonld"
 mykg query provenance
 mykg audit --out "$env:TEMP\analytics.json" --html "$env:TEMP\memory_audit.html"
 ```
@@ -169,8 +169,8 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 | `ingest <file.md>` | Extract, validate, review, merge, and eval candidates |
 | `deep-dive <file.md>` | Generate a pre-ingest workspace with artifacts and candidates |
 | `check --provenance` | Flag nodes with missing source citations |
+| `export` / `export --jsonld` | Emit canonical JSON-LD |
 | `export --ttl` | Emit Turtle/RDF |
-| `export --jsonld` | Emit JSON-LD/RDF |
 | `context` | Print a compact LLM-ready context snapshot |
 | `viz` | Generate an offline single-file HTML viewer |
 | `audit` | Emit graph analytics, directed idea-flow queues, and optional Memory Audit HTML |
@@ -276,20 +276,22 @@ mykg ingest path/to/your/notes.md --backend openai --model gpt-5.2
 The public repo ships code, docs, and a fictional demo graph. Your real graph should live outside the repo or in the ignored default path, then be loaded explicitly:
 
 ```bash
-MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg summary
-MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg query "architecture"
-MYGRAPH_PATH=~/my-private-graph/mygraph.json mykg context
+MYGRAPH_PATH=~/my-private-graph/mygraph.jsonld mykg summary
+MYGRAPH_PATH=~/my-private-graph/mygraph.jsonld mykg query "architecture"
+MYGRAPH_PATH=~/my-private-graph/mygraph.jsonld mykg context
 ```
 
-Your private `mygraph.json`, generated private viewers, TTL exports, eval logs, state logs, and local env files are ignored by default.
+Your private `mygraph.jsonld`, legacy `mygraph.json`, generated private
+viewers, TTL/JSON-LD exports, eval logs, state logs, and local env files are
+ignored by default.
 
 ## Storage Direction
 
-In v0.8.0, `knowledge-worker` resolves the storage question this way: plain JSON
-remains the canonical local graph; JSONL is the append-only history layer for
-reviews, evals, analyzer runs, and future replay; RDF/Turtle and JSON-LD exports
-are the open-web bridge. Kuzu is a future optional local query backend, and
-graphify.net is a future publishing or interchange target.
+In v0.8.0, `knowledge-worker` resolves the storage question this way: JSON-LD is
+the canonical local graph; JSONL is the append-only history layer for reviews,
+evals, analyzer runs, and future replay; Turtle/RDF export is the semantic-web
+bridge. Kuzu is a future optional local query backend, and graphify.net is a
+future publishing or interchange target.
 
 See [Storage Decision](docs/STORAGE_DECISION.md) for the full decision record.
 
@@ -305,7 +307,7 @@ for ideas that branch outward, and a `weak_claim_queue` that asks for human
 review actions instead of auto-promoting conclusions.
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json mykg audit \
+MYGRAPH_PATH=examples/demo_graph.jsonld mykg audit \
   --out /tmp/analytics.json \
   --html /tmp/memory_audit.html
 ```
@@ -336,7 +338,7 @@ proposal:
   goal contributions that inherit a challenge to the goal (`TENSION_WITH`).
 
 ```bash
-MYGRAPH_PATH=examples/demo_graph.json mykg discover \
+MYGRAPH_PATH=examples/demo_graph.jsonld mykg discover \
   --out /tmp/discovery.json \
   --candidates /tmp/discovery.candidates.json
 ```

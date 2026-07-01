@@ -13,12 +13,12 @@ sanitized examples.
 
 ## 3. Boring Persistence
 
-Use simple JSON until it becomes the limiting factor. Add SQL-backed storage only
-when operational needs justify it, and keep the graph schema stable across
+Use compact JSON-LD until it becomes the limiting factor. Add SQL-backed storage
+only when operational needs justify it, and keep the graph schema stable across
 storage backends.
 
-Use append-only JSONL for history and replay before introducing a database.
-Export JSON-LD/RDF for open-web interoperability without making the local source
+Use append-only JSONL for history and replay before introducing a database. Use
+Turtle/RDF export for open-web interoperability without making the local source
 of truth depend on a hosted service.
 
 ## 4. Review Before Merge

@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEMO_GRAPH = ROOT / "examples" / "demo_graph.json"
+DEMO_GRAPH = ROOT / "examples" / "demo_graph.jsonld"
 
 PUBLIC_NODE_TYPES = {
     "person",
@@ -180,10 +180,11 @@ class BenchmarkTest(unittest.TestCase):
 
         gitignore = (ROOT / ".gitignore").read_text()
         self.assertIn("mygraph/mygraph.json", gitignore)
+        self.assertIn("mygraph/mygraph.jsonld", gitignore)
 
         if (ROOT / ".git").exists():
             tracked = subprocess.run(
-                ["git", "ls-files", "mygraph/mygraph.json"],
+                ["git", "ls-files", "mygraph/mygraph.jsonld", "mygraph/mygraph.json"],
                 cwd=ROOT,
                 text=True,
                 capture_output=True,

@@ -9,7 +9,7 @@
   important concepts, bridge ideas, weak claims, proof trail, and legwork
   queues.
 - Publish `docs/COMPETITIVE_ANALYSIS.md` and `docs/BENCHMARKS.md`.
-- Add offline benchmark tests over `examples/demo_graph.json`.
+- Add offline benchmark tests over `examples/demo_graph.jsonld`.
 
 ## v0.4: Discovery Layer (shipped)
 
@@ -42,10 +42,10 @@
 
 ## v0.8: Open-Web Storage Contract
 
-- Keep JSON as the canonical local graph store.
+- Keep JSON-LD as the canonical local graph store.
 - Use JSONL for append-only review/eval/event history.
-- Ship JSON-LD export as the JSON-native RDF/open-web bridge alongside
-  Turtle/RDF export.
+- Keep legacy JSON graph files readable for migration.
+- Ship Turtle/RDF export as the semantic-web sibling to JSON-LD storage.
 - Document Kuzu as a future optional read/query backend and graphify.net as a
   future publishing or interchange target, not as v0.8.0 storage dependencies.
 - Keep the core graph CLI stdlib-only except for optional RDF export extras.
@@ -71,9 +71,9 @@
 
 ## v2: Storage Evolution
 
-- Move from JSON-only persistence to optional database-backed read models only
+- Move from JSON-LD persistence to optional database-backed read models only
   when graph size, query ergonomics, or concurrency makes JSON awkward.
 - Prefer adapters that preserve the public node/edge schema, CLI behavior,
   provenance invariants, and local-first/private-by-default workflow.
-- Explore Kuzu for local graph analytics after JSON, JSONL, and JSON-LD/RDF
+- Explore Kuzu for local graph analytics after JSON-LD, JSONL, and Turtle/RDF
   contracts are stable.

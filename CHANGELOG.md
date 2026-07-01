@@ -2,12 +2,12 @@
 
 ## 0.8.0
 
-- Accepted the v0.8.0 storage direction: JSON remains canonical, JSONL becomes
-  the append-only history layer, JSON-LD/RDF are the open-web interchange path,
+- Accepted the v0.8.0 storage direction: JSON-LD becomes canonical, JSONL
+  remains the append-only history layer, Turtle/RDF is the interchange path,
   Kuzu is deferred as an optional future read/query backend, and graphify.net is
   treated as a future publishing/interchange target.
-- Added `mykg export --jsonld` as a JSON-LD/RDF sibling to the existing
-  Turtle/RDF export.
+- Made `mykg export` default to canonical JSON-LD and kept `mykg export
+  --jsonld` as the explicit form.
 - Updated the public roadmap, specification, design notes, principles, and
   README to make the open-web storage contract explicit.
 

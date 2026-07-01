@@ -8,7 +8,7 @@ from mygraph.discover import build_discovery, extract_candidates
 from mygraph.mygraph import Graph
 
 ROOT = Path(__file__).resolve().parent.parent
-DEMO_GRAPH = ROOT / "examples" / "demo_graph.json"
+DEMO_GRAPH = ROOT / "examples" / "demo_graph.jsonld"
 
 
 class DiscoverDemoGraphTest(unittest.TestCase):

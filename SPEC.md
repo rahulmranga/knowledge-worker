@@ -33,16 +33,16 @@ Edge types:
 - Every edge has a `source_id`.
 - High-confidence claims must have literal excerpts where available.
 - Private graph data is loaded by path, not committed.
-- JSON is canonical; JSONL history, Turtle/RDF, JSON-LD, and HTML are generated
-  or derived artifacts.
+- JSON-LD is canonical storage; legacy JSON graph files remain readable.
+- JSONL history, Turtle/RDF, and HTML are generated or derived artifacts.
 
 ## Storage
 
-The default graph path is `mygraph/mygraph.json`, which is ignored by git.
+The default graph path is `mygraph/mygraph.jsonld`, which is ignored by git.
 Override it with:
 
 ```bash
-MYGRAPH_PATH=/absolute/path/to/mygraph.json python3 mygraph/mygraph.py summary
+MYGRAPH_PATH=/absolute/path/to/mygraph.jsonld python3 mygraph/mygraph.py summary
 ```
 
 This keeps public demo data and private graph data cleanly separated.
@@ -51,10 +51,10 @@ The storage contract is intentionally layered:
 
 | Format | Purpose |
 |---|---|
-| JSON | Canonical graph store for nodes and edges. |
+| JSON-LD | Canonical graph store for nodes, edges, context, and schema version. |
 | JSONL | Append-only records for reviews, evals, analyzer runs, and future replay. |
 | Turtle/RDF | Generated semantic-web export. |
-| JSON-LD | Open-web export using the same graph schema and provenance model. |
+| JSON | Legacy graph format that remains readable for migration. |
 
 Database-backed graph engines are adapters, not canonical storage. Kuzu is a
 candidate for a future optional read/query backend when local graph size or
@@ -74,19 +74,21 @@ python3 mygraph/mygraph.py dump
 python3 mygraph/mygraph.py reset
 python3 mygraph/mygraph.py ingest <file.md>
 python3 mygraph/mygraph.py check --provenance
-python3 mygraph/mygraph.py export --ttl --out <file.ttl>
+python3 mygraph/mygraph.py export --out <file.jsonld>
 python3 mygraph/mygraph.py export --jsonld --out <file.jsonld>
+python3 mygraph/mygraph.py export --ttl --out <file.ttl>
 python3 mygraph/mygraph.py context --out <file.md>
-python3 mygraph/mygraph.py viz --graph <file.json> --out <file.html> --no-open
-python3 mygraph/mygraph.py audit --graph <file.json> --out <analytics.json>
-python3 mygraph/mygraph.py discover --graph <file.json> --out <discovery.json> --candidates <candidates.json>
+python3 mygraph/mygraph.py viz --graph <file.jsonld> --out <file.html> --no-open
+python3 mygraph/mygraph.py audit --graph <file.jsonld> --out <analytics.json>
+python3 mygraph/mygraph.py discover --graph <file.jsonld> --out <discovery.json> --candidates <candidates.json>
 ```
 
 ## Public Demo
 
-The repository includes a fictional graph in `examples/demo_graph.json`. It
-exercises provenance, decisions, goals, references, and questions without
-exposing private source material.
+The repository includes a fictional canonical graph in
+`examples/demo_graph.jsonld`. It exercises provenance, decisions, goals,
+references, and questions without exposing private source material. The legacy
+`examples/demo_graph.json` fixture remains readable for migration coverage.
 
 ## Safety Boundary
 

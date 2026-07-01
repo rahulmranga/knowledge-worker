@@ -13,15 +13,15 @@ Usage:
 
     mykg ingest <path/to/file.md>                         # v1 M1: 5-stage extractor pipeline
     mykg check [--provenance|--stale-edges|--pairs N|--source-candidates DIR]
+    mykg export --jsonld                                  # emit canonical JSON-LD
     mykg export --ttl                                     # emit Turtle/RDF
-    mykg export --jsonld                                  # emit JSON-LD/RDF
     mykg context                                          # LLM-ready context snapshot
     mykg viz                                              # v1 M4: write offline HTML viewer
     mykg audit                                            # memory audit analytics + optional HTML
     mykg discover                                         # derived-edge proposals + second-order analytics
     mykg deep-dive <source.md> --out-dir <dir>            # pre-ingest reasoning workspace
 
-Graph file: ./mygraph.json by default, or MYGRAPH_PATH=/absolute/path.json.
+Graph file: ./mygraph.jsonld by default, or MYGRAPH_PATH=/absolute/path.jsonld.
 """
 
 from __future__ import annotations
@@ -35,7 +35,24 @@ from datetime import datetime, timezone
 from typing import Any, Optional
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_GRAPH_PATH = os.path.join(HERE, "mygraph.json")
+DEFAULT_GRAPH_PATH = os.path.join(HERE, "mygraph.jsonld")
+JSONLD_CONTEXT = {
+    "@vocab": "https://rahulmranga.github.io/knowledge-worker/schema#",
+    "kw": "https://rahulmranga.github.io/knowledge-worker/schema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "id": "@id",
+    "graphId": "@id",
+    "graphType": "@type",
+    "nodeType": "kw:nodeType",
+    "edgeType": "kw:edgeType",
+    "source_id": {"@id": "kw:sourceId"},
+    "src": {"@id": "kw:source"},
+    "dst": {"@id": "kw:target"},
+    "created_at": {"@id": "dcterms:created"},
+    "last_seen": {"@id": "kw:lastSeen"},
+    "nodes": {"@id": "kw:nodes", "@container": "@index"},
+    "edges": {"@id": "kw:edges", "@container": "@list"},
+}
 
 
 def resolve_graph_path(path: Optional[str] = None) -> str:
@@ -100,6 +117,11 @@ class Graph:
             return cls()
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
+        if "@context" in data and data.get("graphType") not in {None, "KnowledgeGraph", "kw:KnowledgeGraph"}:
+            raise ValueError(
+                "Unsupported JSON-LD graph document. Use the compact "
+                "knowledge-worker storage shape with nodes and edges."
+            )
         # forward-compat: drop unknown fields, default missing optional fields
         node_fields = {f.name for f in Node.__dataclass_fields__.values()}
         edge_fields = {f.name for f in Edge.__dataclass_fields__.values()}
@@ -116,12 +138,19 @@ class Graph:
             edges.append(Edge(**kw))
         return cls(nodes=nodes, edges=edges)
 
-    def save(self, path: Optional[str] = None) -> None:
-        path = resolve_graph_path(path)
-        data = {
+    def to_jsonld_data(self) -> dict[str, Any]:
+        return {
+            "@context": JSONLD_CONTEXT,
+            "graphId": "kw:graph",
+            "graphType": "KnowledgeGraph",
+            "schema_version": "knowledge-worker/jsonld/v1",
             "nodes": {nid: asdict(n) for nid, n in self.nodes.items()},
             "edges": [asdict(e) for e in self.edges],
         }
+
+    def save(self, path: Optional[str] = None) -> None:
+        path = resolve_graph_path(path)
+        data = self.to_jsonld_data()
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, sort_keys=True)
@@ -657,7 +686,7 @@ Usage:
                                 [--backend claude|openai|ollama] [--model <name>]
   mykg check [--provenance] [--stale-edges] [--pairs N]
              [--source-candidates <dir>]
-  mykg export (--ttl | --jsonld) [--out <path>]
+  mykg export [--jsonld | --ttl] [--out <path>]
   mykg context [--out <path>] [--max-ideas N]
   mykg viz [--graph <path>] [--out <path>] [--no-open]
   mykg audit [--graph <path>] [--out analytics.json] [--html memory_audit.html]

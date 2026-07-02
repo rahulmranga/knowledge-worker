@@ -1,3 +1,14 @@
+> Part of a provenance-preserving knowledge infrastructure — attribution survives compression, retrieval, and reuse. You are here: **knowledge-worker — durable memory layer**. See also:
+> - [knowledge-worker](https://github.com/rahulmranga/knowledge-worker) — durable memory layer
+> - [headroom](https://github.com/headroomlabs-ai/headroom) — provenance-safe compression
+> - [AG-UI protocol](https://protocol.vaked.dev) — interop layer
+> - [kompress](https://kompress.vaked.dev) — the research case
+> - [longrun-eval-kompress](https://github.com/peterlodri-sec/longrun-eval-kompress) — eval harness, with Peter Lodri
+>
+> Full picture: [rahul-rangarao.dev](https://rahul-rangarao.dev)
+
+---
+
 # knowledge-worker
 
 [![PyPI](https://img.shields.io/pypi/v/knowledge-worker.svg)](https://pypi.org/project/knowledge-worker/)

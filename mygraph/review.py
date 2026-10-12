@@ -92,6 +92,7 @@ def review(validated: dict, source_text: str,
     """
     Returns the user-approved subset of `validated` (same shape).
     Edges whose endpoints aren't approved get filtered after node decisions.
+    In auto-accept-high mode, edges must also retain high confidence.
     """
     g = Graph.load()
     src = validated["source"]
@@ -141,6 +142,8 @@ def review(validated: dict, source_text: str,
     approved_node_ids = {n["id"] for n in approved_nodes} | set(g.nodes.keys()) | {src["id"]}
     approved_edges: list[dict] = []
     for edge in validated.get("edges", []):
+        if auto_accept_high and not auto_accept_all and edge.get("confidence") != "high":
+            continue
         if edge["src"] in approved_node_ids and edge["dst"] in approved_node_ids:
             approved_edges.append(edge)
 

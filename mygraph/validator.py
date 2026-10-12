@@ -36,13 +36,14 @@ class Manifest:
     accepted_nodes: list[dict] = field(default_factory=list)
     accepted_edges: list[dict] = field(default_factory=list)
     demoted_nodes: list[tuple[dict, str]] = field(default_factory=list)
+    demoted_edges: list[tuple[dict, str]] = field(default_factory=list)
     rejected_nodes: list[tuple[dict, str]] = field(default_factory=list)
     rejected_edges: list[tuple[dict, str]] = field(default_factory=list)
 
     def summary(self) -> str:
         return (
             f"  accepted : {len(self.accepted_nodes)} nodes / {len(self.accepted_edges)} edges\n"
-            f"  demoted  : {len(self.demoted_nodes)} nodes\n"
+            f"  demoted  : {len(self.demoted_nodes)} nodes / {len(self.demoted_edges)} edges\n"
             f"  rejected : {len(self.rejected_nodes)} nodes / {len(self.rejected_edges)} edges"
         )
 
@@ -123,6 +124,15 @@ def validate(payload: dict, source_text: str) -> tuple[dict, Manifest]:
                 manifest.rejected_edges.append((edge, f"orphan_{endpoint_key}:{ep}"))
                 break
         else:
+            # Relationships need source evidence even when both endpoints exist.
+            excerpt = (edge.get("excerpt") or "").strip()
+            if edge["confidence"] == "high":
+                if not excerpt:
+                    edge["confidence"] = "low"
+                    manifest.demoted_edges.append((edge, "no_excerpt"))
+                elif _norm(excerpt) not in src_norm:
+                    edge["confidence"] = "low"
+                    manifest.demoted_edges.append((edge, "excerpt_not_in_source"))
             valid_edges.append(edge)
             manifest.accepted_edges.append(edge)
 

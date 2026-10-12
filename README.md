@@ -98,6 +98,13 @@ Candidates are proposals, not memory. Validation checks schema, IDs,
 provenance excerpts, and edge endpoints. Review is the promotion gate. The
 active graph changes only after accepted candidates are merged.
 
+High-confidence nodes and edges require a source excerpt that matches after
+whitespace and case normalization. Missing or unmatched excerpts demote the
+candidate to low confidence. `--auto-accept-high` (also the default for
+`--non-interactive`) excludes these edges even when their endpoints already
+exist in the graph. `--auto-accept-all` explicitly accepts lower-confidence
+candidates as well; validation reports and eval logs retain edge demotion reasons.
+
 The product contract is:
 
 > The model proposes. Artifacts expose reasoning. Provenance verifies. Human review promotes.

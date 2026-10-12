@@ -127,9 +127,13 @@ def run_ingest(args: list[str]) -> int:
                  "n_accepted_nodes": len(manifest.accepted_nodes),
                  "n_accepted_edges": len(manifest.accepted_edges),
                  "n_demoted_nodes": len(manifest.demoted_nodes),
+                 "n_demoted_edges": len(manifest.demoted_edges),
                  "n_rejected_nodes": len(manifest.rejected_nodes),
                  "n_rejected_edges": len(manifest.rejected_edges),
                  "demotions": [{"id": n["id"], "reason": r} for n, r in manifest.demoted_nodes],
+                 "demotions_e": [{"src": e["src"], "dst": e["dst"],
+                                  "type": e["type"], "reason": r}
+                                 for e, r in manifest.demoted_edges],
                  "rejections_n": [{"id": n.get("id", "?"), "reason": r} for n, r in manifest.rejected_nodes],
                  "rejections_e": [{"src": e.get("src", "?"), "dst": e.get("dst", "?"),
                                    "type": e.get("type", "?"), "reason": r}

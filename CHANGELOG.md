@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.4
+
+- Removed the author name and email from the package metadata.
+
 ## 0.8.3
 
 - Rewrote the PyPI description and expanded the keyword list so the project is

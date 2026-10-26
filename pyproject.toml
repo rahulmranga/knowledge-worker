@@ -4,12 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "knowledge-worker"
-version = "0.8.3"
+version = "0.8.4"
 description = "Local-first knowledge graph memory for LLMs and AI agents: MCP server, RAG context, provenance"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
-authors = [{ name = "Rahul Rangarao", email = "rahulmohanrangarao@gmail.com" }]
 keywords = [
     "knowledge-graph",
     "ai-memory",

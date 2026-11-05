@@ -6,6 +6,8 @@
 - Fixed script injection in the `mykg audit` and `mykg viz` HTML pages: graph
   text could close the script block with a differently cased `</SCRIPT`. Every
   `<` in the embedded JSON is now written as `\u003c`.
+- Fixed a blank `mykg audit` page when graph text contained a template
+  placeholder such as `__GRAPH_JSON__`.
 - Enforced edge provenance in automatic ingestion (#7).
 
 ## 0.8.3

@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import sys
 from collections import Counter, defaultdict, deque
 from dataclasses import asdict
@@ -1045,8 +1046,12 @@ def render_memory_audit_html(g: Graph, analytics: dict, out_path: Path) -> Path:
     graph_json = json.dumps(_graph_payload(g), ensure_ascii=False)
     # HTML ends a script tag case-insensitively; with no "<" in the JSON, no
     # graph text can open or close a tag from inside the script block.
-    html = HTML_TEMPLATE.replace("__AUDIT_JSON__", audit_json.replace("<", "\\u003c"))
-    html = html.replace("__GRAPH_JSON__", graph_json.replace("<", "\\u003c"))
+    payloads = {
+        "AUDIT": audit_json.replace("<", "\\u003c"),
+        "GRAPH": graph_json.replace("<", "\\u003c"),
+    }
+    # One pass, so placeholder text inside a payload stays data.
+    html = re.sub(r"__(AUDIT|GRAPH)_JSON__", lambda m: payloads[m.group(1)], HTML_TEMPLATE)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
     return out_path

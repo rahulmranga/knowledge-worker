@@ -67,6 +67,27 @@ class HtmlEmbeddingTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assert_inert(html_path.read_text(encoding="utf-8"), ["AUDIT", "GRAPH"])
 
+    def test_memory_audit_keeps_placeholder_text_as_data(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            graph_path = Path(tmp) / "graph.jsonld"
+            g = Graph()
+            g.add_node(Node(id="source:s", type="source", label="source"))
+            for name in ("AUDIT", "GRAPH"):
+                nid = f"idea:{name.lower()}"
+                g.add_node(Node(id=nid, type="idea", label=f"__{name}_JSON__"))
+                g.add_edge(Edge(nid, "source:s", "MENTIONED_IN", "source:s"))
+            g.save(str(graph_path))
+            html_path = Path(tmp) / "audit.html"
+            result = run_mykg(
+                "audit", "--out", str(Path(tmp) / "a.json"), "--html", str(html_path),
+                graph_path=graph_path,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            html = html_path.read_text(encoding="utf-8")
+            embedded_json(html, "AUDIT")
+            labels = {n["label"] for n in embedded_json(html, "GRAPH")["nodes"].values()}
+            self.assertTrue({"__AUDIT_JSON__", "__GRAPH_JSON__"} <= labels)
+
     def test_viz_escapes_embedded_markup(self):
         with tempfile.TemporaryDirectory() as tmp:
             graph_path = Path(tmp) / "graph.jsonld"

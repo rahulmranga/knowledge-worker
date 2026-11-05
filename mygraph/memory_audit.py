@@ -1043,8 +1043,10 @@ renderDetails(null);
 def render_memory_audit_html(g: Graph, analytics: dict, out_path: Path) -> Path:
     audit_json = json.dumps(analytics, ensure_ascii=False)
     graph_json = json.dumps(_graph_payload(g), ensure_ascii=False)
-    html = HTML_TEMPLATE.replace("__AUDIT_JSON__", audit_json.replace("</script", "<\\/script"))
-    html = html.replace("__GRAPH_JSON__", graph_json.replace("</script", "<\\/script"))
+    # HTML ends a script tag case-insensitively; with no "<" in the JSON, no
+    # graph text can open or close a tag from inside the script block.
+    html = HTML_TEMPLATE.replace("__AUDIT_JSON__", audit_json.replace("<", "\\u003c"))
+    html = html.replace("__GRAPH_JSON__", graph_json.replace("<", "\\u003c"))
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
     return out_path

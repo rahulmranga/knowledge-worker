@@ -3,6 +3,10 @@
 ## 0.8.4
 
 - Removed the author name and email from the package metadata.
+- Fixed script injection in the `mykg audit` and `mykg viz` HTML pages: graph
+  text could close the script block with a differently cased `</SCRIPT`. Every
+  `<` in the embedded JSON is now written as `\u003c`.
+- Enforced edge provenance in automatic ingestion (#7).
 
 ## 0.8.3
 

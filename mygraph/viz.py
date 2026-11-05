@@ -377,7 +377,9 @@ def _graph_payload(graph_path: Path) -> dict:
 def render_html(graph_path: Path, out_path: Path = HTML_PATH) -> Path:
     payload = _graph_payload(graph_path)
     graph_json = json.dumps(payload, ensure_ascii=False)
-    html = HTML_TEMPLATE.replace("__GRAPH_JSON__", graph_json.replace("</script", "<\\/script"))
+    # HTML ends a script tag case-insensitively; with no "<" in the JSON, no
+    # graph text can open or close a tag from inside the script block.
+    html = HTML_TEMPLATE.replace("__GRAPH_JSON__", graph_json.replace("<", "\\u003c"))
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
     return out_path
